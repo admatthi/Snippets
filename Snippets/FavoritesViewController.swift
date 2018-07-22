@@ -23,6 +23,23 @@ var thumbnail = [String:UIImage]()
 class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    func hideloading() {
+        
+        loadinglabel.alpha = 0
+        activityIndicator.stopAnimating()
+        activityIndicator.alpha = 0
+        
+    }
+    
+    func showloading() {
+        
+        loadinglabel.alpha = 1
+        activityIndicator.startAnimating()
+        activityIndicator.alpha = 1
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +54,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         backgroundlabel.layer.cornerRadius = 5.0
         backgroundlabel.clipsToBounds = true
+        
+        showloading()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -148,6 +168,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 
         } else {
             
+            hideloading()
+            
             return 0
         }
 
@@ -159,6 +181,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if favorites.count > indexPath.row && favoriteids.count > indexPath.row {
             
+            cell.imagecover.alpha = 1
+            
             cell.favoritelabel.text = favorites[favoriteids[indexPath.row]]
             cell.imagecover.image = thumbnail[favoriteids[indexPath.row]]
             cell.imagecover.layer.cornerRadius = 5.0
@@ -167,12 +191,20 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
             
             cell.favoritelabel.text = "You have no favorites"
-
+            cell.imagecover.alpha = 0
         }
+        
+        hideloading()
         
         return cell
     }
 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedtext = favorites[favoriteids[indexPath.row]]!
+        
+        self.performSegue(withIdentifier: "FavoritesToFullText", sender: self)
+    }
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
@@ -198,6 +230,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadinglabel: UILabel!
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {

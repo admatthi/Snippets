@@ -24,6 +24,26 @@ var librarybookids = [String]()
 
 class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    func hideloading() {
+        
+        loadinglabel.alpha = 0
+        activityIndicator.stopAnimating()
+        activityIndicator.alpha = 0
+        
+    }
+    
+    func showloading() {
+        
+        loadinglabel.alpha = 1
+        activityIndicator.startAnimating()
+        activityIndicator.alpha = 1
+
+    }
+    
+    @IBOutlet weak var coverimage: UIImageView!
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +54,8 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.queryforbookinfo()
             
         }
+        
+        showloading()
         
         backgroundlabel.layer.cornerRadius = 5.0
         backgroundlabel.clipsToBounds = true
@@ -83,6 +105,9 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var loadinglabel: UILabel!
     func queryforbookinfo() {
         
         var functioncounter = 0
@@ -169,6 +194,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.bookauthor.text = libraryauthors[librarybookids[indexPath.row]]
         cell.booktitle.text = librarytitles[librarybookids[indexPath.row]]
         
+        hideloading()
         
         return cell
     }

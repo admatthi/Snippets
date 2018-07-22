@@ -10,6 +10,11 @@
 		157A74EA0165AD58AB8C42FF /* Pods_SnippetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6EE81207569C281144C549E /* Pods_SnippetsUITests.framework */; };
 		9C2304F62D26520C38570F48 /* Pods_Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E681C89D5EFAA82527E004D9 /* Pods_Snippets.framework */; };
 		9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */; };
+		9D40206E2102278900E90720 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D40206D2102278900E90720 /* FilterViewController.swift */; };
+		9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
+		9D4020732102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
+		9D4020742102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
+		9D402076210241E400E90720 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D402075210241E400E90720 /* StoreKit.framework */; };
 		9D714EBE20FFA0E7002CD2A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EBD20FFA0E7002CD2A3 /* AppDelegate.swift */; };
 		9D714EC520FFA0EB002CD2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D714EC420FFA0EB002CD2A3 /* Assets.xcassets */; };
 		9D714EC820FFA0EB002CD2A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */; };
@@ -99,6 +104,9 @@
 		5B29037367A81C6A6156FE25 /* Pods-SnippetsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsUITests/Pods-SnippetsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A42BC6B365D009C7E233046 /* Pods-SnippetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		9D40206D2102278900E90720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		9D4020712102375E00E90720 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
+		9D402075210241E400E90720 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9D714EBA20FFA0E7002CD2A3 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D714EBD20FFA0E7002CD2A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D714EC420FFA0EB002CD2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2304F62D26520C38570F48 /* Pods_Snippets.framework in Frameworks */,
+				9D402076210241E400E90720 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +233,8 @@
 				9D714EFB20FFA1A8002CD2A3 /* Settings2ViewController.swift */,
 				9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */,
 				9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */,
+				9D40206D2102278900E90720 /* FilterViewController.swift */,
+				9D4020712102375E00E90720 /* ExpandedViewController.swift */,
 				9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */,
 				9D714EC420FFA0EB002CD2A3 /* Assets.xcassets */,
 				9D714EC920FFA0EB002CD2A3 /* Info.plist */,
@@ -253,6 +264,7 @@
 		F87C21907DEB21E58C006ECF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D402075210241E400E90720 /* StoreKit.framework */,
 				E681C89D5EFAA82527E004D9 /* Pods_Snippets.framework */,
 				A796B9825B532C8C1B74FF48 /* Pods_SnippetsTests.framework */,
 				C6EE81207569C281144C549E /* Pods_SnippetsUITests.framework */,
@@ -332,6 +344,11 @@
 				TargetAttributes = {
 					9D714EB920FFA0E7002CD2A3 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					9D714ECD20FFA0EB002CD2A3 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -487,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D40206E2102278900E90720 /* FilterViewController.swift in Sources */,
 				9D714F1A20FFA1A9002CD2A3 /* FavoritesTableViewCell.swift in Sources */,
 				9D714F0220FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */,
 				9D714F1720FFA1A9002CD2A3 /* DViewController.swift in Sources */,
@@ -503,6 +521,7 @@
 				9D714F2F20FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,
 				9D714F1420FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9D714F0E20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
+				9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */,
 				9D714F1D20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
 				9D714F3520FFA1A9002CD2A3 /* SubsViewController.swift in Sources */,
 				9D714F0B20FFA1A9002CD2A3 /* ReaderViewController.swift in Sources */,
@@ -525,6 +544,7 @@
 				9D714F0920FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */,
 				9D714F0020FFA1A9002CD2A3 /* ReadTableViewCell.swift in Sources */,
 				9D714F2A20FFA1A9002CD2A3 /* BookOverviewViewController.swift in Sources */,
+				9D4020732102375E00E90720 /* ExpandedViewController.swift in Sources */,
 				9D714F3320FFA1A9002CD2A3 /* BViewController.swift in Sources */,
 				9D714F3020FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,
 				9D714F1520FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
@@ -551,6 +571,7 @@
 				9D714F0A20FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */,
 				9D714F0120FFA1A9002CD2A3 /* ReadTableViewCell.swift in Sources */,
 				9D714F2B20FFA1A9002CD2A3 /* BookOverviewViewController.swift in Sources */,
+				9D4020742102375E00E90720 /* ExpandedViewController.swift in Sources */,
 				9D714F3420FFA1A9002CD2A3 /* BViewController.swift in Sources */,
 				9D714F3120FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,
 				9D714F1620FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,

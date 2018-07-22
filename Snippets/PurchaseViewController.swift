@@ -63,13 +63,13 @@ class NetworkActivityIndicatorManager: NSObject {
     }
 }
 
-var sharedSecret = "a4cd3069d1b947d9b3e8b9223de7c35d"
+var sharedSecret = "20f815c7b6b24304a5c3d124edf09bcc"
 
 var price = Double()
 class PurchaseViewController: UIViewController {
 
     @IBOutlet weak var saleslabel: UILabel!
-    let bundleID = "com.aatech.Eat"
+    let bundleID = "com.aatech.Snippets"
     
     var threedaytrial = RegisteredPurchase.threedaytrial
     var sevendaytrial = RegisteredPurchase.sevendaytrial
@@ -158,24 +158,40 @@ class PurchaseViewController: UIViewController {
                                             
                                             if product.productId == self.bundleID + "." + "7DayTrial"{
                                                 
-                                                
+                                                DispatchQueue.main.async {
+                                                    
+                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
+                                                    
+                                                }
                                                 
                                             }
                                             if product.productId == self.bundleID + "." + "3DayTrial" {
                                                 
-                                                
+                                                DispatchQueue.main.async {
+                                                    
+                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
+                                                    
+                                                }
                                                 
                                             }
                                             
                                             if product.productId == self.bundleID + "." + "OneTimePurchase" {
                                                 
-                                                
+                                                DispatchQueue.main.async {
+                                                    
+                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
+                                                    
+                                                }
                                                 
                                             }
                                             
                                             if product.productId == self.bundleID + "." + "7DayFreeTrial" {
                                                 
-                                                
+                                                DispatchQueue.main.async {
+                                                    
+                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
+                                                    
+                                                }
                                                 
                                             }
                                             
@@ -203,6 +219,11 @@ class PurchaseViewController: UIViewController {
                                             
                                             self.showAlert(alert: self.alertForPurchaseResult(result: result))
                                             
+                                            DispatchQueue.main.async {
+                                                
+                                                self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
+                                                
+                                            }
 
                                         }
                                         

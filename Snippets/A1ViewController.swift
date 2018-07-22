@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import AudioToolbox
 
 var dummycovers = [UIImage]()
 var dummytitles = [String]()
@@ -16,11 +17,20 @@ var dummybookids = [String]()
 
 class A1ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBAction func tapGo(_ sender: Any) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
+        self.performSegue(withIdentifier: "SHOW", sender: self)
+        
+    }
     @IBOutlet weak var collectinView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         FBSDKAppEvents.logEvent("Sale Screen")
+
 
         
         dummycovers.append(UIImage(named: "1")!)
