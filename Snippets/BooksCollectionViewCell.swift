@@ -10,6 +10,7 @@ import UIKit
 
 class BooksCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var lockimage: UIImageView!
     @IBOutlet weak var dark: UIImageView!
     @IBOutlet weak var bookcover: UIImageView!
     @IBOutlet weak var bookauthor: UILabel!

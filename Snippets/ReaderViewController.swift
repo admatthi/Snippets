@@ -250,6 +250,10 @@ class ReaderViewController: UIViewController {
 
         if counter > (quote.count-1) {
             
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+            ref?.child("Users").child(uid).child("Completed").child(selectedbookid).updateChildValues(["Text" : "Wow"])
+            
             self.performSegue(withIdentifier: "ReaderToOverview", sender: self)
 
             
@@ -734,7 +738,7 @@ class ReaderViewController: UIViewController {
         
         quotetext.addCharacterSpacing()
 
-        backgroundlabel.backgroundColor = colors[counter]
+//        backgroundlabel.backgroundColor = colors[counter]
         
 
         }

@@ -23,6 +23,7 @@ var bookauthors = [String:String]()
 var bookcovers = [String:UIImage]()
 var bookdescriptions = [String:String]()
 var bookurls = [String:String]()
+var bookcompleted = [String:String]()
 
 var foryoubookids = [String]()
 var foryoubooknames = [String:String]()
@@ -41,6 +42,8 @@ var selectedurl = String()
 
 var selectedfilter = String()
 
+var completedbooks = [String]()
+
 class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var logo: UIImageView!
@@ -52,30 +55,34 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var authorofquote: UILabel!
     func hideloading() {
         
-        coverimage.alpha = 0
+//        coverimage.alpha = 0
+        loadinglabeltext.alpha = 0
 //        logo.alpha = 0
         activityIndicator.stopAnimating()
         activityIndicator.alpha = 0
-        tapfavorties.alpha = 1
-        taphome.alpha = 1
-        taplibrary.alpha = 1
-        tapfilters.alpha = 1
+//        tapfavorties.alpha = 1
+//        taphome.alpha = 1
+//        taplibrary.alpha = 1
+//        tapfilters.alpha = 1
+        tapcta.alpha = 0
     }
     
     @IBOutlet weak var coverimage: UIImageView!
     @IBOutlet weak var loadinglabel: UILabel!
     func showloading() {
         
-        coverimage.alpha = 1
+//        coverimage.alpha = 1
         logo.alpha = 1
+        loadinglabeltext.alpha = 1
         activityIndicator.startAnimating()
         activityIndicator.alpha = 1
-        tapfavorties.alpha = 0
-        taphome.alpha = 0
-        taplibrary.alpha = 0
-        
+//        tapfavorties.alpha = 0
+//        taphome.alpha = 0
+//        taplibrary.alpha = 0
+        tapcta.alpha = 0
     }
     
+    @IBOutlet weak var tapcta: UIButton!
     @IBOutlet weak var categorylabel: UILabel!
     @IBOutlet weak var taphome: UIButton!
     @IBOutlet weak var tapfavorties: UIButton!
@@ -94,56 +101,63 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         showloading()
         
+        backgroundlabel.layer.cornerRadius = 5.0
+        backgroundlabel.clipsToBounds = true
+        
+        if selectedfilter == "" {
+            
+            selectedfilter = "Business & Money"
+            
+            categorylabel.text = selectedfilter.uppercased()
+            
+        } else {
+            
+            categorylabel.text = selectedfilter.uppercased()
+            
+        }
+        
+        queryforbookids { () -> () in
+            
+            self.queryforbookinfo()
+            
+        }
+        
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
 
             purchased = false
-            
-            DispatchQueue.main.async {
-                
-                self.performSegue(withIdentifier: "DiscoverToSale", sender: self)
-                
-            }
-            
+        
+            collectionView2.reloadData()
+            tapsettings.alpha = 0
+            tapfavorties.alpha = 0
+            taphome.alpha = 0
+            taplibrary.alpha = 0
+            tapfilters.alpha = 0
+            tapcta.alpha = 1
             
         } else {
             
+            uid = (Auth.auth().currentUser?.uid)!
+
             newuser = false
             // Do any additional setup after loading the view.
-            
+            purchased = true
+            tapsettings.alpha = 1
+            tapfavorties.alpha = 1
+            taphome.alpha = 1
+            taplibrary.alpha = 1
+            tapfilters.alpha = 1
+            tapcta.alpha = 0
+            collectionView2.reloadData()
+            queryforcompletedbookids()
 //            let date = Date()
 //            let calendar = Calendar.current
 //            let dateFormatter = DateFormatter()
 //            dateFormatter.dateFormat = "MM-dd-yy"
 //            todaysdate =  dateFormatter.string(from: date)
             
-            backgroundlabel.layer.cornerRadius = 5.0
-            backgroundlabel.clipsToBounds = true
-            uid = (Auth.auth().currentUser?.uid)!
-            
-            if selectedfilter == "" {
-                
-                selectedfilter = "Business & Money"
-
-                categorylabel.text = selectedfilter.uppercased()
-                
-            } else {
-                
-                categorylabel.text = selectedfilter.uppercased()
-
-            }
-            
-            queryforbookids { () -> () in
-                
-                self.queryforbookinfo()
-                
-            }
             
             
-            collectionView2.reloadData()
-            
-            purchased = true
-            tapsettings.alpha = 1
         }
         // Do any additional setup after loading the view.
     }
@@ -197,6 +211,52 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         
     }
+    
+    func queryforcompletedbookids() {
+        
+        var functioncounter = 0
+        
+        completedbooks.removeAll()
+      
+        ref?.child("Users").child(uid).child("Completed").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if let snapDict = snapshot.value as? [String:AnyObject] {
+                
+                for each in snapDict {
+                    
+                    let ids = each.key
+                    
+                    completedbooks.append(ids)
+                    
+                    functioncounter += 1
+                    
+                    if functioncounter == snapDict.count {
+                        
+                        for each in completedbooks {
+                            
+                            if bookids.contains(each) {
+                                
+                                bookcompleted[each] = "True"
+                                
+                                self.collectionView2.reloadData()
+                                
+                            }
+                        }
+                        
+                    }
+                    
+                    
+                }
+                
+            }
+            
+        })
+        
+        
+    }
+    
     @IBOutlet weak var tapfilters: UIButton!
     func queryforbookinfo() {
             
@@ -206,6 +266,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
             for each in bookids  {
                 
+                bookcompleted[each] = "False"
+
                 ref?.child("AllBooks").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
                     
                     var value = snapshot.value as? NSDictionary
@@ -214,7 +276,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     if var activityvalue = value?["Author"] as? String {
                                 
                     bookauthors[each] = activityvalue
-                                
+                    
                     }
                             
                     if var activityvalue2 = value?["Name"] as? String {
@@ -225,6 +287,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     if var activityvalue2 = value?["Description"] as? String {
                         
                         bookdescriptions[each] = activityvalue2
+                        
+                    } else {
+                        
+                        bookdescriptions[each] = "Dummy"
+
+                        bookcompleted[each] = "Dummy"
+                        
                     }
                             
                     if var productimagee = value?["Image"] as? String {
@@ -253,12 +322,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                     
                                 }
                                 
-                    }
-                    
-//                    self.collectionView4.reloadData()
-//                    self.collectionView3.reloadData()
-//                    self.collectionView2.reloadData()
-//                    self.collectionView.reloadData()
+                        }
+
                     
                     if functioncounter == bookids.count {
 
@@ -272,11 +337,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
     }
     
-    func loadmore() {
-        
-        
-        
-    }
+
   
     
     func collectionView(_ collectionView: UICollectionView,
@@ -311,20 +372,46 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         cell.dark.layer.cornerRadius = 10.0
         cell.dark.layer.masksToBounds = true
         
+        if purchased {
+            
+            cell.lockimage.image = UIImage(named: "PurpleOval")
+            
+        } else {
+            
+            cell.lockimage.image = UIImage(named: "Lock")
+        }
         if bookauthors.count > indexPath.row {
                 
                 cell.bookauthor.text = bookauthors[bookids[indexPath.row]]
                 cell.bookcover.image = bookcovers[bookids[indexPath.row]]
                 cell.booktitle.text = booknames[bookids[indexPath.row]]
-
-                
+            
                 hideloading()
+            
+            if bookcompleted[bookids[indexPath.row]] == "True" {
+                
+                cell.lockimage.alpha = 0
+
+            } else {
+                
+                cell.lockimage.alpha = 1
+
+            }
+            
+            if purchased {
+                
+                tapcta.alpha = 0
+
+            } else {
+                
+                tapcta.alpha = 1
+
+            }
                 
             }
         
         if indexPath.row == bookauthors.count - 5 {
             
-            loadmore()
             
         }
         
@@ -336,14 +423,36 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var collectionView2: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                selectedbookid = bookids[indexPath.row]
-                selectedtitle = booknames[bookids[indexPath.row]]!
-                selectedauthor = bookauthors[bookids[indexPath.row]]!
-                selectedimage = bookcovers[bookids[indexPath.row]]!
-                selecteddescription = bookdescriptions[bookids[indexPath.row]]!
-                selectedurl = bookurls[bookids[indexPath.row]]!
-                    
+        
+        
+        if purchased {
+            
+            selectedbookid = bookids[indexPath.row]
+            selectedtitle = booknames[bookids[indexPath.row]]!
+            selectedauthor = bookauthors[bookids[indexPath.row]]!
+            selectedimage = bookcovers[bookids[indexPath.row]]!
+            selecteddescription = bookdescriptions[bookids[indexPath.row]]!
+            selectedurl = bookurls[bookids[indexPath.row]]!
+            
+            
+            if bookcompleted[bookids[indexPath.row]] == "Dummy" {
+                
+                
+            } else {
+                
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+
+            }
+            
+        } else {
+            
+            DispatchQueue.main.async {
+                
+                self.performSegue(withIdentifier: "DiscoverToBuy", sender: self)
+                
+            }
+            
+        }
     
     }
     
