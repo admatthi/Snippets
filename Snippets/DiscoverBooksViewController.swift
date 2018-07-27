@@ -133,7 +133,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             taphome.alpha = 0
             taplibrary.alpha = 0
             tapfilters.alpha = 0
-            tapcta.alpha = 1
+//            tapcta.alpha = 1
             
         } else {
             
@@ -400,11 +400,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             if purchased {
                 
-                tapcta.alpha = 0
+//                tapcta.alpha = 0
 
             } else {
                 
-                tapcta.alpha = 1
+                cell.lockimage.alpha = 1
+                cell.lockimage.image = UIImage(named: "PurpleOval")
+//                tapcta.alpha = 1
 
             }
                 
@@ -424,6 +426,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         
         if purchased {
             
@@ -446,12 +451,22 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
         } else {
             
-            DispatchQueue.main.async {
+            selectedbookid = bookids[indexPath.row]
+            selectedtitle = booknames[bookids[indexPath.row]]!
+            selectedauthor = bookauthors[bookids[indexPath.row]]!
+            selectedimage = bookcovers[bookids[indexPath.row]]!
+            selecteddescription = bookdescriptions[bookids[indexPath.row]]!
+            selectedurl = bookurls[bookids[indexPath.row]]!
+            
+            
+            if bookcompleted[bookids[indexPath.row]] == "Dummy" {
                 
-                self.performSegue(withIdentifier: "DiscoverToBuy", sender: self)
+                
+            } else {
+                
+                self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                 
             }
-            
         }
     
     }

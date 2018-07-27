@@ -21,6 +21,9 @@ class BookOverviewViewController: UIViewController {
     @IBOutlet weak var keyinsights: UILabel!
     @IBAction func tapStartReading(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         if purchased {
             
                 self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
@@ -63,11 +66,11 @@ class BookOverviewViewController: UIViewController {
         
         if purchased {
             
-            tapstart.setTitle("Read Now", for: .normal)
+            tapstart.setTitle("Start Story", for: .normal)
             
         } else {
             
-            tapstart.setTitle("Start Your Free 7-Day Trial Now", for: .normal)
+//            tapstart.setTitle("Start Your Free 7-Day Trial Now", for: .normal)
         }
         
         // Do any additional setup after loading the view.

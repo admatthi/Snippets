@@ -161,6 +161,7 @@ class ReaderViewController: UIViewController {
         colors.append(gred)
         colors.append(lblue)
         
+        tapanywhere.alpha = 1
     }
     
     @IBOutlet weak var counterbutton: UIButton!
@@ -244,6 +245,7 @@ class ReaderViewController: UIViewController {
         
         }
     
+    @IBOutlet weak var tapanywhere: UILabel!
     @IBOutlet weak var tapbookmark: UIButton!
     func nextcount() {
         
@@ -254,7 +256,7 @@ class ReaderViewController: UIViewController {
             generator.impactOccurred()
             ref?.child("Users").child(uid).child("Completed").child(selectedbookid).updateChildValues(["Text" : "Wow"])
             
-            self.performSegue(withIdentifier: "ReaderToOverview", sender: self)
+            self.performSegue(withIdentifier: "ReaderToDiscover", sender: self)
 
             
         } else {
@@ -264,6 +266,8 @@ class ReaderViewController: UIViewController {
             showproperquote()
             
         }
+        
+        tapanywhere.alpha = 0
 
     }
     @IBOutlet weak var whitelabel: UILabel!
