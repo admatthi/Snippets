@@ -116,15 +116,21 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
         }
         
-        queryforbookids { () -> () in
-            
-            self.queryforbookinfo()
-            
-        }
+
         
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
 
+            var text = "Most Popular"
+            
+            categorylabel.text = text.uppercased()
+
+            queryforallbookids { () -> () in
+                
+                self.queryforbookinfo()
+            }
+
+            
             purchased = false
         
             collectionView2.reloadData()
@@ -136,6 +142,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 //            tapcta.alpha = 1
             
         } else {
+            
+            queryforbookids { () -> () in
+                
+                self.queryforbookinfo()
+                
+            }
             
             uid = (Auth.auth().currentUser?.uid)!
 
@@ -183,6 +195,48 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
      
         
         ref?.child("AllBooks").queryOrdered(byChild: "Genre").queryEqual(toValue: selectedfilter).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if let snapDict = snapshot.value as? [String:AnyObject] {
+                
+                for each in snapDict {
+                    
+                    let ids = each.key
+                    
+                    bookids.append(ids)
+                    
+                    functioncounter += 1
+                    
+                    if functioncounter == snapDict.count {
+                        
+                        completed()
+                        
+                    }
+                    
+                    
+                }
+                
+            }
+            
+        })
+        
+        
+    }
+    
+    func queryforallbookids(completed: @escaping (() -> ()) ) {
+        
+        var functioncounter = 0
+        
+        bookids.removeAll()
+        bookcovers.removeAll()
+        bookauthors.removeAll()
+        booknames.removeAll()
+        bookdescriptions.removeAll()
+        bookurls.removeAll()
+        
+        
+        ref?.child("AllBooks").queryLimited(toFirst: 50).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
