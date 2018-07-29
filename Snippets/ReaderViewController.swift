@@ -40,7 +40,7 @@ class ReaderViewController: UIViewController {
         
         if counter > 0 {
             
-//            lastcount()
+            lastcount()
 
         }
         

@@ -97,7 +97,7 @@ class BookOverviewViewController: UIViewController {
                 
                 if var activityvalue2 = value?["Insights"] as? String {
                     
-                    self.keyinsights.text = "\(activityvalue2) Key Snippets"
+                    self.keyinsights.text = "\(activityvalue2) views"
                 }
                 
                 

@@ -43,6 +43,7 @@ var selectedurl = String()
 var selectedfilter = String()
 
 var completedbooks = [String]()
+var bookinsights = [String:String]()
 
 class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -53,8 +54,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var collectionView4: UICollectionView!
     @IBOutlet weak var collectionView3: UICollectionView!
     @IBOutlet weak var authorofquote: UILabel!
+    @IBOutlet weak var loadingimage: UIImageView!
     func hideloading() {
-        
+        loadingimage.alpha = 0
 //        coverimage.alpha = 0
         loadinglabeltext.alpha = 0
 //        logo.alpha = 0
@@ -71,6 +73,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var loadinglabel: UILabel!
     func showloading() {
         
+        loadingimage.alpha = 1
 //        coverimage.alpha = 1
         logo.alpha = 1
         loadinglabeltext.alpha = 1
@@ -95,7 +98,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         self.becomeFirstResponder() // To get shake gesture
         
         FBSDKAppEvents.logEvent("Discover Viewed")
-
+        activityIndicator.color = .white
+        
         tryingtopurchase = false
         // Do any additional setup after loading the view.
         
@@ -125,9 +129,17 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             categorylabel.text = text.uppercased()
 
-            queryforallbookids { () -> () in
+            if bookids.count == 0 {
                 
-                self.queryforbookinfo()
+                queryforallbookids { () -> () in
+                    
+                    self.queryforbookinfo()
+                }
+
+                
+            } else {
+                
+                
             }
 
             
@@ -234,7 +246,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         booknames.removeAll()
         bookdescriptions.removeAll()
         bookurls.removeAll()
-        
+        bookinsights.removeAll()
         
         ref?.child("AllBooks").queryLimited(toFirst: 50).observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -349,6 +361,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         bookcompleted[each] = "Dummy"
                         
                     }
+                    
+                    if var activityvalue2 = value?["Insights"] as? String {
+                        
+                        bookinsights[each] = activityvalue2
+                    }
                             
                     if var productimagee = value?["Image"] as? String {
                                 
@@ -436,7 +453,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         }
         if bookauthors.count > indexPath.row {
                 
-                cell.bookauthor.text = bookauthors[bookids[indexPath.row]]
+            cell.bookauthor.text = "\(bookinsights[bookids[indexPath.row]]!) views"
                 cell.bookcover.image = bookcovers[bookids[indexPath.row]]
                 cell.booktitle.text = booknames[bookids[indexPath.row]]
             
