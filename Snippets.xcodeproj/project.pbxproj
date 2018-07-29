@@ -80,6 +80,9 @@
 		9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
 		9D714F3920FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
 		9D714F3A20FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
+		9DA3FFE7210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
+		9DA3FFE8210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
+		9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DE98A542107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
 		9DE98A552107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
 		9DE98A562107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
@@ -144,6 +147,7 @@
 		9D714EFC20FFA1A8002CD2A3 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubsViewController.swift; sourceTree = "<group>"; };
 		9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A1ViewController.swift; sourceTree = "<group>"; };
+		9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham-Bold.otf"; sourceTree = "<group>"; };
 		9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham Book Regular.otf"; sourceTree = "<group>"; };
 		9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A796B9825B532C8C1B74FF48 /* Pods_SnippetsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnippetsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +248,7 @@
 				9D40206D2102278900E90720 /* FilterViewController.swift */,
 				9D4020712102375E00E90720 /* ExpandedViewController.swift */,
 				9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */,
+				9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */,
 				9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */,
 				9D662CCF21082BA900A474A3 /* rm_albion.ttf */,
 				9D714EC420FFA0EB002CD2A3 /* Assets.xcassets */,
@@ -399,6 +404,7 @@
 				9D714EC820FFA0EB002CD2A3 /* LaunchScreen.storyboard in Resources */,
 				9D662CD021082BAB00A474A3 /* rm_albion.ttf in Resources */,
 				9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */,
+				9DA3FFE7210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
 				9DE98A542107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */,
 				9D714EC520FFA0EB002CD2A3 /* Assets.xcassets in Resources */,
 			);
@@ -409,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DE98A552107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */,
+				9DA3FFE8210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
 				9D714F2420FFA1A9002CD2A3 /* Main.storyboard in Resources */,
 				9D662CD121082BAB00A474A3 /* rm_albion.ttf in Resources */,
 			);
@@ -419,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DE98A562107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */,
+				9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
 				9D714F2520FFA1A9002CD2A3 /* Main.storyboard in Resources */,
 				9D662CD221082BAB00A474A3 /* rm_albion.ttf in Resources */,
 			);

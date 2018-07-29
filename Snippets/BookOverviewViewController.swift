@@ -70,7 +70,7 @@ class BookOverviewViewController: UIViewController {
             
         } else {
             
-//            tapstart.setTitle("Start Your Free 7-Day Trial Now", for: .normal)
+            tapstart.setTitle("Start your 7-day free trial to unlock", for: .normal)
         }
         
         // Do any additional setup after loading the view.
