@@ -30,7 +30,16 @@ class BookOverviewViewController: UIViewController {
             
         } else {
             
-            self.performSegue(withIdentifier: "BookOverviewToPurchase", sender: self)
+            if testerselected {
+                
+                self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+
+            } else {
+                
+                self.performSegue(withIdentifier: "BookOverviewToPurchase", sender: self)
+
+            }
+            
         }
         
     }
@@ -70,7 +79,16 @@ class BookOverviewViewController: UIViewController {
             
         } else {
             
-            tapstart.setTitle("Start your 7-day free trial to unlock", for: .normal)
+            if testerselected {
+                
+                tapstart.setTitle("Start Story", for: .normal)
+                
+            } else {
+                
+                tapstart.setTitle("Start your 7-day free trial to unlock", for: .normal)
+
+            }
+            
         }
         
         // Do any additional setup after loading the view.

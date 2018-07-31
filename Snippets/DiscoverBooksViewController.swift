@@ -40,6 +40,8 @@ var onebookurls = [String:String]()
 var onebookcompleted = [String:String]()
 var onebookinsights = [String:String]()
 
+var testerselected = Bool()
+
 
 class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -948,7 +950,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = onebookcovers[oneids[indexPath.row]]
                 cell.booktitle.text = onebooknames[oneids[indexPath.row]]
                 
-                    if oneids[indexPath.row] == "1806" {
+                    if indexPath.row == 0 {
                         
                         cell.lockimage.image = UIImage(named: "Tester")
                         
@@ -1107,6 +1109,15 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedimage = onebookcovers[oneids[indexPath.row]]!
                 selecteddescription = onebookdescriptions[oneids[indexPath.row]]!
                 selectedurl = onebookurls[oneids[indexPath.row]]!
+                
+                if indexPath.row == 0 {
+                    
+                    testerselected = true
+                    
+                } else {
+                    
+                    testerselected = false
+                }
                 
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                 

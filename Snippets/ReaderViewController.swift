@@ -88,7 +88,14 @@ class ReaderViewController: UIViewController {
         ref = Database.database().reference()
         
         
-        ref?.child("Users").child(uid).child("Library").child(selectedbookid).updateChildValues(["Text" : "Hello"])
+        if testerselected {
+            
+            
+        } else {
+            
+            ref?.child("Users").child(uid).child("Library").child(selectedbookid).updateChildValues(["Text" : "Hello"])
+
+        }
         
 //        whitelabel.layer.cornerRadius = 10.0
 //        whitelabel.layer.masksToBounds = true

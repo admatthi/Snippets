@@ -994,7 +994,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3e-8r-nT1">
-                                <rect key="frame" x="137" y="494" width="100" height="30"/>
+                                <rect key="frame" x="137" y="570" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TSq-sT-ab4"/>
                                     <constraint firstAttribute="width" constant="100" id="aBg-RE-2B9"/>
@@ -1008,37 +1008,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPB-mD-7mh">
-                                <rect key="frame" x="23" y="545" width="329" height="115"/>
+                                <rect key="frame" x="23" y="570" width="329" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="329" id="Qd9-8s-7M3"/>
                                     <constraint firstAttribute="height" constant="115" id="Zja-Eh-Lnh"/>
                                 </constraints>
-                                <string key="text">By subscribing, you get unlimited access to best selling titles. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable.</string>
+                                <string key="text">You can turn off auto-renewel in your iTunes settings. You must do this at least 24-hours before the end of your current subscription period for the change to take effect. To learn more, check out our terms of use.</string>
                                 <fontDescription key="fontDescription" name="MicrosoftSansSerif" family="Microsoft Sans Serif" pointSize="10"/>
                                 <color key="textColor" red="0.59991671954314718" green="0.59991671954314718" blue="0.59991671954314718" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="equ-wr-194">
-                                <rect key="frame" x="25" y="521" width="324" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2g8-QU-fQI"/>
-                                    <constraint firstAttribute="width" constant="324" id="f21-xg-2yx"/>
-                                </constraints>
+                                <rect key="frame" x="25" y="591" width="324" height="81"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="By continuing, you accept our Terms of Use &amp; Privacy Policy">
+                                <state key="normal">
                                     <color key="titleColor" red="0.60782836294416243" green="0.60782836294416243" blue="0.60782836294416243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="tapTerms:" destination="PcP-Wv-fbZ" eventType="touchUpInside" id="bQY-MP-xpU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start 7 Day Free Trial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dae-TK-fWP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start my 7-day free trial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dae-TK-fWP">
                                 <rect key="frame" x="43" y="386" width="290" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="Zbf-Ss-mfW"/>
                                     <constraint firstAttribute="height" constant="42" id="xYk-Ic-ILR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1078,18 +1074,18 @@
                                     <constraint firstAttribute="height" constant="36" id="9hw-TZ-Xh9"/>
                                     <constraint firstAttribute="width" constant="290" id="kbQ-vo-LaD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Cheltenham-Bold" family="ITC Cheltenham" pointSize="17"/>
                                 <color key="textColor" red="0.42745098039215684" green="0.45098039215686275" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-Ll-kX1">
-                                <rect key="frame" x="51" y="446" width="273" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel up to 24h before trial ends." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-Ll-kX1">
+                                <rect key="frame" x="51" y="450" width="273" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="273" id="jVl-h7-4mb"/>
                                     <constraint firstAttribute="height" constant="30" id="qlG-D8-0p6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="8"/>
-                                <color key="textColor" red="0.42745098039215684" green="0.45490196078431372" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="9"/>
+                                <color key="textColor" red="0.094678119189295071" green="0.10089046711676354" blue="0.12277918781725883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get the big ideas from 2,500 + of the world's best nonfiction titles" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsZ-I5-gJN">
@@ -1098,7 +1094,7 @@
                                     <constraint firstAttribute="height" constant="65" id="QwB-B1-Qcj"/>
                                     <constraint firstAttribute="width" constant="273" id="ikH-wc-gyA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="17"/>
                                 <color key="textColor" red="0.480488578680203" green="0.480488578680203" blue="0.480488578680203" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1108,7 +1104,7 @@
                                     <constraint firstAttribute="width" constant="290" id="F7Q-Ni-9mY"/>
                                     <constraint firstAttribute="height" constant="24" id="gta-js-ykh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
+                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="10"/>
                                 <color key="textColor" red="0.42745098039215684" green="0.45098039215686275" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1118,7 +1114,7 @@
                                     <constraint firstAttribute="height" constant="36" id="5U5-I4-TOa"/>
                                     <constraint firstAttribute="width" constant="290" id="SLy-ft-zsf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Cheltenham-Bold" family="ITC Cheltenham" pointSize="17"/>
                                 <color key="textColor" red="0.42745098039215684" green="0.45098039215686275" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1128,7 +1124,7 @@
                                     <constraint firstAttribute="width" constant="290" id="OVo-lF-3Ld"/>
                                     <constraint firstAttribute="height" constant="24" id="hbR-wh-eu5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
+                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="10"/>
                                 <color key="textColor" red="0.42745098039215684" green="0.45098039215686275" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1149,7 +1145,7 @@
                                     <constraint firstAttribute="height" constant="24" id="GAP-jF-Afv"/>
                                     <constraint firstAttribute="width" constant="290" id="aeg-r2-7vw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1159,7 +1155,7 @@
                                     <constraint firstAttribute="height" constant="73" id="I4a-YE-6XQ"/>
                                     <constraint firstAttribute="width" constant="272" id="UuF-a3-fj7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Cheltenham-Bold" family="ITC Cheltenham" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="Cheltenham-Bold" family="ITC Cheltenham" pointSize="25"/>
                                 <color key="textColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1168,24 +1164,25 @@
                         <constraints>
                             <constraint firstItem="I73-yp-w6e" firstAttribute="top" secondItem="Vw0-g8-d3c" secondAttribute="bottom" constant="-7" id="18A-P7-7BP"/>
                             <constraint firstItem="pwr-Ll-kX1" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="6JY-gk-9YW"/>
+                            <constraint firstItem="equ-wr-194" firstAttribute="leading" secondItem="EBM-z0-Bav" secondAttribute="leading" constant="25" id="8S2-nn-ffa"/>
                             <constraint firstItem="dae-TK-fWP" firstAttribute="leading" secondItem="d5u-Sg-1eZ" secondAttribute="trailing" constant="-316" id="AQl-yJ-0YO"/>
-                            <constraint firstItem="equ-wr-194" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="AhC-ro-MYu"/>
-                            <constraint firstItem="BPB-mD-7mh" firstAttribute="top" secondItem="G3e-8r-nT1" secondAttribute="bottom" constant="21" id="BJI-sy-2gU"/>
-                            <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="equ-wr-194" secondAttribute="bottom" constant="116" id="Czm-gc-cZY"/>
+                            <constraint firstItem="equ-wr-194" firstAttribute="top" secondItem="G3e-8r-nT1" secondAttribute="bottom" constant="-9" id="Afq-ag-tdq"/>
+                            <constraint firstItem="BPB-mD-7mh" firstAttribute="top" secondItem="G3e-8r-nT1" secondAttribute="bottom" constant="-30" id="BJI-sy-2gU"/>
                             <constraint firstItem="I73-yp-w6e" firstAttribute="leading" secondItem="Vw0-g8-d3c" secondAttribute="trailing" constant="-290" id="EFd-FS-4j6"/>
                             <constraint firstItem="Unf-7M-pQL" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="FIo-b4-Fac"/>
                             <constraint firstItem="Vw0-g8-d3c" firstAttribute="leading" secondItem="ib1-nn-yoS" secondAttribute="trailing" constant="-316" id="J2h-XJ-3xG"/>
+                            <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="equ-wr-194" secondAttribute="bottom" constant="-5" id="Mcq-7m-O9T"/>
                             <constraint firstItem="d5u-Sg-1eZ" firstAttribute="top" secondItem="dae-TK-fWP" secondAttribute="bottom" constant="-43" id="Mzj-8k-DpZ"/>
                             <constraint firstItem="MsZ-I5-gJN" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="NKQ-5y-dWv"/>
                             <constraint firstItem="vE9-Gt-cpy" firstAttribute="top" secondItem="EBM-z0-Bav" secondAttribute="top" constant="47" id="OM8-Pa-IDf"/>
                             <constraint firstItem="GwU-mZ-u9O" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="QQT-Lv-Jd0"/>
                             <constraint firstItem="mfN-jp-djX" firstAttribute="leading" secondItem="Unf-7M-pQL" secondAttribute="trailing" constant="-316" id="Vqn-Gk-M2n"/>
-                            <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="BPB-mD-7mh" secondAttribute="bottom" constant="7" id="WAd-BQ-aE0"/>
+                            <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="BPB-mD-7mh" secondAttribute="bottom" constant="-18" id="WAd-BQ-aE0"/>
                             <constraint firstItem="d5u-Sg-1eZ" firstAttribute="top" secondItem="ib1-nn-yoS" secondAttribute="bottom" constant="9" id="WR8-Wl-0wP"/>
                             <constraint firstItem="d5u-Sg-1eZ" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="Yhe-6t-60b"/>
                             <constraint firstItem="vE9-Gt-cpy" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="ZcQ-jf-tzB"/>
+                            <constraint firstItem="EBM-z0-Bav" firstAttribute="trailing" secondItem="equ-wr-194" secondAttribute="trailing" constant="26" id="Zic-al-m85"/>
                             <constraint firstItem="ib1-nn-yoS" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="ZtP-3F-3Yh"/>
-                            <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="equ-wr-194" secondAttribute="bottom" constant="116" id="a77-pA-IYM"/>
                             <constraint firstItem="Ogf-jt-lw8" firstAttribute="top" secondItem="mfN-jp-djX" secondAttribute="bottom" constant="-7" id="b54-Up-jCg"/>
                             <constraint firstItem="ib1-nn-yoS" firstAttribute="top" secondItem="Unf-7M-pQL" secondAttribute="bottom" constant="8" id="bQg-Nm-P4q"/>
                             <constraint firstItem="5Ua-Lm-z7k" firstAttribute="leading" secondItem="EBM-z0-Bav" secondAttribute="leading" constant="16" id="dl4-e8-BgC"/>
@@ -1203,10 +1200,10 @@
                             <constraint firstItem="GwU-mZ-u9O" firstAttribute="top" secondItem="dae-TK-fWP" secondAttribute="bottom" constant="-7" id="qH5-Jv-2y2"/>
                             <constraint firstItem="MsZ-I5-gJN" firstAttribute="top" secondItem="vE9-Gt-cpy" secondAttribute="bottom" constant="8" id="qqF-2c-hmP"/>
                             <constraint firstItem="Ogf-jt-lw8" firstAttribute="leading" secondItem="mfN-jp-djX" secondAttribute="trailing" constant="-290" id="r9h-E2-bPl"/>
-                            <constraint firstItem="pwr-Ll-kX1" firstAttribute="top" secondItem="d5u-Sg-1eZ" secondAttribute="bottom" id="u4f-Ml-0uo"/>
+                            <constraint firstItem="pwr-Ll-kX1" firstAttribute="top" secondItem="d5u-Sg-1eZ" secondAttribute="bottom" constant="4" id="u4f-Ml-0uo"/>
                             <constraint firstItem="MsZ-I5-gJN" firstAttribute="top" secondItem="vE9-Gt-cpy" secondAttribute="bottom" constant="8" id="wp8-Si-ieu"/>
                             <constraint firstItem="Unf-7M-pQL" firstAttribute="top" secondItem="mfN-jp-djX" secondAttribute="bottom" constant="-40" id="xg5-aM-okl"/>
-                            <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="BPB-mD-7mh" secondAttribute="bottom" constant="7" id="z02-wV-ETs"/>
+                            <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="BPB-mD-7mh" secondAttribute="bottom" constant="-18" id="z02-wV-ETs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EBM-z0-Bav"/>
                     </view>
@@ -1915,7 +1912,7 @@
                                             <outlet property="delegate" destination="JWn-hR-rYQ" id="6eE-nG-QDl"/>
                                         </connections>
                                     </collectionView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="6" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ghv-lk-b0V">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ghv-lk-b0V">
                                         <rect key="frame" x="0.0" y="1208" width="375" height="249"/>
                                         <color key="backgroundColor" red="0.12549019607843137" green="0.16078431372549021" blue="0.20784313725490197" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2105,7 +2102,7 @@
                                             <outlet property="delegate" destination="JWn-hR-rYQ" id="Va6-Yi-X54"/>
                                         </connections>
                                     </collectionView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="7" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nVG-fP-4gX">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="6" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nVG-fP-4gX">
                                         <rect key="frame" x="0.0" y="1499" width="375" height="249"/>
                                         <color key="backgroundColor" red="0.12549019607843137" green="0.16078431372549021" blue="0.20784313725490197" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2334,8 +2331,8 @@
                                 </constraints>
                                 <state key="normal" image="HomeTapped"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-NI-IM4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="2800"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-NI-IM4">
+                                <rect key="frame" x="0.0" y="598" width="375" height="2202"/>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -3410,7 +3407,7 @@
                                     <constraint firstAttribute="width" constant="331" id="Fh4-OQ-IpJ"/>
                                     <constraint firstAttribute="height" constant="67" id="dIH-iN-aLC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="15"/>
                                 <state key="normal" title="Start Story" backgroundImage="WhiteButton">
                                     <color key="titleColor" red="0.098039215686274508" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -3848,11 +3845,11 @@
         <image name="X-1" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M3O-5p-mHj"/>
+        <segue reference="ao3-wZ-2o6"/>
         <segue reference="knN-qt-VWg"/>
         <segue reference="5oX-WZ-j3Q"/>
-        <segue reference="5Rc-yX-HdV"/>
-        <segue reference="SlH-1V-Xtw"/>
+        <segue reference="om5-Pt-tAY"/>
+        <segue reference="hr4-mk-0em"/>
         <segue reference="Dcn-FR-y5Z"/>
         <segue reference="nRD-N8-Le1"/>
         <segue reference="4dt-c2-5VA"/>
