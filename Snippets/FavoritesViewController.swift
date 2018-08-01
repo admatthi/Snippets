@@ -43,13 +43,19 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        favoriteids.removeAll()
 
         ref = Database.database().reference()
 
-        queryforfavoriteids { () -> () in
+        if favorites.count == 0 {
             
-            self.queryfordata()
+            queryforfavoriteids { () -> () in
+                
+                self.queryfordata()
+            }
+            
+        } else {
+            
+            
         }
         
         backgroundlabel.layer.cornerRadius = 5.0
@@ -70,7 +76,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         var functioncounter = 0
         
         
-        
+        favoriteids.removeAll()
+
         ref?.child("Users").child(uid).child("Favorites").observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
@@ -179,7 +186,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Favorites", for: indexPath) as! FavoritesTableViewCell
         
-        if favorites.count > indexPath.row && favoriteids.count > indexPath.row {
+        if favorites.count > indexPath.row {
             
             cell.imagecover.alpha = 1
             
@@ -209,7 +216,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if editingStyle == .delete {
             
-            ref?.child("Users").child(uid).child("Favorites").child(favoriteids[indexPath.row]).removeValue()
+        ref?.child("Users").child(uid).child("Favorites").child(favoriteids[indexPath.row]).removeValue()
 
             favorites.removeValue(forKey: favoriteids[indexPath.row])
             thumbnail.removeValue(forKey: favoriteids[indexPath.row])

@@ -102,17 +102,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         backgroundlabel.layer.cornerRadius = 5.0
         backgroundlabel.clipsToBounds = true
         
-        if selectedfilter == "" {
-            
-            selectedfilter = "Business & Money"
-            
-            categorylabel.text = selectedfilter.uppercased()
-            
-        } else {
-            
-            categorylabel.text = selectedfilter.uppercased()
-            
-        }
+
         
 
         
@@ -139,7 +129,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             purchased = false
         
-            collectionView1.reloadData()
             tapsettings.alpha = 0
             tapfavorties.alpha = 0
             taphome.alpha = 0
@@ -149,11 +138,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
         } else {
             
-            queryforbookids { () -> () in
-                
-                self.queryforbookinfo()
-                
-            }
+
             
             uid = (Auth.auth().currentUser?.uid)!
 
@@ -164,7 +149,22 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             tapfavorties.alpha = 1
             taphome.alpha = 1
             taplibrary.alpha = 1
-            tapfilters.alpha = 1
+            tapfilters.alpha = 0
+
+            if bookids.count == 0 {
+                
+                queryforallbookids { () -> () in
+                    
+                    self.queryforbookinfo()
+                }
+                
+                
+            } else {
+                
+                
+            }
+            
+//            tapfilters.alpha = 1
             queryforcompletedbookids()
 //            let date = Date()
 //            let calendar = Calendar.current
@@ -352,8 +352,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                                 bookcompleted[each] = "True"
                                 
-                                self.collectionView1.reloadData()
-                                self.collectionView1.reloadData()
+//                                self.collectionView1.reloadData()
                                 
                             }
                         }
@@ -809,7 +808,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         }
 
 
-                    if functioncounter > 70 {
+                    if functioncounter == 90 {
 
                         self.collectionView1.reloadData()
                         self.collectionView2.reloadData()
@@ -959,8 +958,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         
                     }
                 
-                hideloading()
-                
             }
             
         }
@@ -973,7 +970,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = twobookcovers[twoids[indexPath.row]]
                 cell.booktitle.text = twobooknames[twoids[indexPath.row]]
                 
-                hideloading()
                 
             }
             
@@ -987,8 +983,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = threebookcovers[threeids[indexPath.row]]
                 cell.booktitle.text = threebooknames[threeids[indexPath.row]]
                 
-                hideloading()
-                
             }
             
         }
@@ -1001,7 +995,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = fourbookcovers[fourids[indexPath.row]]
                 cell.booktitle.text = fourbooknames[fourids[indexPath.row]]
                 
-                hideloading()
                 
             }
             
@@ -1015,7 +1008,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = fivebookcovers[fiveids[indexPath.row]]
                 cell.booktitle.text = fivebooknames[fiveids[indexPath.row]]
                 
-                hideloading()
                 
             }
             
@@ -1029,7 +1021,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = sixbookcovers[sixids[indexPath.row]]
                 cell.booktitle.text = sixbooknames[sixids[indexPath.row]]
                 
-                hideloading()
                 
             }
             
@@ -1043,7 +1034,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = sevenbookcovers[sevenids[indexPath.row]]
                 cell.booktitle.text = sevenbooknames[sevenids[indexPath.row]]
                 
-                hideloading()
                 
             }
             
@@ -1057,7 +1047,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookcover.image = eightbookcovers[eightids[indexPath.row]]
                 cell.booktitle.text = eightbooknames[eightids[indexPath.row]]
                 
-                hideloading()
                 
             }
             

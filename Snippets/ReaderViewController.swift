@@ -37,6 +37,8 @@ class ReaderViewController: UIViewController {
     
     @IBAction func tapPrevious(_ sender: Any) {
         
+        let progress = (Float(counter)/Float(arrayCount))
+        self.progressView.setProgress(Float(progress), animated:true)
         
         if counter > 0 {
             
@@ -214,7 +216,7 @@ class ReaderViewController: UIViewController {
     var randomstring = String()
     
     @IBAction func tapBookMark(_ sender: Any) {
-        
+        favorites.removeAll()
         randomstring = UUID().uuidString
 
         if counter > 0  {
@@ -290,7 +292,7 @@ class ReaderViewController: UIViewController {
         
         quote.removeAll()
         
-        ref?.child("AllBooks").child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("AllBooks1").child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             

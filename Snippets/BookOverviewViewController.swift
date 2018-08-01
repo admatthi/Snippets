@@ -104,7 +104,7 @@ class BookOverviewViewController: UIViewController {
         
         var functioncounter = 0
         
-            ref?.child("AllBooks").child(selectedbookid).observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("AllBooks1").child(selectedbookid).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
                 

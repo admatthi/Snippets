@@ -359,7 +359,7 @@ class PurchaseViewController: UIViewController {
         let buttonTitleStr = NSMutableAttributedString(string:"By continuing, you accept our Terms of Use & Privacy Policy", attributes:attrs)
         attributedString.append(buttonTitleStr)
         tapterms.setAttributedTitle(attributedString, for: .normal)
-        tapterms.setTitleColor(.gray, for: .normal)
+        tapterms.setTitleColor(.white, for: .normal)
         
         //        label.text = "By continuing you accept our Privacy Policy, Billing Terms, & Terms of Use"
         
@@ -552,7 +552,7 @@ class PurchaseViewController: UIViewController {
     }
     
     var attrs = [
-        NSAttributedStringKey.foregroundColor : UIColor.gray,
+        NSAttributedStringKey.foregroundColor : UIColor.white,
         NSAttributedStringKey.underlineStyle : 1] as [NSAttributedStringKey : Any]
     
     var attributedString = NSMutableAttributedString(string:"")

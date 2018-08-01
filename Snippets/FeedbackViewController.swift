@@ -71,9 +71,14 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
                         
                         ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
                         
-                        self.dismiss(animated: true, completion: {
+                        DispatchQueue.main.async {
                             
-                        })
+                            self.dismiss(animated: true, completion: {
+                                
+                            })
+                        }
+                        
+         
                     }
                         
                     }
