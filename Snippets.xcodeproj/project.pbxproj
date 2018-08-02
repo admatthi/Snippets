@@ -10,6 +10,7 @@
 		157A74EA0165AD58AB8C42FF /* Pods_SnippetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6EE81207569C281144C549E /* Pods_SnippetsUITests.framework */; };
 		9C2304F62D26520C38570F48 /* Pods_Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E681C89D5EFAA82527E004D9 /* Pods_Snippets.framework */; };
 		9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */; };
+		9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */; };
 		9D40206E2102278900E90720 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D40206D2102278900E90720 /* FilterViewController.swift */; };
 		9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
 		9D4020732102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
@@ -113,6 +114,7 @@
 		5B29037367A81C6A6156FE25 /* Pods-SnippetsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsUITests/Pods-SnippetsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A42BC6B365D009C7E233046 /* Pods-SnippetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		9D40206D2102278900E90720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9D4020712102375E00E90720 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
 		9D402075210241E400E90720 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -247,6 +249,7 @@
 				9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */,
 				9D40206D2102278900E90720 /* FilterViewController.swift */,
 				9D4020712102375E00E90720 /* ExpandedViewController.swift */,
+				9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */,
 				9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */,
 				9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */,
 				9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */,
@@ -549,6 +552,7 @@
 				9D714F1D20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
 				9D714F3520FFA1A9002CD2A3 /* SubsViewController.swift in Sources */,
 				9D714F0B20FFA1A9002CD2A3 /* ReaderViewController.swift in Sources */,
+				9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */,
 				9D714F2020FFA1A9002CD2A3 /* AViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

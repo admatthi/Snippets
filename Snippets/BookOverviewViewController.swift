@@ -66,12 +66,7 @@ class BookOverviewViewController: UIViewController {
         author.text = selectedauthor
         cover.image = selectedimage
         
-        if let first = selecteddescription.components(separatedBy: ".").first {
-           
-            descriptionlabel.text = "\(first)."
 
-        }
-        
         queryforreviewinfo()
         
         cover.layer.cornerRadius = 10.0
@@ -122,6 +117,22 @@ class BookOverviewViewController: UIViewController {
                 if var activityvalue2 = value?["Insights"] as? String {
                     
                     self.keyinsights.text = "\(activityvalue2) views"
+                }
+                
+                var author2 = value?["Author"] as! String
+                selectedauthor = author2
+                var name = value?["Name"] as! String
+                selectedtitle = name
+                var description = value?["Description"] as! String
+                selecteddescription = description
+                self.titlelabel.text = selectedtitle
+                self.author.text = selectedauthor
+                self.cover.image = selectedimage
+                
+                if let first = selecteddescription.components(separatedBy: ".").first {
+                    
+                    self.descriptionlabel.text = "\(first)."
+                    
                 }
                 
                 
