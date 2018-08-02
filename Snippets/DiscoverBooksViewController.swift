@@ -398,6 +398,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             onebookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             onebookinsights[each] = insight
+                            
+                                                                    functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 onebookurls[each] = productimagee
@@ -417,7 +420,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         onebookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -425,7 +428,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                             
@@ -445,6 +448,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             twobookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             twobookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 twobookurls[each] = productimagee
@@ -464,7 +469,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         twobookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -472,7 +477,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                             
@@ -491,6 +496,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             threebookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             threebookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 threebookurls[each] = productimagee
@@ -510,7 +517,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         threebookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -518,7 +525,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                             
@@ -538,6 +545,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             fourbookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             fourbookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 fourbookurls[each] = productimagee
@@ -557,7 +566,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         fourbookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -565,7 +574,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                             
@@ -585,6 +594,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             fivebookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             fivebookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 fivebookurls[each] = productimagee
@@ -604,7 +615,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         fivebookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -612,7 +623,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                             
@@ -633,6 +644,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             sixbookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             sixbookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 sixbookurls[each] = productimagee
@@ -652,7 +665,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         sixbookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -660,7 +673,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                         
@@ -680,6 +693,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             sevenbookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             sevenbookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 sevenbookurls[each] = productimagee
@@ -699,7 +714,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         sevenbookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -707,7 +722,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
     
@@ -727,6 +742,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             eightbookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             eightbookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 eightbookurls[each] = productimagee
@@ -746,7 +763,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         eightbookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -754,7 +771,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                         
@@ -773,6 +790,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             ninebookdescriptions[each] = description
                             var insight = value?["Insights"] as! String
                             ninebookinsights[each] = insight
+                            functioncounter += 1
+
                             if var productimagee = value?["Image"] as? String {
                                 
                                 ninebookurls[each] = productimagee
@@ -792,7 +811,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         
                                         ninebookcovers[each] = productphoto
                                         
-                                        functioncounter += 1
+//                                        functioncounter += 1
                                         
                                     }
                                     
@@ -800,7 +819,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 
                             } else {
                                 
-                                functioncounter += 1
+//                                functioncounter += 1
                                 
                             }
                             

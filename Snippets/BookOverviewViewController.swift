@@ -65,7 +65,13 @@ class BookOverviewViewController: UIViewController {
         titlelabel.text = selectedtitle
         author.text = selectedauthor
         cover.image = selectedimage
-        descriptionlabel.text = selecteddescription
+        
+        if let first = selecteddescription.components(separatedBy: ".").first {
+           
+            descriptionlabel.text = "\(first)."
+
+        }
+        
         queryforreviewinfo()
         
         cover.layer.cornerRadius = 10.0

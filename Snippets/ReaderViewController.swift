@@ -462,7 +462,7 @@ class ReaderViewController: UIViewController {
         quotetext.text = quote[counter]
         print(counter)
         
-        quotetext.addCharacterSpacing()
+//        quotetext.addCharacterSpacing()
 
 //        backgroundlabel.backgroundColor = colors[counter]
         
