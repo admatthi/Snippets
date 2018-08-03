@@ -46,6 +46,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 
         ref = Database.database().reference()
 
+        showloading()
+
         if favorites.count == 0 {
             
             queryforfavoriteids { () -> () in
@@ -61,7 +63,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         backgroundlabel.layer.cornerRadius = 5.0
         backgroundlabel.clipsToBounds = true
         
-        showloading()
         
         // Do any additional setup after loading the view.
     }
@@ -78,7 +79,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         favoriteids.removeAll()
 
-        ref?.child("Users").child(uid).child("Favorites").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("Users").child(uid).child("Favorites").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
@@ -175,9 +176,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 
         } else {
             
-            hideloading()
             
-            return 0
+            return 1
         }
 
     }
@@ -188,6 +188,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if favorites.count > indexPath.row {
             
+            hideloading()
+
             cell.imagecover.alpha = 1
             
             cell.favoritelabel.text = favorites[favoriteids[indexPath.row]]
@@ -200,9 +202,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.favoritelabel.text = "You have no favorites"
             cell.imagecover.alpha = 0
         }
-        
-        hideloading()
-        
+                
         return cell
     }
 

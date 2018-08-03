@@ -69,7 +69,7 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
                         
                         ref = Database.database().reference()
                         
-                        ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
+                    ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
                         
                         DispatchQueue.main.async {
                             

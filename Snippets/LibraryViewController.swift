@@ -47,6 +47,8 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nobooks.alpha = 0
+
         ref = Database.database().reference()
 
         queryforbookids { () -> () in
@@ -75,7 +77,8 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         librarycovers.removeAll()
         libraryauthors.removeAll()
         librarytitles.removeAll()
-        ref?.child("Users").child(uid).child("Library").observeSingleEvent(of: .value, with: { (snapshot) in
+        
+        ref?.child("Users").child(uid).child("Library").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
@@ -116,7 +119,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         for each in librarybookids  {
             
-            ref?.child("AllBooks").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("AllBooks1").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
                 
@@ -162,6 +165,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
                 
                 if functioncounter == librarybookids.count  {
                     
+                    self.showloading()
                     self.collectionView.reloadData()
                 }
                 
@@ -170,6 +174,7 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
     }
+    @IBOutlet weak var nobooks: UILabel!
     @IBOutlet weak var backgroundlabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -177,7 +182,20 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        return librarytitles.count
+        if librarytitles.count > 0 {
+            
+            nobooks.alpha = 0
+            return librarytitles.count
+
+        } else {
+            
+            nobooks.alpha = 1
+
+            hideloading()
+            
+            return 0
+        }
+        
         
     }
     
