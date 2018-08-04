@@ -30,7 +30,7 @@ class BookOverviewViewController: UIViewController {
             
         } else {
             
-            if testerselected {
+            if freepressed {
                 
                 self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
 
@@ -80,7 +80,7 @@ class BookOverviewViewController: UIViewController {
             
         } else {
             
-            if testerselected {
+            if freepressed {
                 
                 tapstart.setTitle("Start Story", for: .normal)
                 
@@ -100,7 +100,8 @@ class BookOverviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+
+ 
     func queryforreviewinfo() {
         
         var functioncounter = 0

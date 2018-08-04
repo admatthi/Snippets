@@ -90,11 +90,14 @@ class ReaderViewController: UIViewController {
         ref = Database.database().reference()
         
         
-        if testerselected {
+        if freepressed {
+            
+            tapbookmark.alpha = 0
             
             
         } else {
             
+           tapbookmark.alpha = 1
             ref?.child("Users").child(uid).child("Library").child(selectedbookid).updateChildValues(["Text" : "Hello"])
 
         }
@@ -271,7 +274,15 @@ class ReaderViewController: UIViewController {
             
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.impactOccurred()
-            ref?.child("Users").child(uid).child("Completed").child(selectedbookid).updateChildValues(["Text" : "Wow"])
+            
+            if freepressed {
+                
+                
+            } else {
+                
+        ref?.child("Users").child(uid).child("Completed").child(selectedbookid).updateChildValues(["Text" : "Wow"])
+
+            }
             
             self.performSegue(withIdentifier: "ReaderToDiscover", sender: self)
 

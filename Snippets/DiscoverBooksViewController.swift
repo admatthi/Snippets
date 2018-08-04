@@ -18,6 +18,7 @@ import AudioToolbox
 import GameplayKit
 
 var bookids = [String]()
+var freepressed = Bool()
 
 
 var purchased = Bool()
@@ -91,6 +92,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         self.becomeFirstResponder() // To get shake gesture
         
+        freebackground.layer.cornerRadius = 5.0
         FBSDKAppEvents.logEvent("Discover Viewed")
         activityIndicator.color = .white
         
@@ -102,7 +104,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         backgroundlabel.layer.cornerRadius = 5.0
         backgroundlabel.clipsToBounds = true
-    
+        
+        freebackground.layer.cornerRadius = 5.0
+        freebackground.clipsToBounds = true
         if bookids.count > 0 {
             
             
@@ -132,6 +136,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             tapfilters.alpha = 0
 //            tapcta.alpha = 1
             
+            freepressed = false
+            queryforfreebook()
+            
         } else {
             
 
@@ -147,7 +154,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             taplibrary.alpha = 1
             tapfilters.alpha = 0
             
-            
+            freepressed = false
+            queryforfreebook()
 
             
 //            tapfilters.alpha = 1
@@ -430,6 +438,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineids.append("88")
         nineids.append("89")
         nineids.append("90")
+        nineids.append("129")
         ninebookcovers.append(UIImage(named: "81")!)
         ninebookcovers.append(UIImage(named: "82")!)
         ninebookcovers.append(UIImage(named: "83")!)
@@ -440,10 +449,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         ninebookcovers.append(UIImage(named: "88")!)
         ninebookcovers.append(UIImage(named: "89")!)
         ninebookcovers.append(UIImage(named: "90")!)
+        ninebookcovers.append(UIImage(named: "129")!)
 
         
-        collectionView1.reloadData()
-        collectionView2.reloadData()
+//        collectionView1.reloadData()
+//        collectionView2.reloadData()
         collectionView3.reloadData()
         collectionView4.reloadData()
         collectionView5.reloadData()
@@ -556,8 +566,61 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 }
             }
     
+    func queryforfreebook() {
+        
+        var functioncounter = 0
+        
+        ref?.child("AllBooks1").child("Free").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if var productimagee = value?["Image"] as? String {
+                
+                if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
+                    
+                    let url = URL(string: productimagee)
+                    
+                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    
+                    if data != nil {
+                        
+                        let productphoto = UIImage(data: (data)!)
+                        
+                        //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
+                        let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
+                        
+                        self.freebookimage = productphoto!
+                        
+                        self.freebackground.image = productphoto
+                        
+                        functioncounter += 1
+                        
+                        
+                    }
+                    
+                    
+                }
+            }
+            
+        })
+        
+    }
+    
+    var freebookimage = UIImage()
+    
+    @IBAction func tapFree(_ sender: Any) {
+        
+        selectedbookid = "Free"
+        selectedimage = freebookimage
+        
+        freepressed = true
+        
+        self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+        
+    }
     
     
+    @IBOutlet weak var freebackground: UIImageView!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
@@ -571,12 +634,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         if purchased {
             
-            cell.lockimage.image = UIImage(named: "PurpleOval")
             
         } else {
             
             
-            cell.lockimage.image = UIImage(named: "Lock")
+            cell.lockimage.alpha = 1
+            
         }
         
         
@@ -718,7 +781,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var collectionView5: UICollectionView!
     @IBOutlet weak var collectionView4: UICollectionView!
     @IBOutlet weak var collectionView1: UICollectionView!
-    @IBOutlet weak var collectionView2: UICollectionView!
+//    @IBOutlet weak var collectionView2: UICollectionView!
     @IBOutlet weak var collectionView3: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
