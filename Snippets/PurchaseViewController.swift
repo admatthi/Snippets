@@ -89,7 +89,7 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var tapterms: UIButton!
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.tryeatfree.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -367,7 +367,7 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("Purchase Screen")
         
-        
+        continuereading.text = "Continue Reading \(selectedtitle)"
         // Do any additional setup after loading the view.
     }
     
@@ -412,6 +412,7 @@ class PurchaseViewController: UIViewController {
     
     
     
+    @IBOutlet weak var continuereading: UILabel!
     /*
      // MARK: - Navigation
      
@@ -561,6 +562,7 @@ class PurchaseViewController: UIViewController {
         if motion == .motionShake {
             
             takeScreenshot(true)
+
             showalert()
             
         }

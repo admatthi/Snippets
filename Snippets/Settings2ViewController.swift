@@ -18,14 +18,14 @@ import UserNotifications
 class Settings2ViewController: UIViewController {
     @IBAction func tapBilling(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.tryeatfree.com/billing-terms.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/billing-terms.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
     }
     @IBAction func tapAbout(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.tryeatfree.com"
+        if let url = NSURL(string: "https://www.snippetsla.com"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -46,7 +46,7 @@ class Settings2ViewController: UIViewController {
     }
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.tryeatfree.com/terms.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/terms.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -54,7 +54,7 @@ class Settings2ViewController: UIViewController {
     
     @IBAction func tapPrivacy(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.tryeatfree.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }

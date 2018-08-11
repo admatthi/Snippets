@@ -129,7 +129,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             purchased = false
         
-            tapsettings.alpha = 0
             tapfavorties.alpha = 0
             taphome.alpha = 0
             taplibrary.alpha = 0
@@ -148,7 +147,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             newuser = false
             // Do any additional setup after loading the view.
             purchased = true
-            tapsettings.alpha = 1
             tapfavorties.alpha = 1
             taphome.alpha = 1
             taplibrary.alpha = 1
@@ -301,7 +299,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         twobookcovers.append(UIImage(named: "20")!)
         
         threeids.append("21")
-        threeids.append("22")
         threeids.append("23")
         threeids.append("24")
         threeids.append("25")
@@ -311,7 +308,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         threeids.append("29")
         threeids.append("30")
         threebookcovers.append(UIImage(named: "21")!)
-        threebookcovers.append(UIImage(named: "22")!)
         threebookcovers.append(UIImage(named: "23")!)
         threebookcovers.append(UIImage(named: "24")!)
         threebookcovers.append(UIImage(named: "25")!)
@@ -330,7 +326,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         fourids.append("37")
         fourids.append("38")
         fourids.append("39")
-        fourids.append("40")
+        
         fourbookcovers.append(UIImage(named: "31")!)
         fourbookcovers.append(UIImage(named: "32")!)
         fourbookcovers.append(UIImage(named: "33")!)
@@ -340,25 +336,20 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         fourbookcovers.append(UIImage(named: "37")!)
         fourbookcovers.append(UIImage(named: "38")!)
         fourbookcovers.append(UIImage(named: "39")!)
-        fourbookcovers.append(UIImage(named: "40")!)
         
-        fiveids.append("41")
         fiveids.append("42")
         fiveids.append("43")
         fiveids.append("44")
         fiveids.append("45")
         fiveids.append("46")
-        fiveids.append("47")
         fiveids.append("48")
         fiveids.append("49")
         fiveids.append("50")
-        fivebookcovers.append(UIImage(named: "41")!)
         fivebookcovers.append(UIImage(named: "42")!)
         fivebookcovers.append(UIImage(named: "43")!)
         fivebookcovers.append(UIImage(named: "44")!)
         fivebookcovers.append(UIImage(named: "45")!)
         fivebookcovers.append(UIImage(named: "46")!)
-        fivebookcovers.append(UIImage(named: "47")!)
         fivebookcovers.append(UIImage(named: "48")!)
         fivebookcovers.append(UIImage(named: "49")!)
         fivebookcovers.append(UIImage(named: "50")!)
@@ -366,25 +357,19 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
 //
         sixids.append("51")
-        sixids.append("52")
         sixids.append("53")
         sixids.append("54")
         sixids.append("55")
-        sixids.append("56")
         sixids.append("57")
         sixids.append("58")
         sixids.append("59")
-        sixids.append("60")
         sixbookcovers.append(UIImage(named: "51")!)
-        sixbookcovers.append(UIImage(named: "52")!)
         sixbookcovers.append(UIImage(named: "53")!)
         sixbookcovers.append(UIImage(named: "54")!)
         sixbookcovers.append(UIImage(named: "55")!)
-        sixbookcovers.append(UIImage(named: "56")!)
         sixbookcovers.append(UIImage(named: "57")!)
         sixbookcovers.append(UIImage(named: "58")!)
         sixbookcovers.append(UIImage(named: "59")!)
-        sixbookcovers.append(UIImage(named: "60")!)
 
         sevenids.append("61")
         sevenids.append("62")
@@ -610,6 +595,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBAction func tapFree(_ sender: Any) {
         
+        
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedbookid = "Free"
         selectedimage = freebookimage
         
@@ -634,6 +623,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         if purchased {
             
+            cell.lockimage.alpha = 0
+
             
         } else {
             
@@ -661,7 +652,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 
 //                cell.bookauthor.text = "\(onebookinsights[oneids[indexPath.row]]!) views"
                 cell.bookcover.image = onebookcovers[indexPath.row]
-                
+                cell.lockimage.alpha = 1
                     if indexPath.row == 0 {
                         
                         cell.lockimage.image = UIImage(named: "Tester")
@@ -676,6 +667,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         }
         
         if collectionView.tag == 2 {
+            
+            cell.lockimage.alpha = 1
             
             if twobookcovers.count > indexPath.row {
                 
@@ -913,7 +906,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     func showalert() {
         
-        let alert = UIAlertController(title: "Shake To Report", message: "Please report any issues you found!", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Shake To Report", message: "Please report any issues you found! Feedback is greatly appreciated :)", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Send Feedback", style: .default, handler: { action in
             switch action.style{
             case .default:
@@ -934,7 +927,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
+        
+        
         self.present(alert, animated: true, completion: nil)
+        
+        let subview = (alert.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.layer.cornerRadius = 5
+        subview.backgroundColor = .white
         
     }
     

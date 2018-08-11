@@ -148,15 +148,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             tapcreate.alpha = 0 
         }
-//        if newuser == true {
-//            
-//            tapcreate.alpha = 0
-//            
-//        } else {
-//            
-//            tapcreate.alpha = 1
-//        }
-//        
+
     }
     
     override func didReceiveMemoryWarning() {

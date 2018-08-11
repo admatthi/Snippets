@@ -236,7 +236,7 @@ class ReaderViewController: UIViewController {
             } else {
                 
                 tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl])
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
 
                 bookmarktapped = true
 
@@ -255,7 +255,7 @@ class ReaderViewController: UIViewController {
             } else {
                 
                 tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl])
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
                 
                 bookmarktapped = true
                 

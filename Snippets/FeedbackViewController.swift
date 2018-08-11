@@ -13,12 +13,12 @@ import FirebaseStorage
 var counter = Int()
 var logodownloadurl = String()
 
-class FeedbackViewController: UIViewController, UITextFieldDelegate {
+class FeedbackViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tapx: UIButton!
-    @IBOutlet weak var tf: UITextField!
     @IBOutlet weak var ss: UIImageView!
     
+    @IBOutlet weak var tf: UITextView!
     @IBAction func tapX(_ sender: Any) {
         
         self.dismiss(animated: true, completion: {
@@ -65,11 +65,21 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
                         
                         var uid = String()
                         
-                        uid = currentUser!.uid
+                          if Auth.auth().currentUser == nil {
+                            
+                            ref?.child("Feedback").child("1232131").childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
+
+
+                          } else {
+                            
+
+                            
+                                uid = currentUser!.uid
+                            ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
+                            
+                        }
                         
                         ref = Database.database().reference()
-                        
-                    ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
                         
                         DispatchQueue.main.async {
                             
@@ -103,6 +113,7 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
 
         tf.delegate = self
         ss.image = screenshot
+        
         // Do any additional setup after loading the view.
     }
 

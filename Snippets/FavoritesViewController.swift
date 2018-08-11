@@ -46,8 +46,10 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 
         ref = Database.database().reference()
 
-        showloading()
 
+        hideloading()
+        tableView.reloadData()
+        
         if favorites.count == 0 {
             
             queryforfavoriteids { () -> () in
@@ -72,6 +74,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var tapsettings: UIButton!
     func queryforfavoriteids(completed: @escaping (() -> ()) ) {
         
         var functioncounter = 0
@@ -88,6 +91,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                 for each in snapDict {
                     
                     let ids = each.key
+                    
+                    self.showloading()
+
                     
                     favoriteids.append(ids)
                     

@@ -86,7 +86,7 @@ class BookOverviewViewController: UIViewController {
                 
             } else {
                 
-                tapstart.setTitle("Start your 7-day free trial to unlock", for: .normal)
+                tapstart.setTitle("Start Story", for: .normal)
 
             }
             
@@ -124,6 +124,8 @@ class BookOverviewViewController: UIViewController {
                 selectedauthor = author2
                 var name = value?["Name"] as! String
                 selectedtitle = name
+                var url = value?["Image"] as! String
+                selectedurl = url
                 var description = value?["Description"] as! String
                 selecteddescription = description
                 self.titlelabel.text = selectedtitle
