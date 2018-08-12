@@ -116,7 +116,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             loadids()
         }
 
-        
+        self.freebookimage = UIImage(named: "pp copy")!
+
         
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -125,8 +126,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             categorylabel.text = text.uppercased()
 
- 
-            
             purchased = false
         
             tapfavorties.alpha = 0
@@ -153,7 +152,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             tapfilters.alpha = 0
             
             freepressed = false
-            queryforfreebook()
+//            queryforfreebook()
 
             
 //            tapfilters.alpha = 1

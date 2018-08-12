@@ -2037,7 +2037,7 @@
                                             <outlet property="delegate" destination="JWn-hR-rYQ" id="LfD-M6-475"/>
                                         </connections>
                                     </collectionView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="jb4-uf-Yad">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pp copy" translatesAutoresizingMaskIntoConstraints="NO" id="jb4-uf-Yad">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkBackground-3" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-NP-ZxU">
@@ -2396,7 +2396,7 @@
                                 <state key="normal" image="HomeTapped"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-NI-IM4">
-                                <rect key="frame" x="0.0" y="2591" width="375" height="92"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="2790"/>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -6173,12 +6173,13 @@ lwACe58AAo0LAAKNDQACjRIAAo0gAAKNJAACjSsAAo0wAAKNPQACjUAAAo1NAAKNUgACjVoAAo1dAAKN
 YgACjWoAAo1tAAKNfwACjYIAAo2HAAAAAAAABAEAAAAAAAAAWQAAAAAAAAAAAAAAAAACjYk
 </mutableData>
         </image>
+        <image name="pp copy" width="375" height="281"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M3O-5p-mHj"/>
-        <segue reference="HhW-k5-tti"/>
+        <segue reference="81X-gA-syT"/>
+        <segue reference="knN-qt-VWg"/>
         <segue reference="5oX-WZ-j3Q"/>
-        <segue reference="Nh1-LO-uCJ"/>
+        <segue reference="qcC-U3-han"/>
         <segue reference="zJ5-Ak-cT8"/>
         <segue reference="qf7-L9-Grm"/>
         <segue reference="4dt-c2-5VA"/>
