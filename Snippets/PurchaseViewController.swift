@@ -367,7 +367,7 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("Purchase Screen")
         
-        continuereading.text = "Continue Reading \(selectedtitle)"
+//        continuereading.text = "Continue Reading \(selectedtitle)"
         // Do any additional setup after loading the view.
     }
     

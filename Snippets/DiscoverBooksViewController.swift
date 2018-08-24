@@ -135,7 +135,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 //            tapcta.alpha = 1
             
             freepressed = false
-            queryforfreebook()
+//            queryforfreebook()
             
         } else {
             
@@ -255,185 +255,201 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     func loadids() {
 
-        oneids.append("1")
-        oneids.append("2")
-        oneids.append("3")
-        oneids.append("4")
-        oneids.append("5")
-        oneids.append("6")
-        oneids.append("7")
-        oneids.append("8")
-        oneids.append("9")
-        oneids.append("10")
-        onebookcovers.append(UIImage(named: "1")!)
-        onebookcovers.append(UIImage(named: "2")!)
-        onebookcovers.append(UIImage(named: "3")!)
-        onebookcovers.append(UIImage(named: "4")!)
-        onebookcovers.append(UIImage(named: "5")!)
-        onebookcovers.append(UIImage(named: "6")!)
-        onebookcovers.append(UIImage(named: "7")!)
-        onebookcovers.append(UIImage(named: "8")!)
-        onebookcovers.append(UIImage(named: "9")!)
-        onebookcovers.append(UIImage(named: "10")!)
         
-        twoids.append("11")
-        twoids.append("12")
-        twoids.append("33")
-        twoids.append("14")
-        twoids.append("15")
-        twoids.append("16")
-        twoids.append("17")
-        twoids.append("18")
-        twoids.append("19")
-        twoids.append("20")
-        twobookcovers.append(UIImage(named: "11")!)
-        twobookcovers.append(UIImage(named: "12")!)
-        twobookcovers.append(UIImage(named: "13")!)
-        twobookcovers.append(UIImage(named: "14")!)
-        twobookcovers.append(UIImage(named: "15")!)
-        twobookcovers.append(UIImage(named: "16")!)
-        twobookcovers.append(UIImage(named: "17")!)
-        twobookcovers.append(UIImage(named: "18")!)
-        twobookcovers.append(UIImage(named: "19")!)
-        twobookcovers.append(UIImage(named: "20")!)
+        twoids.append("1")
+        twoids.append("2")
+        twoids.append("3")
+        twoids.append("4")
+        twoids.append("5")
+        twoids.append("6")
+        twoids.append("7")
+        twoids.append("8")
+        twoids.append("9")
+        twoids.append("10")
         
-        threeids.append("21")
-        threeids.append("23")
-        threeids.append("24")
-        threeids.append("25")
-        threeids.append("26")
-        threeids.append("27")
-        threeids.append("28")
-        threeids.append("29")
-        threeids.append("30")
-        threebookcovers.append(UIImage(named: "21")!)
-        threebookcovers.append(UIImage(named: "23")!)
-        threebookcovers.append(UIImage(named: "24")!)
-        threebookcovers.append(UIImage(named: "25")!)
-        threebookcovers.append(UIImage(named: "26")!)
-        threebookcovers.append(UIImage(named: "27")!)
-        threebookcovers.append(UIImage(named: "28")!)
-        threebookcovers.append(UIImage(named: "29")!)
-        threebookcovers.append(UIImage(named: "30")!)
+        twobookcovers.append(UIImage(named: "M1")!)
+        twobookcovers.append(UIImage(named: "M2")!)
+        twobookcovers.append(UIImage(named: "M3")!)
+        twobookcovers.append(UIImage(named: "M4")!)
+        twobookcovers.append(UIImage(named: "M5")!)
+        twobookcovers.append(UIImage(named: "M6")!)
+        twobookcovers.append(UIImage(named: "M7")!)
+        twobookcovers.append(UIImage(named: "M8")!)
+        twobookcovers.append(UIImage(named: "M9")!)
+        twobookcovers.append(UIImage(named: "M10")!)
         
-        fourids.append("31")
-        fourids.append("32")
-        fourids.append("33")
-        fourids.append("34")
-        fourids.append("35")
-        fourids.append("36")
-        fourids.append("37")
-        fourids.append("38")
-        fourids.append("39")
+        threeids.append("1")
+        threeids.append("2")
+        threeids.append("3")
+        threeids.append("4")
+        threeids.append("5")
+        threeids.append("6")
+        threeids.append("7")
+        threeids.append("8")
+        threeids.append("9")
+        threeids.append("10")
         
-        fourbookcovers.append(UIImage(named: "31")!)
-        fourbookcovers.append(UIImage(named: "32")!)
-        fourbookcovers.append(UIImage(named: "33")!)
-        fourbookcovers.append(UIImage(named: "34")!)
-        fourbookcovers.append(UIImage(named: "35")!)
-        fourbookcovers.append(UIImage(named: "36")!)
-        fourbookcovers.append(UIImage(named: "37")!)
-        fourbookcovers.append(UIImage(named: "38")!)
-        fourbookcovers.append(UIImage(named: "39")!)
+        threebookcovers.append(UIImage(named: "F1")!)
+        threebookcovers.append(UIImage(named: "F2")!)
+        threebookcovers.append(UIImage(named: "F3")!)
+        threebookcovers.append(UIImage(named: "F4")!)
+        threebookcovers.append(UIImage(named: "F5")!)
+        threebookcovers.append(UIImage(named: "F6")!)
+        threebookcovers.append(UIImage(named: "F7")!)
+        threebookcovers.append(UIImage(named: "F8")!)
+        threebookcovers.append(UIImage(named: "F9")!)
+        threebookcovers.append(UIImage(named: "F10")!)
         
-        fiveids.append("42")
-        fiveids.append("43")
-        fiveids.append("44")
-        fiveids.append("45")
-        fiveids.append("46")
-        fiveids.append("48")
-        fiveids.append("49")
-        fiveids.append("50")
-        fivebookcovers.append(UIImage(named: "42")!)
-        fivebookcovers.append(UIImage(named: "43")!)
-        fivebookcovers.append(UIImage(named: "44")!)
-        fivebookcovers.append(UIImage(named: "45")!)
-        fivebookcovers.append(UIImage(named: "46")!)
-        fivebookcovers.append(UIImage(named: "48")!)
-        fivebookcovers.append(UIImage(named: "49")!)
-        fivebookcovers.append(UIImage(named: "50")!)
+        fourids.append("2")
+        fourids.append("3")
+        fourids.append("4")
+        
+        fourbookcovers.append(UIImage(named: "H1")!)
+        fourbookcovers.append(UIImage(named: "H2")!)
+        fourbookcovers.append(UIImage(named: "H3")!)
+ 
+        
+        fiveids.append("1")
+        fiveids.append("2")
+        fiveids.append("3")
+        fiveids.append("4")
+        fiveids.append("5")
+        fiveids.append("6")
+        fiveids.append("7")
+        fiveids.append("8")
+        fiveids.append("9")
+        fiveids.append("10")
+        fiveids.append("11")
+        fiveids.append("12")
+        fiveids.append("13")
+        fiveids.append("14")
+        fiveids.append("15")
+        fiveids.append("16")
+        fiveids.append("17")
+        fiveids.append("18")
+        fiveids.append("19")
+
+        
+        fivebookcovers.append(UIImage(named: "B1")!)
+        fivebookcovers.append(UIImage(named: "B2")!)
+        fivebookcovers.append(UIImage(named: "B3")!)
+        fivebookcovers.append(UIImage(named: "B4")!)
+        fivebookcovers.append(UIImage(named: "B5")!)
+        fivebookcovers.append(UIImage(named: "B6")!)
+        fivebookcovers.append(UIImage(named: "B7")!)
+        fivebookcovers.append(UIImage(named: "B8")!)
+        fivebookcovers.append(UIImage(named: "B9")!)
+        fivebookcovers.append(UIImage(named: "B10")!)
+        fivebookcovers.append(UIImage(named: "B11")!)
+        fivebookcovers.append(UIImage(named: "B12")!)
+        fivebookcovers.append(UIImage(named: "B13")!)
+        fivebookcovers.append(UIImage(named: "B14")!)
+        fivebookcovers.append(UIImage(named: "B15")!)
+        fivebookcovers.append(UIImage(named: "B16")!)
+        fivebookcovers.append(UIImage(named: "B17")!)
+        fivebookcovers.append(UIImage(named: "B18")!)
+        fivebookcovers.append(UIImage(named: "B19")!)
+
         
 
-//
-        sixids.append("51")
-        sixids.append("53")
-        sixids.append("54")
-        sixids.append("55")
-        sixids.append("57")
-        sixids.append("58")
-        sixids.append("59")
-        sixbookcovers.append(UIImage(named: "51")!)
-        sixbookcovers.append(UIImage(named: "53")!)
-        sixbookcovers.append(UIImage(named: "54")!)
-        sixbookcovers.append(UIImage(named: "55")!)
-        sixbookcovers.append(UIImage(named: "57")!)
-        sixbookcovers.append(UIImage(named: "58")!)
-        sixbookcovers.append(UIImage(named: "59")!)
+        sixids.append("1")
+        sixids.append("2")
+        sixids.append("3")
+        sixids.append("4")
 
-        sevenids.append("61")
-        sevenids.append("62")
-        sevenids.append("63")
-        sevenids.append("64")
-        sevenids.append("65")
-        sevenids.append("66")
-        sevenids.append("67")
-        sevenids.append("68")
-        sevenids.append("69")
-        sevenids.append("70")
-        sevenbookcovers.append(UIImage(named: "61")!)
-        sevenbookcovers.append(UIImage(named: "62")!)
-        sevenbookcovers.append(UIImage(named: "63")!)
-        sevenbookcovers.append(UIImage(named: "64")!)
-        sevenbookcovers.append(UIImage(named: "65")!)
-        sevenbookcovers.append(UIImage(named: "66")!)
-        sevenbookcovers.append(UIImage(named: "67")!)
-        sevenbookcovers.append(UIImage(named: "68")!)
-        sevenbookcovers.append(UIImage(named: "69")!)
-        sevenbookcovers.append(UIImage(named: "70")!)
+        
+        sixbookcovers.append(UIImage(named: "S1")!)
+        sixbookcovers.append(UIImage(named: "S2")!)
+        sixbookcovers.append(UIImage(named: "S3")!)
+        sixbookcovers.append(UIImage(named: "S4")!)
 
-        eightids.append("71")
-        eightids.append("72")
-        eightids.append("73")
-        eightids.append("74")
-        eightids.append("75")
-        eightids.append("76")
-        eightids.append("77")
-        eightids.append("78")
-        eightids.append("79")
-        eightids.append("80")
-        eightbookcovers.append(UIImage(named: "71")!)
-        eightbookcovers.append(UIImage(named: "72")!)
-        eightbookcovers.append(UIImage(named: "73")!)
-        eightbookcovers.append(UIImage(named: "74")!)
-        eightbookcovers.append(UIImage(named: "75")!)
-        eightbookcovers.append(UIImage(named: "76")!)
-        eightbookcovers.append(UIImage(named: "77")!)
-        eightbookcovers.append(UIImage(named: "78")!)
-        eightbookcovers.append(UIImage(named: "79")!)
-        eightbookcovers.append(UIImage(named: "80")!)
 
-        nineids.append("81")
-        nineids.append("82")
-        nineids.append("83")
-        nineids.append("84")
-        nineids.append("85")
-        nineids.append("86")
-        nineids.append("87")
-        nineids.append("88")
-        nineids.append("89")
-        nineids.append("90")
-        nineids.append("129")
-        ninebookcovers.append(UIImage(named: "81")!)
-        ninebookcovers.append(UIImage(named: "82")!)
-        ninebookcovers.append(UIImage(named: "83")!)
-        ninebookcovers.append(UIImage(named: "84")!)
-        ninebookcovers.append(UIImage(named: "85")!)
-        ninebookcovers.append(UIImage(named: "86")!)
-        ninebookcovers.append(UIImage(named: "87")!)
-        ninebookcovers.append(UIImage(named: "88")!)
-        ninebookcovers.append(UIImage(named: "89")!)
-        ninebookcovers.append(UIImage(named: "90")!)
-        ninebookcovers.append(UIImage(named: "129")!)
+        sevenids.append("1")
+        sevenids.append("2")
+        sevenids.append("3")
+        sevenids.append("4")
+        sevenids.append("5")
+        sevenids.append("6")
+        sevenids.append("7")
+        sevenids.append("8")
+        sevenids.append("9")
+        sevenids.append("10")
+        
+        sevenbookcovers.append(UIImage(named: "PR1")!)
+        sevenbookcovers.append(UIImage(named: "PR2")!)
+        sevenbookcovers.append(UIImage(named: "PR3")!)
+        sevenbookcovers.append(UIImage(named: "PR4")!)
+        sevenbookcovers.append(UIImage(named: "PR5")!)
+        sevenbookcovers.append(UIImage(named: "PR6")!)
+        sevenbookcovers.append(UIImage(named: "PR7")!)
+        sevenbookcovers.append(UIImage(named: "PR8")!)
+        
+        
+        eightids.append("1")
+        eightids.append("2")
+        eightids.append("3")
+        eightids.append("4")
+        eightids.append("5")
+        eightids.append("6")
+        eightids.append("7")
+        eightids.append("8")
+        eightids.append("9")
+        eightids.append("10")
+        
+        eightbookcovers.append(UIImage(named: "MH1")!)
+        eightbookcovers.append(UIImage(named: "MH2")!)
+        eightbookcovers.append(UIImage(named: "MH3")!)
+        eightbookcovers.append(UIImage(named: "MH4")!)
+        eightbookcovers.append(UIImage(named: "MH5")!)
+        eightbookcovers.append(UIImage(named: "MH6")!)
+        eightbookcovers.append(UIImage(named: "MH7")!)
+        eightbookcovers.append(UIImage(named: "MH8")!)
+        eightbookcovers.append(UIImage(named: "MH9")!)
+        eightbookcovers.append(UIImage(named: "MH10")!)
+
+        nineids.append("1")
+        nineids.append("2")
+        nineids.append("3")
+        nineids.append("4")
+        nineids.append("5")
+        nineids.append("6")
+        nineids.append("7")
+        nineids.append("8")
+        nineids.append("9")
+        nineids.append("10")
+        nineids.append("11")
+        nineids.append("12")
+        nineids.append("13")
+        nineids.append("14")
+        nineids.append("15")
+        nineids.append("16")
+        nineids.append("17")
+        nineids.append("18")
+        nineids.append("19")
+        nineids.append("20")
+        
+        ninebookcovers.append(UIImage(named: "PS1")!)
+        ninebookcovers.append(UIImage(named: "PS2")!)
+        ninebookcovers.append(UIImage(named: "PS3")!)
+        ninebookcovers.append(UIImage(named: "PS4")!)
+        ninebookcovers.append(UIImage(named: "PS5")!)
+        ninebookcovers.append(UIImage(named: "PS6")!)
+        ninebookcovers.append(UIImage(named: "PS7")!)
+        ninebookcovers.append(UIImage(named: "PS8")!)
+        ninebookcovers.append(UIImage(named: "PS9")!)
+        ninebookcovers.append(UIImage(named: "PS10")!)
+        ninebookcovers.append(UIImage(named: "PS11")!)
+        ninebookcovers.append(UIImage(named: "PS12")!)
+        ninebookcovers.append(UIImage(named: "PS13")!)
+        ninebookcovers.append(UIImage(named: "PS14")!)
+        ninebookcovers.append(UIImage(named: "PS15")!)
+        ninebookcovers.append(UIImage(named: "PS16")!)
+        ninebookcovers.append(UIImage(named: "PS17")!)
+        ninebookcovers.append(UIImage(named: "PS18")!)
+        ninebookcovers.append(UIImage(named: "PS19")!)
+        ninebookcovers.append(UIImage(named: "PS20")!)
+        ninebookcovers.append(UIImage(named: "PS21")!)
+        ninebookcovers.append(UIImage(named: "PS21")!)
 
         
 //        collectionView1.reloadData()
@@ -497,7 +513,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     
                     if collectionView.tag == 3 {
                         
-                        return threeids.count
+                        return threebookcovers.count
                         
                     } else {
                         
@@ -594,10 +610,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBAction func tapFree(_ sender: Any) {
         
-        
+        selectedgenre = "Free"
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        
         selectedbookid = "Free"
         selectedimage = freebookimage
         
@@ -618,7 +633,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         cell.dark.layer.cornerRadius = 10.0
         cell.dark.layer.masksToBounds = true
         
-        cell.bookauthor.alpha = 0
         
         if purchased {
             
@@ -785,8 +799,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 
                 selectedbookid = oneids[indexPath.row]
                 selectedimage = onebookcovers[indexPath.row]
-                
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+
                 
             } else {
                 
@@ -794,8 +808,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
                     selectedbookid = twoids[indexPath.row]
                     selectedimage = twobookcovers[indexPath.row]
-
                     
+                    
+                    selectedgenre = "Biography & Memoir"
+                    FBSDKAppEvents.logEvent("Biography Tapped")
+
                     self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                     
                 } else {
@@ -804,8 +821,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         selectedbookid = threeids[indexPath.row]
        
                         selectedimage = threebookcovers[indexPath.row]
-                     
-                        
+                     selectedgenre = "For You"
+                        FBSDKAppEvents.logEvent("For You Tapped")
                         self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                         
                     } else {
@@ -813,10 +830,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         if collectionView.tag == 4 {
                             
                             selectedbookid = fourids[indexPath.row]
-
+                            selectedgenre = "Health, Fitness, & Dieting"
                             selectedimage = fourbookcovers[indexPath.row]
                      
-                            
+                            FBSDKAppEvents.logEvent("Health, Fitness, & Dieting Tapped")
                             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                             
                         } else {
@@ -824,10 +841,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             if collectionView.tag == 5 {
                                 
                                 selectedbookid = fiveids[indexPath.row]
-
+                                selectedgenre = "Business & Investing"
                                 selectedimage = fivebookcovers[indexPath.row]
        
-                                
+                                FBSDKAppEvents.logEvent("Business & Investing Tapped")
                                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                 
                             } else {
@@ -836,7 +853,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                     
                                     selectedbookid = sixids[indexPath.row]
                                     selectedimage = sixbookcovers[indexPath.row]
-
+                                    selectedgenre = "Sex & Relationships"
+                                    FBSDKAppEvents.logEvent("Sex & Relationships Tapped")
                                     self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                     
                                 } else {
@@ -846,8 +864,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         selectedbookid = sevenids[indexPath.row]
  
                                         selectedimage = sevenbookcovers[indexPath.row]
-
-                                        
+                                        selectedgenre = "Productivity"
+                                        FBSDKAppEvents.logEvent("Productivity Tapped")
                                         self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                         
                                     } else {
@@ -856,7 +874,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                             
                                             selectedbookid = eightids[indexPath.row]
                                             selectedimage = eightbookcovers[indexPath.row]
-                                            
+                                            selectedgenre = "Mental Health"
+                                            FBSDKAppEvents.logEvent("Mental Health Tapped")
                                             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                             
                                         } else {
@@ -866,7 +885,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                                 selectedbookid = nineids[indexPath.row]
 
                                                 selectedimage = ninebookcovers[indexPath.row]
+                                                selectedgenre = "Psychology"
 
+                                                FBSDKAppEvents.logEvent("Psychology Tapped")
                                                 
                                                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                                 
@@ -1094,3 +1115,5 @@ var bookcompleted = [String:String]()
 //    }
 //
 //}
+
+var selectedgenre = String()

@@ -106,7 +106,7 @@ class BookOverviewViewController: UIViewController {
         
         var functioncounter = 0
         
-            ref?.child("AllBooks1").child(selectedbookid).observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("AllBooks1").child(selectedgenre).child(selectedbookid).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
                 
@@ -132,11 +132,13 @@ class BookOverviewViewController: UIViewController {
                 self.author.text = selectedauthor
                 self.cover.image = selectedimage
                 
-                if let first = selecteddescription.components(separatedBy: ".").first {
+                self.descriptionlabel.text = selecteddescription
+                
+//                if let first = selecteddescription.components(separatedBy: ".").first {
+                
+//                    self.descriptionlabel.text = "\(first)."
                     
-                    self.descriptionlabel.text = "\(first)."
-                    
-                }
+//                }
                 
                 
             })

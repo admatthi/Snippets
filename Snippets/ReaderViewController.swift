@@ -303,7 +303,7 @@ class ReaderViewController: UIViewController {
         
         quote.removeAll()
         
-        ref?.child("AllBooks1").child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("AllBooks1").child(selectedgenre).child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
