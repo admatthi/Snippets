@@ -16,6 +16,8 @@ import FBSDKCoreKit
 import UserNotifications
 import AudioToolbox
 
+var selectedviews = String()
+
 class BookOverviewViewController: UIViewController {
 
     @IBOutlet weak var keyinsights: UILabel!
@@ -66,7 +68,8 @@ class BookOverviewViewController: UIViewController {
         author.text = selectedauthor
         cover.image = selectedimage
         
-
+        keyinsights.text = selectedviews
+        
         queryforreviewinfo()
         
         cover.layer.cornerRadius = 10.0
@@ -115,9 +118,10 @@ class BookOverviewViewController: UIViewController {
 //                    self.abouttheauthor.text = activityvalue2
                 }
                 
-                if var activityvalue2 = value?["Insights"] as? String {
+                if var activityvalue2 = value?["AmazonURL"] as? String {
                     
-                    self.keyinsights.text = "\(activityvalue2) views"
+                        selectedurl  = activityvalue2
+//                    self.keyinsights.text = "\(activityvalue2) views"
                 }
                 
                 var author2 = value?["Author"] as! String
@@ -125,7 +129,7 @@ class BookOverviewViewController: UIViewController {
                 var name = value?["Name"] as! String
                 selectedtitle = name
                 var url = value?["Image"] as! String
-                selectedurl = url
+//                selectedurl = url
                 var description = value?["Description"] as! String
                 selecteddescription = description
                 self.titlelabel.text = selectedtitle

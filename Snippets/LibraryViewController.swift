@@ -209,8 +209,8 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.dark.layer.masksToBounds = true
         
         cell.bookcover.image = librarycovers[librarybookids[indexPath.row]]
-        cell.bookauthor.text = libraryauthors[librarybookids[indexPath.row]]
-        cell.booktitle.text = librarytitles[librarybookids[indexPath.row]]
+//        cell.bookauthor.text = libraryauthors[librarybookids[indexPath.row]]
+//        cell.booktitle.text = librarytitles[librarybookids[indexPath.row]]
         
         hideloading()
         

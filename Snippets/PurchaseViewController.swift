@@ -347,6 +347,8 @@ class PurchaseViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var backgroundimage: UIImageView!
+    @IBOutlet weak var descriptivetext: UILabel!
     @IBOutlet weak var customlabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -367,7 +369,22 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("Purchase Screen")
         
-//        continuereading.text = "Continue Reading \(selectedtitle)"
+        backgroundimage.image = selectedimage
+        
+
+
+
+        let first = "Unlock the big ideas from "
+        let second = "\(selectedtitle) "
+        let third = "and 2500+ other best selling books"
+        var characters = second.count
+        
+        let boldItalicsFont = UIFont(name: "AvenirNext-BoldItalic", size: 20.0)!
+        
+        let buttonTitleStr2 = NSMutableAttributedString(string:first + second + third, attributes:attrs2)
+        
+        attributedString2.append(buttonTitleStr2)
+        descriptivetext.attributedText = attributedString2
         // Do any additional setup after loading the view.
     }
     
@@ -556,7 +573,12 @@ class PurchaseViewController: UIViewController {
         NSAttributedStringKey.foregroundColor : UIColor.white,
         NSAttributedStringKey.underlineStyle : 1] as [NSAttributedStringKey : Any]
     
+    var attrs2 = [NSAttributedStringKey.font : UIFont(name: "AvenirNext-Bold", size: 17.0),
+        NSAttributedStringKey.foregroundColor : UIColor.white] as [NSAttributedStringKey : Any]
+    
     var attributedString = NSMutableAttributedString(string:"")
+    var attributedString2 = NSMutableAttributedString(string:"")
+
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {

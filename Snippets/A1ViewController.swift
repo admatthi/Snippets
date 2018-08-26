@@ -286,8 +286,8 @@ class A1ViewController: UIViewController, UICollectionViewDelegate, UICollection
         cell.dark.layer.masksToBounds = true
         
         cell.bookcover.image = dummycovers[indexPath.row]
-        cell.bookauthor.text = dummyauthors[indexPath.row]
-        cell.booktitle.text = dummytitles[indexPath.row]
+//        cell.bookauthor.text = dummyauthors[indexPath.row]
+//        cell.booktitle.text = dummytitles[indexPath.row]
 
         
         return cell

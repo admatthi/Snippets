@@ -92,7 +92,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         self.becomeFirstResponder() // To get shake gesture
         
-        freebackground.layer.cornerRadius = 5.0
+//        freebackground.layer.cornerRadius = 5.0
         FBSDKAppEvents.logEvent("Discover Viewed")
         activityIndicator.color = .white
         
@@ -105,8 +105,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         backgroundlabel.layer.cornerRadius = 5.0
         backgroundlabel.clipsToBounds = true
         
-        freebackground.layer.cornerRadius = 5.0
-        freebackground.clipsToBounds = true
+//        freebackground.layer.cornerRadius = 5.0
+//        freebackground.clipsToBounds = true
         if bookids.count > 0 {
             
             
@@ -131,9 +131,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             tapfavorties.alpha = 0
             taphome.alpha = 0
             taplibrary.alpha = 0
-            tapfilters.alpha = 0
 //            tapcta.alpha = 1
-            
+            tapsettings.alpha = 0
             freepressed = false
 //            queryforfreebook()
             
@@ -146,11 +145,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             newuser = false
             // Do any additional setup after loading the view.
             purchased = true
-            tapfavorties.alpha = 1
-            taphome.alpha = 1
-            taplibrary.alpha = 1
-            tapfilters.alpha = 0
-            
+            tapfavorties.alpha = 0
+            taphome.alpha = 0
+            taplibrary.alpha = 0
+            tapsettings.alpha = 1
             freepressed = false
 //            queryforfreebook()
 
@@ -169,6 +167,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var tapsettings: UIButton!
     @IBOutlet weak var taplibrary: UIButton!
     @IBOutlet weak var backgroundlabel: UILabel!
     override func didReceiveMemoryWarning() {
@@ -176,7 +175,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var tapsettings: UIButton!
     
 
     
@@ -225,7 +223,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
     }
     
-    @IBOutlet weak var tapfilters: UIButton!
     
     var testbookcovers = [UIImage]()
     
@@ -251,10 +248,29 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         eightbookcovers.removeAll()
         nineids.removeAll()
         ninebookcovers.removeAll()
+        oneviews.removeAll()
+        twoviews.removeAll()
+        threeviews.removeAll()
+        fourviews.removeAll()
+        fiveviews.removeAll()
+        sixviews.removeAll()
+        sevenviews.removeAll()
+        eightviews.removeAll()
+        nineviews.removeAll()
     }
     
     func loadids() {
 
+        onebookcovers.append(UIImage(named: "M1")!)
+        onebookcovers.append(UIImage(named: "M2")!)
+        onebookcovers.append(UIImage(named: "M3")!)
+        onebookcovers.append(UIImage(named: "M4")!)
+        onebookcovers.append(UIImage(named: "M5")!)
+        onebookcovers.append(UIImage(named: "M6")!)
+        onebookcovers.append(UIImage(named: "M7")!)
+        onebookcovers.append(UIImage(named: "M8")!)
+        onebookcovers.append(UIImage(named: "M9")!)
+        onebookcovers.append(UIImage(named: "M10")!)
         
         twoids.append("1")
         twoids.append("2")
@@ -278,6 +294,29 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         twobookcovers.append(UIImage(named: "M9")!)
         twobookcovers.append(UIImage(named: "M10")!)
         
+        twoauthors.append("Mindy Kaling")
+        twoauthors.append("Phil Knight")
+        twoauthors.append("Viktor E. Frankl")
+        twoauthors.append("Randy Pausch")
+        twoauthors.append("Susan Orlean")
+        twoauthors.append("Paul Kalanithi")
+        twoauthors.append("Ashlee Vance")
+        twoauthors.append("Ron Chernow")
+        twoauthors.append("Arnold Schwarzenegger")
+        twoauthors.append("Ray Dalio")
+        twotitles.append("Is Everyone Hanging Out Without Me?")
+        twotitles.append("Shoe Dog")
+        twotitles.append("Man's Search for Meaning")
+        twotitles.append("The Last Lecture")
+        twotitles.append("The Orchid Thief")
+        twotitles.append("When Breath Becomes Air")
+        twotitles.append("Elon Musk")
+        twotitles.append("Titan")
+        twotitles.append("Total Recall")
+        twotitles.append("Principles: Life and Work")
+        
+
+        
         threeids.append("1")
         threeids.append("2")
         threeids.append("3")
@@ -300,14 +339,18 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         threebookcovers.append(UIImage(named: "F9")!)
         threebookcovers.append(UIImage(named: "F10")!)
         
+        fourids.append("1")
         fourids.append("2")
         fourids.append("3")
         fourids.append("4")
+        fourids.append("5")
         
         fourbookcovers.append(UIImage(named: "H1")!)
         fourbookcovers.append(UIImage(named: "H2")!)
         fourbookcovers.append(UIImage(named: "H3")!)
- 
+        fourbookcovers.append(UIImage(named: "H4")!)
+        fourbookcovers.append(UIImage(named: "H5")!)
+
         
         fiveids.append("1")
         fiveids.append("2")
@@ -356,12 +399,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         sixids.append("2")
         sixids.append("3")
         sixids.append("4")
-
+        sixids.append("5")
         
         sixbookcovers.append(UIImage(named: "S1")!)
         sixbookcovers.append(UIImage(named: "S2")!)
         sixbookcovers.append(UIImage(named: "S3")!)
         sixbookcovers.append(UIImage(named: "S4")!)
+        sixbookcovers.append(UIImage(named: "S5")!)
 
 
         sevenids.append("1")
@@ -451,7 +495,140 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         ninebookcovers.append(UIImage(named: "PS21")!)
         ninebookcovers.append(UIImage(named: "PS21")!)
 
+        oneviews.append("343K views")
+        oneviews.append("466.9K views")
+        oneviews.append("957.6K views")
+        oneviews.append("377.9K views")
+        oneviews.append("3.4M views")
+        oneviews.append("2.1M views")
+        oneviews.append("1.6M views")
+        oneviews.append("1.2M views")
+        oneviews.append("87K views")
+        oneviews.append("123.5K views")
         
+        twoviews.append("343K views")
+        twoviews.append("466.9K views")
+        twoviews.append("957.6K views")
+        twoviews.append("377.9K views")
+        twoviews.append("3.4M views")
+        twoviews.append("2.1M views")
+        twoviews.append("1.6M views")
+        twoviews.append("1.2M views")
+        twoviews.append("87K views")
+        twoviews.append("123.5K views")
+
+        threeviews.append("377.9K views")
+        threeviews.append("3.4M views")
+        threeviews.append("933.6K views")
+        threeviews.append("395.8K views")
+        threeviews.append("82K views")
+        threeviews.append("5.1M views")
+        threeviews.append("2.6M views")
+        threeviews.append("1.3M views")
+        threeviews.append("2M views")
+        threeviews.append("1.2M views")
+        
+        fourviews.append("264.9K views")
+        fourviews.append("1.4M views")
+        fourviews.append("321.2K views")
+        fourviews.append("452.3K views")
+        fourviews.append("115K views")
+        fourviews.append("3.2M views")
+        fourviews.append("6.2M views")
+        fourviews.append("3.8M views")
+        fourviews.append("1.1M views")
+        fourviews.append("1.5M views")
+        
+        fiveviews.append("255.4K views")
+        fiveviews.append("1.5M views")
+        fiveviews.append("321K views")
+        fiveviews.append("455K views")
+        fiveviews.append("321K views")
+        fiveviews.append("4.3M views")
+        fiveviews.append("2.1M views")
+        fiveviews.append("1.8M views")
+        fiveviews.append("2.5M views")
+        fiveviews.append("26K views")
+        fiveviews.append("37K views")
+        fiveviews.append("39K views")
+        fiveviews.append("321.6K views")
+        fiveviews.append("342.8K views")
+        fiveviews.append("821K views")
+        fiveviews.append("4.2M views")
+        fiveviews.append("1.9M views")
+        fiveviews.append("2.2M views")
+        fiveviews.append("3.7M views")
+        fiveviews.append("1M views")
+        
+        sixviews.append("450K views")
+        sixviews.append("2.8M views")
+        sixviews.append("321K views")
+        sixviews.append("892K views")
+        sixviews.append("801K views")
+        sixviews.append("4M views")
+        sixviews.append("1.2M views")
+        sixviews.append("1M views")
+        sixviews.append("2.4M views")
+        sixviews.append("2.9M views")
+        
+        sevenviews.append("1.8M views")
+        sevenviews.append("2.5M views")
+        sevenviews.append("26K views")
+        sevenviews.append("37K views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        sevenviews.append("4.2M views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        
+        eightviews.append("377.9K views")
+        eightviews.append("3.4M views")
+        eightviews.append("933.6K views")
+        eightviews.append("395.8K views")
+        eightviews.append("82K views")
+        eightviews.append("5.1M views")
+        eightviews.append("2.6M views")
+        eightviews.append("1.3M views")
+        eightviews.append("2M views")
+        eightviews.append("1.2M views")
+        
+        nineviews.append("832K views")
+        nineviews.append("3M views")
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
+        nineviews.append("832K views")
+        nineviews.append("3M views")
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
+        nineviews.append("832K views")
+        nineviews.append("3M views")
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
+        
+
+
 //        collectionView1.reloadData()
 //        collectionView2.reloadData()
         collectionView3.reloadData()
@@ -464,7 +641,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
     }
     
-//    func queryforbookinfo() {
+    @IBOutlet weak var collectionView1: UICollectionView!
+    //    func queryforbookinfo() {
 //
 //            var functioncounter = 0
 //
@@ -501,7 +679,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
             if collectionView.tag == 1 {
                 
-            return oneids.count
+            return onebookcovers.count
 
             } else {
                 
@@ -525,7 +703,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             
                             if collectionView.tag == 5 {
                                 
-                                return fiveids.count
+                                return sevenids.count
                                 
                             } else {
                                 
@@ -622,6 +800,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
     }
     
+    @IBOutlet weak var mainviews: UILabel!
+    var twoauthors = [String]()
+    var twoviews = [String]()
+    var twotitles = [String]()
     
     @IBOutlet weak var freebackground: UIImageView!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -629,7 +811,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         cell.bookcover.layer.cornerRadius = 10.0
         cell.bookcover.layer.masksToBounds = true
-        
+//        cell.bookauthor.alpha = 0
         cell.dark.layer.cornerRadius = 10.0
         cell.dark.layer.masksToBounds = true
         
@@ -642,7 +824,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         } else {
             
             
-            cell.lockimage.alpha = 1
+            cell.lockimage.alpha = 0
             
         }
         
@@ -665,7 +847,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 
 //                cell.bookauthor.text = "\(onebookinsights[oneids[indexPath.row]]!) views"
                 cell.bookcover.image = onebookcovers[indexPath.row]
-                cell.lockimage.alpha = 1
+                cell.views.text = oneviews[indexPath.row]
+
+                cell.lockimage.alpha = 0
+                
                     if indexPath.row == 0 {
                         
                         cell.lockimage.image = UIImage(named: "Tester")
@@ -686,7 +871,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             if twobookcovers.count > indexPath.row {
                 
                 cell.bookcover.image = twobookcovers[indexPath.row]
-                
+                cell.views.text = twoviews[indexPath.row]
+//                cell.author.text = twoauthors[indexPath.row]
+//                cell.booktitle.text = twotitles[indexPath.row]
                 
             }
             
@@ -695,7 +882,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         if collectionView.tag == 3 {
             
             if threebookcovers.count > indexPath.row {
-                
+                cell.views.text = threeviews[indexPath.row]
+
                 cell.bookcover.image = threebookcovers[indexPath.row]
                 
             }
@@ -705,7 +893,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         if collectionView.tag == 4 {
             
             if fourbookcovers.count > indexPath.row {
-                
+                cell.views.text = fourviews[indexPath.row]
+
                 cell.bookcover.image = fourbookcovers[indexPath.row]
                 
                 
@@ -716,7 +905,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         if collectionView.tag == 5 {
             
             if fivebookcovers.count > indexPath.row {
-                
+                cell.views.text = fiveviews[indexPath.row]
+
                 cell.bookcover.image = fivebookcovers[indexPath.row]
                 
                 
@@ -727,7 +917,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         if collectionView.tag == 6 {
             
             if sixbookcovers.count > indexPath.row {
-                
+                cell.views.text = sixviews[indexPath.row]
+
                 cell.bookcover.image = sixbookcovers[indexPath.row]
                 
                 
@@ -738,7 +929,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         if collectionView.tag == 7 {
             
             if sevenbookcovers.count > indexPath.row {
-                
+                cell.views.text = sevenviews[indexPath.row]
+
                 cell.bookcover.image = sevenbookcovers[indexPath.row]
                 
                 
@@ -749,8 +941,21 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         if collectionView.tag == 8 {
             
             if eightbookcovers.count > indexPath.row {
-                
+                cell.views.text = eightviews[indexPath.row]
+
                 cell.bookcover.image = eightbookcovers[indexPath.row]
+                
+                
+            }
+            
+        }
+        
+        if collectionView.tag == 9 {
+            
+            if ninebookcovers.count > indexPath.row {
+                cell.views.text = nineviews[indexPath.row]
+                
+                cell.bookcover.image = ninebookcovers[indexPath.row]
                 
                 
             }
@@ -786,7 +991,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var collectionView6: UICollectionView!
     @IBOutlet weak var collectionView5: UICollectionView!
     @IBOutlet weak var collectionView4: UICollectionView!
-    @IBOutlet weak var collectionView1: UICollectionView!
 //    @IBOutlet weak var collectionView2: UICollectionView!
     @IBOutlet weak var collectionView3: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -799,6 +1003,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 
                 selectedbookid = oneids[indexPath.row]
                 selectedimage = onebookcovers[indexPath.row]
+                selectedviews = oneviews[indexPath.row]
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 
                 
@@ -809,7 +1014,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     selectedbookid = twoids[indexPath.row]
                     selectedimage = twobookcovers[indexPath.row]
                     
-                    
+                    selectedviews = twoviews[indexPath.row]
                     selectedgenre = "Biography & Memoir"
                     FBSDKAppEvents.logEvent("Biography Tapped")
 
@@ -823,6 +1028,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         selectedimage = threebookcovers[indexPath.row]
                      selectedgenre = "For You"
                         FBSDKAppEvents.logEvent("For You Tapped")
+                        selectedviews = threeviews[indexPath.row]
                         self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                         
                     } else {
@@ -832,7 +1038,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             selectedbookid = fourids[indexPath.row]
                             selectedgenre = "Health, Fitness, & Dieting"
                             selectedimage = fourbookcovers[indexPath.row]
-                     
+                     selectedviews = fourviews[indexPath.row]
                             FBSDKAppEvents.logEvent("Health, Fitness, & Dieting Tapped")
                             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                             
@@ -843,7 +1049,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 selectedbookid = fiveids[indexPath.row]
                                 selectedgenre = "Business & Investing"
                                 selectedimage = fivebookcovers[indexPath.row]
-       
+       selectedviews = fiveviews[indexPath.row]
                                 FBSDKAppEvents.logEvent("Business & Investing Tapped")
                                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                 
@@ -855,6 +1061,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                     selectedimage = sixbookcovers[indexPath.row]
                                     selectedgenre = "Sex & Relationships"
                                     FBSDKAppEvents.logEvent("Sex & Relationships Tapped")
+                                    selectedviews = sixviews[indexPath.row]
                                     self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                     
                                 } else {
@@ -866,6 +1073,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         selectedimage = sevenbookcovers[indexPath.row]
                                         selectedgenre = "Productivity"
                                         FBSDKAppEvents.logEvent("Productivity Tapped")
+                                        selectedviews = sevenviews[indexPath.row]
                                         self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                         
                                     } else {
@@ -876,6 +1084,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                             selectedimage = eightbookcovers[indexPath.row]
                                             selectedgenre = "Mental Health"
                                             FBSDKAppEvents.logEvent("Mental Health Tapped")
+                                            selectedviews = eightviews[indexPath.row]
                                             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                             
                                         } else {
@@ -886,7 +1095,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
                                                 selectedimage = ninebookcovers[indexPath.row]
                                                 selectedgenre = "Psychology"
-
+                                                selectedviews = nineviews[indexPath.row]
                                                 FBSDKAppEvents.logEvent("Psychology Tapped")
                                                 
                                                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
@@ -1057,6 +1266,16 @@ var sixids = [String]()
 var sevenids = [String]()
 var eightids = [String]()
 var nineids = [String]()
+
+var oneviews = [String]()
+var twoviews = [String]()
+var threeviews = [String]()
+var fourviews = [String]()
+var fiveviews = [String]()
+var sixviews = [String]()
+var sevenviews = [String]()
+var eightviews = [String]()
+var nineviews = [String]()
 
 var bookcompleted = [String:String]()
 //

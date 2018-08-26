@@ -35,6 +35,19 @@ class ReaderViewController: UIViewController {
     
     @IBOutlet weak var progressView: UIProgressView!
     
+    @IBAction func tapBuy(_ sender: Any) {
+        
+        if selectedurl != "" {
+            
+            FBSDKAppEvents.logEvent("Buy Tapped")
+
+            if let url = NSURL(string: "\(selectedurl)"
+                ) {
+                UIApplication.shared.openURL(url as URL)
+            }
+            
+        }
+    }
     @IBAction func tapPrevious(_ sender: Any) {
         
         let progress = (Float(counter)/Float(arrayCount))
@@ -46,7 +59,7 @@ class ReaderViewController: UIViewController {
 
         }
         
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
         bookmarktapped = false
     }
@@ -57,7 +70,7 @@ class ReaderViewController: UIViewController {
         
         nextcount()
         
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
         bookmarktapped = false
     }
@@ -69,14 +82,14 @@ class ReaderViewController: UIViewController {
     
     func showbookmark() {
         
-        if bookmarktapped {
-            
-            tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-            
-        } else {
-            
-            tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
-        }
+//        if bookmarktapped {
+//
+//            tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+//
+//        } else {
+//
+//            tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//        }
     }
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var authorlabel: UILabel!
@@ -84,6 +97,7 @@ class ReaderViewController: UIViewController {
     
     var arrayCount = Int()
 
+    @IBOutlet weak var tapbuy: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,12 +106,12 @@ class ReaderViewController: UIViewController {
         
         if freepressed {
             
-            tapbookmark.alpha = 0
+            tapbuy.alpha = 0
             
             
         } else {
             
-           tapbookmark.alpha = 1
+           tapbuy.alpha = 1
             ref?.child("Users").child(uid).child("Library").child(selectedbookid).updateChildValues(["Text" : "Hello"])
 
         }
@@ -212,59 +226,59 @@ class ReaderViewController: UIViewController {
         }
         
         bookmarktapped = true
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
     }
     
     var randomstring = String()
     
-    @IBAction func tapBookMark(_ sender: Any) {
-        favorites.removeAll()
-        randomstring = UUID().uuidString
-
-        if counter > 0  {
-                        
-
-            if bookmarktapped {
-                
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
-
-                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
-
-                bookmarktapped = false
-
-            } else {
-                
-                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
-
-                bookmarktapped = true
-
-            }
-            
-        } else {
-            
-            if bookmarktapped {
-                
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
-                
-                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
-                
-                bookmarktapped = false
-                
-            } else {
-                
-                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
-                
-                bookmarktapped = true
-                
-            }
-            
-        }
-        
-        }
-    
+//    @IBAction func tapBookMark(_ sender: Any) {
+//        favorites.removeAll()
+//        randomstring = UUID().uuidString
+//
+//        if counter > 0  {
+//
+//
+//            if bookmarktapped {
+//
+//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
+//
+//                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//
+//                bookmarktapped = false
+//
+//            } else {
+//
+//                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
+//
+//                bookmarktapped = true
+//
+//            }
+//
+//        } else {
+//
+//            if bookmarktapped {
+//
+//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
+//
+//                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//
+//                bookmarktapped = false
+//
+//            } else {
+//
+//                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
+//
+//                bookmarktapped = true
+//
+//            }
+//
+//        }
+//
+//        }
+//
     @IBOutlet weak var tapanywhere: UILabel!
     @IBOutlet weak var tapbookmark: UIButton!
     func nextcount() {
@@ -283,7 +297,8 @@ class ReaderViewController: UIViewController {
         ref?.child("Users").child(uid).child("Completed").child(selectedbookid).updateChildValues(["Text" : "Wow"])
 
             }
-            
+            FBSDKAppEvents.logEvent("Book Completed")
+
             self.performSegue(withIdentifier: "ReaderToDiscover", sender: self)
 
             
