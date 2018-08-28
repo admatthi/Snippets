@@ -16,6 +16,7 @@ import FirebaseInstanceID
 import FirebaseMessaging
 import UXCam
 import AVFoundation
+import Purchases
 
 var uid = String()
 var ref: DatabaseReference?
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var purchases: RCPurchases?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -38,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKAppEvents.activateApp()
         
         UXCam.start(withKey: "8921dd89a4b98a3")
+        
+        purchases = RCPurchases(apiKey: "sdilTRDuWzrDdwVvtryTFPzjxKzYaUsO")
+        self.purchases!.delegate = self as! RCPurchasesDelegate
         
         SwiftyStoreKit.completeTransactions(atomically: true) { products in
             
@@ -57,6 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -190,4 +197,31 @@ class SegueFromTop: UIStoryboardSegue
         )
     }
 }
+
+
+//extension AppDelegate: RCPurchasesDelegate {
+//    func purchases(_ purchases: RCPurchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: RCPurchaserInfo) {
+//        handlePurchaserInfo(purchaserInfo)
+//    }
+//
+//    func purchases(_ purchases: RCPurchases, receivedUpdatedPurchaserInfo purchaserInfo: RCPurchaserInfo) {
+//        handlePurchaserInfo(purchaserInfo)
+//    }
+//
+//    func purchases(_ purchases: RCPurchases, failedToUpdatePurchaserInfoWithError error: Error) {
+//        showError(error)
+//    }
+//
+//    func purchases(_ purchases: RCPurchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
+//        showError(failureReason)
+//    }
+//
+//    func purchases(_ purchases: RCPurchases, restoredTransactionsWith purchaserInfo: RCPurchaserInfo) {
+//        handlePurchaserInfo(purchaserInfo)
+//    }
+//
+//    func purchases(_ purchases: RCPurchases, failedToRestoreTransactionsWithError error: Error) {
+//        showError(failureReason)
+//    }
+//}
 

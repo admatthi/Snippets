@@ -53,11 +53,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var authorofquote: UILabel!
     @IBOutlet weak var loadingimage: UIImageView!
     func hideloading() {
-        coverimage.alpha = 0
-//        logo.alpha = 0
-        activityIndicator.stopAnimating()
-        activityIndicator.alpha = 0
-        loadingback.alpha = 0
+//        coverimage.alpha = 0
+////        logo.alpha = 0
+//        activityIndicator.stopAnimating()
+//        activityIndicator.alpha = 0
+//        loadingback.alpha = 0
 //        tapfavorties.alpha = 1
 //        taphome.alpha = 1
 //        taplibrary.alpha = 1
@@ -69,22 +69,45 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var loadinglabel: UILabel!
     func showloading() {
         
-        coverimage.alpha = 1
-        logo.alpha = 1
-        loadingback.alpha = 1
-        activityIndicator.startAnimating()
-        activityIndicator.alpha = 1
+//        coverimage.alpha = 1
+//        logo.alpha = 1
+//        loadingback.alpha = 1
+//        activityIndicator.startAnimating()
+//        activityIndicator.alpha = 1
         
 //        tapfavorties.alpha = 0
 //        taphome.alpha = 0
 //        taplibrary.alpha = 0
     }
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tapcta: UIButton!
     @IBOutlet weak var categorylabel: UILabel!
     @IBOutlet weak var taphome: UIButton!
     @IBOutlet weak var tapfavorties: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    func startTimer() {
+        
+        let timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollToNextCell), userInfo: nil, repeats: true);
+        
+        
+    }
+    
+    @objc func scrollToNextCell() {
+        
+        
+        //get cell size
+        let cellSize = CGRect(x: 0, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+        
+        //get current content Offset of the Collection view
+        let contentOffset = collectionView1.contentOffset
+        
+        //scroll to next cell
+        collectionView1.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width - 25, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -94,7 +117,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
 //        freebackground.layer.cornerRadius = 5.0
         FBSDKAppEvents.logEvent("Discover Viewed")
-        activityIndicator.color = .white
+//        activityIndicator.color = .white
         
         tryingtopurchase = false
         // Do any additional setup after loading the view.
@@ -161,8 +184,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 //            dateFormatter.dateFormat = "MM-dd-yy"
 //            todaysdate =  dateFormatter.string(from: date)
             
+            if uid == "UQPiEDlHTcTL3BYdFWCMF5YIJde2" {
+                
+                loadgirlstuff()
+            }
             
-            
+            startTimer()
+
         }
         // Do any additional setup after loading the view.
     }
@@ -259,18 +287,25 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineviews.removeAll()
     }
     
+    @IBOutlet weak var psychologylabel: UILabel!
     func loadids() {
 
-        onebookcovers.append(UIImage(named: "M1")!)
-        onebookcovers.append(UIImage(named: "M2")!)
-        onebookcovers.append(UIImage(named: "M3")!)
-        onebookcovers.append(UIImage(named: "M4")!)
-        onebookcovers.append(UIImage(named: "M5")!)
-        onebookcovers.append(UIImage(named: "M6")!)
-        onebookcovers.append(UIImage(named: "M7")!)
-        onebookcovers.append(UIImage(named: "M8")!)
-        onebookcovers.append(UIImage(named: "M9")!)
-        onebookcovers.append(UIImage(named: "M10")!)
+        onebookcovers.append(UIImage(named: "BS1")!)
+        onebookcovers.append(UIImage(named: "BS2")!)
+        onebookcovers.append(UIImage(named: "BS3")!)
+        onebookcovers.append(UIImage(named: "BS5")!)
+        onebookcovers.append(UIImage(named: "BS6")!)
+        onebookcovers.append(UIImage(named: "BS7")!)
+        onebookcovers.append(UIImage(named: "BS9")!)
+        
+        oneids.append("1")
+        oneids.append("2")
+        oneids.append("3")
+        oneids.append("4")
+        oneids.append("5")
+        oneids.append("6")
+        oneids.append("7")
+
         
         twoids.append("1")
         twoids.append("2")
@@ -451,6 +486,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         eightbookcovers.append(UIImage(named: "MH9")!)
         eightbookcovers.append(UIImage(named: "MH10")!)
 
+        
+        
         nineids.append("1")
         nineids.append("2")
         nineids.append("3")
@@ -495,16 +532,16 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         ninebookcovers.append(UIImage(named: "PS21")!)
         ninebookcovers.append(UIImage(named: "PS21")!)
 
-        oneviews.append("343K views")
-        oneviews.append("466.9K views")
-        oneviews.append("957.6K views")
-        oneviews.append("377.9K views")
-        oneviews.append("3.4M views")
-        oneviews.append("2.1M views")
-        oneviews.append("1.6M views")
-        oneviews.append("1.2M views")
-        oneviews.append("87K views")
-        oneviews.append("123.5K views")
+        oneviews.append("233K views")
+        oneviews.append("492K views")
+        oneviews.append("432K views")
+        oneviews.append("589K views")
+        oneviews.append("2.4M views")
+        oneviews.append("2M views")
+        oneviews.append("1.3M views")
+        oneviews.append("1.9M views")
+        oneviews.append("887K views")
+        oneviews.append("145K views")
         
         twoviews.append("343K views")
         twoviews.append("466.9K views")
@@ -637,6 +674,36 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         collectionView6.reloadData()
         collectionView7.reloadData()
         collectionView8.reloadData()
+        collectionView9.reloadData()
+        
+    }
+    
+    func loadgirlstuff() {
+        
+        psychologylabel.text = "For Diana"
+        ninebookcovers.removeAll()
+        nineids.removeAll()
+
+        ninebookcovers.append(UIImage(named: "R10")!)
+        ninebookcovers.append(UIImage(named: "R3")!)
+        ninebookcovers.append(UIImage(named: "R2")!)
+        ninebookcovers.append(UIImage(named: "PS25")!)
+        ninebookcovers.append(UIImage(named: "MH7")!)
+        ninebookcovers.append(UIImage(named: "MH2")!)
+        ninebookcovers.append(UIImage(named: "M1")!)
+        ninebookcovers.append(UIImage(named: "M5")!)
+        ninebookcovers.append(UIImage(named: "M4")!)
+  
+        nineids.append("1")
+        nineids.append("2")
+        nineids.append("3")
+        nineids.append("4")
+        nineids.append("5")
+        nineids.append("6")
+        nineids.append("7")
+        nineids.append("8")
+        nineids.append("9")
+        
         collectionView9.reloadData()
         
     }
@@ -845,6 +912,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             if onebookcovers.count > indexPath.row {
                 
+                cell.bookcover.layer.cornerRadius = 0.0
+                cell.bookcover.layer.masksToBounds = false
+                cell.dark.layer.cornerRadius = 0.0
+                cell.dark.layer.masksToBounds = false
 //                cell.bookauthor.text = "\(onebookinsights[oneids[indexPath.row]]!) views"
                 cell.bookcover.image = onebookcovers[indexPath.row]
                 cell.views.text = oneviews[indexPath.row]
@@ -1004,6 +1075,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedbookid = oneids[indexPath.row]
                 selectedimage = onebookcovers[indexPath.row]
                 selectedviews = oneviews[indexPath.row]
+                selectedgenre = "Top Sellers"
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 
                 
@@ -1098,7 +1170,14 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                                 selectedviews = nineviews[indexPath.row]
                                                 FBSDKAppEvents.logEvent("Psychology Tapped")
                                                 
+                                                if psychologylabel.text == "For Diana" {
+                                                    
+                                                    selectedgenre = "Diana"
+                                                    
+                                                }
+                                                
                                                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                                                
                                                 
                                             } else {
                                                 

@@ -61,6 +61,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 newuser = false
                 
+                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
+                
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
                     
@@ -100,18 +102,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let thirty = dateFormatter.string(from: thirtyDaysAfterToday)
                 
                 
-                if bodymonthlygoal != "" && careermonthlygoal != "" && happinessmonthlygoal != "" && careermonthlygoal != "" {
-                    
-                    ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate, "BodyMonthlyGoal" : bodymonthlygoal, "CareerMonthlyGoal" : careermonthlygoal, "PeopleMonthlyGoal" : peoplemonthlygoal, "HappinessMonthlyGoal" : happinessmonthlygoal, "FirstMonth" : thirty])
-                    
-                }
+                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
+
                 
 
                 newuser = false
 
                 DispatchQueue.main.async {
                     
-        self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
+                    self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
                 }
             }
             
