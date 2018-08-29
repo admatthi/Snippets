@@ -16,6 +16,7 @@
 		9D4020732102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
 		9D4020742102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
 		9D402076210241E400E90720 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D402075210241E400E90720 /* StoreKit.framework */; };
+		9D54FB7A2134DE60003B8BA7 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54FB792134DE60003B8BA7 /* DemoViewController.swift */; };
 		9D662CD021082BAB00A474A3 /* rm_albion.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D662CCF21082BA900A474A3 /* rm_albion.ttf */; };
 		9D662CD121082BAB00A474A3 /* rm_albion.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D662CCF21082BA900A474A3 /* rm_albion.ttf */; };
 		9D662CD221082BAB00A474A3 /* rm_albion.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D662CCF21082BA900A474A3 /* rm_albion.ttf */; };
@@ -118,6 +119,7 @@
 		9D40206D2102278900E90720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9D4020712102375E00E90720 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
 		9D402075210241E400E90720 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9D54FB792134DE60003B8BA7 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		9D662CCF21082BA900A474A3 /* rm_albion.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rm_albion.ttf; sourceTree = "<group>"; };
 		9D714EBA20FFA0E7002CD2A3 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D714EBD20FFA0E7002CD2A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				9D40206D2102278900E90720 /* FilterViewController.swift */,
 				9D4020712102375E00E90720 /* ExpandedViewController.swift */,
 				9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */,
+				9D54FB792134DE60003B8BA7 /* DemoViewController.swift */,
 				9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */,
 				9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */,
 				9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */,
@@ -548,6 +551,7 @@
 				9D714F2920FFA1A9002CD2A3 /* BookOverviewViewController.swift in Sources */,
 				9D714F3220FFA1A9002CD2A3 /* BViewController.swift in Sources */,
 				9D714F2F20FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,
+				9D54FB7A2134DE60003B8BA7 /* DemoViewController.swift in Sources */,
 				9D714F1420FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9D714F0E20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */,

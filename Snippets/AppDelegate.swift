@@ -25,13 +25,23 @@ var newuser = Bool()
 var todaysdate = String()
 var screenshot = UIImage()
 
+
+protocol SnippetsPurchasesDelegate: AnyObject {
+    
+    func purchaseCompleted(product: String)
+    
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var purchases = RCPurchases(apiKey: "sdilTRDuWzrDdwVvtryTFPzjxKzYaUsO")
 
-    var purchases: RCPurchases?
+    weak var purchasesdelegate : SnippetsPurchasesDelegate?
 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -41,8 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UXCam.start(withKey: "8921dd89a4b98a3")
         
-        purchases = RCPurchases(apiKey: "sdilTRDuWzrDdwVvtryTFPzjxKzYaUsO")
-        self.purchases!.delegate = self as! RCPurchasesDelegate
+        purchases?.delegate = self
         
         SwiftyStoreKit.completeTransactions(atomically: true) { products in
             
@@ -199,29 +208,32 @@ class SegueFromTop: UIStoryboardSegue
 }
 
 
-//extension AppDelegate: RCPurchasesDelegate {
-//    func purchases(_ purchases: RCPurchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: RCPurchaserInfo) {
+extension AppDelegate: RCPurchasesDelegate {
+    func purchases(_ purchases: RCPurchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: RCPurchaserInfo) {
+        
+        self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
+        
 //        handlePurchaserInfo(purchaserInfo)
-//    }
-//
-//    func purchases(_ purchases: RCPurchases, receivedUpdatedPurchaserInfo purchaserInfo: RCPurchaserInfo) {
+    }
+
+    func purchases(_ purchases: RCPurchases, receivedUpdatedPurchaserInfo purchaserInfo: RCPurchaserInfo) {
 //        handlePurchaserInfo(purchaserInfo)
-//    }
-//
-//    func purchases(_ purchases: RCPurchases, failedToUpdatePurchaserInfoWithError error: Error) {
-//        showError(error)
-//    }
-//
-//    func purchases(_ purchases: RCPurchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
-//        showError(failureReason)
-//    }
-//
-//    func purchases(_ purchases: RCPurchases, restoredTransactionsWith purchaserInfo: RCPurchaserInfo) {
+    }
+
+    func purchases(_ purchases: RCPurchases, failedToUpdatePurchaserInfoWithError error: Error) {
+        print(error)
+    }
+
+    func purchases(_ purchases: RCPurchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
+        print(failureReason)
+    }
+
+    func purchases(_ purchases: RCPurchases, restoredTransactionsWith purchaserInfo: RCPurchaserInfo) {
 //        handlePurchaserInfo(purchaserInfo)
-//    }
-//
-//    func purchases(_ purchases: RCPurchases, failedToRestoreTransactionsWithError error: Error) {
-//        showError(failureReason)
-//    }
-//}
+    }
+
+    func purchases(_ purchases: RCPurchases, failedToRestoreTransactionsWithError error: Error) {
+        print(error)
+    }
+}
 

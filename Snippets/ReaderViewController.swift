@@ -50,9 +50,8 @@ class ReaderViewController: UIViewController {
     }
     @IBAction func tapPrevious(_ sender: Any) {
         
-        let progress = (Float(counter)/Float(arrayCount))
-        self.progressView.setProgress(Float(progress), animated:true)
-        
+        quotetext.slideInFromLeft()
+
         if counter > 0 {
             
             lastcount()
@@ -65,8 +64,8 @@ class ReaderViewController: UIViewController {
     }
     @IBAction func tapNext(_ sender: Any) {
         
-        let progress = (Float(counter)/Float(arrayCount))
-        self.progressView.setProgress(Float(progress), animated:true)
+        quotetext.slideInFromRight()
+
         
         nextcount()
         
@@ -134,67 +133,7 @@ class ReaderViewController: UIViewController {
 
                 // Do any additional setup after loading the view.
         
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        colors.append(bblue)
-        colors.append(yyellow)
-        colors.append(oorange)
-        colors.append(gred)
-        colors.append(lblue)
-        
+  
         tapanywhere.alpha = 1
     }
     
@@ -223,6 +162,8 @@ class ReaderViewController: UIViewController {
             counter -= 1
             showproperquote()
             
+            let progress = (Float(counter)/Float(arrayCount))
+            self.progressView.setProgress(Float(progress), animated:true)
         }
         
         bookmarktapped = true
@@ -308,6 +249,8 @@ class ReaderViewController: UIViewController {
 
             showproperquote()
             
+            let progress = (Float(counter)/Float(arrayCount))
+            self.progressView.setProgress(Float(progress), animated:true)
         }
         
         tapanywhere.alpha = 0
@@ -452,6 +395,68 @@ class ReaderViewController: UIViewController {
                 
                 quote.append(activityvalue2)
             }
+            
+            if var activityvalue2 = value?["26"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["27"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["28"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["29"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["30"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["31"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["32"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["33"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["34"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["35"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["36"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["37"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["38"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["39"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["40"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+
             
             self.counter = 0
 

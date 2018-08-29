@@ -157,6 +157,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 //            tapcta.alpha = 1
             tapsettings.alpha = 0
             freepressed = false
+            
+//            DispatchQueue.main.async {
+//                
+//                self.performSegue(withIdentifier: "HomeToDemo", sender: self)
+//
+//            }
 //            queryforfreebook()
             
         } else {
