@@ -108,6 +108,16 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         
     }
+    
+    func yomofucker() {
+        
+        
+        DispatchQueue.main.async {
+            
+            self.performSegue(withIdentifier: "Cmon", sender: self)
+
+                        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -119,7 +129,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         FBSDKAppEvents.logEvent("Discover Viewed")
 //        activityIndicator.color = .white
         
-        tryingtopurchase = false
         // Do any additional setup after loading the view.
         
         showloading()
@@ -141,7 +150,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
         self.freebookimage = UIImage(named: "pp copy")!
 
-        
+        startTimer()
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
 
@@ -164,6 +173,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 //
 //            }
 //            queryforfreebook()
+            
             
         } else {
             
@@ -195,7 +205,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 loadgirlstuff()
             }
             
-            startTimer()
 
         }
         // Do any additional setup after loading the view.

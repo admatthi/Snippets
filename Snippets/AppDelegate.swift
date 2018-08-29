@@ -72,7 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
+    func letsgo() {
+        
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Login") as UIViewController
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = initialViewControlleripad
+        self.window?.makeKeyAndVisible()
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -213,27 +220,43 @@ extension AppDelegate: RCPurchasesDelegate {
         
         self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
         
-//        handlePurchaserInfo(purchaserInfo)
+        print("purchased")
+        tryingtopurchase  = true
+        letsgo()
+        
     }
 
     func purchases(_ purchases: RCPurchases, receivedUpdatedPurchaserInfo purchaserInfo: RCPurchaserInfo) {
 //        handlePurchaserInfo(purchaserInfo)
+        
+        print("shit")
+        
     }
 
     func purchases(_ purchases: RCPurchases, failedToUpdatePurchaserInfoWithError error: Error) {
         print(error)
+        
+        tryingtopurchase = false
     }
 
     func purchases(_ purchases: RCPurchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
         print(failureReason)
+        
+        tryingtopurchase = false
     }
 
     func purchases(_ purchases: RCPurchases, restoredTransactionsWith purchaserInfo: RCPurchaserInfo) {
 //        handlePurchaserInfo(purchaserInfo)
+        
+        print("restored")
+        tryingtopurchase  = true
+        
     }
 
     func purchases(_ purchases: RCPurchases, failedToRestoreTransactionsWithError error: Error) {
         print(error)
     }
 }
+
+
 

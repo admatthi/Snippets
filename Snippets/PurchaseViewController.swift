@@ -67,7 +67,7 @@ class NetworkActivityIndicatorManager: NSObject {
 var sharedSecret = "20f815c7b6b24304a5c3d124edf09bcc"
 
 var price = Double()
-class PurchaseViewController: UIViewController, RCPurchasesDelegate {
+class PurchaseViewController: UIViewController {
 
     @IBOutlet weak var saleslabel: UILabel!
     let bundleID = "com.aatech.Snippets"
@@ -129,7 +129,6 @@ class PurchaseViewController: UIViewController, RCPurchasesDelegate {
             guard let monthly = pro.offerings["Monthly"] else { return }
             guard let product = monthly.activeProduct else { return }
             self.purchases?.makePurchase(product)
-            
             
         }
         
@@ -261,6 +260,14 @@ class PurchaseViewController: UIViewController, RCPurchasesDelegate {
         
     }
     
+    func yomofucker() {
+    
+    DispatchQueue.main.async {
+    
+    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
+    
+        }
+    }
     
     func restorePurchases() {
         
@@ -386,7 +393,6 @@ class PurchaseViewController: UIViewController, RCPurchasesDelegate {
         ref = Database.database().reference()
         
         
-        purchases?.delegate = self as! RCPurchasesDelegate
 
         self.becomeFirstResponder() // To get shake gesture
 
@@ -459,65 +465,7 @@ class PurchaseViewController: UIViewController, RCPurchasesDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    weak var purchasesdelegate : SnippetsPurchasesDelegate?
 
-    func purchases(_ purchases: RCPurchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: RCPurchaserInfo) {
-        
-        self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
-        
-        tryingtopurchase = true
-
-        DispatchQueue.main.async {
-            
-            self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-            
-        }
-        //        handlePurchaserInfo(purchaserInfo)
-    }
-    
-    func purchases(_ purchases: RCPurchases, receivedUpdatedPurchaserInfo purchaserInfo: RCPurchaserInfo) {
-        //        handlePurchaserInfo(purchaserInfo)
-    }
-    
-    func purchases(_ purchases: RCPurchases, failedToUpdatePurchaserInfoWithError error: Error) {
-        
-        print(error)
-        
-//        let alert = UIAlertView()
-//        alert.title = "This is our fault."
-//        alert.message = "\(error.localizedDescription)"
-//        alert.addButton(withTitle: "Cancel")
-//        alert.show()
-
-    }
-    
-    func purchases(_ purchases: RCPurchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
-        
-        
-//        let alert = UIAlertView()
-//        alert.title = "This is our fault."
-//        alert.message = "\(failureReason.localizedDescription)"
-//        alert.addButton(withTitle: "Cancel")
-//        alert.show()
-//
-    }
-    
-    func purchases(_ purchases: RCPurchases, restoredTransactionsWith purchaserInfo: RCPurchaserInfo) {
-        //        handlePurchaserInfo(purchaserInfo)
-    }
-    
-    func purchases(_ purchases: RCPurchases, failedToRestoreTransactionsWithError error: Error) {
-        
-//        print(error)
-//
-//        let alert = UIAlertView()
-//        alert.title = "This is our fault."
-//        alert.message = "\(error.localizedDescription)"
-//        alert.addButton(withTitle: "Cancel")
-//        alert.show()
-        
-        
-    }
     
     @IBOutlet weak var continuereading: UILabel!
     /*
