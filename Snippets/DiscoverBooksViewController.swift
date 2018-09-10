@@ -394,12 +394,16 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         fourids.append("3")
         fourids.append("4")
         fourids.append("5")
-        
+        fourids.append("6")
+        fourids.append("7")
+
         fourbookcovers.append(UIImage(named: "H1")!)
         fourbookcovers.append(UIImage(named: "H2")!)
         fourbookcovers.append(UIImage(named: "H3")!)
         fourbookcovers.append(UIImage(named: "H4")!)
         fourbookcovers.append(UIImage(named: "H5")!)
+        fourbookcovers.append(UIImage(named: "H6")!)
+        fourbookcovers.append(UIImage(named: "H7")!)
 
         
         fiveids.append("1")
@@ -489,6 +493,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         eightids.append("8")
         eightids.append("9")
         eightids.append("10")
+        eightids.append("11")
+
+        eightids.append("12")
+
+        eightids.append("13")
+
         
         eightbookcovers.append(UIImage(named: "MH1")!)
         eightbookcovers.append(UIImage(named: "MH2")!)
@@ -500,6 +510,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         eightbookcovers.append(UIImage(named: "MH8")!)
         eightbookcovers.append(UIImage(named: "MH9")!)
         eightbookcovers.append(UIImage(named: "MH10")!)
+        eightbookcovers.append(UIImage(named: "MH11")!)
+        eightbookcovers.append(UIImage(named: "MH12")!)
+        eightbookcovers.append(UIImage(named: "MH13")!)
 
         
         
@@ -523,6 +536,14 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineids.append("18")
         nineids.append("19")
         nineids.append("20")
+        nineids.append("21")
+        nineids.append("22")
+        nineids.append("23")
+        nineids.append("24")
+        nineids.append("25")
+        nineids.append("26")
+        
+        
         
         ninebookcovers.append(UIImage(named: "PS1")!)
         ninebookcovers.append(UIImage(named: "PS2")!)
@@ -545,7 +566,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         ninebookcovers.append(UIImage(named: "PS19")!)
         ninebookcovers.append(UIImage(named: "PS20")!)
         ninebookcovers.append(UIImage(named: "PS21")!)
-        ninebookcovers.append(UIImage(named: "PS21")!)
+        ninebookcovers.append(UIImage(named: "PS22")!)
+        ninebookcovers.append(UIImage(named: "PS23")!)
+        ninebookcovers.append(UIImage(named: "PS24")!)
+        ninebookcovers.append(UIImage(named: "PS25")!)
+        ninebookcovers.append(UIImage(named: "PS26")!)
 
         oneviews.append("233K views")
         oneviews.append("492K views")
@@ -647,6 +672,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         eightviews.append("1.3M views")
         eightviews.append("2M views")
         eightviews.append("1.2M views")
+        eightviews.append("1.3M views")
+        eightviews.append("2M views")
+        eightviews.append("1.2M views")
         
         nineviews.append("832K views")
         nineviews.append("3M views")
@@ -678,7 +706,14 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineviews.append("3.8M views")
         nineviews.append("2M views")
         nineviews.append("1.2M views")
-        
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
 
 
 //        collectionView1.reloadData()
