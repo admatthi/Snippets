@@ -1,8 +1,8 @@
 //
-//  LibraryViewController.swift
+//  LibViewController.swift
 //  Snippets
 //
-//  Created by Alek Matthiessen on 7/18/18.
+//  Created by Alek Matthiessen on 9/10/18.
 //  Copyright © 2018 AA Tech. All rights reserved.
 //
 
@@ -17,50 +17,25 @@ import UserNotifications
 import AudioToolbox
 import GameplayKit
 
-var librarycovers = [String:UIImage]()
-var librarytitles = [String:String]()
-var libraryauthors = [String:String]()
-var librarybookids = [String]()
+class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-class LibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    func hideloading() {
-        
-        loadinglabel.alpha = 0
-        activityIndicator.stopAnimating()
-        activityIndicator.alpha = 0
-        
-    }
-    
-    func showloading() {
-        
-        loadinglabel.alpha = 1
-        activityIndicator.startAnimating()
-        activityIndicator.alpha = 1
-
-    }
-    
-    @IBOutlet weak var coverimage: UIImageView!
-    
-
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nobooks.alpha = 0
-
         ref = Database.database().reference()
-
+        
+        self.becomeFirstResponder() // To get shake gesture
+        
+        //        freebackground.layer.cornerRadius = 5.0
+        FBSDKAppEvents.logEvent("Library Viewed")
+        
         queryforbookids { () -> () in
             
             self.queryforbookinfo()
             
         }
-        
-        showloading()
-        
-        backgroundlabel.layer.cornerRadius = 5.0
-        backgroundlabel.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -77,8 +52,10 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         librarycovers.removeAll()
         libraryauthors.removeAll()
         librarytitles.removeAll()
+        librarygenres.removeAll()
+        librarysubids.removeAll()
         
-        ref?.child("Users").child(uid).child("Library").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("Users").child(uid).child("Library").queryLimited(toFirst: 25).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
@@ -108,9 +85,6 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var loadinglabel: UILabel!
     func queryforbookinfo() {
         
         var functioncounter = 0
@@ -119,54 +93,48 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         for each in librarybookids  {
             
-            ref?.child("Users").child(uid).child("Library").observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("Users").child(uid).child("Library").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
                 
                 
-                if var activityvalue = value?["Name"] as? String {
+                if var activityvalue1 = value?["Name"] as? String {
                     
-                    librarytitles[each] = activityvalue
-                    
-                }
-                
-                if var activityvalue = value?["Author"] as? String {
-                    
-                    libraryauthors[each] = activityvalue
+                    librarytitles[each] = activityvalue1
                     
                 }
                 
-                
-                if var productimagee = value?["Image"] as? String {
+                if var activityvalue2 = value?["Author"] as? String {
                     
-                    if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
-                        
-                        let url = URL(string: productimagee)
-                        
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        
-                        if data != nil {
-                            
-                            let productphoto = UIImage(data: (data)!)
-                            
-                            //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
-                            let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
-                            
-                            librarycovers[each] = productphoto
-                            
-                            functioncounter += 1
-                            
-                            
-                        }
-                        
-                        
-                    }
+                    libraryauthors[each] = activityvalue2
+                    
                 }
+                
+                if var activityvalue4 = value?["Genre"] as? String {
+                    
+                    librarygenres[each] = activityvalue4
+                    
+                }
+                
+                if var activityvalue4 = value?["BookID"] as? String {
+                    
+                    librarysubids[each] = activityvalue4
+                    
+                }
+                
+                if var activityvalue3 = value?["Image"] as? String {
+                    
+                    librarycovers[each] = UIImage(named: "\(activityvalue3)")
+                    
+                    functioncounter += 1
+
+                }
+                
                 
                 if functioncounter == librarybookids.count  {
                     
-                    self.showloading()
-                    self.collectionView.reloadData()
+//                    self.showloading()
+                    self.tableView.reloadData()
                 }
                 
             })
@@ -174,60 +142,63 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
     }
-    @IBOutlet weak var nobooks: UILabel!
-    @IBOutlet weak var backgroundlabel: UILabel!
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if librarytitles.count > 0 {
-            
-            nobooks.alpha = 0
-            return librarytitles.count
-
-        } else {
-            
-            nobooks.alpha = 1
-
-            hideloading()
-            
-            return 0
-        }
-        
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
-        cell.bookcover.layer.cornerRadius = 10.0
-        cell.bookcover.layer.masksToBounds = true
-        
-        cell.dark.layer.cornerRadius = 10.0
-        cell.dark.layer.masksToBounds = true
-        
-        cell.bookcover.image = librarycovers[librarybookids[indexPath.row]]
-//        cell.bookauthor.text = libraryauthors[librarybookids[indexPath.row]]
-//        cell.booktitle.text = librarytitles[librarybookids[indexPath.row]]
-        
-        hideloading()
-        
-        return cell
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        selectedbookid = librarybookids[indexPath.row]
+        selectedgenre = librarygenres[librarybookids[indexPath.row]]!
+        selectedbookid = librarysubids[librarybookids[indexPath.row]]!
+        selectedimage = librarycovers[librarybookids[indexPath.row]]!
         selectedtitle = librarytitles[librarybookids[indexPath.row]]!
         selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
-        selectedimage = librarycovers[librarybookids[indexPath.row]]!
         
-        self.performSegue(withIdentifier: "LibraryToReader", sender: self)
-        
+        self.performSegue(withIdentifier: "LibToReader", sender: self)
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if librarycovers.count > 0 {
+            
+           return librarycovers.count
+            
+        } else {
+            
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Lib", for: indexPath) as! LibTableViewCell
+        
+        cell.coverimage.layer.cornerRadius = 10.0
+        cell.coverimage.layer.masksToBounds = true
+        
+        if librarycovers.count > 0 {
+    
+        cell.author.text = libraryauthors[librarybookids[indexPath.row]]
+        cell.title.text = librarytitles[librarybookids[indexPath.row]]
+        cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
+        cell.greenlabel.alpha = 1
+        } else {
+            
+            cell.author.text = ""
+            cell.title.text = "You haven't added any books to your library yet"
+            cell.coverimage.image = nil
+            cell.greenlabel.alpha = 0
+        }
+
+        return cell
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
@@ -278,8 +249,11 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         if let image = screenshotImage, shouldSave {
             
             screenshot = image
-            
         }
         return screenshotImage
     }
+
 }
+
+var librarygenres = [String:String]()
+var librarysubids = [String:String]()

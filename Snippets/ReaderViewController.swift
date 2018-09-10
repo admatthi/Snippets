@@ -111,7 +111,6 @@ class ReaderViewController: UIViewController {
         } else {
             
            tapbuy.alpha = 1
-            ref?.child("Users").child(uid).child("Library").child(selectedbookid).updateChildValues(["Text" : "Hello"])
 
         }
         

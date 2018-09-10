@@ -82,6 +82,8 @@
 		9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
 		9D714F3920FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
 		9D714F3A20FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
+		9D9A829E2146D9380050F2B3 /* LibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A829D2146D9380050F2B3 /* LibViewController.swift */; };
+		9D9A82A02146D9A90050F2B3 /* LibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */; };
 		9DA3FFE7210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DA3FFE8210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
@@ -151,6 +153,8 @@
 		9D714EFC20FFA1A8002CD2A3 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubsViewController.swift; sourceTree = "<group>"; };
 		9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A1ViewController.swift; sourceTree = "<group>"; };
+		9D9A829D2146D9380050F2B3 /* LibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibViewController.swift; sourceTree = "<group>"; };
+		9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibTableViewCell.swift; sourceTree = "<group>"; };
 		9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham-Bold.otf"; sourceTree = "<group>"; };
 		9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham Book Regular.otf"; sourceTree = "<group>"; };
 		9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 				9D714EF220FFA1A5002CD2A3 /* CodeViewController.swift */,
 				9D714EF120FFA1A4002CD2A3 /* CViewController.swift */,
 				9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */,
+				9D9A829D2146D9380050F2B3 /* LibViewController.swift */,
+				9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */,
 				9D714EF320FFA1A5002CD2A3 /* DViewController.swift */,
 				9D714EF420FFA1A5002CD2A3 /* FavoritesTableViewCell.swift */,
 				9D714EF520FFA1A6002CD2A3 /* FavoritesViewController.swift */,
@@ -536,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9A829E2146D9380050F2B3 /* LibViewController.swift in Sources */,
 				9D40206E2102278900E90720 /* FilterViewController.swift in Sources */,
 				9D714F1A20FFA1A9002CD2A3 /* FavoritesTableViewCell.swift in Sources */,
 				9D714F0220FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */,
@@ -558,6 +565,7 @@
 				9D714F1D20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
 				9D714F3520FFA1A9002CD2A3 /* SubsViewController.swift in Sources */,
 				9D714F0B20FFA1A9002CD2A3 /* ReaderViewController.swift in Sources */,
+				9D9A82A02146D9A90050F2B3 /* LibTableViewCell.swift in Sources */,
 				9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */,
 				9D714F2020FFA1A9002CD2A3 /* AViewController.swift in Sources */,
 			);

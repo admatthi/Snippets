@@ -160,9 +160,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
             purchased = false
         
-            tapfavorties.alpha = 0
-            taphome.alpha = 0
-            taplibrary.alpha = 0
+
 //            tapcta.alpha = 1
             tapsettings.alpha = 0
             freepressed = false
@@ -184,9 +182,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             newuser = false
             // Do any additional setup after loading the view.
             purchased = true
-            tapfavorties.alpha = 0
-            taphome.alpha = 0
-            taplibrary.alpha = 0
             tapsettings.alpha = 1
             freepressed = false
 //            queryforfreebook()
@@ -1126,6 +1121,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedimage = onebookcovers[indexPath.row]
                 selectedviews = oneviews[indexPath.row]
                 selectedgenre = "Top Sellers"
+                selectedimagename = "BS\(indexPath.row+1)"
+
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 
                 
@@ -1139,6 +1136,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     selectedviews = twoviews[indexPath.row]
                     selectedgenre = "Biography & Memoir"
                     FBSDKAppEvents.logEvent("Biography Tapped")
+                    selectedimagename = "M\(indexPath.row+1)"
 
                     self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                     
@@ -1150,6 +1148,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         selectedimage = threebookcovers[indexPath.row]
                      selectedgenre = "For You"
                         FBSDKAppEvents.logEvent("For You Tapped")
+                        selectedimagename = "F\(indexPath.row+1)"
+
                         selectedviews = threeviews[indexPath.row]
                         self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                         
@@ -1162,6 +1162,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             selectedimage = fourbookcovers[indexPath.row]
                      selectedviews = fourviews[indexPath.row]
                             FBSDKAppEvents.logEvent("Health, Fitness, & Dieting Tapped")
+                            selectedimagename = "H\(indexPath.row+1)"
+
                             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                             
                         } else {
@@ -1173,6 +1175,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 selectedimage = fivebookcovers[indexPath.row]
        selectedviews = fiveviews[indexPath.row]
                                 FBSDKAppEvents.logEvent("Business & Investing Tapped")
+                                selectedimagename = "B\(indexPath.row+1)"
                                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                 
                             } else {
@@ -1183,6 +1186,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                     selectedimage = sixbookcovers[indexPath.row]
                                     selectedgenre = "Sex & Relationships"
                                     FBSDKAppEvents.logEvent("Sex & Relationships Tapped")
+                                    selectedimagename = "S\(indexPath.row+1)"
+
                                     selectedviews = sixviews[indexPath.row]
                                     self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                     
@@ -1195,6 +1200,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                         selectedimage = sevenbookcovers[indexPath.row]
                                         selectedgenre = "Productivity"
                                         FBSDKAppEvents.logEvent("Productivity Tapped")
+                                        selectedimagename = "PR\(indexPath.row+1)"
+
                                         selectedviews = sevenviews[indexPath.row]
                                         self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                         
@@ -1206,6 +1213,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                             selectedimage = eightbookcovers[indexPath.row]
                                             selectedgenre = "Mental Health"
                                             FBSDKAppEvents.logEvent("Mental Health Tapped")
+                                            selectedimagename = "MH\(indexPath.row+1)"
+
                                             selectedviews = eightviews[indexPath.row]
                                             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                             
@@ -1219,7 +1228,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                                 selectedgenre = "Psychology"
                                                 selectedviews = nineviews[indexPath.row]
                                                 FBSDKAppEvents.logEvent("Psychology Tapped")
-                                                
+                                                selectedimagename = "PS\(indexPath.row+1)"
                                                 if psychologylabel.text == "For Diana" {
                                                     
                                                     selectedgenre = "Diana"
@@ -1464,4 +1473,5 @@ var bookcompleted = [String:String]()
 //
 //}
 
+var selectedimagename = String()
 var selectedgenre = String()
