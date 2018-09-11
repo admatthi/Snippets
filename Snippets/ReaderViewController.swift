@@ -102,7 +102,6 @@ class ReaderViewController: UIViewController {
         
         ref = Database.database().reference()
         
-        
         if freepressed {
             
             tapbuy.alpha = 0
@@ -112,7 +111,7 @@ class ReaderViewController: UIViewController {
             
             tapbuy.alpha = 1
             tapbookmark.alpha = 1
-            ref?.child("Users").child(uid).child("Library").childByAutoId().updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid])
+            ref?.child("Users").child(uid).child("Library").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid])
 
 
         }

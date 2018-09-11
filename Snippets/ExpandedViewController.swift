@@ -18,7 +18,6 @@ class ExpandedViewController: UIViewController {
         
         fulltext.text = selectedtext
 
-    fulltext.addCharacterSpacing()
         // Do any additional setup after loading the view.
     }
 

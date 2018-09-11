@@ -126,7 +126,8 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    
+        selectedtext = favorites[favoriteids[indexPath.row]]!
+        self.performSegue(withIdentifier: "QuoteToExpanded", sender: self)
         
     }
     

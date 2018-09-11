@@ -146,7 +146,7 @@
                                     <color key="titleColor" red="0.5723797679" green="0.57652366160000001" blue="0.57644540070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="81c-TS-nvb" kind="show" customClass="SegueFromLeft" customModule="Snippets" customModuleProvider="target" id="2VV-da-dDt"/>
+                                    <segue destination="81c-TS-nvb" kind="show" id="t6x-oZ-Dk2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd8-pS-DiO">
@@ -738,7 +738,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBx-1D-0lM">
                                 <rect key="frame" x="47" y="63" width="280" height="541"/>
                                 <string key="text">Now imagining it may be equally agreeable to you to know the Circumstances of my Life, many of which you are yet unacquainted with; and expecting a Week's uninterrupted Leisure in my present Country Retirement, I sit down to write them for you. </string>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -750,7 +750,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="X"/>
                                 <connections>
-                                    <segue destination="ws0-FS-Hbf" kind="show" id="U7h-k7-4mZ"/>
+                                    <segue destination="81c-TS-nvb" kind="show" id="sCE-jq-7Qv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -775,7 +775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBc-21-epb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14230" y="5444"/>
+            <point key="canvasLocation" x="-9412" y="6307"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="9vu-PR-2BY">
@@ -2450,7 +2450,7 @@
                         <segue destination="SVO-GV-jvL" kind="presentation" identifier="Try2" id="81X-gA-syT"/>
                         <segue destination="SVO-GV-jvL" kind="show" id="ao3-wZ-2o6"/>
                         <segue destination="PcP-Wv-fbZ" kind="show" identifier="HomeToPurchase" id="zJ5-Ak-cT8"/>
-                        <segue destination="xvC-5O-nSi" kind="show" identifier="HomeToBookOverview" customClass="SegueFromRight" customModule="Snippets" customModuleProvider="target" id="knN-qt-VWg"/>
+                        <segue destination="xvC-5O-nSi" kind="show" identifier="HomeToBookOverview" id="knN-qt-VWg"/>
                         <segue destination="xvC-5O-nSi" kind="show" identifier="HomeToBookOverview" id="lky-bQ-2Vr"/>
                         <segue destination="PcP-Wv-fbZ" kind="show" identifier="DiscoverToBuy" id="hr4-mk-0em"/>
                         <segue destination="oxP-kH-qYg" kind="show" identifier="HomeToDemo" id="Inx-fu-rga"/>
@@ -2561,11 +2561,23 @@
                                     <outlet property="delegate" destination="hep-vL-YOw" id="1Ea-TJ-qJd"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnL-U8-a6P">
+                                <rect key="frame" x="332" y="23" width="27" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="hpI-L0-VXy"/>
+                                    <constraint firstAttribute="width" constant="27" id="rex-LL-Goy"/>
+                                </constraints>
+                                <state key="normal" image="Settings"/>
+                                <connections>
+                                    <segue destination="ny6-z1-1xH" kind="show" id="8Mm-jX-DvB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="g8e-wA-mii" firstAttribute="bottom" secondItem="d2K-YV-VkL" secondAttribute="bottom" id="3m8-1D-Yfk"/>
                             <constraint firstItem="ySc-gw-2rO" firstAttribute="leading" secondItem="d2K-YV-VkL" secondAttribute="leading" id="7xV-HA-VAn"/>
+                            <constraint firstItem="rnL-U8-a6P" firstAttribute="top" secondItem="d2K-YV-VkL" secondAttribute="top" constant="3" id="9MB-xv-AKG"/>
                             <constraint firstItem="lbv-CQ-BtN" firstAttribute="centerX" secondItem="F3U-Vi-KsG" secondAttribute="centerX" id="Eqh-dG-M54"/>
                             <constraint firstItem="g8e-wA-mii" firstAttribute="trailing" secondItem="d2K-YV-VkL" secondAttribute="trailing" id="ExO-g9-Hbw"/>
                             <constraint firstItem="g8e-wA-mii" firstAttribute="top" secondItem="lbv-CQ-BtN" secondAttribute="bottom" constant="36" id="FWP-Lo-OZF"/>
@@ -2575,6 +2587,7 @@
                             <constraint firstItem="g8e-wA-mii" firstAttribute="leading" secondItem="d2K-YV-VkL" secondAttribute="leading" id="Wyk-YP-67y"/>
                             <constraint firstItem="lbv-CQ-BtN" firstAttribute="top" secondItem="d2K-YV-VkL" secondAttribute="top" constant="6" id="bug-ob-IAh"/>
                             <constraint firstItem="ySc-gw-2rO" firstAttribute="bottom" secondItem="d2K-YV-VkL" secondAttribute="bottom" id="ehy-g5-bJk"/>
+                            <constraint firstItem="d2K-YV-VkL" firstAttribute="trailing" secondItem="rnL-U8-a6P" secondAttribute="trailing" constant="16" id="fwK-dY-73e"/>
                             <constraint firstItem="g8e-wA-mii" firstAttribute="leading" secondItem="d2K-YV-VkL" secondAttribute="leading" id="vEt-gT-Cmv"/>
                             <constraint firstItem="ySc-gw-2rO" firstAttribute="trailing" secondItem="d2K-YV-VkL" secondAttribute="trailing" id="ywt-FG-dne"/>
                         </constraints>
@@ -2583,6 +2596,7 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="Account2" id="yDX-V2-uty"/>
                     <connections>
                         <outlet property="tableView" destination="g8e-wA-mii" id="qjI-kL-Ija"/>
+                        <segue destination="bWC-1N-KaX" kind="show" identifier="QuoteToExpanded" id="aeQ-qY-d1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4o-f4-hFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2723,27 +2737,12 @@
                     <tabBarItem key="tabBarItem" title="Library" image="Books-1" id="9UK-Um-08Z"/>
                     <connections>
                         <outlet property="tableView" destination="VWy-l8-sxz" id="xG6-P3-Odn"/>
-                        <segue destination="SVO-GV-jvL" kind="show" identifier="LibToReader" customClass="SegueFromRight" customModule="Snippets" customModuleProvider="target" id="geI-t6-Svl"/>
+                        <segue destination="SVO-GV-jvL" kind="show" identifier="LibToReader" id="geI-t6-Svl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6L-TS-0yA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-10247.200000000001" y="5595.652173913044"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bC5-lH-oiU">
-            <objects>
-                <viewController id="Z63-Hr-S3F" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mpk-Dq-f6c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="96b-zu-cau"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sJW-GK-sQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-9556" y="5591.1544227886061"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="YP9-15-nKf">
@@ -3227,9 +3226,6 @@
                                     <constraint firstAttribute="height" constant="28" id="GES-wY-lrw"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="WhiteArrow"/>
-                                <connections>
-                                    <segue destination="81c-TS-nvb" kind="show" customClass="SegueFromLeft" customModule="Snippets" customModuleProvider="target" id="om5-Pt-tAY"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7F-Tx-glH">
                                 <rect key="frame" x="0.0" y="37" width="100" height="36"/>
@@ -3242,7 +3238,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="81c-TS-nvb" kind="show" customClass="SegueFromLeft" customModule="Snippets" customModuleProvider="target" id="UNr-ju-TAe"/>
+                                    <segue destination="81c-TS-nvb" kind="show" id="MUy-ss-ahV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -6528,13 +6524,13 @@ YgACjWoAAo1tAAKNfwACjYIAAo2HAAAAAAAABAEAAAAAAAAAWQAAAAAAAAAAAAAAAAACjYk
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YBD-WV-gH6"/>
-        <segue reference="mNO-gr-Bou"/>
-        <segue reference="geI-t6-Svl"/>
-        <segue reference="knN-qt-VWg"/>
+        <segue reference="sCE-jq-7Qv"/>
+        <segue reference="M3O-5p-mHj"/>
+        <segue reference="7jq-hO-3an"/>
         <segue reference="dLC-YQ-4Le"/>
-        <segue reference="hr4-mk-0em"/>
-        <segue reference="wYw-yP-fYv"/>
-        <segue reference="WBk-0A-KD8"/>
+        <segue reference="SlH-1V-Xtw"/>
+        <segue reference="aeQ-qY-d1A"/>
+        <segue reference="cBF-0u-l56"/>
+        <segue reference="8Mm-jX-DvB"/>
     </inferredMetricsTieBreakers>
 </document>
