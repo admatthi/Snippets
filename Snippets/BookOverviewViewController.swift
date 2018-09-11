@@ -28,7 +28,6 @@ class BookOverviewViewController: UIViewController {
         
         if purchased {
             
-            ref?.child("Users").child(uid).child("Library").childByAutoId().updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid])
             
                 self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
             

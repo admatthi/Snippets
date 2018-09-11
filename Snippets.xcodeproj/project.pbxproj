@@ -89,6 +89,7 @@
 		9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DE5864721473FD500DF4129 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
 		9DE586492147404F00DF4129 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE586482147404F00DF4129 /* FavTableViewCell.swift */; };
+		9DE5864B21481AF500DF4129 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864A21481AF500DF4129 /* MainViewController.swift */; };
 		9DE98A542107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
 		9DE98A552107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
 		9DE98A562107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
@@ -160,6 +161,7 @@
 		9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham-Bold.otf"; sourceTree = "<group>"; };
 		9DE5864621473FD500DF4129 /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
 		9DE586482147404F00DF4129 /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
+		9DE5864A21481AF500DF4129 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham Book Regular.otf"; sourceTree = "<group>"; };
 		9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A796B9825B532C8C1B74FF48 /* Pods_SnippetsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnippetsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 				9D714EBD20FFA0E7002CD2A3 /* AppDelegate.swift */,
 				9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */,
 				9D714EF720FFA1A6002CD2A3 /* Main.storyboard */,
+				9DE5864A21481AF500DF4129 /* MainViewController.swift */,
 				9D714EF620FFA1A6002CD2A3 /* AViewController.swift */,
 				9D714EF920FFA1A7002CD2A3 /* BookOverviewViewController.swift */,
 				9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */,
@@ -561,6 +564,7 @@
 				9D714F1120FFA1A9002CD2A3 /* CViewController.swift in Sources */,
 				9D714EBE20FFA0E7002CD2A3 /* AppDelegate.swift in Sources */,
 				9D714F0820FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */,
+				9DE5864B21481AF500DF4129 /* MainViewController.swift in Sources */,
 				9DE5864721473FD500DF4129 /* FavViewController.swift in Sources */,
 				9D714EFF20FFA1A9002CD2A3 /* ReadTableViewCell.swift in Sources */,
 				9D714F2920FFA1A9002CD2A3 /* BookOverviewViewController.swift in Sources */,

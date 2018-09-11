@@ -165,10 +165,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
 
 //            tapcta.alpha = 1
-            tapsettings.alpha = 0
-            taphome.alpha = 0
-            taplib.alpha = 0
-            navlabel.alpha = 0
+//            tapsettings.alpha = 0
+//            taphome.alpha = 0
+//            taplib.alpha = 0
+//            navlabel.alpha = 0
             freepressed = false
             
 //            DispatchQueue.main.async {
@@ -188,11 +188,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             newuser = false
             // Do any additional setup after loading the view.
             purchased = true
-            tapsettings.alpha = 1
+//            tapsettings.alpha = 1
             freepressed = false
-            taphome.alpha = 1
-            taplib.alpha = 1
-            navlabel.alpha = 1
+//            taphome.alpha = 1
+//            taplib.alpha = 1
+//            navlabel.alpha = 1
 //            queryforfreebook()
 
             
@@ -1394,8 +1394,8 @@ var eightbookurls = [String:String]()
 var eightbookcompleted = [String:String]()
 var eightbookinsights = [String:String]()
 
-var ninebooknames = [String:String]()
-var ninebookauthors = [String:String]()
+var ninebooknames = [String]()
+var ninebookauthors = [String]()
 var ninebookcovers = [UIImage]()
 var ninebookdescriptions = [String:String]()
 var ninebookurls = [String:String]()

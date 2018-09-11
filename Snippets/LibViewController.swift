@@ -31,11 +31,14 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //        freebackground.layer.cornerRadius = 5.0
         FBSDKAppEvents.logEvent("Library Viewed")
         
+       
         queryforbookids { () -> () in
             
             self.queryforbookinfo()
             
         }
+        
+         loaddefaultvalues()
         // Do any additional setup after loading the view.
     }
 
@@ -145,11 +148,23 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if librarycovers.count > 0 {
+            
         selectedgenre = librarygenres[librarybookids[indexPath.row]]!
         selectedbookid = librarysubids[librarybookids[indexPath.row]]!
         selectedimage = librarycovers[librarybookids[indexPath.row]]!
         selectedtitle = librarytitles[librarybookids[indexPath.row]]!
         selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
+            
+        } else {
+            
+            selectedgenre = "Psychology"
+            selectedbookid = "\(indexPath.row+1)"
+            selectedimage = ninebookcovers[indexPath.row]
+            selectedimagename = "PS\(indexPath.row+1)"
+            selectedtitle = ninebooknames[indexPath.row]
+            selectedauthor = ninebookauthors[indexPath.row]
+        }
         
         self.performSegue(withIdentifier: "LibToReader", sender: self)
     }
@@ -162,7 +177,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         } else {
             
-            return 1
+            return 15
         }
     }
     
@@ -179,13 +194,26 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.title.text = librarytitles[librarybookids[indexPath.row]]
         cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
         cell.greenlabel.alpha = 1
+        cell.emptylabel.alpha = 0
             
         } else {
             
+            if indexPath.row == 0 {
             cell.author.text = ""
-            cell.title.text = "You haven't added any books to your library yet"
+            cell.title.text = ""
             cell.coverimage.image = nil
             cell.greenlabel.alpha = 0
+            cell.emptylabel.alpha = 1
+                
+            } else {
+                
+                cell.coverimage.image = ninebookcovers[indexPath.row]
+                cell.greenlabel.alpha = 1
+                cell.author.text = ninebookauthors[indexPath.row]
+                cell.title.text = ninebooknames[indexPath.row]
+                cell.emptylabel.alpha = 0
+     
+            }
         }
 
         return cell
@@ -210,6 +238,42 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
+    func loaddefaultvalues() {
+        
+        ninebookauthors.append("Kevin Horsley")
+        ninebookauthors.append("David Deida")
+        ninebookauthors.append("Jonathan Heidt")
+        ninebookauthors.append("Sigmund Freud")
+        ninebookauthors.append("Robert B. Cialdini")
+        ninebookauthors.append("Dr. Dan Ariely")
+        ninebookauthors.append("Malcolm Gladwell")
+        ninebookauthors.append("Mihaly Csikszentmihalyi")
+        ninebookauthors.append("Malcolm Gladwell")
+        ninebookauthors.append("Mark Williams and Danny Penman")
+        ninebookauthors.append("Martin Seligman")
+        ninebookauthors.append("Daniel Goleman")
+        ninebookauthors.append("Dan Gilbert")
+        ninebookauthors.append("Nassim Nicholas Taleb")
+        ninebookauthors.append("Karen Ehman")
+        ninebooknames.append("Unlimited Memory")
+        ninebooknames.append("The Way of the Superior Man")
+        ninebooknames.append("The Happiness Hypothesis")
+        ninebooknames.append("Civilization and Its Discontents")
+        ninebooknames.append("Influence")
+        ninebooknames.append("Predictably Irrational")
+        ninebooknames.append("Outliers: The Story Of Success")
+        ninebooknames.append("Flow: The Psychology Of Happiness")
+        ninebooknames.append("David and Goliath")
+        ninebooknames.append("Mindfullness")
+        ninebooknames.append("Authentic Happiness")
+        ninebooknames.append("Emotional Intelligence")
+        ninebooknames.append("Stumbling on Happiness")
+        ninebooknames.append("Antifragile: Things That Gain from Disorder")
+        ninebooknames.append("Keep It Shut")
+
+        tableView.reloadData()
+        
+    }
     
     func showalert() {
         

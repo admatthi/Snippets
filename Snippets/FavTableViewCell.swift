@@ -10,6 +10,7 @@ import UIKit
 
 class FavTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var emptylabel: UILabel!
     @IBOutlet weak var descriptionlabel: UILabel!
     @IBOutlet weak var greenlabel: UILabel!
     @IBOutlet weak var coverimage: UIImageView!

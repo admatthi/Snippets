@@ -154,10 +154,12 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.descriptionlabel.text = favorites[favoriteids[indexPath.row]]
             cell.coverimage.image = thumbnail[favoriteids[indexPath.row]]
             cell.greenlabel.alpha = 1
+            cell.emptylabel.alpha = 0
             
         } else {
             
-            cell.descriptionlabel.text = "You don't have any favorites yet"
+            cell.descriptionlabel.text = ""
+            cell.emptylabel.alpha = 1
             cell.coverimage.image = nil
             cell.greenlabel.alpha = 0
             

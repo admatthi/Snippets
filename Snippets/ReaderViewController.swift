@@ -112,6 +112,8 @@ class ReaderViewController: UIViewController {
             
             tapbuy.alpha = 1
             tapbookmark.alpha = 1
+            ref?.child("Users").child(uid).child("Library").childByAutoId().updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid])
+
 
         }
         
