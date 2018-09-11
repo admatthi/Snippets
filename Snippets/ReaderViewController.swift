@@ -58,7 +58,7 @@ class ReaderViewController: UIViewController {
 
         }
         
-//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
         bookmarktapped = false
     }
@@ -69,7 +69,7 @@ class ReaderViewController: UIViewController {
         
         nextcount()
         
-//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
         bookmarktapped = false
     }
@@ -81,14 +81,14 @@ class ReaderViewController: UIViewController {
     
     func showbookmark() {
         
-//        if bookmarktapped {
-//
-//            tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-//
-//        } else {
-//
-//            tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
-//        }
+        if bookmarktapped {
+
+            tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+
+        } else {
+
+            tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+        }
     }
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var authorlabel: UILabel!
@@ -106,11 +106,12 @@ class ReaderViewController: UIViewController {
         if freepressed {
             
             tapbuy.alpha = 0
-            
+            tapbookmark.alpha = 0
             
         } else {
             
-           tapbuy.alpha = 1
+            tapbuy.alpha = 1
+            tapbookmark.alpha = 1
 
         }
         
@@ -166,59 +167,59 @@ class ReaderViewController: UIViewController {
         }
         
         bookmarktapped = true
-//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
     }
     
     var randomstring = String()
     
-//    @IBAction func tapBookMark(_ sender: Any) {
-//        favorites.removeAll()
-//        randomstring = UUID().uuidString
-//
-//        if counter > 0  {
-//
-//
-//            if bookmarktapped {
-//
-//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
-//
-//                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
-//
-//                bookmarktapped = false
-//
-//            } else {
-//
-//                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
-//
-//                bookmarktapped = true
-//
-//            }
-//
-//        } else {
-//
-//            if bookmarktapped {
-//
-//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
-//
-//                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
-//
-//                bookmarktapped = false
-//
-//            } else {
-//
-//                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-//                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedurl, "Author" : selectedauthor, "Name" : selectedtitle])
-//
-//                bookmarktapped = true
-//
-//            }
-//
-//        }
-//
-//        }
-//
+    @IBAction func tapBookMark(_ sender: Any) {
+        favorites.removeAll()
+        randomstring = UUID().uuidString
+
+        if counter > 0  {
+
+
+            if bookmarktapped {
+
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
+
+                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+
+                bookmarktapped = false
+
+            } else {
+
+                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedimagename])
+
+                bookmarktapped = true
+
+            }
+
+        } else {
+
+            if bookmarktapped {
+
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
+
+                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+
+                bookmarktapped = false
+
+            } else {
+
+                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedimagename])
+
+                bookmarktapped = true
+
+            }
+
+        }
+
+        }
+
     @IBOutlet weak var tapanywhere: UILabel!
     @IBOutlet weak var tapbookmark: UIButton!
     func nextcount() {
@@ -456,8 +457,7 @@ class ReaderViewController: UIViewController {
                 quote.append(activityvalue2)
             }
 
-            
-            self.counter = 0
+        
 
             self.showproperquote()
             

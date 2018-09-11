@@ -83,7 +83,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tapcta: UIButton!
     @IBOutlet weak var categorylabel: UILabel!
-    @IBOutlet weak var taphome: UIButton!
     @IBOutlet weak var tapfavorties: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -94,6 +93,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
     }
     
+    @IBOutlet weak var tapsettings: UIButton!
+    @IBOutlet weak var taphome: UIButton!
+    @IBOutlet weak var taplib: UIButton!
+    @IBOutlet weak var navlabel: UILabel!
     @objc func scrollToNextCell() {
         
         
@@ -163,6 +166,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
 //            tapcta.alpha = 1
             tapsettings.alpha = 0
+            taphome.alpha = 0
+            taplib.alpha = 0
+            navlabel.alpha = 0
             freepressed = false
             
 //            DispatchQueue.main.async {
@@ -184,6 +190,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             purchased = true
             tapsettings.alpha = 1
             freepressed = false
+            taphome.alpha = 1
+            taplib.alpha = 1
+            navlabel.alpha = 1
 //            queryforfreebook()
 
             
@@ -205,8 +214,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         // Do any additional setup after loading the view.
     }
 
-    @IBOutlet weak var tapsettings: UIButton!
-    @IBOutlet weak var taplibrary: UIButton!
     @IBOutlet weak var backgroundlabel: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

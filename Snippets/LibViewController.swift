@@ -179,6 +179,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.title.text = librarytitles[librarybookids[indexPath.row]]
         cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
         cell.greenlabel.alpha = 1
+            
         } else {
             
             cell.author.text = ""
