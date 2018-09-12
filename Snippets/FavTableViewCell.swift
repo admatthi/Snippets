@@ -10,6 +10,8 @@ import UIKit
 
 class FavTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bluebutton: UIImageView!
+    @IBOutlet weak var upgradelabel: UILabel!
     @IBOutlet weak var emptylabel: UILabel!
     @IBOutlet weak var descriptionlabel: UILabel!
     @IBOutlet weak var greenlabel: UILabel!

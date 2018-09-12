@@ -31,12 +31,20 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //        freebackground.layer.cornerRadius = 5.0
         FBSDKAppEvents.logEvent("Library Viewed")
         
-       
-        queryforbookids { () -> () in
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+
             
-            self.queryforbookinfo()
+        } else {
+         
+            queryforbookids { () -> () in
+                
+                self.queryforbookinfo()
+                
+            }
             
         }
+
         
          loaddefaultvalues()
         // Do any additional setup after loading the view.
@@ -155,6 +163,9 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         selectedimage = librarycovers[librarybookids[indexPath.row]]!
         selectedtitle = librarytitles[librarybookids[indexPath.row]]!
         selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
+        
+            self.performSegue(withIdentifier: "LibraryToOverview", sender: self)
+
             
         } else {
             
@@ -164,9 +175,11 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             selectedimagename = "PS\(indexPath.row+1)"
             selectedtitle = ninebooknames[indexPath.row]
             selectedauthor = ninebookauthors[indexPath.row]
+            
+            self.performSegue(withIdentifier: "LibraryToOverview", sender: self)
+
         }
         
-        self.performSegue(withIdentifier: "LibToReader", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

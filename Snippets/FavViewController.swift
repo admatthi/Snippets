@@ -25,20 +25,27 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         ref = Database.database().reference()
         
+        FBSDKAppEvents.logEvent("Favorites Viewed")
         
         tableView.reloadData()
         
-        if favorites.count == 0 {
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
             
+            tableView.reloadData()
+            tapsettings.alpha = 0
+            
+        } else {
+            
+            tapsettings.alpha = 1
             queryforfavoriteids { () -> () in
                 
                 self.queryfordata()
             }
             
-        } else {
-            
-            
         }
+        
+
         // Do any additional setup after loading the view.
     }
 
@@ -124,10 +131,20 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
+    @IBOutlet weak var tapsettings: UIButton!
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         
-        selectedtext = favorites[favoriteids[indexPath.row]]!
-        self.performSegue(withIdentifier: "QuoteToExpanded", sender: self)
+        if favorites.count > 0 {
+            
+            selectedtext = favorites[favoriteids[indexPath.row]]!
+            self.performSegue(withIdentifier: "QuoteToExpanded", sender: self)
+            
+        } else {
+            
+            self.performSegue(withIdentifier: "FavoritesToPurchase", sender: self)
+           
+        }
         
     }
     
@@ -139,7 +156,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         } else {
             
-            return 1
+            return 2
         }
     }
     
@@ -156,13 +173,28 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.coverimage.image = thumbnail[favoriteids[indexPath.row]]
             cell.greenlabel.alpha = 1
             cell.emptylabel.alpha = 0
-            
+            cell.upgradelabel.alpha = 0
+            cell.bluebutton.alpha = 0
         } else {
             
+            if indexPath.row == 0 {
             cell.descriptionlabel.text = ""
             cell.emptylabel.alpha = 1
             cell.coverimage.image = nil
             cell.greenlabel.alpha = 0
+                cell.upgradelabel.alpha = 0
+                cell.bluebutton.alpha = 0
+                
+            } else {
+                
+                cell.descriptionlabel.text = ""
+                cell.emptylabel.alpha = 0
+                cell.coverimage.image = nil
+                cell.greenlabel.alpha = 0
+                cell.upgradelabel.alpha = 1
+                cell.bluebutton.alpha = 1
+                
+            }
             
         }
         
