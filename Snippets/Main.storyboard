@@ -2590,7 +2590,7 @@
                                     <constraint firstAttribute="height" constant="27" id="hpI-L0-VXy"/>
                                     <constraint firstAttribute="width" constant="27" id="rex-LL-Goy"/>
                                 </constraints>
-                                <state key="normal" image="Settings"/>
+                                <state key="normal" image="SettingsWhite"/>
                                 <connections>
                                     <segue destination="ny6-z1-1xH" kind="show" id="8Mm-jX-DvB"/>
                                 </connections>
@@ -3688,6 +3688,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="81c-TS-nvb" customClass="MainViewController" customModule="Snippets" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Px-Vo-tEF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.11372549019607843" green="0.14509803921568629" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -3743,6 +3744,7 @@
         <image name="S5" width="312" height="500"/>
         <image name="SNIPPETSLogo" width="424" height="106"/>
         <image name="Settings" width="200" height="200"/>
+        <image name="SettingsWhite" width="30" height="30"/>
         <image name="Test" width="941" height="704"/>
         <image name="WhiteArrow" width="200" height="200"/>
         <image name="WhiteButton-1" width="328" height="49"/>

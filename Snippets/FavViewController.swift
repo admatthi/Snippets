@@ -38,11 +38,19 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             
             tapsettings.alpha = 1
-            queryforfavoriteids { () -> () in
-                
-                self.queryfordata()
-            }
             
+            if favorites.count > 0 {
+                
+         
+                
+            } else {
+                
+                queryforfavoriteids { () -> () in
+                    
+                    self.queryfordata()
+                }
+                
+            }
         }
         
 
@@ -99,6 +107,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         thumbnail.removeAll()
         
         for each in favoriteids {
+            
             ref?.child("Users").child(uid).child("Favorites").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
@@ -167,7 +176,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.coverimage.layer.cornerRadius = 10.0
         cell.coverimage.layer.masksToBounds = true
         
-        if favorites.count > 0 {
+        if thumbnail.count > indexPath.row && favorites.count > indexPath.row {
             
             cell.descriptionlabel.text = favorites[favoriteids[indexPath.row]]
             cell.coverimage.image = thumbnail[favoriteids[indexPath.row]]
@@ -175,6 +184,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.emptylabel.alpha = 0
             cell.upgradelabel.alpha = 0
             cell.bluebutton.alpha = 0
+            
         } else {
             
             if indexPath.row == 0 {

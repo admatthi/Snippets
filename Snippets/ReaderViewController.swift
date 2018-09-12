@@ -102,6 +102,8 @@ class ReaderViewController: UIViewController {
         
         ref = Database.database().reference()
         
+        favorites.removeAll()
+        
         if freepressed {
             
             tapbuy.alpha = 0
