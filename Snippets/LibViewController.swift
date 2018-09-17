@@ -31,9 +31,10 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //        freebackground.layer.cornerRadius = 5.0
         FBSDKAppEvents.logEvent("Library Viewed")
         
+        self.loaddefaultvalues()
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
-
             
         } else {
          
@@ -46,7 +47,6 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
 
         
-         loaddefaultvalues()
         // Do any additional setup after loading the view.
     }
 
@@ -164,7 +164,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         selectedtitle = librarytitles[librarybookids[indexPath.row]]!
         selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
         
-            self.performSegue(withIdentifier: "LibraryToOverview", sender: self)
+        self.performSegue(withIdentifier: "LibraryToOverview", sender: self)
 
             
         } else {
@@ -190,7 +190,14 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         } else {
             
-            return 15
+            if ninebookauthors.count > 0 {
+                
+                return 15
+                
+            } else {
+                
+                return 0
+            }
         }
     }
     
@@ -212,6 +219,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             
             if indexPath.row == 0 {
+                
             cell.author.text = ""
             cell.title.text = ""
             cell.coverimage.image = nil

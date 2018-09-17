@@ -52,6 +52,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if favorites.count == 0 {
             
+            favorites.removeAll()
+            favoriteids.removeAll()
+            
             queryforfavoriteids { () -> () in
                 
                 self.queryfordata()
@@ -80,8 +83,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         var functioncounter = 0
         
         
-        favoriteids.removeAll()
-
         ref?.child("Users").child(uid).child("Favorites").queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
@@ -181,7 +182,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             return favorites.count
 
         } else {
-            
             
             return 1
         }

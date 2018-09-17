@@ -345,7 +345,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         twobookcovers.append(UIImage(named: "M8")!)
         twobookcovers.append(UIImage(named: "M9")!)
         twobookcovers.append(UIImage(named: "M10")!)
-        
+
         twoauthors.append("Mindy Kaling")
         twoauthors.append("Phil Knight")
         twoauthors.append("Viktor E. Frankl")
@@ -483,7 +483,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         sevenbookcovers.append(UIImage(named: "PR6")!)
         sevenbookcovers.append(UIImage(named: "PR7")!)
         sevenbookcovers.append(UIImage(named: "PR8")!)
-        
+        sevenbookcovers.append(UIImage(named: "PR9")!)
+
         
         eightids.append("1")
         eightids.append("2")
