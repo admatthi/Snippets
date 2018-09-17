@@ -133,6 +133,19 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     
                 }
                 
+                if var activityvalue4 = value?["Completed"] as? String {
+                    
+                    if activityvalue4 == "True" {
+                        
+                        librarycomps[each] = "True"
+                        
+                    } else {
+                        
+                        librarycomps[each] = "False"
+                    }
+                    
+                }
+                
                 if var activityvalue3 = value?["Image"] as? String {
                     
                     librarycovers[each] = UIImage(named: "\(activityvalue3)")
@@ -209,13 +222,22 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.coverimage.layer.masksToBounds = true
         
         if librarycovers.count > 0 {
-    
+            
+            cell.title.text = librarytitles[librarybookids[indexPath.row]]
         cell.author.text = libraryauthors[librarybookids[indexPath.row]]
-        cell.title.text = librarytitles[librarybookids[indexPath.row]]
         cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
         cell.greenlabel.alpha = 1
         cell.emptylabel.alpha = 0
             
+            if librarycomps[librarybookids[indexPath.row]] == "True" {
+                
+                cell.title.text = "Fuck Yeah"
+                
+            } else {
+                
+                cell.title.text = librarytitles[librarybookids[indexPath.row]]
+
+            }
         } else {
             
             if indexPath.row == 0 {
@@ -343,3 +365,4 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
 var librarygenres = [String:String]()
 var librarysubids = [String:String]()
+var librarycomps = [String:String]()

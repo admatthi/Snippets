@@ -102,7 +102,7 @@ class PurchaseViewController: UIViewController {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("YearPressed")
+        FBSDKAppEvents.logEvent("Lifetime Pressed")
         
 //        purchase(purchase: onetimepurchase)
         
@@ -118,29 +118,11 @@ class PurchaseViewController: UIViewController {
     }
     @IBAction func tapButton2(_ sender: Any) {
                 
-        FBSDKAppEvents.logEvent("MonthlyPressed")
+        FBSDKAppEvents.logEvent("Yearly Pressed")
         
 //        purchase(purchase: threedaytrial)
 
 //        let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        purchases?.entitlements { entitlements in
-            guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Monthly"] else { return }
-            guard let product = monthly.activeProduct else { return }
-            self.purchases?.makePurchase(product)
-            
-        }
-        
-        
-    }
-    @IBAction func tapButton3(_ sender: Any) {
-        
-        //        generator.impactOccurred()
-        
-        FBSDKAppEvents.logEvent("12MonthTrialPressed")
-        
-//        purchase(purchase: sevendayfreetrial)
         
         purchases?.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
@@ -150,6 +132,25 @@ class PurchaseViewController: UIViewController {
             
             
         }
+        
+        
+    }
+    @IBAction func tapButton3(_ sender: Any) {
+        
+        //        generator.impactOccurred()
+        
+        FBSDKAppEvents.logEvent("Monthly Pressed")
+        
+//        purchase(purchase: sevendayfreetrial)
+        
+        purchases?.entitlements { entitlements in
+            guard let pro = entitlements?["Subscriptions"] else { return }
+            guard let monthly = pro.offerings["Monthly"] else { return }
+            guard let product = monthly.activeProduct else { return }
+            self.purchases?.makePurchase(product)
+            
+        }
+       
         
     }
     
