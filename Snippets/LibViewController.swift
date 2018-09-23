@@ -65,7 +65,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         librarytitles.removeAll()
         librarygenres.removeAll()
         librarysubids.removeAll()
-        
+        libraryimagenames.removeAll()
         ref?.child("Users").child(uid).child("Library").queryLimited(toFirst: 25).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
@@ -150,6 +150,8 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     
                     librarycovers[each] = UIImage(named: "\(activityvalue3)")
                     
+                    libraryimagenames[each] = activityvalue3
+                    
                     functioncounter += 1
 
                 }
@@ -176,7 +178,8 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         selectedimage = librarycovers[librarybookids[indexPath.row]]!
         selectedtitle = librarytitles[librarybookids[indexPath.row]]!
         selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
-        
+        selectedimagename = libraryimagenames[librarybookids[indexPath.row]]!
+            
         self.performSegue(withIdentifier: "LibraryToOverview", sender: self)
 
             
@@ -231,11 +234,11 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             if librarycomps[librarybookids[indexPath.row]] == "True" {
                 
-                cell.title.text = "Fuck Yeah"
+                cell.completed.alpha = 1
                 
             } else {
                 
-                cell.title.text = librarytitles[librarybookids[indexPath.row]]
+                cell.completed.alpha = 0
 
             }
         } else {
@@ -247,6 +250,8 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.coverimage.image = nil
             cell.greenlabel.alpha = 0
             cell.emptylabel.alpha = 1
+                cell.completed.alpha = 0
+
                 
             } else {
                 
@@ -255,7 +260,8 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 cell.author.text = ninebookauthors[indexPath.row]
                 cell.title.text = ninebooknames[indexPath.row]
                 cell.emptylabel.alpha = 0
-     
+                cell.completed.alpha = 0
+
             }
         }
 
@@ -366,3 +372,4 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 var librarygenres = [String:String]()
 var librarysubids = [String:String]()
 var librarycomps = [String:String]()
+var libraryimagenames = [String:String]()

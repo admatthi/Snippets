@@ -224,7 +224,6 @@ class LibraryViewController: UIViewController, UICollectionViewDelegate, UIColle
         selectedtitle = librarytitles[librarybookids[indexPath.row]]!
         selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
         selectedimage = librarycovers[librarybookids[indexPath.row]]!
-        
         self.performSegue(withIdentifier: "LibraryToReader", sender: self)
         
     }

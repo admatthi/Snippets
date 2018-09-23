@@ -10,6 +10,7 @@ import UIKit
 
 class LibTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var completed: UIImageView!
     @IBOutlet weak var emptylabel: UILabel!
     @IBOutlet weak var greenlabel: UILabel!
     @IBOutlet weak var author: UILabel!

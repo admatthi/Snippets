@@ -238,9 +238,11 @@ class ReaderViewController: UIViewController {
                 
             } else {
                 
-        ref?.child("Users").child(uid).child(selectedtitle).child("Completed").updateChildValues(["Text" : "True"])
+        
 
             }
+            
+            ref?.child("Users").child(uid).child("Library").child(selectedtitle).updateChildValues(["Completed" : "True"])
             
             selectedimage = cover.image!
             FBSDKAppEvents.logEvent("Book Completed")
