@@ -413,6 +413,7 @@ class PurchaseViewController: UIViewController {
 
 
 
+        if selectedtitle != "" {
         let first = "Unlock the big ideas from "
         let second = "\(selectedtitle) "
         let third = "and 2500+ other best selling books"
@@ -424,6 +425,12 @@ class PurchaseViewController: UIViewController {
         
         attributedString2.append(buttonTitleStr2)
         descriptivetext.attributedText = attributedString2
+            
+        } else {
+            
+            descriptivetext.text = "Unlock the big ideas from over 2500+ best selling books"
+
+        }
         // Do any additional setup after loading the view.
     }
     

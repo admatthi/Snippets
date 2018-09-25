@@ -19,44 +19,55 @@ import GameplayKit
 
 var inprogresspressed = Bool()
 var searchterm = String()
+var librarydescriptions = [String:String]()
 
-class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LibViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var tapinprogress: UIButton!
-    @IBOutlet weak var tapfinished: UIButton!
     
     @IBAction func tapInProgress(_ sender: Any) {
-        
-        inprogresspressed = true
-        searchterm = "InProgress"
-        tapinprogress.alpha = 1
-        tapfinished.alpha = 0.25
-        tapinprogress.setBackgroundImage(UIImage(named: "BottomBar"), for: .normal)
-        tapfinished.setBackgroundImage(nil, for: .normal)
-        queryforbookids { () -> () in
-            
-            self.queryforbookinfo()
-            
-        }
-    }
-    
-    @IBAction func tapFinished(_ sender: Any) {
-        
-        inprogresspressed = false
-        searchterm = "Completed"
-        tapinprogress.alpha = 0.25
-        tapfinished.alpha = 1
-        tapfinished.setBackgroundImage(UIImage(named: "BottomBar"), for: .normal)
-        tapinprogress.setBackgroundImage(nil, for: .normal)
 
+        
+        if inprogresspressed {
+        searchterm = "InProgress"
+        tapinprogress.setImage(UIImage(named: "In Progress"), for: .normal)
         queryforbookids { () -> () in
-            
+
             self.queryforbookinfo()
+
+        }
             
+            inprogresspressed = false
+
+        } else {
+            
+            tapinprogress.setImage(UIImage(named: "Complete"), for: .normal)
+            searchterm = "Completed"
+
+            inprogresspressed = true
+
         }
     }
+//
+//    @IBAction func tapFinished(_ sender: Any) {
+//
+//        inprogresspressed = false
+//        searchterm = "Completed"
+//        tapinprogress.alpha = 0.25
+//        tapfinished.alpha = 1
+//        tapfinished.setBackgroundImage(UIImage(named: "BottomBar"), for: .normal)
+//        tapinprogress.setBackgroundImage(nil, for: .normal)
+//
+//        queryforbookids { () -> () in
+//
+//            self.queryforbookinfo()
+//
+//        }
+//    }
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,18 +86,13 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
-            tapinprogress.alpha = 0
-            tapfinished.alpha = 0
             
         } else {
          
             uid = (Auth.auth().currentUser?.uid)!
 
-            tapinprogress.alpha = 1
-            tapfinished.alpha = 0.25
-            inprogresspressed = true
+            inprogresspressed = false
             searchterm = "InProgress"
-            tapinprogress.setBackgroundImage(UIImage(named: "BottomBar"), for: .normal)
 
             queryforbookids { () -> () in
                 
@@ -116,11 +122,13 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         librarygenres.removeAll()
         librarysubids.removeAll()
         libraryimagenames.removeAll()
-       
-        tableView.reloadData()
-    ref?.child("Users").child(uid).child("Library").child(searchterm).queryLimited(toFirst: 25).observeSingleEvent(of: .value, with: { (snapshot) in
+        librarydescriptions.removeAll()
+        collectionView.reloadData()
+        
+        
+    ref?.child("Users").child(uid).child("Library").child(searchterm).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            var value = snapshot.value as? NSDictionary
+        if var value = snapshot.value as? NSDictionary {
             
             if let snapDict = snapshot.value as? [String:AnyObject] {
                 
@@ -128,7 +136,12 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     
                     let ids = each.key
                     
+                    
+                    if ids != "Title" {
+                        
                     librarybookids.append(ids)
+                        
+                    }
                     
                     functioncounter += 1
                     
@@ -143,10 +156,17 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 
             }
             
-        })
+        } else {
+            
+            print(snapshot)
+            
+        }
+    })
         
         
     }
+    
+
     
     func queryforbookinfo() {
         
@@ -179,24 +199,20 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     
                 }
                 
+                
+                if var activityvalue4 = value?["Description"] as? String {
+                    
+                    librarydescriptions[each] = activityvalue4
+                    
+                }
+                
                 if var activityvalue4 = value?["BookID"] as? String {
                     
                     librarysubids[each] = activityvalue4
                     
                 }
                 
-                if var activityvalue4 = value?["Completed"] as? String {
-                    
-                    if activityvalue4 == "True" {
-                        
-                        librarycomps[each] = "True"
-                        
-                    } else {
-                        
-                        librarycomps[each] = "False"
-                    }
-                    
-                }
+               
                 
                 if var activityvalue3 = value?["Image"] as? String {
                     
@@ -212,7 +228,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 if functioncounter == librarybookids.count  {
                     
 //                    self.showloading()
-                    self.tableView.reloadData()
+                    self.collectionView.reloadData()
                 }
                 
             })
@@ -221,36 +237,35 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         
         if librarycovers.count > 0 {
             
-        selectedgenre = librarygenres[librarybookids[indexPath.row]]!
-        selectedbookid = librarysubids[librarybookids[indexPath.row]]!
-        selectedimage = librarycovers[librarybookids[indexPath.row]]!
         selectedtitle = librarytitles[librarybookids[indexPath.row]]!
         selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
-        selectedimagename = libraryimagenames[librarybookids[indexPath.row]]!
+        selecteddescription = librarydescriptions[librarybookids[indexPath.row]]!
+            selectedgenre = librarygenres[librarybookids[indexPath.row]]!
+            selectedbookid = librarysubids[librarybookids[indexPath.row]]!
             
-        self.performSegue(withIdentifier: "LibraryToOverview", sender: self)
+            selectedimage = librarycovers[librarybookids[indexPath.row]]!
+        self.performSegue(withIdentifier: "LibToReader", sender: self)
 
             
         } else {
             
-            selectedgenre = "Psychology"
-            selectedbookid = "\(indexPath.row+1)"
-            selectedimage = ninebookcovers[indexPath.row]
-            selectedimagename = "PS\(indexPath.row+1)"
-            selectedtitle = ninebooknames[indexPath.row]
-            selectedauthor = ninebookauthors[indexPath.row]
-            
-            self.performSegue(withIdentifier: "LibraryToOverview", sender: self)
+            self.performSegue(withIdentifier: "ReadToPurchase2", sender: self)
 
         }
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         
         if librarycovers.count > 0 {
             
@@ -258,88 +273,110 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         } else {
             
-            if ninebookauthors.count > 0 {
-                
-                if searchterm == "InProgress" {
-                    
-                    return 15
-
-                } else {
-                    
-                    return 1
-                }
-                
-            } else {
-                
-                return 0
-            }
+           return 1
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Lib", for: indexPath) as! LibTableViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Libb", for: indexPath) as! LibbCollectionViewCell
         
         cell.coverimage.layer.cornerRadius = 10.0
         cell.coverimage.layer.masksToBounds = true
-        cell.selectionStyle = .none
+        
+        cell.layer.cornerRadius = 10.0
+        cell.layer.masksToBounds = true
+        
+        cell.finished.alpha = 0
+
+        
         if librarycovers.count > 0 {
             
-            cell.title.text = librarytitles[librarybookids[indexPath.row]]
-        cell.author.text = libraryauthors[librarybookids[indexPath.row]]
-        cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
-        cell.greenlabel.alpha = 1
-        cell.emptylabel.alpha = 0
             
-            if inprogresspressed == false {
+            cell.titlelabel.text = librarytitles[librarybookids[indexPath.row]]
+            cell.author.text = libraryauthors[librarybookids[indexPath.row]]
+            cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
+            cell.descriptionlabel.text = librarydescriptions[librarybookids[indexPath.row]]
                 
-                cell.completed.alpha = 1
-                
-            } else {
-                
-                cell.completed.alpha = 0
+            cell.views.text = nineviews[indexPath.row]
+            cell.bamlabel.text = "Start Story"
+            cell.buttonlabel.image = UIImage(named: "WhiteButton-1")
+            cell.bamlabel.textColor = darkbluee
 
-            }
-            
         } else {
+            
+            cell.titlelabel.text = "Nothing In Library"
+            cell.descriptionlabel.text = "You haven't opened or saved any new books yet. Bummer. Find books you'll love now!"
+            cell.coverimage.image = nil
+            cell.author.text = ""
+            cell.views.text = ""
+            cell.bamlabel.text = "Upgrade Now"
+            cell.bamlabel.textColor = .white
+
+            cell.buttonlabel.image = UIImage(named: "BLUEBUTTON-2")
+            cell.finished.alpha = 0
+            
             
             if indexPath.row == 0 {
                 
-            cell.author.text = ""
-            cell.title.text = ""
-            cell.coverimage.image = nil
-            cell.greenlabel.alpha = 0
-            cell.emptylabel.alpha = 1
-            cell.completed.alpha = 0
-
-                if inprogresspressed {
-                    
-                    cell.emptylabel.text = "You haven't started any books yet. Here are a few suggestions!"
-
-                } else {
-                    
-                    if searchterm == "Completed" {
-                    
-                    cell.emptylabel.text = "This is where your finished books will appear. Start reading!"
-                        
-                    } else {
-                        
-                        cell.emptylabel.text = "Your library is empty. Bummer. Here are a few suggestions!"
-                    }
-                }
                 
-            } else {
-                
-                cell.coverimage.image = ninebookcovers[indexPath.row]
-                cell.greenlabel.alpha = 1
-                cell.author.text = ninebookauthors[indexPath.row]
-                cell.title.text = ninebooknames[indexPath.row]
-                cell.emptylabel.alpha = 0
-                cell.completed.alpha = 0
 
+//            cell.author.text = ""
+//            cell.title.text = ""
+//            cell.coverimage.image = nil
+//            cell.greenlabel.alpha = 0
+//            cell.emptylabel.alpha = 1
+//            cell.completed.alpha = 0
+//
+//                if inprogresspressed {
+//
+//                    cell.emptylabel.text = "You haven't started any books yet. Here are a few suggestions!"
+//
+//                } else {
+//
+//                    if searchterm == "Completed" {
+//
+//                    cell.emptylabel.text = "This is where your finished books will appear. Start reading!"
+//
+//                    } else {
+//
+//                        cell.emptylabel.text = "Your library is empty. Bummer. Here are a few suggestions!"
+//                    }
+//                }
+//
+//            } else {
+//
+//                cell.coverimage.image = ninebookcovers[indexPath.row]
+//                cell.greenlabel.alpha = 1
+//                cell.author.text = ninebookauthors[indexPath.row]
+//                cell.title.text = ninebooknames[indexPath.row]
+//                cell.emptylabel.alpha = 0
+//                cell.completed.alpha = 0
+//
             }
         }
 
+//        if searchterm == "InProgress" {
+//
+//            cell.finished.alpha = 0
+//
+//        } else {
+//
+//            cell.finished.alpha = 1
+//        }
+        
+//        if Auth.auth().currentUser == nil {
+//            // Do smth if user is not logged in
+//            cell.bamlabel.alpha = 1
+//            cell.buttonlabel.alpha = 1
+//
+//        } else {
+//
+//          cell.bamlabel.alpha = 0
+//            cell.buttonlabel.alpha = 0
+//
+//        }
+        
         return cell
     }
     
@@ -493,7 +530,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         ninebooknames.append("Antifragile: Things That Gain from Disorder")
         ninebooknames.append("Keep It Shut")
 
-        tableView.reloadData()
+        collectionView.reloadData()
         
     }
     
@@ -546,3 +583,5 @@ var librarygenres = [String:String]()
 var librarysubids = [String:String]()
 var librarycomps = [String:String]()
 var libraryimagenames = [String:String]()
+var libraryurls = [String:String]()
+

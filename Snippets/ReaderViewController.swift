@@ -35,6 +35,12 @@ class ReaderViewController: UIViewController {
     
     @IBOutlet weak var progressView: UIProgressView!
     
+    @IBAction func tapBack(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: {
+            
+        })
+    }
     @IBAction func tapBuy(_ sender: Any) {
         
         if selectedurl != "" {
@@ -113,7 +119,7 @@ class ReaderViewController: UIViewController {
             
             tapbuy.alpha = 1
             tapbookmark.alpha = 1
-            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False"])
+            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False", "Description" : selecteddescription])
 
 
         }
@@ -244,7 +250,7 @@ class ReaderViewController: UIViewController {
             
         ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).removeValue()
 
-        ref?.child("Users").child(uid).child("Library").child("Completed").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False"])
+            ref?.child("Users").child(uid).child("Library").child("Completed").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False", "Description" : selecteddescription])
 
             selectedimage = cover.image!
             FBSDKAppEvents.logEvent("Book Completed")

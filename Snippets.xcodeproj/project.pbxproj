@@ -89,6 +89,7 @@
 		9DA3FFE8210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DD99E8E214F3C6400AC40FB /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */; };
+		9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */; };
 		9DE5864721473FD500DF4129 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
 		9DE586492147404F00DF4129 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE586482147404F00DF4129 /* FavTableViewCell.swift */; };
 		9DE5864B21481AF500DF4129 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864A21481AF500DF4129 /* MainViewController.swift */; };
@@ -163,6 +164,7 @@
 		9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibTableViewCell.swift; sourceTree = "<group>"; };
 		9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham-Bold.otf"; sourceTree = "<group>"; };
 		9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
+		9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibbCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DE5864621473FD500DF4129 /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
 		9DE586482147404F00DF4129 /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		9DE5864A21481AF500DF4129 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				9D714EF120FFA1A4002CD2A3 /* CViewController.swift */,
 				9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */,
 				9D9A829D2146D9380050F2B3 /* LibViewController.swift */,
+				9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */,
 				9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */,
 				9DE5864621473FD500DF4129 /* FavViewController.swift */,
 				9DE586482147404F00DF4129 /* FavTableViewCell.swift */,
@@ -582,6 +585,7 @@
 				9D714F2F20FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,
 				9D54FB7A2134DE60003B8BA7 /* DemoViewController.swift in Sources */,
 				9D714F1420FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
+				9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */,
 				9D714F0E20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */,
 				9D714F1D20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,

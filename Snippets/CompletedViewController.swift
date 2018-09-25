@@ -11,6 +11,12 @@ import Cheers
 
 class CompletedViewController: UIViewController {
 
+    @IBAction func tapNext(_ sender: Any) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
+    }
     @IBOutlet weak var bamview: CheerView!
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var imageback: UIImageView!
