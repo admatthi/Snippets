@@ -175,6 +175,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         cell.coverimage.layer.cornerRadius = 10.0
         cell.coverimage.layer.masksToBounds = true
+        cell.selectionStyle = .none
         
         if thumbnail.count > indexPath.row && favorites.count > indexPath.row {
             

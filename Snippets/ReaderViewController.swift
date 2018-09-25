@@ -113,7 +113,7 @@ class ReaderViewController: UIViewController {
             
             tapbuy.alpha = 1
             tapbookmark.alpha = 1
-            ref?.child("Users").child(uid).child("Library").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False"])
+            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False"])
 
 
         }
@@ -242,8 +242,10 @@ class ReaderViewController: UIViewController {
 
             }
             
-            ref?.child("Users").child(uid).child("Library").child(selectedtitle).updateChildValues(["Completed" : "True"])
-            
+        ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).removeValue()
+
+        ref?.child("Users").child(uid).child("Library").child("Completed").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False"])
+
             selectedimage = cover.image!
             FBSDKAppEvents.logEvent("Book Completed")
 

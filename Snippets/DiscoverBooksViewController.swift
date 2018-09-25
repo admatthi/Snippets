@@ -761,6 +761,78 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
     }
     
+    @IBAction func tapSeeMoreBM(_ sender: Any) {
+        
+        selectedgenre = "Biography & Memoir"
+
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
+    @IBAction func tapSeeMoreRF(_ sender: Any) {
+        
+        selectedgenre = "For You"
+        
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
+    @IBAction func tapSeeMoreHealth(_ sender: Any) {
+        
+        selectedgenre = "Health, Fitness, & Dieting"
+        
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
+    @IBAction func tapSeeMoreB(_ sender: Any) {
+        
+        selectedgenre = "Business & Investing"
+        
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
+    @IBAction func tapSeeMoreSex(_ sender: Any) {
+        
+        selectedgenre = "Sex & Relationships"
+        
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
+    @IBAction func tapSeeMoreP(_ sender: Any) {
+        
+        selectedgenre = "Productivity"
+        
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
+    @IBAction func tapSeeMoreMH(_ sender: Any) {
+        
+        selectedgenre = "Mental Health"
+        
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
+    @IBAction func tapSeeMorePS(_ sender: Any) {
+        
+        selectedgenre = "Psychology"
+        
+        
+        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        
+    }
+    
     @IBOutlet weak var collectionView1: UICollectionView!
     //    func queryforbookinfo() {
 //
@@ -1483,3 +1555,5 @@ var bookcompleted = [String:String]()
 
 var selectedimagename = String()
 var selectedgenre = String()
+
+

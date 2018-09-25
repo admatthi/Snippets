@@ -47,6 +47,19 @@ class BookOverviewViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var taplib: UIButton!
+    @IBAction func tapLibrary(_ sender: Any) {
+        
+        if selectedimagename != "" {
+        ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False"])
+            
+        } else {
+            
+            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": "StockPhoto", "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False"])
+        }
+        
+            taplib.setImage(UIImage(named: "Plus Copy"), for: .normal)
+    }
     @IBOutlet weak var tapstart: UIButton!
     @IBOutlet weak var descriptionlabel: UILabel!
     @IBOutlet weak var tapstartreading: UIButton!
@@ -78,24 +91,17 @@ class BookOverviewViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("Book Overview Viewed")
         
-        if purchased {
+        
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
             
-            tapstart.setTitle("Start Story", for: .normal)
+            taplib.alpha = 0
             
         } else {
             
-            if freepressed {
-                
-                tapstart.setTitle("Start Story", for: .normal)
-                
-            } else {
-                
-                tapstart.setTitle("Start Story", for: .normal)
-
-            }
+            taplib.alpha = 1
             
         }
-        
         // Do any additional setup after loading the view.
     }
 

@@ -45,6 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        
+   
+        
+        
         FirebaseApp.configure()
         
         FBSDKAppEvents.activateApp()
@@ -68,6 +73,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+        
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            tabBar.selectedIndex = 0
+
+            
+        } else {
+            
+            tabBar.selectedIndex = 1
+
+        }
         
         return true
     }
