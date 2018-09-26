@@ -60,6 +60,12 @@ class BookOverviewViewController: UIViewController {
         
             taplib.setImage(UIImage(named: "Plus Copy"), for: .normal)
     }
+    @IBAction func tapBack(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: {
+            
+        })
+    }
     @IBOutlet weak var tapstart: UIButton!
     @IBOutlet weak var descriptionlabel: UILabel!
     @IBOutlet weak var tapstartreading: UIButton!

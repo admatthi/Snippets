@@ -126,6 +126,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
         ref = Database.database().reference()
         
+        seemoreviews.removeAll()
+        
         self.becomeFirstResponder() // To get shake gesture
         
 //        freebackground.layer.cornerRadius = 5.0
@@ -763,8 +765,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBAction func tapSeeMoreBM(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "Biography & Memoir"
 
+        seemoreviews = twoviews
         
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
@@ -772,63 +778,91 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBAction func tapSeeMoreRF(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "For You"
         
-        
+        seemoreviews = threeviews
+
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
     }
     
     @IBAction func tapSeeMoreHealth(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "Health, Fitness, & Dieting"
         
-        
+        seemoreviews = fourviews
+
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
     }
     
     @IBAction func tapSeeMoreB(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "Business & Investing"
         
-        
+        seemoreviews = fiveviews
+
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
     }
     
     @IBAction func tapSeeMoreSex(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "Sex & Relationships"
         
-        
+        seemoreviews = sixviews
+
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
     }
     
     @IBAction func tapSeeMoreP(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "Productivity"
         
-        
+        seemoreviews = sevenviews
+
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
     }
     
     @IBAction func tapSeeMoreMH(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "Mental Health"
         
-        
+        seemoreviews = eightviews
+
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
     }
     
     @IBAction func tapSeeMorePS(_ sender: Any) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         selectedgenre = "Psychology"
         
-        
+        seemoreviews = nineviews
+
         self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         
     }

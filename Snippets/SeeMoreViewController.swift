@@ -19,15 +19,24 @@ var seemoreimages = [String:UIImage]()
 var seemoretitles = [String:String]()
 var seemoreids = [String]()
 var seemoreimagenames = [String:String]()
+var seemoreviews = [String]()
+
+var abbreviation = String()
 
 class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        activityIndicator.startAnimating()
+        activityIndicator.alpha = 1
+        activityIndicator.color = mygreen
         titlelabel.text = selectedgenre
+        
+        selectedgenreshortner()
         
         queryforids { () -> () in
             
@@ -45,7 +54,7 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         seemoreimages.removeAll()
         seemoretitles.removeAll()
         seemoreauthors.removeAll()
-        
+        seemoreimagenames.removeAll()
         ref?.child("AllBooks1").child(selectedgenre).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
@@ -78,6 +87,50 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
+    func selectedgenreshortner() {
+        
+        if selectedgenre == "Biography & Memoir" {
+            
+            abbreviation = "M"
+        }
+        
+        if selectedgenre == "For You" {
+            
+            abbreviation = "F"
+        }
+        
+        if selectedgenre == "Health, Fitness, & Dieting" {
+            
+            abbreviation = "H"
+        }
+        
+        if selectedgenre == "Business & Investing" {
+            
+            abbreviation = "B"
+        }
+        
+        if selectedgenre == "Sex & Relationships" {
+            
+            abbreviation = "S"
+        }
+        
+        if selectedgenre == "Productivity" {
+            
+            abbreviation = "PR"
+        }
+        
+        if selectedgenre == "Mental Health" {
+            
+            abbreviation = "MH"
+        }
+        
+        if selectedgenre == "Psychology" {
+            
+            abbreviation = "PS"
+        }
+        
+    }
+    
     func queryforreviewinfo() {
         
         var functioncounter = 0
@@ -100,43 +153,51 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
             }
             
-            if var productimagee = value?["Image"] as? String {
-                
-                if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
-                    
-                    let url = URL(string: productimagee)
-                    
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    
-                    if data != nil {
-                        
-                        let productphoto = UIImage(data: (data)!)
-                        
-                        //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
-                        let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
-                        
-                        if productphoto == nil {
-                            
-                            seemoreimages[each] = UIImage(named: "StockPhoto")
-                        } else {
-                            
-                            seemoreimages[each] = productphoto!
-
-                        }
-                        
-                        
-                        functioncounter += 1
-                        
-                        
-                    }
-                    
-                    
-                }
-            }
+            seemoreimages[each] = UIImage(named: "\(abbreviation)\(each)")
             
+            seemoreimagenames[each] = "\(abbreviation)\(each)"
+            
+            functioncounter += 1
+//
+//            if var productimagee = value?["Image"] as? String {
+//
+//
+//                if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
+//
+//                    let url = URL(string: productimagee)
+//
+//                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+//
+//                    if data != nil {
+//
+//                        let productphoto = UIImage(data: (data)!)
+//
+//                        //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
+//                        let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
+//
+//                        if productphoto == nil {
+//
+//                            seemoreimages[each] = UIImage(named: "StockPhoto")
+//                        } else {
+//
+//                            seemoreimages[each] = productphoto!
+//
+//                        }
+//
+//
+//                        functioncounter += 1
+//
+//
+//                    }
+//
+            
+//                }
+//            }
+//
           
             print(functioncounter)
             if functioncounter == seemoreids.count {
+                
                 
                 self.tableView.reloadData()
             }
@@ -154,14 +215,19 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         if seemoreimages.count > 0 {
+            
             
             selectedbookid = seemoreids[indexPath.row]
             selectedimage = seemoreimages[seemoreids[indexPath.row]]!
             selectedtitle = seemoretitles[seemoreids[indexPath.row]]!
             selectedauthor = seemoreauthors[seemoreids[indexPath.row]]!
-            selectedimagename = ""
+            selectedimagename = seemoreimagenames[seemoreids[indexPath.row]]!
             
+            selectedviews = seemoreviews[indexPath.row]
             self.performSegue(withIdentifier: "SeeMoreToOverview", sender: self)
             
             
@@ -197,7 +263,10 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.author.text = seemoreauthors[seemoreids[indexPath.row]]
             cell.coverimage.image = seemoreimages[seemoreids[indexPath.row]]
             
+            cell.views.text = seemoreviews[indexPath.row]
             
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.alpha = 0
         }
      
         return cell

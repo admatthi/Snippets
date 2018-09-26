@@ -179,17 +179,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         ref?.child("Users").child(uid).child("Library").child("InProgress").child("The Power of Myth").updateChildValues(["Author" : "Joseph Campbell", "BookID" : "18", "Description" : "The Power of Myth launched an extraordinary resurgence of interest in Joseph Campbell and his work. A preeminent scholar, writer, and teacher, he has had a profound influence on millions of people--including Star Wars creator George Lucas.", "Genre" : "Psychology", "Image" : "PS18", "Name" : "The Power of Myth"])
 
         
-        ref?.child("Users").child(uid).child("Library").child("InProgress").child("The Road Less Traveled").updateChildValues(["Author" : "Joseph Campbell", "BookID" : "17", "Description" : "Perhaps no book in this generation has had a more profound impact on our intellectual and spiritual lives than The Road Less Traveled. ", "Genre" : "Psychology", "Image" : "PS17", "Name" : "The Road Less Traveled"])
+        ref?.child("Users").child(uid).child("Library").child("InProgress").child("The Road Less Traveled").updateChildValues(["Author" : "M. Scott Peck", "BookID" : "17", "Description" : "Perhaps no book in this generation has had a more profound impact on our intellectual and spiritual lives than The Road Less Traveled. ", "Genre" : "Psychology", "Image" : "PS17", "Name" : "The Road Less Traveled"])
 
-        
-
-        
         ref?.child("Users").child(uid).child("Library").child("InProgress").child("The Purpose Driven Life").updateChildValues(["Author" : "Rick Warren", "BookID" : "16", "Description" : "Licensed in over eighty-five languages, The Purpose Driven Life is far more than just a book; it is a guide to a spiritual journey. ", "Genre" : "Psychology", "Image" : "PS16", "Name" : "The Purpose Driven Life"])
 
         
         ref?.child("Users").child(uid).child("Library").child("InProgress").child("Keep It Shut").updateChildValues(["Author" : "Karen Ehman ", "BookID" : "15", "Description" : "Keep It Shut by Karen Ehman explores how to better control your tongue, knowing what to say and how to say it, and realizing when it is best to say nothing at all.", "Genre" : "Psychology", "Image" : "PS15", "Name" : "Keep It Shut"])
 
-        
         ref?.child("Users").child(uid).child("Library").child("InProgress").child("Antifragile: Things That Gain from Disorder").updateChildValues(["Author" : "Nassim Nicholas Taleb", "BookID" : "14", "Description" : "Just as human bones get stronger when subjected to stress and tension, and rumors or riots intensify when someone tries to repress them, many things in life benefit from stress, disorder, volatility, and turmoil.", "Genre" : "Psychology", "Image" : "PS14", "Name" : "Antifragile: Things That Gain from Disorder"])
 
         

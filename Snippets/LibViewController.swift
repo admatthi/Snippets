@@ -252,7 +252,9 @@ class LibViewController: UIViewController, UICollectionViewDelegate, UICollectio
             selectedgenre = librarygenres[librarybookids[indexPath.row]]!
             selectedbookid = librarysubids[librarybookids[indexPath.row]]!
             
-            selectedimage = librarycovers[librarybookids[indexPath.row]]!
+        selectedimage = librarycovers[librarybookids[indexPath.row]]!
+        selectedimagename = libraryimagenames[librarybookids[indexPath.row]]!
+            
         self.performSegue(withIdentifier: "LibToReader", sender: self)
 
             
