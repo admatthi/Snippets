@@ -46,6 +46,13 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func tapBack(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: {
+            
+        })
+        
+    }
     func queryforids(completed: @escaping (() -> ()) ) {
         
         var functioncounter = 0
@@ -75,6 +82,7 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     
                     if functioncounter == snapDict.count {
                         
+
                         completed()
                         
                     }
@@ -196,6 +204,7 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
 //
           
             print(functioncounter)
+            
             if functioncounter == seemoreids.count {
                 
                 
@@ -249,6 +258,55 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func loadviews() {
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[0]).updateChildValues(["Views" : seemoreviews[0]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[1]).updateChildValues(["Views" : seemoreviews[1]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[2]).updateChildValues(["Views" : seemoreviews[2]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[3]).updateChildValues(["Views" : seemoreviews[3]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[4]).updateChildValues(["Views" : seemoreviews[4]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[5]).updateChildValues(["Views" : seemoreviews[5]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[6]).updateChildValues(["Views" : seemoreviews[6]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[7]).updateChildValues(["Views" : seemoreviews[7]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[8]).updateChildValues(["Views" : seemoreviews[8]])
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[9]).updateChildValues(["Views" : seemoreviews[9]])
+        
+//        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[10]).updateChildValues(["Views" : seemoreviews[10]])
+//
+//        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[11]).updateChildValues(["Views" : seemoreviews[11]])
+//
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[12]).updateChildValues(["Views" : seemoreviews[12]])
+//
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[13]).updateChildValues(["Views" : seemoreviews[13]])
+//
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[14]).updateChildValues(["Views" : seemoreviews[14]])
+//
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[15]).updateChildValues(["Views" : seemoreviews[15]])
+//
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[16]).updateChildValues(["Views" : seemoreviews[16]])
+//
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[17]).updateChildValues(["Views" : seemoreviews[17]])
+//
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[18]).updateChildValues(["Views" : seemoreviews[18]])
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[19]).updateChildValues(["Views" : seemoreviews[19]])
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[20]).updateChildValues(["Views" : seemoreviews[20]])
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[21]).updateChildValues(["Views" : seemoreviews[21]])
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[22]).updateChildValues(["Views" : seemoreviews[22]])
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[23]).updateChildValues(["Views" : seemoreviews[23]])
+//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[24]).updateChildValues(["Views" : seemoreviews[24]])
+//        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[25]).updateChildValues(["Views" : seemoreviews[25]])
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Lib", for: indexPath) as! LibTableViewCell
@@ -267,6 +325,9 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             self.activityIndicator.stopAnimating()
             self.activityIndicator.alpha = 0
+            
+            var fuck = cell.views.text
+        
         }
      
         return cell

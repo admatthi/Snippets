@@ -385,6 +385,12 @@ class PurchaseViewController: UIViewController {
     }
     var purchases = RCPurchases(apiKey: "sdilTRDuWzrDdwVvtryTFPzjxKzYaUsO")
 
+    @IBAction func tapBack(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: {
+            
+        })
+    }
     @IBOutlet weak var backgroundimage: UIImageView!
     @IBOutlet weak var descriptivetext: UILabel!
     @IBOutlet weak var customlabel: UILabel!

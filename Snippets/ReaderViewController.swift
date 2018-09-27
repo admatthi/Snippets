@@ -119,7 +119,7 @@ class ReaderViewController: UIViewController {
             
             tapbuy.alpha = 1
             tapbookmark.alpha = 1
-            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False", "Description" : selecteddescription])
+            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription])
 
 
         }
@@ -234,7 +234,7 @@ class ReaderViewController: UIViewController {
     func nextcount() {
         
 
-        if counter > (quote.count-1) {
+        if counter > quote.count-2 {
             
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.impactOccurred()
@@ -250,7 +250,7 @@ class ReaderViewController: UIViewController {
             
         ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).removeValue()
 
-            ref?.child("Users").child(uid).child("Library").child("Completed").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "False", "Description" : selecteddescription])
+        ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription])
 
             selectedimage = cover.image!
             FBSDKAppEvents.logEvent("Book Completed")

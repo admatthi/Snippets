@@ -39,24 +39,36 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             tapsettings.alpha = 1
             
-            if favorites.count > 0 {
-                
-         
-                
-            } else {
-                
                 queryforfavoriteids { () -> () in
                     
                     self.queryfordata()
                 }
+            
+            refreshControl.attributedTitle = NSAttributedString(string: "")
+            refreshControl.addTarget(self, action: #selector(FavViewController.refresh), for: UIControlEvents.valueChanged)
+            refreshControl.tintColor  = mygreen
+            tableView.addSubview(refreshControl)
                 
-            }
         }
         
 
         // Do any additional setup after loading the view.
     }
+    
+    @objc func refresh() {
+        // Code to refresh table view
+        
+        favorites.removeAll()
+        thumbnail.removeAll()
+        
+        queryforfavoriteids { () -> () in
+            
+            self.queryfordata()
+        }
+    }
 
+    var refreshControl = UIRefreshControl()
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -143,6 +155,8 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tapsettings: UIButton!
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         
         if favorites.count > 0 {
             
@@ -179,6 +193,8 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if thumbnail.count > indexPath.row && favorites.count > indexPath.row {
             
+            refreshControl.endRefreshing()
+
             cell.descriptionlabel.text = favorites[favoriteids[indexPath.row]]
             cell.coverimage.image = thumbnail[favoriteids[indexPath.row]]
             cell.greenlabel.alpha = 1
@@ -225,6 +241,25 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
 
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            ref?.child("Users").child(uid).child("Favorites").child(favoriteids[indexPath.row]).removeValue()
+            
+            favorites.removeValue(forKey: favoriteids[indexPath.row])
+            thumbnail.removeValue(forKey: favoriteids[indexPath.row])
+            
+            favoriteids.remove(at: indexPath.row)
+                        
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            self.tableView.reloadData()
+        }
+        
     }
     
 

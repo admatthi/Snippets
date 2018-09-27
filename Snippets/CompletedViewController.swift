@@ -16,6 +16,8 @@ class CompletedViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
+        
+        
     }
     @IBOutlet weak var bamview: CheerView!
     @IBOutlet weak var titlelabel: UILabel!
@@ -34,6 +36,8 @@ class CompletedViewController: UIViewController {
         // Start
         bamview.start()
         
+        imageback.layer.cornerRadius = 10.0
+        imageback.layer.masksToBounds = true
         // Stop
         // Do any additional setup after loading the view.
     }

@@ -10,13 +10,16 @@ import UIKit
 
 class LibTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rectangle: UIImageView!
+    @IBOutlet weak var emptylabel: UILabel!
+    @IBOutlet weak var upgradelabel: UILabel!
     @IBOutlet weak var views: UILabel!
     @IBOutlet weak var completed: UIImageView!
-    @IBOutlet weak var emptylabel: UILabel!
     @IBOutlet weak var greenlabel: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var coverimage: UIImageView!
+    @IBOutlet weak var bluebutton: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -78,12 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
-            tabBar.selectedIndex = 0
+            tabBar.selectedIndex = 1
 
             
         } else {
             
-            tabBar.selectedIndex = 1
+            tabBar.selectedIndex = 0
 
         }
         

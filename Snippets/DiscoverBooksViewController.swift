@@ -458,12 +458,14 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         sixids.append("3")
         sixids.append("4")
         sixids.append("5")
-        
+        sixids.append("6")
+
         sixbookcovers.append(UIImage(named: "S1")!)
         sixbookcovers.append(UIImage(named: "S2")!)
         sixbookcovers.append(UIImage(named: "S3")!)
         sixbookcovers.append(UIImage(named: "S4")!)
         sixbookcovers.append(UIImage(named: "S5")!)
+        sixbookcovers.append(UIImage(named: "S6")!)
 
 
         sevenids.append("1")
@@ -767,12 +769,21 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "Biography & Memoir"
+            
+            seemoreviews = twoviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        }
         
-        selectedgenre = "Biography & Memoir"
-
-        seemoreviews = twoviews
-        
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+     
         
     }
     
@@ -780,12 +791,21 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "For You"
+            
+            seemoreviews = threeviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        }
         
-        selectedgenre = "For You"
-        
-        seemoreviews = threeviews
-
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+       
         
     }
     
@@ -794,11 +814,21 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        selectedgenre = "Health, Fitness, & Dieting"
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "Health, Fitness, & Dieting"
+            
+            seemoreviews = fourviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        }
         
-        seemoreviews = fourviews
-
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+  
         
     }
     
@@ -807,11 +837,21 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        selectedgenre = "Business & Investing"
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "Business & Investing"
+            
+            seemoreviews = fiveviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        }
         
-        seemoreviews = fiveviews
-
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+      
         
     }
     
@@ -820,11 +860,20 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        selectedgenre = "Sex & Relationships"
-        
-        seemoreviews = sixviews
-
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "Sex & Relationships"
+            
+            seemoreviews = sixviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        }
+     
         
     }
     
@@ -833,11 +882,20 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        selectedgenre = "Productivity"
-        
-        seemoreviews = sevenviews
-
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "Productivity"
+            
+            seemoreviews = sevenviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+        }
+      
         
     }
     
@@ -846,11 +904,22 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        selectedgenre = "Mental Health"
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "Mental Health"
+            
+            seemoreviews = eightviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+            
+        }
         
-        seemoreviews = eightviews
-
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+     
         
     }
     
@@ -859,12 +928,23 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        selectedgenre = "Psychology"
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+            
+        } else {
+            
+            selectedgenre = "Psychology"
+            
+            seemoreviews = nineviews
+            
+            self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
+            
+            
+        }
         
-        seemoreviews = nineviews
 
-        self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
-        
     }
     
     @IBOutlet weak var collectionView1: UICollectionView!
