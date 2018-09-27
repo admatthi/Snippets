@@ -70,6 +70,8 @@ class ReaderViewController: UIViewController {
     }
     @IBAction func tapNext(_ sender: Any) {
         
+        threebuttonuntapped()
+        
         quotetext.slideInFromRight()
 
         
@@ -106,19 +108,20 @@ class ReaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        threebuttonuntapped()
+        
         ref = Database.database().reference()
         
         favorites.removeAll()
         
+        
         if freepressed {
             
-            tapbuy.alpha = 0
-            tapbookmark.alpha = 0
+     
             
         } else {
             
-            tapbuy.alpha = 1
-            tapbookmark.alpha = 1
+
             ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription])
 
 
@@ -135,6 +138,8 @@ class ReaderViewController: UIViewController {
         
         bookmarktapped = false
         
+        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+
         FBSDKAppEvents.logEvent("Read Book Viewed")
 //        wtf()
         
@@ -142,7 +147,7 @@ class ReaderViewController: UIViewController {
 
                 // Do any additional setup after loading the view.
         
-  
+        showbookmark()
         tapanywhere.alpha = 1
     }
     
@@ -228,9 +233,48 @@ class ReaderViewController: UIViewController {
         }
 
         }
+    @IBAction func tapThree(_ sender: Any) {
+        
+        if threetapped {
+            
+            threebuttonuntapped()
+            
+            threetapped = false
 
+        } else {
+            
+            threebuttontapped()
+            
+            threetapped = true
+        }
+    }
+    
+    var threetapped = Bool()
+    @IBOutlet weak var tapback: UIButton!
+    @IBOutlet weak var threebutton: UIButton!
     @IBOutlet weak var tapanywhere: UILabel!
     @IBOutlet weak var tapbookmark: UIButton!
+    
+    func threebuttontapped() {
+        
+        tapbookmark.alpha = 1
+        tapbuy.alpha = 1
+        tapback.alpha = 1
+        threebutton.setImage(UIImage(named: "3ButtonsOpen"), for: .normal)
+        
+        threetapped = true
+    }
+    
+    func threebuttonuntapped() {
+        
+        tapbookmark.alpha = 0
+        tapbuy.alpha = 0
+        tapback.alpha = 0
+     
+        threebutton.setImage(UIImage(named: "3Buttons"), for: .normal)
+        
+        threetapped = false
+    }
     func nextcount() {
         
 

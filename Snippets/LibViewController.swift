@@ -180,6 +180,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             tableView.addSubview(refreshControl) // not required when using UITableViewController
        
         }
+        
     }
     
     var refreshControl = UIRefreshControl()
@@ -325,7 +326,10 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 if functioncounter == librarybookids.count  {
                     
 //                    self.showloading()
-                    self.tableView.reloadData()
+                    
+                    self.organizebyalphabetical()
+
+//                    self.tableView.reloadData()
                 }
                 
             })
@@ -376,7 +380,20 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    @IBAction func tapFilter(_ sender: Any) {
+    }
+    
+    func organizebyalphabetical() {
+        
+        
+        librarybookids = librarybookids.sorted { $0 < $1 }
+        
+
+        tableView.reloadData()
+        
+    }
+    @IBOutlet weak var filterlabel: UILabel!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
     let cell = tableView.dequeueReusableCell(withIdentifier: "Lib", for: indexPath) as! LibTableViewCell
         
