@@ -268,6 +268,8 @@ extension AppDelegate: RCPurchasesDelegate {
         
         print("restored")
         tryingtopurchase  = true
+        letsgo()
+
         
     }
 

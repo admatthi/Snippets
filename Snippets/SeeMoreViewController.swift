@@ -19,7 +19,7 @@ var seemoreimages = [String:UIImage]()
 var seemoretitles = [String:String]()
 var seemoreids = [String]()
 var seemoreimagenames = [String:String]()
-var seemoreviews = [String]()
+var seemoreviews = [String:String]()
 
 var abbreviation = String()
 
@@ -37,6 +37,7 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         titlelabel.text = selectedgenre
         
         selectedgenreshortner()
+        loadviews()
         
         queryforids { () -> () in
             
@@ -161,9 +162,17 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
             }
             
+            if var views = value?["Views"] as? String {
+                seemoreviews[each] = views
+
+            }
+
             seemoreimages[each] = UIImage(named: "\(abbreviation)\(each)")
             
             seemoreimagenames[each] = "\(abbreviation)\(each)"
+            
+//        ref?.child("AllBooks1").child(selectedgenre).child(each).updateChildValues(["Views" : nineviews[functioncounter]])
+
             
             functioncounter += 1
 //
@@ -205,6 +214,8 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
           
             print(functioncounter)
             
+            
+            
             if functioncounter == seemoreids.count {
                 
                 
@@ -215,6 +226,152 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
         
         }
+    }
+    
+    func loadviews() {
+        
+        oneviews.append("233K views")
+        oneviews.append("492K views")
+        oneviews.append("432K views")
+        oneviews.append("589K views")
+        oneviews.append("2.4M views")
+        oneviews.append("2M views")
+        oneviews.append("1.3M views")
+        oneviews.append("1.9M views")
+        oneviews.append("887K views")
+        oneviews.append("145K views")
+        
+        twoviews.append("343K views")
+        twoviews.append("466.9K views")
+        twoviews.append("957.6K views")
+        twoviews.append("377.9K views")
+        twoviews.append("3.4M views")
+        twoviews.append("2.1M views")
+        twoviews.append("1.6M views")
+        twoviews.append("1.2M views")
+        twoviews.append("87K views")
+        twoviews.append("123.5K views")
+        
+        threeviews.append("377.9K views")
+        threeviews.append("3.4M views")
+        threeviews.append("933.6K views")
+        threeviews.append("395.8K views")
+        threeviews.append("82K views")
+        threeviews.append("5.1M views")
+        threeviews.append("2.6M views")
+        threeviews.append("1.3M views")
+        threeviews.append("2M views")
+        threeviews.append("1.2M views")
+        
+        fourviews.append("264.9K views")
+        fourviews.append("1.4M views")
+        fourviews.append("321.2K views")
+        fourviews.append("452.3K views")
+        fourviews.append("115K views")
+        fourviews.append("3.2M views")
+        fourviews.append("6.2M views")
+        fourviews.append("3.8M views")
+        fourviews.append("1.1M views")
+        fourviews.append("1.5M views")
+        
+        fiveviews.append("255.4K views")
+        fiveviews.append("1.5M views")
+        fiveviews.append("321K views")
+        fiveviews.append("455K views")
+        fiveviews.append("321K views")
+        fiveviews.append("4.3M views")
+        fiveviews.append("2.1M views")
+        fiveviews.append("1.8M views")
+        fiveviews.append("2.5M views")
+        fiveviews.append("26K views")
+        fiveviews.append("37K views")
+        fiveviews.append("39K views")
+        fiveviews.append("321.6K views")
+        fiveviews.append("342.8K views")
+        fiveviews.append("821K views")
+        fiveviews.append("4.2M views")
+        fiveviews.append("1.9M views")
+        fiveviews.append("2.2M views")
+        fiveviews.append("3.7M views")
+        fiveviews.append("1M views")
+        
+        sixviews.append("450K views")
+        sixviews.append("2.8M views")
+        sixviews.append("321K views")
+        sixviews.append("892K views")
+        sixviews.append("801K views")
+        sixviews.append("4M views")
+        sixviews.append("1.2M views")
+        sixviews.append("1M views")
+        sixviews.append("2.4M views")
+        sixviews.append("2.9M views")
+        
+        sevenviews.append("1.8M views")
+        sevenviews.append("2.5M views")
+        sevenviews.append("26K views")
+        sevenviews.append("37K views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        sevenviews.append("4.2M views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        
+        eightviews.append("377.9K views")
+        eightviews.append("3.4M views")
+        eightviews.append("933.6K views")
+        eightviews.append("395.8K views")
+        eightviews.append("82K views")
+        eightviews.append("5.1M views")
+        eightviews.append("2.6M views")
+        eightviews.append("1.3M views")
+        eightviews.append("2M views")
+        eightviews.append("1.2M views")
+        eightviews.append("1.3M views")
+        eightviews.append("2M views")
+        eightviews.append("1.2M views")
+        
+        nineviews.append("832K views")
+        nineviews.append("3M views")
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
+        nineviews.append("832K views")
+        nineviews.append("3M views")
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
+        nineviews.append("832K views")
+        nineviews.append("3M views")
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
+        nineviews.append("123K views")
+        nineviews.append("23K views")
+        nineviews.append("984K views")
+        nineviews.append("4.1M views")
+        nineviews.append("1.4M views")
+        nineviews.append("3.8M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
     }
 
     override func didReceiveMemoryWarning() {
@@ -236,7 +393,7 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
             selectedauthor = seemoreauthors[seemoreids[indexPath.row]]!
             selectedimagename = seemoreimagenames[seemoreids[indexPath.row]]!
             
-            selectedviews = seemoreviews[indexPath.row]
+            selectedviews = seemoreviews[seemoreids[indexPath.row]]!
             self.performSegue(withIdentifier: "SeeMoreToOverview", sender: self)
             
             
@@ -258,54 +415,7 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func loadviews() {
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[0]).updateChildValues(["Views" : seemoreviews[0]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[1]).updateChildValues(["Views" : seemoreviews[1]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[2]).updateChildValues(["Views" : seemoreviews[2]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[3]).updateChildValues(["Views" : seemoreviews[3]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[4]).updateChildValues(["Views" : seemoreviews[4]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[5]).updateChildValues(["Views" : seemoreviews[5]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[6]).updateChildValues(["Views" : seemoreviews[6]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[7]).updateChildValues(["Views" : seemoreviews[7]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[8]).updateChildValues(["Views" : seemoreviews[8]])
-        
-        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[9]).updateChildValues(["Views" : seemoreviews[9]])
-        
-//        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[10]).updateChildValues(["Views" : seemoreviews[10]])
-//
-//        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[11]).updateChildValues(["Views" : seemoreviews[11]])
-//
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[12]).updateChildValues(["Views" : seemoreviews[12]])
-//
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[13]).updateChildValues(["Views" : seemoreviews[13]])
-//
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[14]).updateChildValues(["Views" : seemoreviews[14]])
-//
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[15]).updateChildValues(["Views" : seemoreviews[15]])
-//
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[16]).updateChildValues(["Views" : seemoreviews[16]])
-//
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[17]).updateChildValues(["Views" : seemoreviews[17]])
-//
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[18]).updateChildValues(["Views" : seemoreviews[18]])
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[19]).updateChildValues(["Views" : seemoreviews[19]])
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[20]).updateChildValues(["Views" : seemoreviews[20]])
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[21]).updateChildValues(["Views" : seemoreviews[21]])
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[22]).updateChildValues(["Views" : seemoreviews[22]])
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[23]).updateChildValues(["Views" : seemoreviews[23]])
-//         ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[24]).updateChildValues(["Views" : seemoreviews[24]])
-//        ref?.child("AllBooks1").child(selectedgenre).child(seemoreids[25]).updateChildValues(["Views" : seemoreviews[25]])
-        
-    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -321,7 +431,7 @@ class SeeMoreViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.author.text = seemoreauthors[seemoreids[indexPath.row]]
             cell.coverimage.image = seemoreimages[seemoreids[indexPath.row]]
             
-            cell.views.text = seemoreviews[indexPath.row]
+            cell.views.text = seemoreviews[seemoreids[indexPath.row]]!
             
             self.activityIndicator.stopAnimating()
             self.activityIndicator.alpha = 0

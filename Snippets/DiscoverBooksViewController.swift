@@ -778,8 +778,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "Biography & Memoir"
             
-            seemoreviews = twoviews
-            
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         }
         
@@ -800,7 +798,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "For You"
             
-            seemoreviews = threeviews
             
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         }
@@ -823,7 +820,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "Health, Fitness, & Dieting"
             
-            seemoreviews = fourviews
             
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         }
@@ -846,7 +842,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "Business & Investing"
             
-            seemoreviews = fiveviews
             
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         }
@@ -869,7 +864,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "Sex & Relationships"
             
-            seemoreviews = sixviews
             
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         }
@@ -891,7 +885,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "Productivity"
             
-            seemoreviews = sevenviews
             
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
         }
@@ -913,7 +906,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "Mental Health"
             
-            seemoreviews = eightviews
             
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
             
@@ -937,7 +929,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             selectedgenre = "Psychology"
             
-            seemoreviews = nineviews
             
             self.performSegue(withIdentifier: "DiscoverToSeeMore", sender: self)
             

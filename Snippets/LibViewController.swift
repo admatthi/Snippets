@@ -20,7 +20,7 @@ import GameplayKit
 var inprogresspressed = Bool()
 var searchterm = String()
 var librarydescriptions = [String:String]()
-
+var libraryviews = [String:String]()
 class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
@@ -165,6 +165,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             librarysubids.removeAll()
             libraryimagenames.removeAll()
             librarydescriptions.removeAll()
+            libraryviews.removeAll()
             tableView.reloadData()
             
             queryforbookids { () -> () in
@@ -310,7 +311,12 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     
                 }
                 
-               
+                if var activityvalue4 = value?["Views"] as? String {
+                    
+                    libraryviews[each] = activityvalue4
+                    
+                }
+                
                 
                 if var activityvalue3 = value?["Image"] as? String {
                     
@@ -338,6 +344,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
+
 
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -429,7 +436,15 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
 //            cell.descriptionlabel.text = librarydescriptions[librarybookids[indexPath.row]]
             
-            cell.views.text = nineviews[indexPath.row]
+            if libraryviews.count > indexPath.row {
+                
+                cell.views.text = libraryviews[librarybookids[indexPath.row]]!
+                
+            } else {
+                
+                cell.views.text = nineviews[indexPath.row]
+
+            }
 //            cell.bamlabel.text = "Start Story"
 //            cell.buttonlabel.image = UIImage(named: "WhiteButton-1")
 //            cell.bamlabel.textColor = darkbluee
@@ -510,6 +525,8 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
     }
+    
+    
     
     func loadstuff() {
         
