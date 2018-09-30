@@ -436,7 +436,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
 //            cell.descriptionlabel.text = librarydescriptions[librarybookids[indexPath.row]]
             
-            if libraryviews.count > indexPath.row {
+            if libraryviews.count >= librarybookids.count {
                 
                 cell.views.text = libraryviews[librarybookids[indexPath.row]]!
                 

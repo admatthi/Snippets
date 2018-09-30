@@ -54,7 +54,7 @@ class ReaderViewController: UIViewController {
             
         }
     }
-    @IBAction func tapPrevious(_ sender: Any) {
+    @IBAction func tapPrevious(_ sender: AnyObject?) {
         
         quotetext.slideInFromLeft()
 
@@ -68,7 +68,7 @@ class ReaderViewController: UIViewController {
         
         bookmarktapped = false
     }
-    @IBAction func tapNext(_ sender: Any) {
+    @IBAction func tapNext(_ sender: AnyObject?) {
         
         threebuttonuntapped()
         
@@ -114,6 +114,12 @@ class ReaderViewController: UIViewController {
         
         favorites.removeAll()
         
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        var swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
+        self.view.addGestureRecognizer(swipeLeft)
         
         if freepressed {
             
@@ -205,7 +211,24 @@ class ReaderViewController: UIViewController {
             } else {
 
                 tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedimagename])
+               
+                var trimmedtext = String()
+                
+                    
+                    trimmedtext = quote[counter]
+                    
+                    trimmedtext = trimmedtext.replacingOccurrences(of: "\\", with: "", options: NSString.CompareOptions.literal, range: nil)
+                    
+                    trimmedtext = trimmedtext.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
+                    
+                    trimmedtext = trimmedtext.replacingOccurrences(of: "\'", with: "", options: NSString.CompareOptions.literal, range: nil)
+                    
+                    trimmedtext = trimmedtext.replacingOccurrences(of: "“", with: "", options: NSString.CompareOptions.literal, range: nil)
+                    
+                    trimmedtext = trimmedtext.replacingOccurrences(of: "”", with: "", options: NSString.CompareOptions.literal, range: nil)
+                    
+
+                    ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : trimmedtext, "Image" : selectedimagename])
 
                 bookmarktapped = true
 
@@ -224,7 +247,24 @@ class ReaderViewController: UIViewController {
             } else {
 
                 tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter], "Image" : selectedimagename])
+               
+                var trimmedtext = String()
+                
+                
+                trimmedtext = quote[counter]
+                
+                trimmedtext = trimmedtext.replacingOccurrences(of: "\\", with: "", options: NSString.CompareOptions.literal, range: nil)
+                
+                trimmedtext = trimmedtext.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
+                
+                trimmedtext = trimmedtext.replacingOccurrences(of: "\'", with: "", options: NSString.CompareOptions.literal, range: nil)
+                
+                trimmedtext = trimmedtext.replacingOccurrences(of: "“", with: "", options: NSString.CompareOptions.literal, range: nil)
+                
+                trimmedtext = trimmedtext.replacingOccurrences(of: "”", with: "", options: NSString.CompareOptions.literal, range: nil)
+                
+                
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : trimmedtext, "Image" : selectedimagename])
 
                 bookmarktapped = true
 
@@ -526,6 +566,26 @@ class ReaderViewController: UIViewController {
         
     }
     
+     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                self.tapNext(nil)
+            case UISwipeGestureRecognizerDirection.down:
+                print("Swiped down")
+            case UISwipeGestureRecognizerDirection.left:
+                self.tapPrevious(nil)
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
+    }
+    
 
     @IBOutlet weak var two: UIImageView!
     @IBOutlet weak var one: UIImageView!
@@ -546,11 +606,29 @@ class ReaderViewController: UIViewController {
 
     func showproperquote() {
         
+        var trimmedtext = String()
+        
         if counter < quote.count {
             
-        quotetext.text = quote[counter]
-        print(counter)
         
+        trimmedtext = quote[counter]
+            
+        trimmedtext = trimmedtext.replacingOccurrences(of: "\\", with: "", options: NSString.CompareOptions.literal, range: nil)
+
+        trimmedtext = trimmedtext.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
+            
+        trimmedtext = trimmedtext.replacingOccurrences(of: "\'", with: "", options: NSString.CompareOptions.literal, range: nil)
+
+        trimmedtext = trimmedtext.replacingOccurrences(of: "“", with: "", options: NSString.CompareOptions.literal, range: nil)
+
+        trimmedtext = trimmedtext.replacingOccurrences(of: "”", with: "", options: NSString.CompareOptions.literal, range: nil)
+
+        print(trimmedtext)
+        quotetext.text = trimmedtext.capitalizingFirstLetter()
+            
+
+        print(counter)
+       
 //        quotetext.addCharacterSpacing()
 
 //        backgroundlabel.backgroundColor = colors[counter]
@@ -630,5 +708,15 @@ extension UILabel {
             attributedString.addAttribute(NSAttributedStringKey.kern, value: 1.2, range: NSRange(location: 0, length: attributedString.length - 1))
             attributedText = attributedString
         }
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
     }
 }

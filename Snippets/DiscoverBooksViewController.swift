@@ -128,12 +128,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         seemoreviews.removeAll()
         
+        
         self.becomeFirstResponder() // To get shake gesture
         
 //        freebackground.layer.cornerRadius = 5.0
         FBSDKAppEvents.logEvent("Discover Viewed")
 //        activityIndicator.color = .white
-        
         // Do any additional setup after loading the view.
         
         showloading()
@@ -214,6 +214,17 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
         }
         // Do any additional setup after loading the view.
+        
+        collectionView3.decelerationRate  = UIScrollViewDecelerationRateFast
+        collectionView4.decelerationRate  = UIScrollViewDecelerationRateFast
+        collectionView5.decelerationRate  = UIScrollViewDecelerationRateFast
+        collectionView6.decelerationRate  = UIScrollViewDecelerationRateFast
+        collectionView7.decelerationRate  = UIScrollViewDecelerationRateFast
+        collectionView8.decelerationRate  = UIScrollViewDecelerationRateFast
+        
+        collectionView9.decelerationRate  = UIScrollViewDecelerationRateFast
+
+
     }
 
     @IBOutlet weak var backgroundlabel: UILabel!
@@ -668,7 +679,46 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         sevenviews.append("321.6K views")
         sevenviews.append("342.8K views")
         sevenviews.append("821K views")
-        
+        sevenviews.append("1.8M views")
+        sevenviews.append("2.5M views")
+        sevenviews.append("26K views")
+        sevenviews.append("37K views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        sevenviews.append("4.2M views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        sevenviews.append("1.8M views")
+        sevenviews.append("2.5M views")
+        sevenviews.append("26K views")
+        sevenviews.append("37K views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        sevenviews.append("4.2M views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        sevenviews.append("1.8M views")
+        sevenviews.append("2.5M views")
+        sevenviews.append("26K views")
+        sevenviews.append("37K views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+        sevenviews.append("4.2M views")
+        sevenviews.append("39K views")
+        sevenviews.append("321.6K views")
+        sevenviews.append("342.8K views")
+        sevenviews.append("821K views")
+
         eightviews.append("377.9K views")
         eightviews.append("3.4M views")
         eightviews.append("933.6K views")
@@ -710,10 +760,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineviews.append("984K views")
         nineviews.append("4.1M views")
         nineviews.append("1.4M views")
-        nineviews.append("3.8M views")
-        nineviews.append("2M views")
-        nineviews.append("1.2M views")
-        nineviews.append("123K views")
         nineviews.append("23K views")
         nineviews.append("984K views")
         nineviews.append("4.1M views")
@@ -721,6 +767,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineviews.append("3.8M views")
         nineviews.append("2M views")
         nineviews.append("1.2M views")
+  
+//        addstaticbooks()
 
 
 //        collectionView1.reloadData()
@@ -761,6 +809,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineids.append("8")
         nineids.append("9")
         
+
+        
         collectionView9.reloadData()
         
     }
@@ -789,6 +839,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
+        
+        FBSDKAppEvents.logEvent("For You Tapped")
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -810,7 +863,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        
+        FBSDKAppEvents.logEvent("Health, Fitness, & Dieting Tapped")
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -832,7 +886,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        
+        FBSDKAppEvents.logEvent("Business & Investing Tapped")
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -854,7 +909,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        
+        FBSDKAppEvents.logEvent("Sex & Relationships Tapped")
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -875,7 +931,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        
+        FBSDKAppEvents.logEvent("Productivity Tapped")
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -896,7 +953,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        
+        FBSDKAppEvents.logEvent("Mental Health Tapped")
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -919,7 +977,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        
+        FBSDKAppEvents.logEvent("Psychology Tapped")
+
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -1294,6 +1353,29 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var collectionView4: UICollectionView!
 //    @IBOutlet weak var collectionView2: UICollectionView!
     @IBOutlet weak var collectionView3: UICollectionView!
+    
+    func addstaticbooks() {
+        
+    selectedgenre = "For You"
+        
+    var counter2 = 11
+        
+        while counter2 < 35 {
+    
+//            ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues(["Author" : "Jordan B. Peterson", "BookID" : "\(counter2)", "Description" : "What does everyone in the modern world need to know? Renowned psychologist Jordan B. Peterson's answer to this most difficult of questions uniquely combines the hard-won truths of ancient tradition with the stunning revelations of cutting-edge scientific research.", "Genre" : "\(selectedgenre)", "Image" : "F\(counter2)", "Name" : "12 Rules for Life", "Completed" : "No", "Views" : "x"])
+            
+//    ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues([ "Views" : "\(sevenviews[counter2])"])
+
+    ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").child("Summary").child("1").updateChildValues(["1" : "x", "2" : "x", "3" : "x", "4" : "x", "5" : "x", "6" : "x","7" : "x", "8" : "x","9" : "x","10" : "x","11" : "x", "12" : "x", "13" : "x", "14" : "x", "15" : "x", "16" : "x", "17" : "x", "18" : "x", "19" : "x", "20" : "x", "Title" : "x"])
+
+            
+            counter2 += 1
+            
+        }
+        
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
@@ -1306,6 +1388,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedimage = onebookcovers[indexPath.row]
                 selectedviews = oneviews[indexPath.row]
                 selectedgenre = "Top Sellers"
+                FBSDKAppEvents.logEvent("Top Sellers Tapped")
                 selectedimagename = "BS\(indexPath.row+1)"
 
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
