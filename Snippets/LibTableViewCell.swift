@@ -10,6 +10,7 @@ import UIKit
 
 class LibTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lock: UIImageView!
     @IBOutlet weak var rectangle: UIImageView!
     @IBOutlet weak var emptylabel: UILabel!
     @IBOutlet weak var upgradelabel: UILabel!

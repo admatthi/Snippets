@@ -455,7 +455,8 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.upgradelabel.alpha = 0
             cell.bluebutton.alpha = 0
             cell.emptylabel.alpha = 0
-            
+            cell.lock.alpha = 0
+
             cell.greenlabel.alpha = 1
             
     } else {
@@ -470,6 +471,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.views.text = ""
             cell.author.text = ""
             cell.upgradelabel.alpha = 0
+            cell.lock.alpha = 0
             cell.bluebutton.alpha = 0
             cell.rectangle.alpha = 0
 
@@ -480,6 +482,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.views.text = ""
             cell.author.text = ""
             cell.upgradelabel.alpha = 1
+            cell.lock.alpha = 1
             cell.bluebutton.alpha = 1
             cell.emptylabel.alpha = 0
             cell.rectangle.alpha = 0
@@ -487,10 +490,11 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             if Auth.auth().currentUser == nil {
                 // Do smth if user is not logged in
                 cell.upgradelabel.alpha = 1
+                cell.lock.alpha = 1
                 cell.bluebutton.alpha = 1
                 
             } else {
-                
+                cell.lock.alpha = 0
                 cell.upgradelabel.alpha = 0
                 cell.bluebutton.alpha = 0
                 

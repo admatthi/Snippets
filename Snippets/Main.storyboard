@@ -578,7 +578,7 @@
                                     <constraint firstAttribute="height" constant="53" id="HFv-zB-Zu9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCU-Ji-wbH">
@@ -1389,7 +1389,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRY 3 DAYS FREE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6D-kZ-unm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOIN FREE FOR 3 DAYS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6D-kZ-unm">
                                 <rect key="frame" x="42" y="450" width="290" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="TnE-1d-emz"/>
@@ -1409,7 +1409,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel anytime. Will automatically extend after 7 day FREE trial to $67 per 1 month" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-F1-0mc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel anytime. Will automatically extend after 3 day FREE trial to $67 per month" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-F1-0mc">
                                 <rect key="frame" x="43" y="501" width="290" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="3F1-0J-2bb"/>
@@ -2890,7 +2890,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't bookmarked anything yet! What a shame." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-eY-4QT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't bookmarked anything yet! What a shame.  Start reading like a CEO!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-eY-4QT">
                                                     <rect key="frame" x="37" y="27.5" width="301" height="79"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="301" id="5yQ-e4-S39"/>
@@ -2917,16 +2917,25 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlock" translatesAutoresizingMaskIntoConstraints="NO" id="cpz-Is-cOJ">
+                                                    <rect key="frame" x="72" y="54" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="sWa-Oy-hjX"/>
+                                                        <constraint firstAttribute="height" constant="25" id="u3E-cH-bQk"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.094117647060000004" green="0.1176470588" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="kTe-0g-Baz" firstAttribute="top" secondItem="yb5-lq-eVH" secondAttribute="topMargin" constant="1" id="3jc-Jr-3vc"/>
                                                 <constraint firstItem="GXO-HT-6YK" firstAttribute="centerY" secondItem="yb5-lq-eVH" secondAttribute="centerY" id="6Ay-NM-gLr"/>
+                                                <constraint firstItem="cpz-Is-cOJ" firstAttribute="centerY" secondItem="GXO-HT-6YK" secondAttribute="centerY" id="AwH-6x-RLb"/>
                                                 <constraint firstItem="YNP-eY-4QT" firstAttribute="centerX" secondItem="yb5-lq-eVH" secondAttribute="centerX" id="BmU-9b-EMm"/>
                                                 <constraint firstAttribute="bottom" secondItem="LQr-vi-HAU" secondAttribute="bottom" constant="5" id="Idi-6Z-Pls"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="i0H-Yd-m2I" secondAttribute="bottom" constant="4" id="MFW-GW-N7d"/>
                                                 <constraint firstItem="i0H-Yd-m2I" firstAttribute="top" secondItem="yb5-lq-eVH" secondAttribute="topMargin" constant="1" id="Nfx-Tc-lAj"/>
                                                 <constraint firstItem="Ugc-hF-HAN" firstAttribute="centerX" secondItem="yb5-lq-eVH" secondAttribute="centerX" id="OuP-i1-kod"/>
+                                                <constraint firstItem="GXO-HT-6YK" firstAttribute="leading" secondItem="cpz-Is-cOJ" secondAttribute="trailing" constant="-60" id="Vgu-m9-tcm"/>
                                                 <constraint firstItem="Ugc-hF-HAN" firstAttribute="centerY" secondItem="yb5-lq-eVH" secondAttribute="centerY" id="g6k-VE-eYN"/>
                                                 <constraint firstItem="i0H-Yd-m2I" firstAttribute="leading" secondItem="yb5-lq-eVH" secondAttribute="leadingMargin" id="nWj-jy-2Yt"/>
                                                 <constraint firstItem="LQr-vi-HAU" firstAttribute="leading" secondItem="yb5-lq-eVH" secondAttribute="leading" id="ojV-FA-pHN"/>
@@ -2943,6 +2952,7 @@
                                             <outlet property="descriptionlabel" destination="kTe-0g-Baz" id="jUK-Dk-mPH"/>
                                             <outlet property="emptylabel" destination="YNP-eY-4QT" id="rTN-dk-Zq0"/>
                                             <outlet property="greenlabel" destination="LQr-vi-HAU" id="gix-8e-1yS"/>
+                                            <outlet property="lock" destination="cpz-Is-cOJ" id="TfR-Gr-2gV"/>
                                             <outlet property="upgradelabel" destination="GXO-HT-6YK" id="RJk-PR-ayO"/>
                                         </connections>
                                     </tableViewCell>
@@ -3069,7 +3079,7 @@
                                                     <color key="textColor" red="0.1215686275" green="0.99607843139999996" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your library is empty! Bummer. Start reading life-changing books!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zla-PV-RdW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your library is empty! Bummer. Start reading like a CEO!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zla-PV-RdW">
                                                     <rect key="frame" x="37" y="28" width="301" height="79"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="301" id="drX-vl-7w7"/>
@@ -3103,6 +3113,13 @@
                                                         <constraint firstAttribute="width" constant="37" id="R1U-vm-DNY"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlock" translatesAutoresizingMaskIntoConstraints="NO" id="2Ra-1n-WQT">
+                                                    <rect key="frame" x="68" y="53" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="A49-gy-Tvk"/>
+                                                        <constraint firstAttribute="height" constant="25" id="MC8-SX-aCo"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.094117647060000004" green="0.1176470588" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -3119,9 +3136,11 @@
                                                 <constraint firstItem="aQv-NB-dNl" firstAttribute="leading" secondItem="esN-hp-WWJ" secondAttribute="leading" id="QXk-37-3cz"/>
                                                 <constraint firstItem="tw8-24-WGm" firstAttribute="trailing" secondItem="esN-hp-WWJ" secondAttribute="trailingMargin" id="TQm-KW-fU6"/>
                                                 <constraint firstItem="Hx0-JY-bxg" firstAttribute="centerY" secondItem="esN-hp-WWJ" secondAttribute="centerY" id="UO7-bt-HIJ"/>
+                                                <constraint firstItem="Hx0-JY-bxg" firstAttribute="leading" secondItem="2Ra-1n-WQT" secondAttribute="trailing" constant="-56" id="YTs-Tk-xd2"/>
                                                 <constraint firstItem="yoN-Mf-LUq" firstAttribute="centerY" secondItem="esN-hp-WWJ" secondAttribute="centerY" id="Yqz-JI-F8J"/>
                                                 <constraint firstItem="zla-PV-RdW" firstAttribute="centerX" secondItem="esN-hp-WWJ" secondAttribute="centerX" id="dUi-mK-a2r"/>
                                                 <constraint firstAttribute="bottom" secondItem="aQv-NB-dNl" secondAttribute="bottom" constant="5" id="fcO-Qv-R6N"/>
+                                                <constraint firstItem="2Ra-1n-WQT" firstAttribute="centerY" secondItem="Hx0-JY-bxg" secondAttribute="centerY" constant="-1.5" id="lhE-SV-wP8"/>
                                                 <constraint firstItem="Hx0-JY-bxg" firstAttribute="centerX" secondItem="esN-hp-WWJ" secondAttribute="centerX" id="onK-Zk-6i7"/>
                                                 <constraint firstItem="YVs-fo-Zx5" firstAttribute="leading" secondItem="k7O-IL-wYk" secondAttribute="trailing" constant="26" id="tBd-LH-tQX"/>
                                                 <constraint firstItem="k7O-IL-wYk" firstAttribute="top" secondItem="esN-hp-WWJ" secondAttribute="topMargin" constant="1" id="uLV-Xv-mqr"/>
@@ -3135,7 +3154,8 @@
                                             <outlet property="coverimage" destination="k7O-IL-wYk" id="SxN-Ha-5N5"/>
                                             <outlet property="emptylabel" destination="zla-PV-RdW" id="K9g-Yd-vYw"/>
                                             <outlet property="greenlabel" destination="aQv-NB-dNl" id="tgt-zO-hd1"/>
-                                            <outlet property="rectangle" destination="tw8-24-WGm" id="fY6-gS-cok"/>
+                                            <outlet property="lock" destination="2Ra-1n-WQT" id="f41-SK-jia"/>
+                                            <outlet property="rectangle" destination="tw8-24-WGm" id="bFL-60-rzj"/>
                                             <outlet property="title" destination="Wyn-Nc-1p8" id="iq5-0z-ded"/>
                                             <outlet property="upgradelabel" destination="Hx0-JY-bxg" id="OqE-wX-aGW"/>
                                             <outlet property="views" destination="CAC-Jt-TUS" id="bE5-7u-aeo"/>
@@ -4537,6 +4557,7 @@
         <image name="StockPhoto" width="323" height="499"/>
         <image name="Test" width="941" height="704"/>
         <image name="Trophy" width="500" height="500"/>
+        <image name="Unlock" width="30" height="30"/>
         <image name="WhiteArrow" width="200" height="200"/>
         <image name="WhiteButton-1" width="328" height="49"/>
         <image name="WorkoutsUntapped" width="16" height="16"/>
@@ -7343,13 +7364,13 @@ YgACjWoAAo1tAAKNfwACjYIAAo2HAAAAAAAABAEAAAAAAAAAWQAAAAAAAAAAAAAAAAACjYk
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nh1-LO-uCJ"/>
+        <segue reference="Dhg-Yk-u5t"/>
         <segue reference="geI-t6-Svl"/>
         <segue reference="Z3c-by-PbJ"/>
         <segue reference="GCk-P9-zek"/>
         <segue reference="We3-CC-6cK"/>
         <segue reference="aeQ-qY-d1A"/>
-        <segue reference="wYw-yP-fYv"/>
+        <segue reference="RFx-FM-SfX"/>
         <segue reference="8Mm-jX-DvB"/>
     </inferredMetricsTieBreakers>
 </document>

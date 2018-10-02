@@ -200,6 +200,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.greenlabel.alpha = 1
             cell.emptylabel.alpha = 0
             cell.upgradelabel.alpha = 0
+            cell.lock.alpha = 0
             cell.bluebutton.alpha = 0
             
         } else {
@@ -211,7 +212,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.greenlabel.alpha = 0
                 cell.upgradelabel.alpha = 0
                 cell.bluebutton.alpha = 0
-                
+                cell.lock.alpha = 0
             } else {
                 
                 cell.descriptionlabel.text = ""
@@ -220,17 +221,17 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 cell.greenlabel.alpha = 0
                 cell.upgradelabel.alpha = 1
                 cell.bluebutton.alpha = 1
-                
+                cell.lock.alpha = 1
                 if Auth.auth().currentUser == nil {
                     // Do smth if user is not logged in
                     cell.upgradelabel.alpha = 1
                     cell.bluebutton.alpha = 1
-                    
+                    cell.lock.alpha = 1
                 } else {
                     
                     cell.upgradelabel.alpha = 0
                     cell.bluebutton.alpha = 0
-                    
+                    cell.lock.alpha = 0
                 }
             }
             
@@ -242,7 +243,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         return cell
     }
-    
+ 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         

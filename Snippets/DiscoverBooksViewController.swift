@@ -215,14 +215,14 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         }
         // Do any additional setup after loading the view.
         
-        collectionView3.decelerationRate  = UIScrollViewDecelerationRateFast
-        collectionView4.decelerationRate  = UIScrollViewDecelerationRateFast
-        collectionView5.decelerationRate  = UIScrollViewDecelerationRateFast
-        collectionView6.decelerationRate  = UIScrollViewDecelerationRateFast
-        collectionView7.decelerationRate  = UIScrollViewDecelerationRateFast
-        collectionView8.decelerationRate  = UIScrollViewDecelerationRateFast
-        
-        collectionView9.decelerationRate  = UIScrollViewDecelerationRateFast
+//        collectionView3.decelerationRate  = UIScrollViewDecelerationRateFast
+//        collectionView4.decelerationRate  = UIScrollViewDecelerationRateFast
+//        collectionView5.decelerationRate  = UIScrollViewDecelerationRateFast
+//        collectionView6.decelerationRate  = UIScrollViewDecelerationRateFast
+//        collectionView7.decelerationRate  = UIScrollViewDecelerationRateFast
+//        collectionView8.decelerationRate  = UIScrollViewDecelerationRateFast
+//        
+//        collectionView9.decelerationRate  = UIScrollViewDecelerationRateFast
 
 
     }
@@ -1356,9 +1356,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     func addstaticbooks() {
         
-    selectedgenre = "For You"
+    selectedgenre = "Productivity"
         
-    var counter2 = 11
+    var counter2 = 7
         
         while counter2 < 35 {
     
