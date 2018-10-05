@@ -1369,7 +1369,7 @@
                                     <action selector="tapTerms:" destination="PcP-Wv-fbZ" eventType="touchUpInside" id="bQY-MP-xpU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$267 one-time payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STm-Qr-EtW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$797 one-time payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STm-Qr-EtW">
                                 <rect key="frame" x="42" y="324" width="290" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="cub-7H-moP"/>
@@ -1379,7 +1379,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YEARLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-ww-JeU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONTHLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxl-ww-JeU">
                                 <rect key="frame" x="43" y="370" width="290" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="go3-EE-tcc"/>
@@ -1389,7 +1389,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOIN FREE FOR 3 DAYS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6D-kZ-unm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRY IT FREE FOR 3 DAYS*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6D-kZ-unm">
                                 <rect key="frame" x="42" y="450" width="290" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="TnE-1d-emz"/>
@@ -1399,7 +1399,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$167 / year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl2-mn-hyO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$597 / month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl2-mn-hyO">
                                 <rect key="frame" x="43" y="389" width="290" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="MDt-oy-F4D"/>
@@ -1409,7 +1409,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel anytime. Will automatically extend after 3 day FREE trial to $67 per month" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-F1-0mc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Will automatically extend after 3 day FREE trial to $497 each year" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-F1-0mc">
                                 <rect key="frame" x="43" y="501" width="290" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="3F1-0J-2bb"/>
@@ -2907,7 +2907,7 @@
                                                         <constraint firstAttribute="width" constant="300" id="HPw-Lx-tNw"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join Free for 3 Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXO-HT-6YK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join FREE for 3 Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXO-HT-6YK">
                                                     <rect key="frame" x="37" y="55" width="300" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="eYl-vg-nQQ"/>
@@ -3005,6 +3005,128 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4o-f4-hFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-10248.799999999999" y="6307.1964017991013"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XF7-Uq-T92">
+            <objects>
+                <viewController id="DBc-ft-SWL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MH0-UC-EYz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chn-Mr-nao">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.10980392156862745" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tww-X8-Dun">
+                                <rect key="frame" x="0.0" y="571" width="375" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.3411764705882353" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join FREE for 3 Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUh-ik-FK4">
+                                <rect key="frame" x="37" y="600" width="300" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4NH-7O-Blf"/>
+                                    <constraint firstAttribute="height" constant="24" id="qfq-iC-ga0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and Claim Your FREE Bonuses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx1-0c-8Bt">
+                                <rect key="frame" x="38" y="629" width="300" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="RJ1-pm-Y5Y"/>
+                                    <constraint firstAttribute="height" constant="24" id="uPc-l8-KyP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" red="0.82751031091370564" green="0.82751031091370564" blue="0.82751031091370564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlock" translatesAutoresizingMaskIntoConstraints="NO" id="s6o-9P-DOV">
+                                <rect key="frame" x="43" y="599.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ezj-FP-I3g"/>
+                                    <constraint firstAttribute="width" constant="25" id="rhJ-wn-pUG"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dsH-Q9-PD9">
+                                <rect key="frame" x="1" y="60" width="375" height="507"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.10196078431372549" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mGJ-c7-YfD">
+                                    <size key="itemSize" width="365" height="507"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7zC-Vn-5wG">
+                                        <rect key="frame" x="5" y="0.0" width="365" height="507"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="507"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Read Like A CEO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmJ-Tm-uwG">
+                                                    <rect key="frame" x="45" y="20" width="284" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Special Offer: FREE for 3 Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wB-r1-MD2">
+                                                    <rect key="frame" x="0.0" y="361" width="365" height="39"/>
+                                                    <color key="backgroundColor" red="0.11372549019607843" green="0.24313725490196078" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="365" id="GhK-os-x0X"/>
+                                                        <constraint firstAttribute="height" constant="29" id="dCs-X2-Ony"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.070588235294117646" green="0.082352941176470587" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="9wB-r1-MD2" firstAttribute="centerX" secondItem="7zC-Vn-5wG" secondAttribute="centerX" id="cSJ-vA-h4A"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SNIPPETSLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KoQ-os-AcE">
+                                <rect key="frame" x="142" y="30" width="90" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="1xG-sp-ns0"/>
+                                    <constraint firstAttribute="height" constant="22" id="J0i-9L-PnR"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NUh-ik-FK4" firstAttribute="leading" secondItem="s6o-9P-DOV" secondAttribute="trailing" constant="-31" id="3wB-1s-Moy"/>
+                            <constraint firstItem="KoQ-os-AcE" firstAttribute="top" secondItem="cFl-oh-nFt" secondAttribute="top" constant="10" id="5QL-cJ-ogG"/>
+                            <constraint firstItem="Chn-Mr-nao" firstAttribute="leading" secondItem="cFl-oh-nFt" secondAttribute="leading" id="ELy-x8-HhV"/>
+                            <constraint firstItem="sx1-0c-8Bt" firstAttribute="centerX" secondItem="MH0-UC-EYz" secondAttribute="centerX" id="Ilb-42-HJr"/>
+                            <constraint firstItem="KoQ-os-AcE" firstAttribute="centerX" secondItem="MH0-UC-EYz" secondAttribute="centerX" id="P1i-3b-Qvy"/>
+                            <constraint firstItem="cFl-oh-nFt" firstAttribute="bottom" secondItem="NUh-ik-FK4" secondAttribute="bottom" constant="43" id="RkX-Ce-iDU"/>
+                            <constraint firstAttribute="trailing" secondItem="Chn-Mr-nao" secondAttribute="trailing" id="URb-NQ-BOj"/>
+                            <constraint firstItem="Chn-Mr-nao" firstAttribute="top" secondItem="MH0-UC-EYz" secondAttribute="top" id="WFi-Vb-5Su"/>
+                            <constraint firstItem="s6o-9P-DOV" firstAttribute="centerY" secondItem="NUh-ik-FK4" secondAttribute="centerY" id="Xhc-Qn-7go"/>
+                            <constraint firstItem="Chn-Mr-nao" firstAttribute="bottom" secondItem="cFl-oh-nFt" secondAttribute="bottom" id="fCf-vY-cey"/>
+                            <constraint firstItem="NUh-ik-FK4" firstAttribute="centerX" secondItem="MH0-UC-EYz" secondAttribute="centerX" id="mF1-yi-XoK"/>
+                            <constraint firstItem="sx1-0c-8Bt" firstAttribute="top" secondItem="s6o-9P-DOV" secondAttribute="bottom" constant="4.5" id="sdg-L3-Qum"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cFl-oh-nFt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oeq-Xe-pgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10250.4" y="6992.6536731634187"/>
         </scene>
         <!--Lib View Controller-->
         <scene sceneID="eqf-WC-6cX">
@@ -7364,11 +7486,11 @@ YgACjWoAAo1tAAKNfwACjYIAAo2HAAAAAAAABAEAAAAAAAAAWQAAAAAAAAAAAAAAAAACjYk
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dhg-Yk-u5t"/>
-        <segue reference="geI-t6-Svl"/>
-        <segue reference="Z3c-by-PbJ"/>
+        <segue reference="Nh1-LO-uCJ"/>
+        <segue reference="81X-gA-syT"/>
+        <segue reference="knN-qt-VWg"/>
         <segue reference="GCk-P9-zek"/>
-        <segue reference="We3-CC-6cK"/>
+        <segue reference="zJ5-Ak-cT8"/>
         <segue reference="aeQ-qY-d1A"/>
         <segue reference="RFx-FM-SfX"/>
         <segue reference="8Mm-jX-DvB"/>
