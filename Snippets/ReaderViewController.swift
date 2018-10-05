@@ -104,6 +104,24 @@ class ReaderViewController: UIViewController {
     
     var arrayCount = Int()
 
+    let swipeRightRec = UISwipeGestureRecognizer()
+    let swipeLeftRec = UISwipeGestureRecognizer()
+    let swipeUpRec = UISwipeGestureRecognizer()
+    let swipeDownRec = UISwipeGestureRecognizer()
+    
+    @objc func swipeR() {
+        
+        self.tapPrevious(nil)
+
+    }
+    
+    @objc func swipeL() {
+        
+        
+        self.tapNext(nil)
+
+        
+    }
     @IBOutlet weak var tapbuy: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,12 +132,22 @@ class ReaderViewController: UIViewController {
         
         favorites.removeAll()
         
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        self.view.addGestureRecognizer(swipeRight)
+        swipeRightRec.addTarget(self, action: #selector(self.swipeR) )
+        swipeRightRec.direction = .right
+        self.view!.addGestureRecognizer(swipeRightRec)
         
-        var swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
-        self.view.addGestureRecognizer(swipeLeft)
+        
+        swipeLeftRec.addTarget(self, action: #selector(self.swipeL) )
+        swipeLeftRec.direction = .left
+        self.view!.addGestureRecognizer(swipeLeftRec)
+        
+        
+//        var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
+//        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+//        self.view.addGestureRecognizer(swipeRight)
+//
+//        var swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
+//        self.view.addGestureRecognizer(swipeLeft)
         
         if freepressed {
             
@@ -193,6 +221,7 @@ class ReaderViewController: UIViewController {
     
     var randomstring = String()
     
+
     @IBAction func tapBookMark(_ sender: Any) {
         favorites.removeAll()
         randomstring = UUID().uuidString
@@ -586,6 +615,22 @@ class ReaderViewController: UIViewController {
         }
     }
     
+//    func handleSwipe(sender: UISwipeGestureRecognizer) {
+//        print(sender.direction)
+//    }
+//
+//    func addSwipe() {
+//        let directions: [UISwipeGestureRecognizerDirection] = [.right, .left, .up, .down]
+//        for direction in directions {
+//            let gesture = UISwipeGestureRecognizer(target: self, action: Selector(self.handleSwipe(<#T##UISwipeGestureRecognizer#>))))
+//                    var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
+//
+//            gesture.direction = direction
+//            self.addGestureRecognizer(gesture)
+//        }
+//    }
+    
+    
 
     @IBOutlet weak var two: UIImageView!
     @IBOutlet weak var one: UIImageView!
@@ -617,7 +662,7 @@ class ReaderViewController: UIViewController {
 
         trimmedtext = trimmedtext.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
             
-        trimmedtext = trimmedtext.replacingOccurrences(of: "\'", with: "", options: NSString.CompareOptions.literal, range: nil)
+//        trimmedtext = trimmedtext.replacingOccurrences(of: "\'", with: "", options: NSString.CompareOptions.literal, range: nil)
 
         trimmedtext = trimmedtext.replacingOccurrences(of: "“", with: "", options: NSString.CompareOptions.literal, range: nil)
 
