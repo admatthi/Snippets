@@ -73,19 +73,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+//        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
         
-        if Auth.auth().currentUser == nil {
-            // Do smth if user is not logged in
-            
-            tabBar.selectedIndex = 1
-
-            
-        } else {
-            
-            tabBar.selectedIndex = 0
-
-        }
+//        if Auth.auth().currentUser == nil {
+//            // Do smth if user is not logged in
+//
+//            tabBar.selectedIndex = 1
+//
+//
+//        } else {
+//
+//            tabBar.selectedIndex = 0
+//
+//        }
         
         return true
     }

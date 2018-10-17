@@ -11,6 +11,7 @@
 		9C2304F62D26520C38570F48 /* Pods_Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E681C89D5EFAA82527E004D9 /* Pods_Snippets.framework */; };
 		9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */; };
 		9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */; };
+		9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1EBF0921767EF4004A566A /* SwipeViewController.swift */; };
 		9D2CF7A6215A672A00F9C3D5 /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */; };
 		9D40206E2102278900E90720 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D40206D2102278900E90720 /* FilterViewController.swift */; };
 		9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
@@ -96,6 +97,9 @@
 		9DE98A542107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
 		9DE98A552107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
 		9DE98A562107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */; };
+		9DEEE4C821776523001B5FE8 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEE4C721776523001B5FE8 /* ScrollViewController.swift */; };
+		9DEEE4CC21776BCF001B5FE8 /* ScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEE4CB21776BCE001B5FE8 /* ScrollTableViewCell.swift */; };
+		9DEEE4CE21776DE1001B5FE8 /* Scroll2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */; };
 		9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */; };
 		E778CDE60069721ACE7A31BE /* Pods_SnippetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A796B9825B532C8C1B74FF48 /* Pods_SnippetsTests.framework */; };
 /* End PBXBuildFile section */
@@ -124,6 +128,7 @@
 		7A42BC6B365D009C7E233046 /* Pods-SnippetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		9D1EBF0921767EF4004A566A /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
 		9D40206D2102278900E90720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9D4020712102375E00E90720 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +174,9 @@
 		9DE586482147404F00DF4129 /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		9DE5864A21481AF500DF4129 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham Book Regular.otf"; sourceTree = "<group>"; };
+		9DEEE4C721776523001B5FE8 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		9DEEE4CB21776BCE001B5FE8 /* ScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTableViewCell.swift; sourceTree = "<group>"; };
+		9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll2TableViewCell.swift; sourceTree = "<group>"; };
 		9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A796B9825B532C8C1B74FF48 /* Pods_SnippetsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnippetsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E553AC67A2A110DC066FE7 /* Pods-SnippetsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsUITests/Pods-SnippetsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,9 +285,13 @@
 				9D40206D2102278900E90720 /* FilterViewController.swift */,
 				9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */,
 				9D54FB792134DE60003B8BA7 /* DemoViewController.swift */,
+				9D1EBF0921767EF4004A566A /* SwipeViewController.swift */,
+				9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */,
+				9DEEE4C721776523001B5FE8 /* ScrollViewController.swift */,
 				9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */,
 				9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */,
 				9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */,
+				9DEEE4CB21776BCE001B5FE8 /* ScrollTableViewCell.swift */,
 				9D662CCF21082BA900A474A3 /* rm_albion.ttf */,
 				9D714EC420FFA0EB002CD2A3 /* Assets.xcassets */,
 				9D714EC920FFA0EB002CD2A3 /* Info.plist */,
@@ -567,9 +579,12 @@
 				9DE586492147404F00DF4129 /* FavTableViewCell.swift in Sources */,
 				9D40206E2102278900E90720 /* FilterViewController.swift in Sources */,
 				9D714F1A20FFA1A9002CD2A3 /* FavoritesTableViewCell.swift in Sources */,
+				9DEEE4CE21776DE1001B5FE8 /* Scroll2TableViewCell.swift in Sources */,
 				9D714F0220FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */,
 				9D714F1720FFA1A9002CD2A3 /* DViewController.swift in Sources */,
 				9D714F2C20FFA1A9002CD2A3 /* LoginViewController.swift in Sources */,
+				9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */,
+				9DEEE4C821776523001B5FE8 /* ScrollViewController.swift in Sources */,
 				9D714F0520FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
 				9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */,
@@ -584,6 +599,7 @@
 				9DD99E8E214F3C6400AC40FB /* CompletedViewController.swift in Sources */,
 				9D714F2F20FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,
 				9D54FB7A2134DE60003B8BA7 /* DemoViewController.swift in Sources */,
+				9DEEE4CC21776BCF001B5FE8 /* ScrollTableViewCell.swift in Sources */,
 				9D714F1420FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */,
 				9D714F0E20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
@@ -805,7 +821,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Snippets;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aatech.Snips-com.aatech.Snips-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -825,7 +841,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Snippets;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aatech.Snips-com.aatech.Snips-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
