@@ -17,6 +17,7 @@ import FBSDKCoreKit
 var reading = [String:String]()
 var seemoredescriptions = [String:String]()
 var lastread = [String:Int]()
+var seemoreurls = [String:String]()
 
 class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -113,6 +114,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         seemoreauthors.removeAll()
         seemoreimagenames.removeAll()
         seemoredescriptions.removeAll()
+        seemoreurls.removeAll()
         ref?.child("AllBooks1").child(selectedgenre).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
@@ -133,6 +135,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     if functioncounter == snapDict.count {
                         
+                        seemoreids.shuffle()
                         
                         completed()
                         
@@ -168,21 +171,26 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 }
                 
+                if var name2 = value?["AmazonURL"] as? String {
+                    seemoreurls[each] = name2
+                    
+                }
+                
 
                 if var views = value?["Description"] as? String {
                     seemoredescriptions[each] = views
                     
                 }
                 
-                if var views = value?["LastRead"] as? Int {
-                    
-                    lastread[each] = counter
-                    
-                } else {
-                    
+//                if var views = value?["LastRead"] as? Int {
+//
+//                    lastread[each] = counter
+//
+//                } else {
+//
                     lastread[each] = 0
-
-                }
+//
+//                }
                 
                 seemoreimages[each] = UIImage(named: "\(abbreviation)\(each)")
                 
@@ -295,14 +303,10 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             counter += 1
             
-            ref?.child(selectedgenre).child(selectedbookid).updateChildValues(["LastRead" : counter])
-
             lastread[seemoreids[buttonTag]] = counter
 
             showproperquote()
             
-//            let progress = (Float(counter)/Float(arrayCount))
-//            self.progress.setProgress(Float(progress), animated:true)
         }
         
         
@@ -627,8 +631,11 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.tapprevious.tag = indexPath.row
         
         cell.tapprevious.addTarget(self, action: #selector(ScrollViewController.tapPrevious2(_:)), for: UIControlEvents.touchUpInside)
+       
+        cell.tapbuy.tag = indexPath.row
 
-   
+        cell.tapbuy.addTarget(self, action: #selector(ScrollViewController.tapBuy2(_:)), for: UIControlEvents.touchUpInside)
+
 
                 cell.selectionStyle = .none
         
@@ -648,7 +655,9 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.swiperightlabel.alpha = 1
                 cell.background3.alpha = 1
                 cell.icon.alpha = 1
-                
+                cell.progressView.alpha = 0
+                cell.progressView.setProgress(0.05, animated: true)
+
             } else {
                 
                 cell.coverimage.alpha = 0
@@ -660,6 +669,21 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.swiperightlabel.alpha = 0
                 cell.background3.alpha = 0
                 cell.icon.alpha = 0
+                cell.progressView.alpha = 1
+                
+                if arrayCount == 0 {
+                    
+                    
+                    cell.progressView.setProgress(0.05, animated: true)
+
+                } else {
+                    
+                    let progress = (Float(counter+1)/Float(arrayCount))
+                    
+                    cell.progressView.setProgress(Float(progress), animated:true)
+
+                }
+
                 
             }
 //            cell.views.text = seemoreviews[seemoreids[indexPath.row]]!
@@ -701,6 +725,8 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if reading[seemoreids[buttonTag]] == "Yes" {
             
+            counter = lastread[seemoreids[buttonTag]]!
+            
             nextcount()
 
         } else {
@@ -709,7 +735,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             reading[seemoreids[buttonTag]] = "Yes"
             
-  
+            counter = lastread[seemoreids[buttonTag]]!
             
             getquotes()
             
@@ -738,6 +764,26 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
     }
+    
+    @objc func tapBuy2(_ sender: UIButton) {
+        
+        buttonTag = sender.tag
+        
+        selectedurl = seemoreurls[seemoreids[buttonTag]]!
+        if selectedurl != "" {
+            
+            FBSDKAppEvents.logEvent("Buy Tapped")
+            
+            if let url = NSURL(string: "\(selectedurl)"
+                ) {
+                UIApplication.shared.openURL(url as URL)
+            }
+            
+        }
+        
+        
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -748,4 +794,28 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     */
 
+}
+
+extension MutableCollection {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            // Change `Int` in the next line to `IndexDistance` in < Swift 4.1
+            let d: Int = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            let i = index(firstUnshuffled, offsetBy: d)
+            swapAt(firstUnshuffled, i)
+        }
+    }
+}
+
+extension Sequence {
+    /// Returns an array with the contents of this sequence, shuffled.
+    func shuffled() -> [Element] {
+        var result = Array(self)
+        result.shuffle()
+        return result
+    }
 }

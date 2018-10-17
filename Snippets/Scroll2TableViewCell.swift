@@ -11,6 +11,7 @@ import UIKit
 class Scroll2TableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var tapbuy: UIButton!
     @IBOutlet weak var background3: UILabel!
     @IBOutlet weak var icon: UILabel!
     @IBOutlet weak var tapprevious: UIButton!
@@ -25,6 +26,7 @@ class Scroll2TableViewCell: UITableViewCell {
     @IBOutlet weak var authorlabel: UILabel!
     @IBOutlet weak var titlelabel: UILabel!
     
+    @IBOutlet weak var progressView: UIProgressView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
