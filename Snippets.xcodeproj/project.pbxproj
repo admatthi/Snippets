@@ -18,6 +18,60 @@
 		9D4020732102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
 		9D4020742102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
 		9D402076210241E400E90720 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D402075210241E400E90720 /* StoreKit.framework */; };
+		9D4D43152177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43032177B99800DC0EB5 /* National-BoldItalic.otf */; };
+		9D4D43162177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43032177B99800DC0EB5 /* National-BoldItalic.otf */; };
+		9D4D43172177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43032177B99800DC0EB5 /* National-BoldItalic.otf */; };
+		9D4D43182177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */; };
+		9D4D43192177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */; };
+		9D4D431A2177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */; };
+		9D4D431B2177BA3B00DC0EB5 /* National-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43052177B9B000DC0EB5 /* National-Medium.otf */; };
+		9D4D431C2177BA3B00DC0EB5 /* National-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43052177B9B000DC0EB5 /* National-Medium.otf */; };
+		9D4D431D2177BA3B00DC0EB5 /* National-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43052177B9B000DC0EB5 /* National-Medium.otf */; };
+		9D4D431E2177BA3B00DC0EB5 /* National-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43062177B9B700DC0EB5 /* National-Book.otf */; };
+		9D4D431F2177BA3B00DC0EB5 /* National-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43062177B9B700DC0EB5 /* National-Book.otf */; };
+		9D4D43202177BA3B00DC0EB5 /* National-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43062177B9B700DC0EB5 /* National-Book.otf */; };
+		9D4D43212177BA3B00DC0EB5 /* National-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43072177B9C400DC0EB5 /* National-Thin.otf */; };
+		9D4D43222177BA3B00DC0EB5 /* National-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43072177B9C400DC0EB5 /* National-Thin.otf */; };
+		9D4D43232177BA3B00DC0EB5 /* National-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43072177B9C400DC0EB5 /* National-Thin.otf */; };
+		9D4D43242177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43082177B9CD00DC0EB5 /* National-BookItalic.otf */; };
+		9D4D43252177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43082177B9CD00DC0EB5 /* National-BookItalic.otf */; };
+		9D4D43262177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43082177B9CD00DC0EB5 /* National-BookItalic.otf */; };
+		9D4D43272177BA3B00DC0EB5 /* National-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */; };
+		9D4D43282177BA3B00DC0EB5 /* National-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */; };
+		9D4D43292177BA3B00DC0EB5 /* National-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */; };
+		9D4D432A2177BA3B00DC0EB5 /* National-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430A2177B9DD00DC0EB5 /* National-Bold.otf */; };
+		9D4D432B2177BA3B00DC0EB5 /* National-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430A2177B9DD00DC0EB5 /* National-Bold.otf */; };
+		9D4D432C2177BA3B00DC0EB5 /* National-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430A2177B9DD00DC0EB5 /* National-Bold.otf */; };
+		9D4D432D2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430B2177B9E400DC0EB5 /* National-SemiboldItalic.otf */; };
+		9D4D432E2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430B2177B9E400DC0EB5 /* National-SemiboldItalic.otf */; };
+		9D4D432F2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430B2177B9E400DC0EB5 /* National-SemiboldItalic.otf */; };
+		9D4D43302177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430C2177B9F400DC0EB5 /* National-ThinItalic.otf */; };
+		9D4D43312177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430C2177B9F400DC0EB5 /* National-ThinItalic.otf */; };
+		9D4D43322177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430C2177B9F400DC0EB5 /* National-ThinItalic.otf */; };
+		9D4D43332177BA3B00DC0EB5 /* National-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430D2177B9FC00DC0EB5 /* National-BlackItalic.otf */; };
+		9D4D43342177BA3B00DC0EB5 /* National-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430D2177B9FC00DC0EB5 /* National-BlackItalic.otf */; };
+		9D4D43352177BA3B00DC0EB5 /* National-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430D2177B9FC00DC0EB5 /* National-BlackItalic.otf */; };
+		9D4D43362177BA3B00DC0EB5 /* National-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */; };
+		9D4D43372177BA3B00DC0EB5 /* National-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */; };
+		9D4D43382177BA3B00DC0EB5 /* National-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */; };
+		9D4D43392177BA3B00DC0EB5 /* National-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */; };
+		9D4D433A2177BA3B00DC0EB5 /* National-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */; };
+		9D4D433B2177BA3B00DC0EB5 /* National-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */; };
+		9D4D433C2177BA3B00DC0EB5 /* National-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43102177BA1100DC0EB5 /* National-Black.otf */; };
+		9D4D433D2177BA3B00DC0EB5 /* National-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43102177BA1100DC0EB5 /* National-Black.otf */; };
+		9D4D433E2177BA3B00DC0EB5 /* National-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43102177BA1100DC0EB5 /* National-Black.otf */; };
+		9D4D433F2177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */; };
+		9D4D43402177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */; };
+		9D4D43412177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */; };
+		9D4D43422177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43122177BA2200DC0EB5 /* National-Extrabold.otf */; };
+		9D4D43432177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43122177BA2200DC0EB5 /* National-Extrabold.otf */; };
+		9D4D43442177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43122177BA2200DC0EB5 /* National-Extrabold.otf */; };
+		9D4D43452177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43132177BA2900DC0EB5 /* National-ExtraboldItalic.otf */; };
+		9D4D43462177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43132177BA2900DC0EB5 /* National-ExtraboldItalic.otf */; };
+		9D4D43472177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43132177BA2900DC0EB5 /* National-ExtraboldItalic.otf */; };
+		9D4D43482177BA3B00DC0EB5 /* National-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43142177BA3300DC0EB5 /* National-Light.otf */; };
+		9D4D43492177BA3B00DC0EB5 /* National-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43142177BA3300DC0EB5 /* National-Light.otf */; };
+		9D4D434A2177BA3B00DC0EB5 /* National-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4D43142177BA3300DC0EB5 /* National-Light.otf */; };
 		9D54FB7A2134DE60003B8BA7 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54FB792134DE60003B8BA7 /* DemoViewController.swift */; };
 		9D662CD021082BAB00A474A3 /* rm_albion.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D662CCF21082BA900A474A3 /* rm_albion.ttf */; };
 		9D662CD121082BAB00A474A3 /* rm_albion.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D662CCF21082BA900A474A3 /* rm_albion.ttf */; };
@@ -133,6 +187,24 @@
 		9D40206D2102278900E90720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9D4020712102375E00E90720 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
 		9D402075210241E400E90720 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9D4D43032177B99800DC0EB5 /* National-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-BoldItalic.otf"; sourceTree = "<group>"; };
+		9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-LightItalic.otf"; sourceTree = "<group>"; };
+		9D4D43052177B9B000DC0EB5 /* National-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Medium.otf"; sourceTree = "<group>"; };
+		9D4D43062177B9B700DC0EB5 /* National-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Book.otf"; sourceTree = "<group>"; };
+		9D4D43072177B9C400DC0EB5 /* National-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Thin.otf"; sourceTree = "<group>"; };
+		9D4D43082177B9CD00DC0EB5 /* National-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-BookItalic.otf"; sourceTree = "<group>"; };
+		9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-MediumItalic.otf"; sourceTree = "<group>"; };
+		9D4D430A2177B9DD00DC0EB5 /* National-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Bold.otf"; sourceTree = "<group>"; };
+		9D4D430B2177B9E400DC0EB5 /* National-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		9D4D430C2177B9F400DC0EB5 /* National-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-ThinItalic.otf"; sourceTree = "<group>"; };
+		9D4D430D2177B9FC00DC0EB5 /* National-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-BlackItalic.otf"; sourceTree = "<group>"; };
+		9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Semibold.otf"; sourceTree = "<group>"; };
+		9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Regular.otf"; sourceTree = "<group>"; };
+		9D4D43102177BA1100DC0EB5 /* National-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Black.otf"; sourceTree = "<group>"; };
+		9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-RegularItalic.otf"; sourceTree = "<group>"; };
+		9D4D43122177BA2200DC0EB5 /* National-Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Extrabold.otf"; sourceTree = "<group>"; };
+		9D4D43132177BA2900DC0EB5 /* National-ExtraboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-ExtraboldItalic.otf"; sourceTree = "<group>"; };
+		9D4D43142177BA3300DC0EB5 /* National-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Light.otf"; sourceTree = "<group>"; };
 		9D54FB792134DE60003B8BA7 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		9D662CCF21082BA900A474A3 /* rm_albion.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rm_albion.ttf; sourceTree = "<group>"; };
 		9D714EBA20FFA0E7002CD2A3 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +368,24 @@
 				9D714EC420FFA0EB002CD2A3 /* Assets.xcassets */,
 				9D714EC920FFA0EB002CD2A3 /* Info.plist */,
 				9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */,
+				9D4D43102177BA1100DC0EB5 /* National-Black.otf */,
+				9D4D430D2177B9FC00DC0EB5 /* National-BlackItalic.otf */,
+				9D4D430A2177B9DD00DC0EB5 /* National-Bold.otf */,
+				9D4D43032177B99800DC0EB5 /* National-BoldItalic.otf */,
+				9D4D43062177B9B700DC0EB5 /* National-Book.otf */,
+				9D4D43082177B9CD00DC0EB5 /* National-BookItalic.otf */,
+				9D4D43122177BA2200DC0EB5 /* National-Extrabold.otf */,
+				9D4D43132177BA2900DC0EB5 /* National-ExtraboldItalic.otf */,
+				9D4D43142177BA3300DC0EB5 /* National-Light.otf */,
+				9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */,
+				9D4D43052177B9B000DC0EB5 /* National-Medium.otf */,
+				9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */,
+				9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */,
+				9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */,
+				9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */,
+				9D4D430B2177B9E400DC0EB5 /* National-SemiboldItalic.otf */,
+				9D4D43072177B9C400DC0EB5 /* National-Thin.otf */,
+				9D4D430C2177B9F400DC0EB5 /* National-ThinItalic.otf */,
 			);
 			path = Snippets;
 			sourceTree = "<group>";
@@ -442,13 +532,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4D43152177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
 				9D714F2320FFA1A9002CD2A3 /* Main.storyboard in Resources */,
+				9D4D43212177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
+				9D4D431B2177BA3B00DC0EB5 /* National-Medium.otf in Resources */,
 				9D714EC820FFA0EB002CD2A3 /* LaunchScreen.storyboard in Resources */,
 				9D662CD021082BAB00A474A3 /* rm_albion.ttf in Resources */,
+				9D4D43302177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */,
+				9D4D43242177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */,
+				9D4D43392177BA3B00DC0EB5 /* National-Regular.otf in Resources */,
+				9D4D43452177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */,
 				9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */,
+				9D4D43422177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */,
+				9D4D43362177BA3B00DC0EB5 /* National-Semibold.otf in Resources */,
+				9D4D43482177BA3B00DC0EB5 /* National-Light.otf in Resources */,
+				9D4D43332177BA3B00DC0EB5 /* National-BlackItalic.otf in Resources */,
 				9DA3FFE7210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
+				9D4D431E2177BA3B00DC0EB5 /* National-Book.otf in Resources */,
+				9D4D432D2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */,
+				9D4D43182177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
 				9DE98A542107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */,
+				9D4D43272177BA3B00DC0EB5 /* National-MediumItalic.otf in Resources */,
 				9D714EC520FFA0EB002CD2A3 /* Assets.xcassets in Resources */,
+				9D4D433C2177BA3B00DC0EB5 /* National-Black.otf in Resources */,
+				9D4D433F2177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */,
+				9D4D432A2177BA3B00DC0EB5 /* National-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,9 +564,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4D43192177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
+				9D4D43162177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
+				9D4D43402177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */,
+				9D4D43222177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
+				9D4D43342177BA3B00DC0EB5 /* National-BlackItalic.otf in Resources */,
+				9D4D43282177BA3B00DC0EB5 /* National-MediumItalic.otf in Resources */,
+				9D4D43312177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */,
 				9DE98A552107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */,
+				9D4D43492177BA3B00DC0EB5 /* National-Light.otf in Resources */,
+				9D4D431C2177BA3B00DC0EB5 /* National-Medium.otf in Resources */,
+				9D4D433A2177BA3B00DC0EB5 /* National-Regular.otf in Resources */,
 				9DA3FFE8210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
+				9D4D43252177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */,
+				9D4D43462177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */,
+				9D4D432E2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */,
+				9D4D432B2177BA3B00DC0EB5 /* National-Bold.otf in Resources */,
+				9D4D433D2177BA3B00DC0EB5 /* National-Black.otf in Resources */,
 				9D714F2420FFA1A9002CD2A3 /* Main.storyboard in Resources */,
+				9D4D431F2177BA3B00DC0EB5 /* National-Book.otf in Resources */,
+				9D4D43432177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */,
+				9D4D43372177BA3B00DC0EB5 /* National-Semibold.otf in Resources */,
 				9D662CD121082BAB00A474A3 /* rm_albion.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,9 +593,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4D431A2177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
+				9D4D43172177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
+				9D4D43412177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */,
+				9D4D43232177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
+				9D4D43352177BA3B00DC0EB5 /* National-BlackItalic.otf in Resources */,
+				9D4D43292177BA3B00DC0EB5 /* National-MediumItalic.otf in Resources */,
+				9D4D43322177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */,
 				9DE98A562107F7620073AD07 /* Cheltenham Book Regular.otf in Resources */,
+				9D4D434A2177BA3B00DC0EB5 /* National-Light.otf in Resources */,
+				9D4D431D2177BA3B00DC0EB5 /* National-Medium.otf in Resources */,
+				9D4D433B2177BA3B00DC0EB5 /* National-Regular.otf in Resources */,
 				9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
+				9D4D43262177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */,
+				9D4D43472177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */,
+				9D4D432F2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */,
+				9D4D432C2177BA3B00DC0EB5 /* National-Bold.otf in Resources */,
+				9D4D433E2177BA3B00DC0EB5 /* National-Black.otf in Resources */,
 				9D714F2520FFA1A9002CD2A3 /* Main.storyboard in Resources */,
+				9D4D43202177BA3B00DC0EB5 /* National-Book.otf in Resources */,
+				9D4D43442177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */,
+				9D4D43382177BA3B00DC0EB5 /* National-Semibold.otf in Resources */,
 				9D662CD221082BAB00A474A3 /* rm_albion.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

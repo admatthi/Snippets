@@ -618,6 +618,8 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.smallimage.layer.cornerRadius = 5.0
         cell.smallimage.layer.masksToBounds = true
+//        cell.coverimage.layer.cornerRadius = 10.0
+//        cell.coverimage.layer.masksToBounds = true
         cell.tapnext.tag = indexPath.row
 
         cell.tapnext.addTarget(self, action: #selector(ScrollViewController.tapNext2(_:)), for: UIControlEvents.touchUpInside)
@@ -643,7 +645,9 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.coverimage.alpha = 1
                 cell.textlabel.alpha = 0
                 cell.readerbackground.alpha = 0
-
+                cell.swiperightlabel.alpha = 1
+                cell.background3.alpha = 1
+                cell.icon.alpha = 1
                 
             } else {
                 
@@ -653,6 +657,9 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 counter = lastread[seemoreids[indexPath.row]]!
 //                cell.textlabel.slideInFromRight()
                 cell.textlabel.text = quote[counter]
+                cell.swiperightlabel.alpha = 0
+                cell.background3.alpha = 0
+                cell.icon.alpha = 0
                 
             }
 //            cell.views.text = seemoreviews[seemoreids[indexPath.row]]!
