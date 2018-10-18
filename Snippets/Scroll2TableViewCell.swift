@@ -11,9 +11,9 @@ import UIKit
 class Scroll2TableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var tapbuy: UIButton!
     @IBOutlet weak var background3: UILabel!
-    @IBOutlet weak var icon: UILabel!
     @IBOutlet weak var tapprevious: UIButton!
     @IBOutlet weak var tapnext: UIButton!
     @IBOutlet weak var textlabel: UILabel!
