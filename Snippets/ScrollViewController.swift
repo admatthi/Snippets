@@ -32,6 +32,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        activityIndicator.color = mygreen
 //        titlelabel.text = selectedgenre
         
+ 
         selectedgenre = "Biography & Memoir"
         
         selectedgenreshortner()
@@ -721,6 +722,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @objc func tapNext2(_ sender: UIButton) {
         
+        
         buttonTag = sender.tag
         
         if reading[seemoreids[buttonTag]] == "Yes" {
@@ -730,6 +732,9 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
             nextcount()
 
         } else {
+            
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
             
             selectedbookid = seemoreids[buttonTag]
             
