@@ -623,8 +623,8 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.smallimage.layer.cornerRadius = 5.0
         cell.smallimage.layer.masksToBounds = true
-//        cell.coverimage.layer.cornerRadius = 10.0
-//        cell.coverimage.layer.masksToBounds = true
+        cell.coverimage.layer.cornerRadius = 10.0
+        cell.coverimage.layer.masksToBounds = true
         cell.tapnext.tag = indexPath.row
 
         cell.tapnext.addTarget(self, action: #selector(ScrollViewController.tapNext2(_:)), for: UIControlEvents.touchUpInside)
@@ -637,8 +637,10 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         cell.tapbuy.addTarget(self, action: #selector(ScrollViewController.tapBuy2(_:)), for: UIControlEvents.touchUpInside)
 
-
-                cell.selectionStyle = .none
+        cell.readerbackground.layer.cornerRadius = 10
+        cell.readerbackground.layer.masksToBounds = true
+        
+        cell.selectionStyle = .none
         
         if seemoreimages.count > 0 {
             
@@ -653,11 +655,8 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.coverimage.alpha = 1
                 cell.textlabel.alpha = 0
                 cell.readerbackground.alpha = 0
-                cell.swiperightlabel.alpha = 1
-                cell.background3.alpha = 1
-                cell.icon.alpha = 1
-                cell.progressView.alpha = 0
-                cell.progressView.setProgress(0.05, animated: true)
+
+                cell.progressView.setProgress(0, animated: true)
 
             } else {
                 
@@ -667,9 +666,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 counter = lastread[seemoreids[indexPath.row]]!
 //                cell.textlabel.slideInFromRight()
                 cell.textlabel.text = quote[counter]
-                cell.swiperightlabel.alpha = 0
-                cell.background3.alpha = 0
-                cell.icon.alpha = 0
+
                 cell.progressView.alpha = 1
                 
                 if arrayCount == 0 {

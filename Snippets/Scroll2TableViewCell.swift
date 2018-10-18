@@ -30,6 +30,9 @@ class Scroll2TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+     progressView.transform = progressView.transform.scaledBy(x: 1, y: 15)
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
