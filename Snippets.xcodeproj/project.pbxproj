@@ -138,11 +138,21 @@
 		9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
 		9D714F3920FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
 		9D714F3A20FFA1A9002CD2A3 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */; };
+		9D7D492921790F1A00138802 /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7D492821790F1A00138802 /* GenreViewController.swift */; };
 		9D9A829E2146D9380050F2B3 /* LibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A829D2146D9380050F2B3 /* LibViewController.swift */; };
 		9D9A82A02146D9A90050F2B3 /* LibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */; };
 		9DA3FFE7210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DA3FFE8210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
 		9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */; };
+		9DD3AC5D217BCD3900D82C13 /* LibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A829D2146D9380050F2B3 /* LibViewController.swift */; };
+		9DD3AC5E217BCD3900D82C13 /* LibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A829D2146D9380050F2B3 /* LibViewController.swift */; };
+		9DD3AC5F217BCD5600D82C13 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
+		9DD3AC60217BCD5600D82C13 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
+		9DD3AC61217BCD5600D82C13 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE586482147404F00DF4129 /* FavTableViewCell.swift */; };
+		9DD3AC62217BCD5600D82C13 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE586482147404F00DF4129 /* FavTableViewCell.swift */; };
+		9DD3AC65217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
+		9DD3AC66217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
+		9DD3AC67217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
 		9DD99E8E214F3C6400AC40FB /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */; };
 		9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */; };
 		9DE5864721473FD500DF4129 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
@@ -237,9 +247,11 @@
 		9D714EFC20FFA1A8002CD2A3 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubsViewController.swift; sourceTree = "<group>"; };
 		9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A1ViewController.swift; sourceTree = "<group>"; };
+		9D7D492821790F1A00138802 /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
 		9D9A829D2146D9380050F2B3 /* LibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibViewController.swift; sourceTree = "<group>"; };
 		9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibTableViewCell.swift; sourceTree = "<group>"; };
 		9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham-Bold.otf"; sourceTree = "<group>"; };
+		9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrowseViewController.swift; path = /Users/alekmatthiessen/Desktop/Snippets/Snippets/Recent/BrowseViewController.swift; sourceTree = "<absolute>"; };
 		9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
 		9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibbCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DE5864621473FD500DF4129 /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
@@ -329,37 +341,8 @@
 				9D714EF720FFA1A6002CD2A3 /* Main.storyboard */,
 				9DE5864A21481AF500DF4129 /* MainViewController.swift */,
 				9D714EF620FFA1A6002CD2A3 /* AViewController.swift */,
-				9D714EF920FFA1A7002CD2A3 /* BookOverviewViewController.swift */,
-				9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */,
-				9D714EFC20FFA1A8002CD2A3 /* BViewController.swift */,
-				9D714EF220FFA1A5002CD2A3 /* CodeViewController.swift */,
-				9D714EF120FFA1A4002CD2A3 /* CViewController.swift */,
-				9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */,
-				9D9A829D2146D9380050F2B3 /* LibViewController.swift */,
-				9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */,
-				9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */,
-				9DE5864621473FD500DF4129 /* FavViewController.swift */,
-				9DE586482147404F00DF4129 /* FavTableViewCell.swift */,
-				9D4020712102375E00E90720 /* ExpandedViewController.swift */,
-				9D714EF320FFA1A5002CD2A3 /* DViewController.swift */,
-				9D714EF420FFA1A5002CD2A3 /* FavoritesTableViewCell.swift */,
-				9D714EF520FFA1A6002CD2A3 /* FavoritesViewController.swift */,
-				9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */,
-				9D714EFA20FFA1A7002CD2A3 /* LoginViewController.swift */,
-				9D714EED20FFA1A3002CD2A3 /* PurchaseViewController.swift */,
-				9D714EEF20FFA1A4002CD2A3 /* ReaderViewController.swift */,
-				9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */,
-				9D714EEB20FFA1A2002CD2A3 /* ReadTableViewCell.swift */,
-				9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */,
-				9D714EFB20FFA1A8002CD2A3 /* Settings2ViewController.swift */,
-				9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */,
-				9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */,
-				9D40206D2102278900E90720 /* FilterViewController.swift */,
-				9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */,
-				9D54FB792134DE60003B8BA7 /* DemoViewController.swift */,
-				9D1EBF0921767EF4004A566A /* SwipeViewController.swift */,
-				9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */,
-				9DEEE4C721776523001B5FE8 /* ScrollViewController.swift */,
+				9DD3AC5C217BCD2000D82C13 /* Recent */,
+				9DD3AC63217BCD5900D82C13 /* Other */,
 				9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */,
 				9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */,
 				9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */,
@@ -406,6 +389,53 @@
 				9D714EDF20FFA0EB002CD2A3 /* Info.plist */,
 			);
 			path = SnippetsUITests;
+			sourceTree = "<group>";
+		};
+		9DD3AC5C217BCD2000D82C13 /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */,
+				9D714EF920FFA1A7002CD2A3 /* BookOverviewViewController.swift */,
+				9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */,
+				9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */,
+				9D9A829D2146D9380050F2B3 /* LibViewController.swift */,
+				9D714EED20FFA1A3002CD2A3 /* PurchaseViewController.swift */,
+				9D714EEF20FFA1A4002CD2A3 /* ReaderViewController.swift */,
+				9DE5864621473FD500DF4129 /* FavViewController.swift */,
+				9DE586482147404F00DF4129 /* FavTableViewCell.swift */,
+			);
+			path = Recent;
+			sourceTree = "<group>";
+		};
+		9DD3AC63217BCD5900D82C13 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9D714EFC20FFA1A8002CD2A3 /* BViewController.swift */,
+				9D714EF220FFA1A5002CD2A3 /* CodeViewController.swift */,
+				9D714EF120FFA1A4002CD2A3 /* CViewController.swift */,
+				9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */,
+				9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */,
+				9D4020712102375E00E90720 /* ExpandedViewController.swift */,
+				9D714EF320FFA1A5002CD2A3 /* DViewController.swift */,
+				9D714EF420FFA1A5002CD2A3 /* FavoritesTableViewCell.swift */,
+				9D714EF520FFA1A6002CD2A3 /* FavoritesViewController.swift */,
+				9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */,
+				9D714EFA20FFA1A7002CD2A3 /* LoginViewController.swift */,
+				9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */,
+				9D714EEB20FFA1A2002CD2A3 /* ReadTableViewCell.swift */,
+				9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */,
+				9D714EFB20FFA1A8002CD2A3 /* Settings2ViewController.swift */,
+				9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */,
+				9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */,
+				9D40206D2102278900E90720 /* FilterViewController.swift */,
+				9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */,
+				9D54FB792134DE60003B8BA7 /* DemoViewController.swift */,
+				9D1EBF0921767EF4004A566A /* SwipeViewController.swift */,
+				9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */,
+				9DEEE4C721776523001B5FE8 /* ScrollViewController.swift */,
+				9D7D492821790F1A00138802 /* GenreViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		F87C21907DEB21E58C006ECF /* Frameworks */ = {
@@ -730,6 +760,7 @@
 				9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */,
 				9DEEE4C821776523001B5FE8 /* ScrollViewController.swift in Sources */,
 				9D714F0520FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
+				9DD3AC66217BCDE600D82C13 /* BrowseViewController.swift in Sources */,
 				9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
 				9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */,
 				9D714F1120FFA1A9002CD2A3 /* CViewController.swift in Sources */,
@@ -744,6 +775,7 @@
 				9D714F2F20FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,
 				9D54FB7A2134DE60003B8BA7 /* DemoViewController.swift in Sources */,
 				9DEEE4CC21776BCF001B5FE8 /* ScrollTableViewCell.swift in Sources */,
+				9D7D492921790F1A00138802 /* GenreViewController.swift in Sources */,
 				9D714F1420FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */,
 				9D714F0E20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
@@ -767,6 +799,9 @@
 				9D714F2D20FFA1A9002CD2A3 /* LoginViewController.swift in Sources */,
 				9D714F0620FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3920FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
+				9DD3AC67217BCDE600D82C13 /* BrowseViewController.swift in Sources */,
+				9DD3AC62217BCD5600D82C13 /* FavTableViewCell.swift in Sources */,
+				9DD3AC5E217BCD3900D82C13 /* LibViewController.swift in Sources */,
 				9D714F1220FFA1A9002CD2A3 /* CViewController.swift in Sources */,
 				9D714ED320FFA0EB002CD2A3 /* SnippetsTests.swift in Sources */,
 				9D714F0920FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */,
@@ -778,6 +813,7 @@
 				9D714F1520FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9D714F0F20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D714F1E20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
+				9DD3AC60217BCD5600D82C13 /* FavViewController.swift in Sources */,
 				9D714F3620FFA1A9002CD2A3 /* SubsViewController.swift in Sources */,
 				9D714F0C20FFA1A9002CD2A3 /* ReaderViewController.swift in Sources */,
 				9D714F2120FFA1A9002CD2A3 /* AViewController.swift in Sources */,
@@ -794,6 +830,9 @@
 				9D714F2E20FFA1A9002CD2A3 /* LoginViewController.swift in Sources */,
 				9D714F0720FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3A20FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
+				9DD3AC65217BCDE600D82C13 /* BrowseViewController.swift in Sources */,
+				9DD3AC61217BCD5600D82C13 /* FavTableViewCell.swift in Sources */,
+				9DD3AC5D217BCD3900D82C13 /* LibViewController.swift in Sources */,
 				9D714F1320FFA1A9002CD2A3 /* CViewController.swift in Sources */,
 				9D714EDE20FFA0EB002CD2A3 /* SnippetsUITests.swift in Sources */,
 				9D714F0A20FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */,
@@ -805,6 +844,7 @@
 				9D714F1620FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9D714F1020FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D714F1F20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
+				9DD3AC5F217BCD5600D82C13 /* FavViewController.swift in Sources */,
 				9D714F3720FFA1A9002CD2A3 /* SubsViewController.swift in Sources */,
 				9D714F0D20FFA1A9002CD2A3 /* ReaderViewController.swift in Sources */,
 				9D714F2220FFA1A9002CD2A3 /* AViewController.swift in Sources */,

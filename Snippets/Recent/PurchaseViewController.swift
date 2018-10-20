@@ -64,13 +64,13 @@ class NetworkActivityIndicatorManager: NSObject {
     }
 }
 
-var sharedSecret = "20f815c7b6b24304a5c3d124edf09bcc"
+var sharedSecret = "9da437b277194aca8dde7cd53b15968c"
 
 var price = Double()
 class PurchaseViewController: UIViewController {
 
     @IBOutlet weak var saleslabel: UILabel!
-    let bundleID = "com.aatech.Snippets"
+    let bundleID = "com.aatech.Snips"
     
     var threedaytrial = RegisteredPurchase.threedaytrial
     var sevendaytrial = RegisteredPurchase.sevendaytrial
@@ -144,7 +144,7 @@ class PurchaseViewController: UIViewController {
         
         purchases?.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Yearly"] else { return }
+            guard let monthly = pro.offerings["Weekly"] else { return }
             guard let product = monthly.activeProduct else { return }
             self.purchases?.makePurchase(product)
             
@@ -422,10 +422,10 @@ class PurchaseViewController: UIViewController {
         if selectedtitle != "" {
         let first = "Unlock the big ideas from "
         let second = "\(selectedtitle) "
-        let third = "and 2500+ other best selling books"
+        let third = "and 2500+ other best selling books!"
         var characters = second.count
         
-        let boldItalicsFont = UIFont(name: "AvenirNext-BoldItalic", size: 20.0)!
+        let boldItalicsFont = UIFont(name: "AvenirNext-BoldItalic", size: 23.0)!
         
         let buttonTitleStr2 = NSMutableAttributedString(string:first + second + third, attributes:attrs2)
         

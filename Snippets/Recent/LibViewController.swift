@@ -21,11 +21,10 @@ var inprogresspressed = Bool()
 var searchterm = String()
 var librarydescriptions = [String:String]()
 var libraryviews = [String:String]()
-class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LibViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tapinprogress: UIButton!
     
     @IBAction func tapInProgress(_ sender: Any) {
@@ -166,7 +165,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             libraryimagenames.removeAll()
             librarydescriptions.removeAll()
             libraryviews.removeAll()
-            tableView.reloadData()
+            collectionView.reloadData()
             
             queryforbookids { () -> () in
                 
@@ -178,7 +177,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             refreshControl.attributedTitle = NSAttributedString(string: "")
             refreshControl.addTarget(self, action: #selector(LibViewController.refresh), for: UIControlEvents.valueChanged)
             refreshControl.tintColor  = mygreen
-            tableView.addSubview(refreshControl) // not required when using UITableViewController
+            collectionView.addSubview(refreshControl) // not required when using UITableViewController
        
         }
         
@@ -251,7 +250,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             
             
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             
         }
     })
@@ -345,47 +344,47 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
 
-
-    
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
         if librarycovers.count > 0 {
             
-        selectedtitle = librarytitles[librarybookids[indexPath.row]]!
-        selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
-        selecteddescription = librarydescriptions[librarybookids[indexPath.row]]!
+            selectedtitle = librarytitles[librarybookids[indexPath.row]]!
+            selectedauthor = libraryauthors[librarybookids[indexPath.row]]!
+            selecteddescription = librarydescriptions[librarybookids[indexPath.row]]!
             selectedgenre = librarygenres[librarybookids[indexPath.row]]!
             selectedbookid = librarysubids[librarybookids[indexPath.row]]!
             
-        selectedimage = librarycovers[librarybookids[indexPath.row]]!
-        selectedimagename = libraryimagenames[librarybookids[indexPath.row]]!
+            selectedimage = librarycovers[librarybookids[indexPath.row]]!
+            selectedimagename = libraryimagenames[librarybookids[indexPath.row]]!
             
-        self.performSegue(withIdentifier: "LibToReader", sender: self)
-
+            self.performSegue(withIdentifier: "LibToReader", sender: self)
+            
             
         } else {
             
             self.performSegue(withIdentifier: "ReadToPurchase2", sender: self)
-
+            
         }
         
     }
     
-      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if librarycovers.count > 0 {
             
-           return librarycovers.count
+            return librarycovers.count
             
         } else {
-                
-                return 2
-
+            
+            return 2
+            
         }
     }
+    
     
     @IBAction func tapFilter(_ sender: Any) {
     }
@@ -396,18 +395,20 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         librarybookids = librarybookids.sorted { $0 < $1 }
         
 
-        tableView.reloadData()
+        collectionView.reloadData()
         
     }
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterlabel: UILabel!
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Lib", for: indexPath) as! LibTableViewCell
-        
-        cell.coverimage.layer.cornerRadius = 10.0
-        cell.coverimage.layer.masksToBounds = true
     
-        cell.selectionStyle = .none
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
+        cell.bookcover.layer.cornerRadius = 10.0
+        cell.bookcover.layer.masksToBounds = true
+        cell.lockimage.alpha = 0
+        cell.views.alpha =  0
+        cell.dark.alpha = 0
+//        cell.selectionStyle = .none
     
 //        cell.layer.cornerRadius = 10.0
 //        cell.layer.masksToBounds = true
@@ -417,34 +418,35 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if librarycovers.count > 0 {
             
-            cell.rectangle.alpha = 1
+            cell.dark.alpha = 0
+//            cell.rectangle.alpha = 1
             
-            if librarycomps[librarybookids[indexPath.row]] == "No" {
-                
-                cell.rectangle.image = UIImage(named: "EmptyRectangle")
-                
-            } else {
-                
-                cell.rectangle.image = UIImage(named: "FullRectangle")
-                
-            }
-            
+//            if librarycomps[librarybookids[indexPath.row]] == "No" {
+//
+//                cell.rectangle.image = UIImage(named: "EmptyRectangle")
+//
+//            } else {
+//
+//                cell.rectangle.image = UIImage(named: "FullRectangle")
+//
+//            }
+//
             refreshControl.endRefreshing()
 
-            cell.title.text = librarytitles[librarybookids[indexPath.row]]
-            cell.author.text = libraryauthors[librarybookids[indexPath.row]]
-            cell.coverimage.image = librarycovers[librarybookids[indexPath.row]]
+//            cell.title.text = librarytitles[librarybookids[indexPath.row]]
+//            cell.author.text = libraryauthors[librarybookids[indexPath.row]]
+            cell.bookcover.image = librarycovers[librarybookids[indexPath.row]]
 //            cell.descriptionlabel.text = librarydescriptions[librarybookids[indexPath.row]]
             
-            if libraryviews.count >= librarybookids.count {
-                
-                cell.views.text = libraryviews[librarybookids[indexPath.row]]!
-                
-            } else {
-                
-                cell.views.text = nineviews[indexPath.row]
-
-            }
+//            if libraryviews.count >= librarybookids.count {
+//
+//                cell.views.text = libraryviews[librarybookids[indexPath.row]]!
+//
+//            } else {
+//
+//                cell.views.text = nineviews[indexPath.row]
+//
+//            }
 //            cell.bamlabel.text = "Start Story"
 //            cell.buttonlabel.image = UIImage(named: "WhiteButton-1")
 //            cell.bamlabel.textColor = darkbluee
@@ -452,51 +454,52 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             self.activityIndicator.stopAnimating()
             self.activityIndicator.alpha = 0
 
-            cell.upgradelabel.alpha = 0
-            cell.bluebutton.alpha = 0
-            cell.emptylabel.alpha = 0
-            cell.lock.alpha = 0
+//            cell.upgradelabel.alpha = 0
+//            cell.bluebutton.alpha = 0
+//            cell.emptylabel.alpha = 0
+//            cell.lock.alpha = 0
 
-            cell.greenlabel.alpha = 1
+//            cell.greenlabel.alpha = 1
             
     } else {
         
-        cell.greenlabel.alpha = 0
+//        cell.greenlabel.alpha = 0
             
         if indexPath.row == 0 {
             
-            cell.title.text = ""
-            cell.emptylabel.alpha = 1
-            cell.coverimage.image = nil
-            cell.views.text = ""
-            cell.author.text = ""
-            cell.upgradelabel.alpha = 0
-            cell.lock.alpha = 0
-            cell.bluebutton.alpha = 0
-            cell.rectangle.alpha = 0
+//            cell.title.text = ""
+////            cell.emptylabel.alpha = 1
+//            cell.coverimage.image = nil
+//            cell.views.text = ""
+//            cell.author.text = ""
+//            cell.upgradelabel.alpha = 0
+//            cell.lock.alpha = 0
+//            cell.bluebutton.alpha = 0
+//            cell.rectangle.alpha = 0
 
         } else {
             
-            cell.title.text = ""
-            cell.coverimage.image = nil
-            cell.views.text = ""
-            cell.author.text = ""
-            cell.upgradelabel.alpha = 1
-            cell.lock.alpha = 1
-            cell.bluebutton.alpha = 1
-            cell.emptylabel.alpha = 0
-            cell.rectangle.alpha = 0
+//            cell.title.text = ""
+            cell.dark.alpha = 0
+            cell.bookcover.image = nil
+//            cell.views.text = ""
+//            cell.author.text = ""
+//            cell.upgradelabel.alpha = 1
+//            cell.lock.alpha = 1
+//            cell.bluebutton.alpha = 1
+//            cell.emptylabel.alpha = 0
+//            cell.rectangle.alpha = 0
 
             if Auth.auth().currentUser == nil {
                 // Do smth if user is not logged in
-                cell.upgradelabel.alpha = 1
-                cell.lock.alpha = 1
-                cell.bluebutton.alpha = 1
+//                cell.upgradelabel.alpha = 1
+//                cell.lock.alpha = 1
+//                cell.bluebutton.alpha = 1
                 
             } else {
-                cell.lock.alpha = 0
-                cell.upgradelabel.alpha = 0
-                cell.bluebutton.alpha = 0
+//                cell.lock.alpha = 0
+//                cell.upgradelabel.alpha = 0
+//                cell.bluebutton.alpha = 0
                 
             }
         }
@@ -509,27 +512,28 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            
-    ref?.child("Users").child(uid).child("Library").child("InProgress").child(librarybookids[indexPath.row]).removeValue()
-            
-            librarytitles.removeValue(forKey: librarybookids[indexPath.row])
-            libraryauthors.removeValue(forKey: librarybookids[indexPath.row])
-            librarycovers.removeValue(forKey: librarybookids[indexPath.row])
-
-            nineviews.remove(at: indexPath.row)
-            
-            librarybookids.remove(at: indexPath.row)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            self.tableView.reloadData()
-        }
-        
-    }
     
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == .delete {
+//
+//    ref?.child("Users").child(uid).child("Library").child("InProgress").child(librarybookids[indexPath.row]).removeValue()
+//
+//            librarytitles.removeValue(forKey: librarybookids[indexPath.row])
+//            libraryauthors.removeValue(forKey: librarybookids[indexPath.row])
+//            librarycovers.removeValue(forKey: librarybookids[indexPath.row])
+//
+//            nineviews.remove(at: indexPath.row)
+//
+//            librarybookids.remove(at: indexPath.row)
+//
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//
+//            self.tableView.reloadData()
+//        }
+//
+//    }
+//
     
     
     func loadstuff() {
@@ -682,7 +686,7 @@ class LibViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         ninebooknames.append("Antifragile: Things That Gain from Disorder")
         ninebooknames.append("Keep It Shut")
 
-        tableView.reloadData()
+        collectionView.reloadData()
         
     }
     

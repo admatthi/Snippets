@@ -27,22 +27,31 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         ref = Database.database().reference()
 
+        tableView.alpha = 0 
+        activityIndicator.startAnimating()
+        activityIndicator.alpha = 1
+        activityIndicator.color = mygreen
+        
 //        activityIndicator.startAnimating()
 //        activityIndicator.alpha = 1
 //        activityIndicator.color = mygreen
 //        titlelabel.text = selectedgenre
         
- 
-        selectedgenre = "Biography & Memoir"
+        if selectedgenre == "" {
         
+            selectedgenre = "Biography & Memoir"
+
+        
+        }
+    
         selectedgenreshortner()
 //        loadviews()
         
-        queryforids { () -> () in
-            
-            self.queryforreviewinfo()
-            
-        }
+//        queryforids { () -> () in
+//
+//            self.queryforreviewinfo()
+//
+//        }
         
 //        swipeRightRec.addTarget(self, action: #selector(self.swipeR) )
 //        swipeRightRec.direction = .right
@@ -54,6 +63,17 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        self.view!.addGestureRecognizer(swipeLeftRec)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        selectedgenreshortner()
+        
+        queryforids { () -> () in
+            
+            self.queryforreviewinfo()
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -383,7 +403,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             quote.removeAll()
             
-            ref?.child("AllBooks1").child("Biography & Memoir").child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("AllBooks1").child(selectedgenre).child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
                 
@@ -639,7 +659,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         cell.readerbackground.layer.cornerRadius = 10
         cell.readerbackground.layer.masksToBounds = true
-        
+
         cell.selectionStyle = .none
         
         if seemoreimages.count > 0 {
@@ -650,6 +670,9 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.smallimage.image = seemoreimages[seemoreids[indexPath.row]]
             cell.introlabel.text = seemoredescriptions[seemoreids[indexPath.row]]
             
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.alpha = 0
+            tableView.alpha = 1
             if reading[seemoreids[indexPath.row]] == "No" {
                 
                 cell.coverimage.alpha = 1
@@ -665,6 +688,9 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.textlabel.alpha = 1
                 counter = lastread[seemoreids[indexPath.row]]!
 //                cell.textlabel.slideInFromRight()
+                
+                if counter < quote.count {
+                    
                 cell.textlabel.text = quote[counter]
 
                 cell.progressView.alpha = 1
@@ -672,7 +698,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if arrayCount == 0 {
                     
                     
-                    cell.progressView.setProgress(0.05, animated: true)
+                    cell.progressView.setProgress(0, animated: true)
 
                 } else {
                     
@@ -680,6 +706,8 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     cell.progressView.setProgress(Float(progress), animated:true)
 
+                }
+                    
                 }
 
                 
@@ -702,6 +730,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //    }
 //
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @objc func swipeR() {
         
 //        self.tapP(nil)
@@ -767,6 +796,7 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+
     @objc func tapBuy2(_ sender: UIButton) {
         
         buttonTag = sender.tag
@@ -821,3 +851,4 @@ extension Sequence {
         return result
     }
 }
+
