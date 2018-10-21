@@ -191,7 +191,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.coverimage.layer.masksToBounds = true
         cell.selectionStyle = .none
         
-        if thumbnail.count > indexPath.row && favorites.count > indexPath.row {
+        if thumbnail.count > indexPath.row && favorites.count > indexPath.row-1 {
             
             refreshControl.endRefreshing()
 

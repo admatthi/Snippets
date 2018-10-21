@@ -17,11 +17,50 @@ var genres = [String]()
 class BrowseViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
 
     var counter = 0
+    @IBOutlet weak var tapback: UIButton!
+    @IBOutlet weak var tapbuton: UIButton!
+    @IBAction func tapBack(_ sender: Any) {
+        
+        collectionView.alpha = 0
+        
+        if counter > 0 {
+            
+            tapbuton.alpha = 1
+            counter -= 1
+            
+            tapgenre.slideInFromLeft()
+            
+            tapgenre.text = genres[counter]
+            selectedgenre = genres[counter]
+            activityIndicator.startAnimating()
+            activityIndicator.alpha = 1
+            activityIndicator.color = mygreen
+            
+            selectedgenreshortner()
+            
+            queryforids { () -> () in
+                
+                self.queryforreviewinfo()
+                
+            }
+            
+            tapbuton.alpha = 1
+            
+        } else {
+            
+            
+            tapbuton.alpha = 0
+            
+        }
+        
+    }
     @IBAction func tapGenre(_ sender: Any) {
         
         collectionView.alpha = 0
         
-        if counter < genres.count {
+        if counter < genres.count-1 {
+            
+            tapbuton.alpha = 1
             counter += 1
             
             tapgenre.slideInFromRight()
@@ -38,6 +77,14 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 self.queryforreviewinfo()
                 
             }
+            
+            tapback.alpha = 1
+            
+        } else {
+            
+            
+            tapbuton.alpha = 0
+            
         }
     }
     @IBOutlet weak var tapgenre: UILabel!
@@ -51,6 +98,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 
         ref = Database.database().reference()
 
+        tapback.alpha =  0
+        
         genres.removeAll()
         genres.append("Biography & Memoir")
         genres.append("Health, Fitness, & Dieting")
@@ -100,6 +149,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                     
                     if ids != "Title" {
                         
+                        seemoreimages[ids] = UIImage(named: "\(abbreviation)\(ids)")
+
                         seemoreids.append(ids)
                         
                     }
@@ -108,6 +159,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                     
                     if functioncounter == snapDict.count {
                         
+                        self.collectionView.alpha = 1
+                        self.collectionView.reloadData()
                         
                         completed()
                         
@@ -242,9 +295,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 
                 
                 if functioncounter == seemoreids.count {
-                    
-                    self.collectionView.alpha = 1
-                    self.collectionView.reloadData()
+                 
                 }
                 
                 
