@@ -23,7 +23,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         collectionView.alpha = 0
         
-        if counter > 0 {
+     
+        if counter > 1 {
             
             tapbuton.alpha = 1
             counter -= 1
@@ -44,12 +45,29 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 
             }
             
-            tapbuton.alpha = 1
+            tapbuton.alpha = 0.25
             
         } else {
             
+            counter -= 1
             
-            tapbuton.alpha = 0
+            tapgenre.slideInFromLeft()
+            
+            tapgenre.text = genres[counter]
+            selectedgenre = genres[counter]
+            activityIndicator.startAnimating()
+            activityIndicator.alpha = 1
+            activityIndicator.color = mygreen
+            
+            selectedgenreshortner()
+            
+            queryforids { () -> () in
+                
+                self.queryforreviewinfo()
+                
+            }
+            
+            tapback.alpha = 0
             
         }
         
@@ -60,7 +78,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         if counter < genres.count-1 {
             
-            tapbuton.alpha = 1
+            tapbuton.alpha = 0.25
             counter += 1
             
             tapgenre.slideInFromRight()
@@ -78,9 +96,10 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 
             }
             
-            tapback.alpha = 1
+            tapback.alpha = 0.25
             
         } else {
+            
             
             
             tapbuton.alpha = 0
@@ -504,7 +523,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
-        cell.bookcover.layer.cornerRadius = 10.0
+        cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
         cell.lockimage.alpha = 0
         cell.views.alpha =  0
@@ -517,7 +536,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         //        cell.finished.alpha = 0
         
         
-        if librarycovers.count > 0 {
+        if seemoreimages.count > 0 {
             
             cell.dark.alpha = 0
             //            cell.rectangle.alpha = 1

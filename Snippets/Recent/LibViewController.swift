@@ -146,12 +146,19 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             tapinprogress.alpha = 0
-            
-            
+            upgradebutton.alpha = 1
+            label1.alpha = 1
+            label2.alpha = 1
+            label3.alpha = 1
+            collectionView.alpha = 0
         } else {
             
             uid = (Auth.auth().currentUser?.uid)!
-            
+            collectionView.alpha = 1
+            upgradebutton.alpha = 0
+            label1.alpha = 0
+            label2.alpha = 0
+            label3.alpha = 0
             inprogresspressed = false
             searchterm = "InProgress"
             tapinprogress.alpha = 0
@@ -401,9 +408,17 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterlabel: UILabel!
     
+    @IBAction func tapUpgrade(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "LibToPurchase", sender: self)
+    }
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label2: UIImageView!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var upgradebutton: UIButton!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
-        cell.bookcover.layer.cornerRadius = 10.0
+        cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
         cell.lockimage.alpha = 0
         cell.views.alpha =  0
@@ -415,21 +430,29 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
 //
 //        cell.finished.alpha = 0
 
+        cell.coloredimage.alpha = 1
+        cell.percetnage.alpha = 1
+
+
+        cell.coloredimage.layer.cornerRadius = 5.0
+        cell.coloredimage.layer.masksToBounds = true
         
         if librarycovers.count > 0 {
             
             cell.dark.alpha = 0
 //            cell.rectangle.alpha = 1
             
-//            if librarycomps[librarybookids[indexPath.row]] == "No" {
-//
-//                cell.rectangle.image = UIImage(named: "EmptyRectangle")
-//
-//            } else {
-//
-//                cell.rectangle.image = UIImage(named: "FullRectangle")
-//
-//            }
+            if librarycomps[librarybookids[indexPath.row]] == "No" {
+
+                cell.coloredimage.image = UIImage(named: "DarkBlue4")
+                cell.percetnage.text = "0%"
+
+            } else {
+
+                cell.coloredimage.image = UIImage(named: "GreenBlue3")
+                cell.percetnage.text = "100%"
+
+            }
 //
             refreshControl.endRefreshing()
 

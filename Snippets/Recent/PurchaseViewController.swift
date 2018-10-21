@@ -67,7 +67,7 @@ class NetworkActivityIndicatorManager: NSObject {
 var sharedSecret = "9da437b277194aca8dde7cd53b15968c"
 
 var price = Double()
-class PurchaseViewController: UIViewController {
+class PurchaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var saleslabel: UILabel!
     let bundleID = "com.aatech.Snips"
@@ -119,15 +119,16 @@ class PurchaseViewController: UIViewController {
     @IBAction func tapButton2(_ sender: Any) {
         
         
-        FBSDKAppEvents.logEvent("Monthly Pressed")
+        FBSDKAppEvents.logEvent("Lifetime Pressed")
         
         //        purchase(purchase: sevendayfreetrial)
         
         purchases?.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Monthly"] else { return }
+            guard let monthly = pro.offerings["Lifetime"] else { return }
             guard let product = monthly.activeProduct else { return }
             self.purchases?.makePurchase(product)
+            
             
         }
         
@@ -164,6 +165,20 @@ class PurchaseViewController: UIViewController {
             
             
         })
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Terms", for: indexPath) as! TermsTableViewCell
+        
+        cell.textlabel.text = "Recurring Billing. Cancel anytime. Payment will be charged to iTunes Account at confirmation of purchase. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable To learn more, check out our terms of use."
+        return cell
     }
     
     
@@ -347,6 +362,8 @@ class PurchaseViewController: UIViewController {
         
     }
     
+    
+    
     func verifyPurcahse(product : RegisteredPurchase) {
         NetworkActivityIndicatorManager.NetworkOperationStarted()
         SwiftyStoreKit.verifyReceipt(using: validator, password: sharedSecret, completion: {
@@ -390,6 +407,15 @@ class PurchaseViewController: UIViewController {
         self.dismiss(animated: true, completion: {
             
         })
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
+            ) {
+            UIApplication.shared.openURL(url as URL)
+        }
+        
     }
     @IBOutlet weak var backgroundimage: UIImageView!
     @IBOutlet weak var descriptivetext: UILabel!

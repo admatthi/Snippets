@@ -92,7 +92,7 @@ class BookOverviewViewController: UIViewController {
         
         queryforreviewinfo()
         
-        cover.layer.cornerRadius = 10.0
+        cover.layer.cornerRadius = 2.0
         cover.layer.masksToBounds = true
         
         FBSDKAppEvents.logEvent("Book Overview Viewed")
