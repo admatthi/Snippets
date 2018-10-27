@@ -72,6 +72,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         
     }
+    
     @IBAction func tapGenre(_ sender: Any) {
         
         collectionView.alpha = 0
@@ -117,7 +118,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 
         ref = Database.database().reference()
 
-        tapback.alpha =  0
+        selectedindex = 0
         
         genres.removeAll()
         genres.append("Biography & Memoir")
@@ -128,6 +129,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         genres.append("Mental Health")
         genres.append("Psychology")
         
+        collectionView2.reloadData()
         
         activityIndicator.startAnimating()
         activityIndicator.alpha = 1
@@ -143,11 +145,25 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
         }
         
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+        
+            purchased = false
+            
+        } else {
+            
+            uid = (Auth.auth().currentUser?.uid)!
+
+            purchased = true
+        }
+        
         
         // Do any additional setup after loading the view.
     }
     
     func queryforids(completed: @escaping (() -> ()) ) {
+        
+        collectionView.alpha = 0
         
         var functioncounter = 0
         
@@ -180,6 +196,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                         
                         self.collectionView.alpha = 1
                         self.collectionView.reloadData()
+                        
+                        
                         
                         completed()
                         
@@ -479,6 +497,28 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
+        if collectionView.tag == 1 {
+            
+
+            collectionView.alpha = 0
+            
+            selectedindex = indexPath.row
+            selectedgenre = genres[indexPath.row]
+            activityIndicator.startAnimating()
+            activityIndicator.alpha = 1
+            activityIndicator.color = mygreen
+            
+            selectedgenreshortner()
+            queryforids { () -> () in
+                
+                self.queryforreviewinfo()
+                
+            }
+            
+            collectionView2.reloadData()
+
+        } else {
+            
         if seemoreimages.count > 0 {
             
             selectedbookid = seemoreids[indexPath.row]
@@ -496,10 +536,17 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
         }
         
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        if collectionView.tag == 1 {
+            
+            return genres.count
+            
+        } else {
+            
         if seemoreimages.count > 0 {
             
             return seemoreimages.count
@@ -507,6 +554,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         } else {
             
             return 0
+            
+        }
             
         }
     }
@@ -521,12 +570,18 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         
     }
     
+    @IBOutlet weak var collectionView2: UICollectionView!
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView.tag == 2 {
+            
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
         cell.lockimage.alpha = 0
         cell.views.alpha =  0
+    
         cell.dark.alpha = 0
         //        cell.selectionStyle = .none
         
@@ -556,6 +611,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             //            cell.title.text = librarytitles[librarybookids[indexPath.row]]
             //            cell.author.text = libraryauthors[librarybookids[indexPath.row]]
             cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
+            cell.views.text = nineviews[indexPath.row]
             //            cell.descriptionlabel.text = librarydescriptions[librarybookids[indexPath.row]]
             
             //            if libraryviews.count >= librarybookids.count {
@@ -627,10 +683,140 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             
         }
+            
+            return cell
+
+        } else {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Categories", for: indexPath) as! CategoriesCollectionViewCell
+
+            collectionView.alpha = 1
+            cell.titlelabel.text = genres[indexPath.row]
+            
+            cell.selectedimage.layer.cornerRadius = 5.0
+                cell.selectedimage.layer.masksToBounds = true
+            collectionView2.alpha = 1
+            
+            if selectedindex == 0 {
+
+                if indexPath.row == 0 {
+
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+
+                } else {
+
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+
+                }
+
+            }
+            
+            if selectedindex == 1 {
+                
+                if indexPath.row == 1 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 2 {
+
+                if indexPath.row == 2 {
+
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+
+                } else {
+
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+
+                }
+
+            }
+
+            if selectedindex == 3 {
+
+                if indexPath.row == 3 {
+
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+
+                } else {
+
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+
+                }
+
+            }
+
+            if selectedindex == 4 {
+
+                if indexPath.row == 4 {
+
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+
+                } else {
+
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+
+                }
+
+            }
+
+            if selectedindex == 5 {
+
+                if indexPath.row == 5 {
+
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+
+                } else {
+
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+
+                }
+
+            }
+            
+            if selectedindex == 6 {
+                
+                if indexPath.row == 6 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            return cell
+
+        }
         
-        return cell
     }
 
+    var selectedindex = Int()
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     /*
     // MARK: - Navigation

@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
-import SwiftyStoreKit
 import StoreKit
 import UserNotifications
 import FirebaseInstanceID
@@ -37,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var purchases = RCPurchases(apiKey: "sdilTRDuWzrDdwVvtryTFPzjxKzYaUsO")
+    var purchases: RCPurchases?
 
     weak var purchasesdelegate : SnippetsPurchasesDelegate?
 
@@ -55,30 +54,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKAppEvents.activateApp()
         
         UXCam.start(withKey: "8921dd89a4b98a3")
+        purchases = RCPurchases(apiKey: "XJcTuaSXGKIWBwsRjWsKIUumwbSzBArQ")
+
+        purchases!.delegate = self
         
-        purchases?.delegate = self
         
-        SwiftyStoreKit.completeTransactions(atomically: true) { products in
-            
-            for product in products {
-                
-                if product.transaction.transactionState == .purchased || product.transaction.transactionState == .restored {
-                    
-                    if product.needsFinishTransaction {
-                        // Deliver content from server, then:
-                        SwiftyStoreKit.finishTransaction(product.transaction)
-                    }
-                    print("purchased: \(product)")
-                }
-            }
-        }
         
         var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
         
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
 
-            tabBar.selectedIndex = 1
+            tabBar.selectedIndex = 0
 
 
         } else {

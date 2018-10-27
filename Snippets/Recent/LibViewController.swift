@@ -125,7 +125,10 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
 //        }
         
     }
-   
+    @IBOutlet weak var tapback: UIButton!
+    
+
+    @IBOutlet weak var tapbookmark: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -151,8 +154,12 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
             label2.alpha = 1
             label3.alpha = 1
             collectionView.alpha = 0
+            tapback.alpha = 0
+            tapbookmark.alpha = 0
         } else {
-            
+            tapbookmark.alpha = 1
+            tapback.alpha = 1
+            purchased = true
             uid = (Auth.auth().currentUser?.uid)!
             collectionView.alpha = 1
             upgradebutton.alpha = 0

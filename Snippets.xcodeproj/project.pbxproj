@@ -13,6 +13,7 @@
 		9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */; };
 		9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1EBF0921767EF4004A566A /* SwipeViewController.swift */; };
 		9D2CF7A6215A672A00F9C3D5 /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */; };
+		9D3C9AC3217D410D0053D9AD /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */; };
 		9D40206E2102278900E90720 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D40206D2102278900E90720 /* FilterViewController.swift */; };
 		9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
 		9D4020732102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
@@ -195,6 +196,7 @@
 		9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		9D1EBF0921767EF4004A566A /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
+		9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D40206D2102278900E90720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9D4020712102375E00E90720 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
 		9D402075210241E400E90720 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -396,6 +398,7 @@
 		9DD3AC5C217BCD2000D82C13 /* Recent */ = {
 			isa = PBXGroup;
 			children = (
+				9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */,
 				9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */,
 				9D714EF920FFA1A7002CD2A3 /* BookOverviewViewController.swift */,
 				9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */,
@@ -406,6 +409,7 @@
 				9D714EEF20FFA1A4002CD2A3 /* ReaderViewController.swift */,
 				9DE5864621473FD500DF4129 /* FavViewController.swift */,
 				9DE586482147404F00DF4129 /* FavTableViewCell.swift */,
+				9D714EFA20FFA1A7002CD2A3 /* LoginViewController.swift */,
 			);
 			path = Recent;
 			sourceTree = "<group>";
@@ -423,7 +427,6 @@
 				9D714EF420FFA1A5002CD2A3 /* FavoritesTableViewCell.swift */,
 				9D714EF520FFA1A6002CD2A3 /* FavoritesViewController.swift */,
 				9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */,
-				9D714EFA20FFA1A7002CD2A3 /* LoginViewController.swift */,
 				9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */,
 				9D714EEB20FFA1A2002CD2A3 /* ReadTableViewCell.swift */,
 				9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */,
@@ -683,10 +686,9 @@
 				"${BUILT_PRODUCTS_DIR}/Cheers/Cheers.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Purchases/Purchases.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -696,10 +698,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cheers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Purchases.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -785,6 +786,7 @@
 				9D714F0E20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */,
 				9D714F1D20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
+				9D3C9AC3217D410D0053D9AD /* CategoriesCollectionViewCell.swift in Sources */,
 				9D714F3520FFA1A9002CD2A3 /* SubsViewController.swift in Sources */,
 				9D714F0B20FFA1A9002CD2A3 /* ReaderViewController.swift in Sources */,
 				9D9A82A02146D9A90050F2B3 /* LibTableViewCell.swift in Sources */,
@@ -1000,16 +1002,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3EC0ED10C94DCEF6F5337251 /* Pods-Snippets.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-7";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-8";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Snippets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Snips;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Quotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1020,16 +1023,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4ED7EBDC46DD0480DD87253 /* Pods-Snippets.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-7";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-8";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Snippets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Snips;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Quotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

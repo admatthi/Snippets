@@ -13,7 +13,6 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 import UserNotifications
-import SwiftyStoreKit
 import StoreKit
 import FBSDKCoreKit
 import UserNotifications
@@ -64,19 +63,19 @@ class NetworkActivityIndicatorManager: NSObject {
     }
 }
 
-var sharedSecret = "9da437b277194aca8dde7cd53b15968c"
+var sharedSecret = "8914f8ac3362492caf9e2eba38b4855c"
 
 var price = Double()
 class PurchaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var saleslabel: UILabel!
-    let bundleID = "com.aatech.Snips"
+    let bundleID = "com.aatech.Quotes"
     
     var threedaytrial = RegisteredPurchase.threedaytrial
     var sevendaytrial = RegisteredPurchase.sevendaytrial
     var onetimepurchase = RegisteredPurchase.OneTimePurchase
     var sevendayfreetrial = RegisteredPurchase.SevenDayFreeTrial
-    let validator = AppleReceiptValidator(service: .production)
+//    let validator = AppleReceiptValidator(service: .production)
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var namelabel: UILabel!
@@ -84,7 +83,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBAction func tapRestore(_ sender: Any) {
         
-        restorePurchases()
+//        restorePurchases()
         
     }
     @IBOutlet weak var tapterms: UIButton!
@@ -106,14 +105,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
 //        purchase(purchase: onetimepurchase)
         
-        purchases?.entitlements { entitlements in
-            guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Lifetime"] else { return }
-            guard let product = monthly.activeProduct else { return }
-            self.purchases?.makePurchase(product)
-            
-            
-        }
+ 
 
     }
     @IBAction func tapButton2(_ sender: Any) {
@@ -123,11 +115,17 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
         //        purchase(purchase: sevendayfreetrial)
         
-        purchases?.entitlements { entitlements in
+        purchases.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
+            
+            
             guard let monthly = pro.offerings["Lifetime"] else { return }
+            
+            
             guard let product = monthly.activeProduct else { return }
-            self.purchases?.makePurchase(product)
+            
+            
+            self.purchases.makePurchase(product)
             
             
         }
@@ -143,30 +141,18 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
         //        let delegate = UIApplication.shared.delegate as! AppDelegate
         
-        purchases?.entitlements { entitlements in
+        purchases.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
             guard let monthly = pro.offerings["Weekly"] else { return }
             guard let product = monthly.activeProduct else { return }
-            self.purchases?.makePurchase(product)
+            self.purchases.makePurchase(product)
             
             
         }
        
         
     }
-    
-    func getInfo(purchase : RegisteredPurchase) {
-        NetworkActivityIndicatorManager.NetworkOperationStarted()
-        SwiftyStoreKit.retrieveProductsInfo([bundleID + "." + purchase.rawValue], completion: {
-            result in
-            NetworkActivityIndicatorManager.networkOperationFinished()
-            
-            self.showAlert(alert: self.alertForProductRetrievalInfo(result: result))
-            
-            
-        })
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 1
@@ -182,99 +168,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func purchase(purchase : RegisteredPurchase) {
-        
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM//dd//yyyy"
-        let dateresult = formatter.string(from: date)
-        
-        NetworkActivityIndicatorManager.NetworkOperationStarted()
-        
-        print(bundleID + "." + purchase.rawValue)
-        
-        SwiftyStoreKit.purchaseProduct(bundleID + "." + purchase.rawValue,
-                                       completion: {
-                                        result in
-                                        NetworkActivityIndicatorManager.networkOperationFinished()
-                                        
-                                        if case .success(let product) = result {
-                                            
-                                            if product.productId == self.bundleID + "." + "7DayTrial"{
-                                                
-                                                DispatchQueue.main.async {
-                                                    
-                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                    
-                                                }
-                                                
-                                            }
-                                            if product.productId == self.bundleID + "." + "3DayTrial" {
-                                                
-                                                DispatchQueue.main.async {
-                                                    
-                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                            if product.productId == self.bundleID + "." + "OneTimePurchase" {
-                                                
-                                                DispatchQueue.main.async {
-                                                    
-                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                            if product.productId == self.bundleID + "." + "7DayFreeTrial" {
-                                                
-                                                DispatchQueue.main.async {
-                                                    
-                                                    self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                            if product.needsFinishTransaction {
-                                                
-                                                SwiftyStoreKit.finishTransaction(product.transaction)
-                                            }
-                                            
-                                            FBSDKAppEvents.logEvent("Purchased Completed")
-                                        
-                                            newuser = false
-                                            
-                                            self.showAlert(alert: self.alertForPurchaseResult(result: result))
 
-                                            tryingtopurchase = true
-                                            
-                                            DispatchQueue.main.async {
-                                                
-                                                self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                
-                                            }
-                                            
-                                            
-                                        } else {
-                                            
-                                            self.showAlert(alert: self.alertForPurchaseResult(result: result))
-                                            
-                                            DispatchQueue.main.async {
-                                                
-                                                self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                
-                                            }
-
-                                        }
-                                        
-                                        
-        })
-        
-    }
     
     func yomofucker() {
     
@@ -285,121 +179,68 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func restorePurchases() {
-        
-        var functioncounter = 0
-        NetworkActivityIndicatorManager.NetworkOperationStarted()
-        SwiftyStoreKit.restorePurchases(atomically: true, completion: {
-            result in
-            NetworkActivityIndicatorManager.networkOperationFinished()
-            
-            for product in result.restoredPurchases {
-                if product.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(product.transaction)
-                    
-                    functioncounter += 1
-                    
-                } else {
-                    
-                    functioncounter += 1
-                    
-                }
-                
-                self.showAlert(alert: self.alertForRestorePurchases(result: result))
-                
-                if functioncounter == result.restoredPurchases.count {
-                    
-                    //                    var email = "\(firstname)\(time)@gmail.com"
-                    //                    var password = "$100kin4m"
-                    //
-                    //                    Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                    //
-                    //                        if let error = error {
-                    //                            print(error)
-                    //                            return
-                    //
-                    //                        } else {
-                    //
-                    //                            uid = (Auth.auth().currentUser?.uid)!
-                    //
-                    //                            //                            ref?.child("Users").child(uid).updateChildValues(["Name" : firstname, "Time" : time, "Location" : workoutlocation, "Goal" : goal, "Status" : activitylevel])
-                    //
-                    //                            DispatchQueue.main.async {
-                    //
-                    //                                self.performSegue(withIdentifier: "PurchaseToHome", sender: self)
-                    //
-                    //                            }
-                    //                        }
-                    //
-                    //                    }
-                }
-                
-            }
-            
-        })
-        
-    }
     
     
     
-    func verifyReceipt() {
-        NetworkActivityIndicatorManager.NetworkOperationStarted()
-        SwiftyStoreKit.verifyReceipt(using: validator, password: sharedSecret, completion: {
-            result in
-            NetworkActivityIndicatorManager.networkOperationFinished()
-            
-            self.showAlert(alert: self.alertForVerifyReceipt(result: result))
-            
-            if case .error(let error) = result {
-                if case .noReceiptData = error {
-                    
-                    
-                    
-                }
-            }
-            
-        })
-        
-    }
+//
+//    func verifyReceipt() {
+//        NetworkActivityIndicatorManager.NetworkOperationStarted()
+//        SwiftyStoreKit.verifyReceipt(using: validator, paforceRefreshsharedSecret, completion: {
+//            result in
+//            NetworkActivityIndicatorManager.networkOperationFinished()
+//
+//            self.showAlert(alert: self.alertForVerifyReceipt(result: result))
+//
+//            if case .error(let error) = result {
+//                if case .noReceiptData = error {
+//
+//
+//
+//                }
+//            }
+//
+//        })
+//
+//    }
     
     
     
-    func verifyPurcahse(product : RegisteredPurchase) {
-        NetworkActivityIndicatorManager.NetworkOperationStarted()
-        SwiftyStoreKit.verifyReceipt(using: validator, password: sharedSecret, completion: {
-            result in
-            NetworkActivityIndicatorManager.networkOperationFinished()
-            
-            switch result{
-            case .success(let receipt):
-                
-                let productID = self.bundleID + "." + product.rawValue
-                
-                if product == .sevendaytrial || product == .threedaytrial {
-                    let purchaseResult = SwiftyStoreKit.verifySubscription(type: .autoRenewable, productId: productID, inReceipt: receipt, validUntil: Date())
-                    self.showAlert(alert: self.alertForVerifySubscription(result: purchaseResult))
-                    
-                }
-                    
-                else {
-                    
-                    let purchaseResult = SwiftyStoreKit.verifyPurchase(productId: productID, inReceipt: receipt)
-                    self.showAlert(alert: self.alertForVerifyPurchase(result: purchaseResult))
-                    
-                }
-            case .error(let error):
-                self.showAlert(alert: self.alertForVerifyReceipt(result: result))
-                if case .noReceiptData = error {
-                    
-                    
-                }
-                
-            }
-            
-            
-        })
-        
-    }
+//    func verifyPurcahse(product : RegisteredPurchase) {
+//        NetworkActivityIndicatorManager.NetworkOperationStarted()
+//        SwiftyStoreKit.verifyReceipt(using: validator, forceRefresh: sharedSecret, completion: {
+//            result in
+//            NetworkActivityIndicatorManager.networkOperationFinished()
+//            
+//            switch result{
+//            case .success(let receipt):
+//                
+//                let productID = self.bundleID + "." + product.rawValue
+//                
+//                if product == .sevendaytrial || product == .threedaytrial {
+//                    let purchaseResult = SwiftyStoreKit.verifySubscription(type: .autoRenewable, productId: productID, inReceipt: receipt, validUntil: Date())
+//                    self.showAlert(alert: self.alertForVerifySubscription(result: purchaseResult))
+//                    
+//                }
+//                    
+//                else {
+//                    
+//                    let purchaseResult = SwiftyStoreKit.verifyPurchase(productId: productID, inReceipt: receipt)
+//                    self.showAlert(alert: self.alertForVerifyPurchase(result: purchaseResult))
+//                    
+//                }
+//            case .error(let error):
+//                self.showAlert(alert: self.alertForVerifyReceipt(result: result))
+//                if case .noReceiptData = error {
+//                    
+//                    
+//                }
+//                
+//            }
+//            
+//            
+//        })
+//        
+//    }
     var purchases = RCPurchases(apiKey: "sdilTRDuWzrDdwVvtryTFPzjxKzYaUsO")
 
     @IBAction func tapBack(_ sender: Any) {
@@ -518,134 +359,17 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
      }
      */
     
-    func alertWithTitle(title : String, message : String) -> UIAlertController {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        return alert
-        
-    }
-    func showAlert(alert : UIAlertController) {
-        guard let _ = self.presentedViewController else {
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        
-    }
-    func alertForProductRetrievalInfo(result : RetrieveResults) -> UIAlertController {
-        
-        
-        if let product = result.retrievedProducts.first {
-            let priceString = product.localizedPrice!
-            return alertWithTitle(title: product.localizedTitle, message: "\(product.localizedDescription) - \(priceString)")
-            
-        }
-        else if let invalidProductID = result.invalidProductIDs.first {
-            return alertWithTitle(title: "Could not retreive product info", message: "Invalid product identifier: \(invalidProductID)")
-        }
-        else {
-            let errorString = result.error?.localizedDescription ?? "Unknown Error. Please Contact Support"
-            return alertWithTitle(title: "Could not retreive product info" , message: errorString)
-            
-        }
-        
-    }
-    func alertForPurchaseResult(result : PurchaseResult) -> UIAlertController {
-        
-        
-        switch result {
-            
-        case .success(let product):
-            print("Purchase Succesful: \(product.productId)")
-            
-            
-            return alertWithTitle(title: "You're all set", message: "Your purchase was successful")
-            
-            
-            
-            
-        case .error(let error):
-            print("Purchase Failed: \(error)")
-            
-            switch error.code {
-                
-            case .unknown: return alertWithTitle(title: "Purchase Error", message: "Unknown error. Please contact support")
-            case .clientInvalid: return alertWithTitle(title: "Purchase Error", message: "Not allowed to make the payment")
-            case .paymentCancelled: return alertWithTitle(title: "Payment Cancelled", message: "Payment Cancelled")
-            case .paymentInvalid: return alertWithTitle(title: "Purchase Error", message: "The purchase identifier was invalid")
-            case .paymentNotAllowed: return alertWithTitle(title: "Purchase Error", message: "The device is not allowed to make the payment")
-            case .storeProductNotAvailable: return alertWithTitle(title: "Purchase Error", message: "The product is not available in the current storefront")
-            case .cloudServicePermissionDenied: return alertWithTitle(title: "Purchase Error", message: "Access to cloud service information is not allowed")
-            case .cloudServiceNetworkConnectionFailed: return alertWithTitle(title: "Purchase Error", message: "Could not connect to the network")
-            default: return alertWithTitle(title: "Purchase Error", message: "Unknown error")
-            }
-            
-        }
-    }
-    func alertForRestorePurchases(result : RestoreResults) -> UIAlertController {
-        if result.restoreFailedPurchases.count > 0 {
-            print("Restore Failed: \(result.restoreFailedPurchases)")
-            return alertWithTitle(title: "Restore Failed", message: "Unknown Error. Please Contact Support")
-        }
-        else if result.restoredPurchases.count > 0 {
-            
-            //
-            return alertWithTitle(title: "Purchases Restored", message: "All purchases have been restored.")
-            
-            
-        }
-        else {
-            return alertWithTitle(title: "Nothing To Restore", message: "No previous purchases were made.")
-        }
-        
-    }
-    func alertForVerifyReceipt(result: VerifyReceiptResult) -> UIAlertController {
-        
-        switch result {
-        case.success(let receipt):
-            return alertWithTitle(title: "Receipt Verified", message: "Receipt Verified Remotely")
-        case .error(let error):
-            switch error {
-            case .noReceiptData:
-                return alertWithTitle(title: "Receipt Verification", message: "No receipt data found, application will try to get a new one. Try Again.")
-            default:
-                return alertWithTitle(title: "Receipt verification", message: "Receipt Verification failed")
-            }
-        }
-    }
-    func alertForVerifySubscription(result: VerifySubscriptionResult) -> UIAlertController {
-        switch result {
-        case .purchased(let expiryDate):
-            return alertWithTitle(title: "Product is Purchased", message: "Product is valid until \(expiryDate)")
-        case .notPurchased:
-            return alertWithTitle(title: "Not purchased", message: "This product has never been purchased")
-        case .expired(let expiryDate):
-            
-            return alertWithTitle(title: "Product Expired", message: "Product is expired since \(expiryDate)")
-        }
-    }
-    func alertForVerifyPurchase(result : VerifyPurchaseResult) -> UIAlertController {
-        switch result {
-        case .purchased:
-            return alertWithTitle(title: "Product is Purchased", message: "Product will not expire")
-        case .notPurchased:
-            
-            return alertWithTitle(title: "Product not purchased", message: "Product has never been purchased")
-            
-            
-        }
-        
-    }
-    func alertForRefreshRecepit(result : RefreshReceiptResult) -> UIAlertController {
-        
-        switch result {
-        case .success(let receiptData):
-            return alertWithTitle(title: "Receipt Refreshed", message: "Receipt refreshed successfully")
-        case .error(let error):
-            return alertWithTitle(title: "Receipt refresh failed", message: "Receipt refresh failed")
-            
-        }
-    }
+  
+//    func alertForRefreshRecepit(result : RefreshReceiptResult) -> UIAlertController {
+//
+//        switch result {
+//        case .success(let receiptData):
+//            return alertWithTitle(title: "Receipt Refreshed", message: "Receipt refreshed successfully")
+//        case .error(let error):
+//            return alertWithTitle(title: "Receipt refresh failed", message: "Receipt refresh failed")
+//
+//        }
+//    }
     
     var attrs = [
         NSAttributedStringKey.foregroundColor : UIColor.white,

@@ -58,7 +58,7 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
                     } else {
                         
                         // store download url
-                        logodownloadurl = metaData!.downloadURL()!.absoluteString
+//                        logodownloadurl = metaData!.downloadURL()!.absoluteString
                         
                         
                         let currentUser = Auth.auth().currentUser
@@ -67,7 +67,7 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
                         
                           if Auth.auth().currentUser == nil {
                             
-                            ref?.child("Feedback").child("1232131").childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
+//                            ref?.child("Feedback").child("1232131").childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
 
 
                           } else {
@@ -75,7 +75,7 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
 
                             
                                 uid = currentUser!.uid
-                            ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
+//                            ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
                             
                         }
                         

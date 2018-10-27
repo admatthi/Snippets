@@ -121,6 +121,48 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 
                         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if Auth.auth().currentUser == nil {
+            // Do smth if user is not logged in
+            
+            var text = "Most Popular"
+            
+            categorylabel.text = text.uppercased()
+            
+            purchased = false
+            
+            
+            //            tapcta.alpha = 1
+            //            tapsettings.alpha = 0
+            //            taphome.alpha = 0
+            //            taplib.alpha = 0
+            //            navlabel.alpha = 0
+            freepressed = false
+            
+            //            DispatchQueue.main.async {
+            //
+            //                self.performSegue(withIdentifier: "HomeToDemo", sender: self)
+            //
+            //            }
+            //            queryforfreebook()
+            
+            
+        } else {
+            
+            
+            
+            uid = (Auth.auth().currentUser?.uid)!
+            
+            newuser = false
+            // Do any additional setup after loading the view.
+            purchased = true
+            //            tapsettings.alpha = 1
+            freepressed = false
+    }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -1207,7 +1249,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.dark.layer.masksToBounds = false
 //                cell.bookauthor.text = "\(onebookinsights[oneids[indexPath.row]]!) views"
                 cell.bookcover.image = onebookcovers[indexPath.row]
-                cell.views.text = oneviews[indexPath.row]
+//                cell.views.text = oneviews[indexPath.row]
 
                 cell.lockimage.alpha = 0
                 

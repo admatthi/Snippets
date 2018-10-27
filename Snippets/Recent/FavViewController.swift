@@ -37,7 +37,6 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         } else {
             
-            tapsettings.alpha = 1
             
                 queryforfavoriteids { () -> () in
                     

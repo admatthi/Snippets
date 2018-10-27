@@ -64,6 +64,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
                 
                 DispatchQueue.main.async {
+                    
+                    purchased = true
+
                     self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
                     
                 }
@@ -109,6 +112,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 newuser = false
 
                 DispatchQueue.main.async {
+                    
+                    purchased = true
                     
                     self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
                 }
