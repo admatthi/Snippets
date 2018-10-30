@@ -13,6 +13,7 @@
 		9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */; };
 		9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1EBF0921767EF4004A566A /* SwipeViewController.swift */; };
 		9D2CF7A6215A672A00F9C3D5 /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */; };
+		9D32CFF62189006E005B1B97 /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D32CFF52189006D005B1B97 /* CompletedViewController.swift */; };
 		9D3C9AC3217D410D0053D9AD /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */; };
 		9D40206E2102278900E90720 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D40206D2102278900E90720 /* FilterViewController.swift */; };
 		9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4020712102375E00E90720 /* ExpandedViewController.swift */; };
@@ -155,7 +156,6 @@
 		9DD3AC66217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
 		9DD3AC67217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
 		9DD3AC69217CEEFA00D82C13 /* TermsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC68217CEEFA00D82C13 /* TermsTableViewCell.swift */; };
-		9DD99E8E214F3C6400AC40FB /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */; };
 		9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */; };
 		9DE5864721473FD500DF4129 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
 		9DE586492147404F00DF4129 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE586482147404F00DF4129 /* FavTableViewCell.swift */; };
@@ -198,6 +198,7 @@
 		9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		9D1EBF0921767EF4004A566A /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
+		9D32CFF52189006D005B1B97 /* CompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
 		9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D40206D2102278900E90720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9D4020712102375E00E90720 /* ExpandedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewController.swift; sourceTree = "<group>"; };
@@ -258,7 +259,6 @@
 		9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham-Bold.otf"; sourceTree = "<group>"; };
 		9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrowseViewController.swift; path = /Users/alekmatthiessen/Desktop/Snippets/Snippets/Recent/BrowseViewController.swift; sourceTree = "<absolute>"; };
 		9DD3AC68217CEEFA00D82C13 /* TermsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsTableViewCell.swift; sourceTree = "<group>"; };
-		9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
 		9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibbCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DE5864621473FD500DF4129 /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
 		9DE586482147404F00DF4129 /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
@@ -402,6 +402,7 @@
 		9DD3AC5C217BCD2000D82C13 /* Recent */ = {
 			isa = PBXGroup;
 			children = (
+				9D32CFF52189006D005B1B97 /* CompletedViewController.swift */,
 				9DE9BF912188AE5B009A5182 /* FunnelViewController.swift */,
 				9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */,
 				9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */,
@@ -435,7 +436,6 @@
 				9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */,
 				9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */,
 				9D714EEB20FFA1A2002CD2A3 /* ReadTableViewCell.swift */,
-				9DD99E8D214F3C6400AC40FB /* CompletedViewController.swift */,
 				9D714EFB20FFA1A8002CD2A3 /* Settings2ViewController.swift */,
 				9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */,
 				9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */,
@@ -770,6 +770,7 @@
 				9D714F2C20FFA1A9002CD2A3 /* LoginViewController.swift in Sources */,
 				9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */,
 				9DEEE4C821776523001B5FE8 /* ScrollViewController.swift in Sources */,
+				9D32CFF62189006E005B1B97 /* CompletedViewController.swift in Sources */,
 				9D714F0520FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9DD3AC66217BCDE600D82C13 /* BrowseViewController.swift in Sources */,
 				9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
@@ -782,7 +783,6 @@
 				9D714EFF20FFA1A9002CD2A3 /* ReadTableViewCell.swift in Sources */,
 				9D714F2920FFA1A9002CD2A3 /* BookOverviewViewController.swift in Sources */,
 				9D714F3220FFA1A9002CD2A3 /* BViewController.swift in Sources */,
-				9DD99E8E214F3C6400AC40FB /* CompletedViewController.swift in Sources */,
 				9DFD9C782187902200BE0EBA /* NewPurchaseViewController.swift in Sources */,
 				9DE9BF922188AE5B009A5182 /* FunnelViewController.swift in Sources */,
 				9D714F2F20FFA1A9002CD2A3 /* Settings2ViewController.swift in Sources */,

@@ -498,8 +498,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         generator.impactOccurred()
         
         if collectionView.tag == 1 {
-            
-
+        
             collectionView.alpha = 0
             
             selectedindex = indexPath.row
@@ -509,6 +508,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             activityIndicator.color = mygreen
             
             selectedgenreshortner()
+            
             queryforids { () -> () in
                 
                 self.queryforreviewinfo()
