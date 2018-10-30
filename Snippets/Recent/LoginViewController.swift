@@ -30,7 +30,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         signup()
     }
 
-
+    @IBAction func tapBack(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: {
+            
+        })
+    }
+    
     @IBOutlet weak var passwordtf: UITextField!
     @IBOutlet weak var emailtf: UITextField!
     

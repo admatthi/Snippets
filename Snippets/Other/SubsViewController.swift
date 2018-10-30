@@ -12,7 +12,7 @@ class SubsViewController: UIViewController {
 
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.snippetsla.com/terms.html"
+        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com.com/terms.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -20,14 +20,14 @@ class SubsViewController: UIViewController {
     }
     @IBAction func tapPrivacy(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
     }
     @IBAction func tapBilling(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.snippetsla.com/billing-terms.html"
+        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/billing-terms.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }

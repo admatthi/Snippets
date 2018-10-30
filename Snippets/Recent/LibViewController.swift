@@ -77,6 +77,8 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     override func viewDidAppear(_ animated: Bool) {
         
+        selectedgenre == ""
+        
 //        ref = Database.database().reference()
 //
 //        self.becomeFirstResponder() // To get shake gesture
@@ -412,6 +414,8 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         collectionView.reloadData()
         
     }
+    
+   
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterlabel: UILabel!
     

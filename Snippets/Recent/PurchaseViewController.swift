@@ -89,7 +89,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tapterms: UIButton!
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -241,7 +241,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
 //        })
 //        
 //    }
-    var purchases = RCPurchases(apiKey: "sdilTRDuWzrDdwVvtryTFPzjxKzYaUsO")
+    var purchases = RCPurchases(apiKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw")
 
     @IBAction func tapBack(_ sender: Any) {
         
@@ -252,12 +252,13 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
         
     }
+    @IBOutlet weak var backlabel: UILabel!
     @IBOutlet weak var backgroundimage: UIImageView!
     @IBOutlet weak var descriptivetext: UILabel!
     @IBOutlet weak var customlabel: UILabel!
@@ -266,14 +267,16 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
         ref = Database.database().reference()
         
-        
+        backlabel.layer.cornerRadius = 10.0
+        backlabel.layer.masksToBounds = true
 
         self.becomeFirstResponder() // To get shake gesture
 
         let buttonTitleStr = NSMutableAttributedString(string:"By continuing, you accept our Terms of Use & Privacy Policy", attributes:attrs)
         attributedString.append(buttonTitleStr)
         tapterms.setAttributedTitle(attributedString, for: .normal)
-        tapterms.setTitleColor(.white, for: .normal)
+        tapterms.setTitleColor(.gray, for: .normal)
+        tapterms.alpha = 0.75
         
         //        label.text = "By continuing you accept our Privacy Policy, Billing Terms, & Terms of Use"
         
@@ -283,6 +286,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
         backgroundimage.image = selectedimage
         
+        tapterms.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
 
 
 
