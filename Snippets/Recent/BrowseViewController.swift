@@ -118,7 +118,6 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 
         ref = Database.database().reference()
 
-        selectedindex = 0
         
         genres.removeAll()
         genres.append("Today's Picks")
@@ -135,16 +134,15 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         activityIndicator.startAnimating()
         activityIndicator.alpha = 1
         activityIndicator.color = mygreen
-        selectedgenre = "Biography & Memoir"
+        selectedindex = 0
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+//        dayofmonth = dateFormatter.string(from: now)
+        dayofmonth = "1"
 
-        selectedgenreshortner()
-        loadviews()
-
-        queryforids { () -> () in
-            
-            self.queryforreviewinfo()
-            
-        }
+        
+        queryfortodayspicks()
         
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -173,6 +171,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         seemoretitles.removeAll()
         seemoreauthors.removeAll()
         seemoreimagenames.removeAll()
+        
+        
         ref?.child("AllBooks1").child(selectedgenre).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
@@ -342,6 +342,136 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
     }
     
+    var dayofmonth = String()
+
+    func queryfortodayspicks() {
+        
+        var functioncounter = 0
+        seemoreids.removeAll()
+        seemoreimages.removeAll()
+        seemoretitles.removeAll()
+        seemoreauthors.removeAll()
+        seemoreimagenames.removeAll()
+        
+        for each in genres {
+            
+            if each == "Today's Picks" {
+                
+                
+            } else {
+            
+            
+            ref?.child("AllBooks1").child(each).child(dayofmonth).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                var value = snapshot.value as? NSDictionary
+                
+                
+                if var author2 = value?["Author"] as? String {
+                    seemoreauthors[each] = author2
+                    
+                }
+                if var name = value?["Name"] as? String {
+                    seemoretitles[each] = name
+                    
+                }
+                
+                if var views = value?["Views"] as? String {
+                    seemoreviews[each] = views
+                    
+                }
+                
+                if each == "Biography & Memoir" {
+                    
+                    abbreviation = "M"
+                    seemoreimages[each] = UIImage(named: "\(abbreviation)\(self.dayofmonth)")
+                    
+                    seemoreimagenames[each] = "\(abbreviation)\(self.dayofmonth)"
+                    functioncounter += 1
+
+                }
+            
+                
+                if each == "Health, Fitness, & Dieting" {
+                    
+                    abbreviation = "H"
+                    seemoreimages[each] = UIImage(named: "\(abbreviation)\(self.dayofmonth)")
+                    
+                    seemoreimagenames[each] = "\(abbreviation)\(self.dayofmonth)"
+                    functioncounter += 1
+
+                }
+                
+                if each == "Business & Investing" {
+                    
+                    abbreviation = "B"
+                    seemoreimages[each] = UIImage(named: "\(abbreviation)\(self.dayofmonth)")
+                    
+                    seemoreimagenames[each] = "\(abbreviation)\(self.dayofmonth)"
+                    functioncounter += 1
+
+                }
+                
+                if each == "Sex & Relationships" {
+                    
+                    abbreviation = "S"
+                    seemoreimages[each] = UIImage(named: "\(abbreviation)\(self.dayofmonth)")
+                    
+                    seemoreimagenames[each] = "\(abbreviation)\(self.dayofmonth)"
+                    functioncounter += 1
+
+                }
+                
+                if each == "Productivity" {
+                    
+                    abbreviation = "PR"
+                    seemoreimages[each] = UIImage(named: "\(abbreviation)\(self.dayofmonth)")
+                    
+                    seemoreimagenames[each] = "\(abbreviation)\(self.dayofmonth)"
+                    functioncounter += 1
+
+                }
+                
+                if each == "Mental Health" {
+                    
+                    abbreviation = "MH"
+                    seemoreimages[each] = UIImage(named: "\(abbreviation)\(self.dayofmonth)")
+                    
+                    seemoreimagenames[each] = "\(abbreviation)\(self.dayofmonth)"
+                    functioncounter += 1
+
+                }
+                
+                if selectedgenre == "Psychology" {
+                    
+                    abbreviation = "PS"
+                    seemoreimages[each] = UIImage(named: "\(abbreviation)\(self.dayofmonth)")
+                    
+                    seemoreimagenames[each] = "\(abbreviation)\(self.dayofmonth)"
+                    functioncounter += 1
+
+                }
+                
+
+                
+                
+                print(functioncounter)
+                print(each)
+                
+                if functioncounter == genres.count-2 {
+                    seemoreids = genres
+
+                    self.collectionView.reloadData()
+                    self.collectionView2.reloadData()
+                }
+                
+                
+            })
+                
+            }
+            
+        }
+    }
+    
     func loadviews() {
         
         oneviews.append("233K views")
@@ -499,10 +629,26 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         generator.impactOccurred()
         
         if collectionView.tag == 1 {
-        
-            collectionView.alpha = 0
             
             selectedindex = indexPath.row
+            collectionView2.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+
+            if selectedindex == 0 {
+                
+                collectionView.alpha = 0
+                
+                activityIndicator.startAnimating()
+                activityIndicator.alpha = 1
+                activityIndicator.color = mygreen
+                
+                queryfortodayspicks()
+                
+                collectionView2.reloadData()
+
+            } else {
+            
+            collectionView.alpha = 0
+            
             selectedgenre = genres[indexPath.row]
             activityIndicator.startAnimating()
             activityIndicator.alpha = 1
@@ -517,20 +663,37 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             }
             
             collectionView2.reloadData()
+                
+            }
 
         } else {
             
         if seemoreimages.count > 0 {
             
-            selectedbookid = seemoreids[indexPath.row]
-            selectedimage = seemoreimages[seemoreids[indexPath.row]]!
-            selectedtitle = seemoretitles[seemoreids[indexPath.row]]!
-            selectedauthor = seemoreauthors[seemoreids[indexPath.row]]!
-            selectedimagename = seemoreimagenames[seemoreids[indexPath.row]]!
+            if selectedindex == 0 {
+                selectedbookid = dayofmonth
+                selectedgenre = genres[indexPath.row+1]
+                selectedimage = seemoreimages[seemoreids[indexPath.row+1]]!
+                selectedtitle = seemoretitles[seemoreids[indexPath.row+1]]!
+                selectedauthor = seemoreauthors[seemoreids[indexPath.row+1]]!
+                selectedimagename = seemoreimagenames[seemoreids[indexPath.row+1]]!
+                
+                self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
+                
+            } else {
+                selectedbookid = seemoreids[indexPath.row]
+                selectedimage = seemoreimages[seemoreids[indexPath.row]]!
+                selectedtitle = seemoretitles[seemoreids[indexPath.row]]!
+                selectedauthor = seemoreauthors[seemoreids[indexPath.row]]!
+                selectedimagename = seemoreimagenames[seemoreids[indexPath.row]]!
+                
+                selectedviews = seemoreviews[seemoreids[indexPath.row]]!
+                
+                self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
+                
+            }
             
-            selectedviews = seemoreviews[seemoreids[indexPath.row]]!
-            
-            self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
+
             
             
         } else {
@@ -594,92 +757,30 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         if seemoreimages.count > 0 {
             
-            cell.dark.alpha = 0
-            //            cell.rectangle.alpha = 1
-            
-            //            if librarycomps[librarybookids[indexPath.row]] == "No" {
-            //
-            //                cell.rectangle.image = UIImage(named: "EmptyRectangle")
-            //
-            //            } else {
-            //
-            //                cell.rectangle.image = UIImage(named: "FullRectangle")
-            //
-            //            }
-            //
-//            refreshControl.endRefreshing()
-            
-            //            cell.title.text = librarytitles[librarybookids[indexPath.row]]
-            //            cell.author.text = libraryauthors[librarybookids[indexPath.row]]
-            cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
-            cell.views.text = nineviews[indexPath.row]
-            //            cell.descriptionlabel.text = librarydescriptions[librarybookids[indexPath.row]]
-            
-            //            if libraryviews.count >= librarybookids.count {
-            //
-            //                cell.views.text = libraryviews[librarybookids[indexPath.row]]!
-            //
-            //            } else {
-            //
-            //                cell.views.text = nineviews[indexPath.row]
-            //
-            //            }
-            //            cell.bamlabel.text = "Start Story"
-            //            cell.buttonlabel.image = UIImage(named: "WhiteButton-1")
-            //            cell.bamlabel.textColor = darkbluee
-            
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.alpha = 0
-            
-            //            cell.upgradelabel.alpha = 0
-            //            cell.bluebutton.alpha = 0
-            //            cell.emptylabel.alpha = 0
-            //            cell.lock.alpha = 0
-            
-            //            cell.greenlabel.alpha = 1
-            
-        } else {
-            
-            //        cell.greenlabel.alpha = 0
-            
-            if indexPath.row == 0 {
+            if selectedindex == 0 {
                 
-                //            cell.title.text = ""
-                ////            cell.emptylabel.alpha = 1
-                //            cell.coverimage.image = nil
-                //            cell.views.text = ""
-                //            cell.author.text = ""
-                //            cell.upgradelabel.alpha = 0
-                //            cell.lock.alpha = 0
-                //            cell.bluebutton.alpha = 0
-                //            cell.rectangle.alpha = 0
+                
+                cell.dark.alpha = 1
+                cell.bookcover.image = seemoreimages[seemoreids[indexPath.row+1]]
+                cell.views.text = genres[indexPath.row + 1]
+                cell.views.alpha = 1
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.alpha = 0
                 
             } else {
                 
-                //            cell.title.text = ""
                 cell.dark.alpha = 0
-                cell.bookcover.image = nil
-                //            cell.views.text = ""
-                //            cell.author.text = ""
-                //            cell.upgradelabel.alpha = 1
-                //            cell.lock.alpha = 1
-                //            cell.bluebutton.alpha = 1
-                //            cell.emptylabel.alpha = 0
-                //            cell.rectangle.alpha = 0
+                cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
                 
-                if Auth.auth().currentUser == nil {
-                    // Do smth if user is not logged in
-                    //                cell.upgradelabel.alpha = 1
-                    //                cell.lock.alpha = 1
-                    //                cell.bluebutton.alpha = 1
-                    
-                } else {
-                    //                cell.lock.alpha = 0
-                    //                cell.upgradelabel.alpha = 0
-                    //                cell.bluebutton.alpha = 0
-                    
-                }
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.alpha = 0
             }
+
+
+            
+        } else {
+            
+            
             
             
             
@@ -797,6 +898,22 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             if selectedindex == 6 {
                 
                 if indexPath.row == 6 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 7 {
+                
+                if indexPath.row == 7 {
                     
                     cell.titlelabel.alpha = 1
                     cell.selectedimage.alpha = 1
