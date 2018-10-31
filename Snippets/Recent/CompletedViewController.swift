@@ -21,7 +21,7 @@ class CompletedViewController: UIViewController {
         
        
         if starsnumber != "" {
-            ref!.child("FeedbackStars").child(selectedbookid).updateChildValues(["Stars" : starsnumber])
+            ref!.child("FeedbackStars").child(selectedgenre).child(selectedbookid).childByAutoId().updateChildValues(["Stars" : starsnumber])
             
             self.performSegue(withIdentifier: "CompletedToMain", sender: self)
         } else {

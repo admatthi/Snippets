@@ -121,6 +121,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         selectedindex = 0
         
         genres.removeAll()
+        genres.append("Today's Picks")
         genres.append("Biography & Memoir")
         genres.append("Health, Fitness, & Dieting")
         genres.append("Business & Investing")
