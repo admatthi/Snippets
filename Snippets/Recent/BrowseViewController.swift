@@ -137,9 +137,9 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         selectedindex = 0
         let now = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd"
-//        dayofmonth = dateFormatter.string(from: now)
-        dayofmonth = "1"
+        dateFormatter.dateFormat = "d"
+        dayofmonth = dateFormatter.string(from: now)
+//        dayofmonth = "1"
 
         
         queryfortodayspicks()
@@ -743,7 +743,6 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
-        cell.lockimage.alpha = 0
         cell.views.alpha =  0
     
         cell.dark.alpha = 0
@@ -766,7 +765,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 cell.views.alpha = 1
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.alpha = 0
-                
+//                cell.lockimage.alpha = 1
             } else {
                 
                 cell.dark.alpha = 0

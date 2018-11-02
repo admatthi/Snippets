@@ -10,6 +10,7 @@ import UIKit
 
 class BooksCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var readagain: UIImageView!
     @IBOutlet weak var percetnage: UILabel!
     @IBOutlet weak var coloredimage: UIImageView!
     @IBOutlet weak var views: UILabel!

@@ -431,9 +431,9 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
-        cell.lockimage.alpha = 0
         cell.views.alpha =  0
         cell.dark.alpha = 0
+        
 //        cell.selectionStyle = .none
     
 //        cell.layer.cornerRadius = 10.0
@@ -441,9 +441,8 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
 //
 //        cell.finished.alpha = 0
 
-        cell.coloredimage.alpha = 1
-        cell.percetnage.alpha = 1
-
+        cell.coloredimage.alpha = 0
+        cell.percetnage.alpha = 0
 
         cell.coloredimage.layer.cornerRadius = 5.0
         cell.coloredimage.layer.masksToBounds = true
@@ -455,13 +454,11 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
             
             if librarycomps[librarybookids[indexPath.row]] == "No" {
 
-                cell.coloredimage.image = UIImage(named: "DarkBlue4")
-                cell.percetnage.text = "0%"
+                cell.readagain.alpha = 0
 
             } else {
 
-                cell.coloredimage.image = UIImage(named: "GreenBlue3")
-                cell.percetnage.text = "100%"
+                cell.readagain.alpha = 1
 
             }
 //

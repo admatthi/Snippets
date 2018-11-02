@@ -21,7 +21,7 @@ import Purchases
 class NewPurchaseViewController: UIViewController {
     
     var attrs = [
-        NSAttributedStringKey.foregroundColor : UIColor.black,
+        NSAttributedStringKey.foregroundColor : UIColor.lightGray,
         NSAttributedStringKey.underlineStyle : 1] as [NSAttributedStringKey : Any]
     
     var attrs2 = [NSAttributedStringKey.font : UIFont(name: "AvenirNext-Bold", size: 17.0),
@@ -98,7 +98,7 @@ class NewPurchaseViewController: UIViewController {
         tapterms.setTitleColor(.black, for: .normal)
         
   
-        tapterms.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        tapterms.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
 
         //        whitelabel.layer.cornerRadius = 10.0
         //        whitelabel.layer.masksToBounds = true
