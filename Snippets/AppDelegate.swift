@@ -60,16 +60,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+     
         
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
 
-            tabBar.selectedIndex = 0
-
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Sale") as UIViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()
+        
 
         } else {
 
+            var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+            
             tabBar.selectedIndex = 0
 
         }

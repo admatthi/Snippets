@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		157A74EA0165AD58AB8C42FF /* Pods_SnippetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6EE81207569C281144C549E /* Pods_SnippetsUITests.framework */; };
 		9C2304F62D26520C38570F48 /* Pods_Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E681C89D5EFAA82527E004D9 /* Pods_Snippets.framework */; };
+		9D0D2D512198854B000C3C6F /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D2D502198854B000C3C6F /* BrowseViewController.swift */; };
+		9D0D2D532198857D000C3C6F /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D2D522198857D000C3C6F /* SaleViewController.swift */; };
 		9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */; };
 		9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */; };
 		9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1EBF0921767EF4004A566A /* SwipeViewController.swift */; };
@@ -152,9 +154,6 @@
 		9DD3AC60217BCD5600D82C13 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
 		9DD3AC61217BCD5600D82C13 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE586482147404F00DF4129 /* FavTableViewCell.swift */; };
 		9DD3AC62217BCD5600D82C13 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE586482147404F00DF4129 /* FavTableViewCell.swift */; };
-		9DD3AC65217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
-		9DD3AC66217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
-		9DD3AC67217BCDE600D82C13 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */; };
 		9DD3AC69217CEEFA00D82C13 /* TermsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3AC68217CEEFA00D82C13 /* TermsTableViewCell.swift */; };
 		9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */; };
 		9DE5864721473FD500DF4129 /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5864621473FD500DF4129 /* FavViewController.swift */; };
@@ -194,6 +193,8 @@
 		3EC0ED10C94DCEF6F5337251 /* Pods-Snippets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snippets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snippets/Pods-Snippets.debug.xcconfig"; sourceTree = "<group>"; };
 		5B29037367A81C6A6156FE25 /* Pods-SnippetsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsUITests/Pods-SnippetsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A42BC6B365D009C7E233046 /* Pods-SnippetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D0D2D502198854B000C3C6F /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		9D0D2D522198857D000C3C6F /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		9D1EBF0921767EF4004A566A /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
@@ -257,7 +258,6 @@
 		9D9A829D2146D9380050F2B3 /* LibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibViewController.swift; sourceTree = "<group>"; };
 		9D9A829F2146D9A90050F2B3 /* LibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibTableViewCell.swift; sourceTree = "<group>"; };
 		9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cheltenham-Bold.otf"; sourceTree = "<group>"; };
-		9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrowseViewController.swift; path = /Users/alekmatthiessen/Desktop/Snippets/Snippets/Recent/BrowseViewController.swift; sourceTree = "<absolute>"; };
 		9DD3AC68217CEEFA00D82C13 /* TermsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsTableViewCell.swift; sourceTree = "<group>"; };
 		9DE0608F215A7A5900F44256 /* LibbCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibbCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DE5864621473FD500DF4129 /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
@@ -405,8 +405,9 @@
 				9D32CFF52189006D005B1B97 /* CompletedViewController.swift */,
 				9DE9BF912188AE5B009A5182 /* FunnelViewController.swift */,
 				9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */,
+				9D0D2D522198857D000C3C6F /* SaleViewController.swift */,
 				9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */,
-				9DD3AC64217BCDE500D82C13 /* BrowseViewController.swift */,
+				9D0D2D502198854B000C3C6F /* BrowseViewController.swift */,
 				9D714EF920FFA1A7002CD2A3 /* BookOverviewViewController.swift */,
 				9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */,
 				9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */,
@@ -695,6 +696,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Purchases/Purchases.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -707,6 +709,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Purchases.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -772,7 +775,6 @@
 				9DEEE4C821776523001B5FE8 /* ScrollViewController.swift in Sources */,
 				9D32CFF62189006E005B1B97 /* CompletedViewController.swift in Sources */,
 				9D714F0520FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
-				9DD3AC66217BCDE600D82C13 /* BrowseViewController.swift in Sources */,
 				9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
 				9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */,
 				9D714F1120FFA1A9002CD2A3 /* CViewController.swift in Sources */,
@@ -782,6 +784,7 @@
 				9DE5864721473FD500DF4129 /* FavViewController.swift in Sources */,
 				9D714EFF20FFA1A9002CD2A3 /* ReadTableViewCell.swift in Sources */,
 				9D714F2920FFA1A9002CD2A3 /* BookOverviewViewController.swift in Sources */,
+				9D0D2D512198854B000C3C6F /* BrowseViewController.swift in Sources */,
 				9D714F3220FFA1A9002CD2A3 /* BViewController.swift in Sources */,
 				9DFD9C782187902200BE0EBA /* NewPurchaseViewController.swift in Sources */,
 				9DE9BF922188AE5B009A5182 /* FunnelViewController.swift in Sources */,
@@ -791,6 +794,7 @@
 				9D7D492921790F1A00138802 /* GenreViewController.swift in Sources */,
 				9D714F1420FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9DE06090215A7A5900F44256 /* LibbCollectionViewCell.swift in Sources */,
+				9D0D2D532198857D000C3C6F /* SaleViewController.swift in Sources */,
 				9D714F0E20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D4020722102375E00E90720 /* ExpandedViewController.swift in Sources */,
 				9D714F1D20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
@@ -813,7 +817,6 @@
 				9D714F2D20FFA1A9002CD2A3 /* LoginViewController.swift in Sources */,
 				9D714F0620FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3920FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
-				9DD3AC67217BCDE600D82C13 /* BrowseViewController.swift in Sources */,
 				9DD3AC62217BCD5600D82C13 /* FavTableViewCell.swift in Sources */,
 				9DD3AC5E217BCD3900D82C13 /* LibViewController.swift in Sources */,
 				9D714F1220FFA1A9002CD2A3 /* CViewController.swift in Sources */,
@@ -844,7 +847,6 @@
 				9D714F2E20FFA1A9002CD2A3 /* LoginViewController.swift in Sources */,
 				9D714F0720FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3A20FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
-				9DD3AC65217BCDE600D82C13 /* BrowseViewController.swift in Sources */,
 				9DD3AC61217BCD5600D82C13 /* FavTableViewCell.swift in Sources */,
 				9DD3AC5D217BCD3900D82C13 /* LibViewController.swift in Sources */,
 				9D714F1320FFA1A9002CD2A3 /* CViewController.swift in Sources */,
@@ -1010,7 +1012,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3EC0ED10C94DCEF6F5337251 /* Pods-Snippets.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-8";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;
@@ -1031,7 +1033,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4ED7EBDC46DD0480DD87253 /* Pods-Snippets.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-8";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;

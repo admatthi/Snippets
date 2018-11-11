@@ -151,9 +151,9 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             tapinprogress.alpha = 0
-            upgradebutton.alpha = 1
-            label1.alpha = 1
-            label2.alpha = 1
+//            upgradebutton.alpha = 1
+//            label1.alpha = 1
+//            label2.alpha = 1
             label3.alpha = 1
             collectionView.alpha = 0
             tapback.alpha = 0

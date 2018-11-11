@@ -136,10 +136,10 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         activityIndicator.color = mygreen
         selectedindex = 0
         let now = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d"
-        dayofmonth = dateFormatter.string(from: now)
-//        dayofmonth = "1"
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "d"
+//        dayofmonth = dateFormatter.string(from: now)
+        dayofmonth = "1"
 
         
         queryfortodayspicks()
