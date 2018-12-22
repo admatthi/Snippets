@@ -93,7 +93,6 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         tapterms.setTitleColor(.black, for: .normal)
         
         
-        tapterms.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         
         //        whitelabel.layer.cornerRadius = 10.0
         //        whitelabel.layer.masksToBounds = true

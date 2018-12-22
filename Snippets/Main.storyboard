@@ -1978,7 +1978,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQf-kB-hZ8">
-                                <rect key="frame" x="1" y="202" width="375" height="249"/>
+                                <rect key="frame" x="1" y="211" width="375" height="249"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="249" id="e9P-xu-zEZ"/>
@@ -2101,7 +2101,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Life Changing Ideas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOr-JE-bgt">
-                                <rect key="frame" x="27.5" y="60" width="320" height="49"/>
+                                <rect key="frame" x="27.5" y="64" width="320" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="cUg-Je-E0e"/>
                                     <constraint firstAttribute="width" constant="320" id="ehF-yS-V3w"/>
@@ -2149,16 +2149,16 @@
                             <constraint firstItem="5Tp-7B-YnL" firstAttribute="trailing" secondItem="Bch-VA-NJH" secondAttribute="trailing" id="M61-Tt-F7f"/>
                             <constraint firstItem="5Tp-7B-YnL" firstAttribute="top" secondItem="Sad-0R-1Da" secondAttribute="top" id="NDS-vI-DhS"/>
                             <constraint firstItem="Bch-VA-NJH" firstAttribute="bottom" secondItem="SZW-5t-i39" secondAttribute="bottom" constant="31" id="RS1-6o-qRW"/>
-                            <constraint firstItem="iOr-JE-bgt" firstAttribute="top" secondItem="t0m-LD-SVI" secondAttribute="bottom" constant="8" id="cLi-SQ-hTM"/>
+                            <constraint firstItem="iOr-JE-bgt" firstAttribute="top" secondItem="t0m-LD-SVI" secondAttribute="bottom" constant="12" id="cLi-SQ-hTM"/>
                             <constraint firstAttribute="trailing" secondItem="eQf-kB-hZ8" secondAttribute="trailing" constant="-1" id="chY-qM-tsC"/>
-                            <constraint firstItem="iOr-JE-bgt" firstAttribute="top" secondItem="XCY-GL-Wcb" secondAttribute="bottom" constant="12" id="cuo-Lf-WxC"/>
+                            <constraint firstItem="iOr-JE-bgt" firstAttribute="top" secondItem="XCY-GL-Wcb" secondAttribute="bottom" constant="16" id="cuo-Lf-WxC"/>
                             <constraint firstItem="5Tp-7B-YnL" firstAttribute="bottom" secondItem="Bch-VA-NJH" secondAttribute="bottom" id="dow-nl-D9H"/>
                             <constraint firstItem="Lfl-qt-39E" firstAttribute="centerX" secondItem="Sad-0R-1Da" secondAttribute="centerX" id="gUr-NU-dkR"/>
                             <constraint firstItem="t0m-LD-SVI" firstAttribute="top" secondItem="Bch-VA-NJH" secondAttribute="top" constant="6" id="ggJ-bD-UbX"/>
                             <constraint firstItem="AmX-wh-hxg" firstAttribute="centerX" secondItem="Sad-0R-1Da" secondAttribute="centerX" id="hWC-8k-8eU"/>
                             <constraint firstItem="XCY-GL-Wcb" firstAttribute="centerX" secondItem="Sad-0R-1Da" secondAttribute="centerX" id="lDg-Nq-oic"/>
                             <constraint firstItem="F8c-5c-mCg" firstAttribute="centerX" secondItem="Sad-0R-1Da" secondAttribute="centerX" id="lx5-RA-1xe"/>
-                            <constraint firstItem="eQf-kB-hZ8" firstAttribute="top" secondItem="AmX-wh-hxg" secondAttribute="bottom" constant="1" id="qnq-Ai-N4f"/>
+                            <constraint firstItem="eQf-kB-hZ8" firstAttribute="top" secondItem="AmX-wh-hxg" secondAttribute="bottom" constant="10" id="qnq-Ai-N4f"/>
                             <constraint firstItem="nkt-2n-oJo" firstAttribute="leading" secondItem="Bch-VA-NJH" secondAttribute="leading" constant="17" id="sMl-bP-GkD"/>
                             <constraint firstItem="bXf-WA-ozf" firstAttribute="centerX" secondItem="Sad-0R-1Da" secondAttribute="centerX" id="wcl-2T-Nb0"/>
                             <constraint firstAttribute="bottom" secondItem="5Tp-7B-YnL" secondAttribute="bottom" id="x4R-Nx-Pg5"/>
@@ -2834,7 +2834,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDZ-X3-FQA">
-                                <rect key="frame" x="0.0" y="10" width="375" height="2590"/>
+                                <rect key="frame" x="0.0" y="-190" width="375" height="2590"/>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2590" id="I2J-ns-2F2"/>
@@ -2844,7 +2844,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTl-vr-x4Y">
-                                <rect key="frame" x="0.0" y="63" width="375" height="2536"/>
+                                <rect key="frame" x="0.0" y="63" width="375" height="2336"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOST POPULAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVQ-Ud-xWO">
                                         <rect key="frame" x="8" y="8" width="359" height="19"/>
@@ -4895,7 +4895,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H35-Q3-Deu">
-                                                    <rect key="frame" x="57" y="11" width="303" height="76"/>
+                                                    <rect key="frame" x="57" y="11" width="303" height="89"/>
                                                     <string key="text">In Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future, veteran technology journalist Ashlee Vance provides the first inside look into the extraordinary life and times of Silicon Valley's most audacious entrepreneur. </string>
                                                     <fontDescription key="fontDescription" name="CheltenhamBook" family="Cheltenham" pointSize="13"/>
                                                     <nil key="textColor"/>
@@ -4909,7 +4909,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lS-gF-5hg">
-                                                    <rect key="frame" x="0.0" y="87" width="375" height="1"/>
+                                                    <rect key="frame" x="0.0" y="100" width="375" height="1"/>
                                                     <color key="backgroundColor" red="0.97842639593908631" green="0.97842639593908631" blue="0.97842639593908631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="hzV-73-zKW"/>
@@ -9135,14 +9135,14 @@ YgACjWoAAo1tAAKNfwACjYIAAo2HAAAAAAAABAEAAAAAAAAAWQAAAAAAAAAAAAAAAAACjYk
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Sny-F5-hPa"/>
-        <segue reference="geI-t6-Svl"/>
+        <segue reference="Nh1-LO-uCJ"/>
+        <segue reference="81X-gA-syT"/>
         <segue reference="OU3-zG-Qfe"/>
         <segue reference="GCk-P9-zek"/>
         <segue reference="aeQ-qY-d1A"/>
         <segue reference="JcO-ae-1fW"/>
-        <segue reference="aPr-40-vZm"/>
-        <segue reference="txS-eC-2xO"/>
+        <segue reference="Bcu-hk-TeZ"/>
+        <segue reference="wYw-yP-fYv"/>
         <segue reference="ybA-Ft-GgD"/>
     </inferredMetricsTieBreakers>
 </document>
