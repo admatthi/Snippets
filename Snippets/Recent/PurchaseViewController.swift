@@ -111,20 +111,17 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func tapButton2(_ sender: Any) {
         
         
-        FBSDKAppEvents.logEvent("Lifetime Pressed")
+       
+        FBSDKAppEvents.logEvent("Yearl Pressed")
         
-        //        purchase(purchase: sevendayfreetrial)
+        //        purchase(purchase: threedaytrial)
+        
+        //        let delegate = UIApplication.shared.delegate as! AppDelegate
         
         purchases.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
-            
-            
-            guard let monthly = pro.offerings["Lifetime"] else { return }
-            
-            
+            guard let monthly = pro.offerings["Weekly"] else { return }
             guard let product = monthly.activeProduct else { return }
-            
-            
             self.purchases.makePurchase(product)
             
             
@@ -135,7 +132,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("Yearly Pressed")
+        FBSDKAppEvents.logEvent("Monthly Pressed")
         
         //        purchase(purchase: threedaytrial)
         
@@ -143,7 +140,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
         purchases.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Weekly"] else { return }
+            guard let monthly = pro.offerings["Monthly"] else { return }
             guard let product = monthly.activeProduct else { return }
             self.purchases.makePurchase(product)
             

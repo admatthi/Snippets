@@ -58,7 +58,7 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
                     } else {
                         
                         // store download url
-                        logodownloadurl = metaData!.downloadURL()!.absoluteString
+//                        logodownloadurl = metaData!.downloadURL()!.absoluteString
                         
                         
                         let currentUser = Auth.auth().currentUser

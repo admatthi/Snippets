@@ -63,16 +63,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
         
         if Auth.auth().currentUser == nil {
-            // Do smth if user is not logged in
-
+            
             let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Sale") as UIViewController
+            
+            
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Overview") as UIViewController
             self.window = UIWindow(frame: UIScreen.main.bounds)
             self.window?.rootViewController = initialViewControlleripad
-            self.window?.makeKeyAndVisible()
-        
-
-        } else {
+            self.window?.makeKeyAndVisible()//
+            
+            
+        }  else {
 
             var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
             
@@ -85,11 +86,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func letsgo() {
         
-        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Login") as UIViewController
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = initialViewControlleripad
-        self.window?.makeKeyAndVisible()
+        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+        
+        tabBar.selectedIndex = 0
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -18,6 +18,8 @@ import FBSDKCoreKit
 import UserNotifications
 import Purchases
 
+var myblue2 = UIColor(red:0.19, green:0.39, blue:1.00, alpha:1.0)
+
 class SaleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var attrs = [
@@ -39,7 +41,8 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func tapLogin(_ sender: Any) {
     }
-    @IBAction func tapBuy(_ sender: Any) {
+    @IBOutlet weak var tapyearly: UIButton!
+    @IBAction func tapBuyYearly(_ sender: Any) {
         
         FBSDKAppEvents.logEvent("Yearly Pressed")
         
@@ -49,7 +52,24 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         purchases.entitlements { entitlements in
             guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Weekly"] else { return }
+            guard let monthly = pro.offerings["Yearly"] else { return }
+            guard let product = monthly.activeProduct else { return }
+            self.purchases.makePurchase(product)
+            
+            
+        }
+    }
+    @IBAction func tapBuy(_ sender: Any) {
+        
+        FBSDKAppEvents.logEvent("Monthly Pressed")
+        
+        //        purchase(purchase: threedaytrial)
+        
+        //        let delegate = UIApplication.shared.delegate as! AppDelegate
+        
+        purchases.entitlements { entitlements in
+            guard let pro = entitlements?["Subscriptions"] else { return }
+            guard let monthly = pro.offerings["Monthly"] else { return }
             guard let product = monthly.activeProduct else { return }
             self.purchases.makePurchase(product)
             
@@ -78,12 +98,25 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+    @IBOutlet weak var savetext2: UIButton!
+    @IBAction func savetext(_ sender: Any) {
+    }
     @IBOutlet weak var tapterms: UIButton!
     @IBOutlet weak var tapbuy: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        
+        savetext2.layer.cornerRadius = 5.0
+        savetext2.layer.masksToBounds = true
+        tapbuy.layer.borderColor = myblue2.cgColor
+        
+        tapbuy.layer.borderWidth = 2.0
+        tapbuy.layer.cornerRadius = 5.0
+        tapbuy.layer.masksToBounds = true
+        tapyearly.layer.cornerRadius = 5.0
+        tapyearly.layer.masksToBounds = true
         
         tapterms.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         
