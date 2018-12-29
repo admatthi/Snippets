@@ -114,24 +114,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if collectionView.tag == 1 {
-            
-        let kWhateverHeightYouWant = 66
-        let string3 = genres[indexPath.row].size
-            
-        return string3
-            
-        } else {
-            
-            return CGSize(width: 166, height: 245 )
-        }
-        
-        
-    }
+
     
     
     override func viewDidLoad() {
@@ -673,7 +656,10 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         if collectionView.tag == 1 {
             
             selectedindex = indexPath.row
+            
             collectionView2.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+            
+            
 
             if selectedindex == 0 {
                 
@@ -835,7 +821,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 
             collectionView.alpha = 1
             cell.titlelabel.text = genres[indexPath.row]
-            cell.titlelabel.sizeToFit()
+//            cell.titlelabel.sizeToFit()
             
             cell.selectedimage.layer.cornerRadius = 5.0
                 cell.selectedimage.layer.masksToBounds = true

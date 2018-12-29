@@ -47,6 +47,11 @@ class BookOverviewViewController: UIViewController {
         
     }
     
+    @IBAction func tapcopy(_ sender: Any) {
+        
+        UIPasteboard.general.string = "One of the best Snippets from \(selectedauthor)'s \(selectedtitle). Tag a friend who needs to hear this! \(selecteddescription) #readthesnippets #book #booksarelife #bookcommunity #bookpassion #bookrecommendation #bookreview #nonfiction #love #greatreads #quotes #bookquotes #bookobsessed #alwayslearning"
+
+    }
     @IBOutlet weak var taplib: UIButton!
     @IBAction func tapLibrary(_ sender: Any) {
         
