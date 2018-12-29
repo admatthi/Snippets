@@ -9,19 +9,49 @@
 import UIKit
 import Cheers
 import Firebase
+import IQKeyboardManager
+
 var starsnumber = String()
 
-class CompletedViewController: UIViewController {
+class CompletedViewController: UIViewController, UITextViewDelegate {
 
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.white
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Any other thoughts?"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    @IBOutlet weak var tv: UITextView!
     @IBOutlet weak var stars: UIImageView!
     @IBAction func tapNext(_ sender: Any) {
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-       
+       var comments = String()
+        
         if starsnumber != "" {
-            ref!.child("FeedbackStars").child(selectedgenre).child(selectedbookid).childByAutoId().updateChildValues(["Stars" : starsnumber])
+           
+            if tv.text != "" {
+                
+                comments = tv.text!
+                
+            } else {
+                
+                comments = "-"
+
+            }
+           
+            ref!.child("FeedbackStars").child(selectedgenre).child(selectedbookid).childByAutoId().updateChildValues(["Stars" : starsnumber, "Comments" : comments])
             
             self.performSegue(withIdentifier: "CompletedToMain", sender: self)
         } else {
@@ -66,8 +96,13 @@ class CompletedViewController: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
 
+        tv.text = "Any other thoughts?"
+        tv.textColor = UIColor.lightGray
+        tv.delegate = self
         imageback.image = selectedimage
-        titlelabel.text = "\(selectedtitle)!"
+        
+        
+//        titlelabel.text = "\(selectedtitle)!"
         
         // Configure
         bamview.config.particle = .confetti(allowedShapes: [Particle.ConfettiShape.triangle])
@@ -80,6 +115,8 @@ class CompletedViewController: UIViewController {
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CompletedViewController.count), userInfo: nil, repeats: true)
 
+//        tv.layer.borderColor = UIColor.lightGray.cgColor
+//        tv.layer.borderWidth = 1.0
         
         
         imageback.layer.cornerRadius = 10.0

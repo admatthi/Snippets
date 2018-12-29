@@ -41,6 +41,11 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func tapLogin(_ sender: Any) {
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        savetext2.flash()
+    }
     @IBOutlet weak var tapyearly: UIButton!
     @IBAction func tapBuyYearly(_ sender: Any) {
         

@@ -16,10 +16,11 @@ class OverviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+
         counter = 0 
         setupimage.image = UIImage(named: "Setup\(counter)")
         
+        view.bringSubview(toFront: tapr)
         
         images.append(UIImage(named: "Overview1")!)
         images.append(UIImage(named: "Overview2")!)

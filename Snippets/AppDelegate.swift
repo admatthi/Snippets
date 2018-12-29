@@ -58,9 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         purchases!.delegate = self
         
+//        
+//        UITabBar.appearance().barTintColor = UIColor.black
+//        UITabBar.appearance().tintColor = UIColor.black
         
-        
-     
+        ref = Database.database().reference()
+
         
         if Auth.auth().currentUser == nil {
             
@@ -75,16 +78,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }  else {
 
-            var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+            uid = (Auth.auth().currentUser?.uid)!
+
+            queryforinfo()
             
-            tabBar.selectedIndex = 0
+          
 
         }
         
         return true
     }
     
+    func queryforinfo() {
+        
+        var functioncounter = 0
+        
+        ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if var purchased = value?["Purchased"] as? String {
+                
+                if purchased == "Yes" {
+                    
+                    var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+                    
+                    tabBar.selectedIndex = 0
+                    
+                } else {
+                    
+                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    
+                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Sale") as UIViewController
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    self.window?.rootViewController = initialViewControlleripad
+                    self.window?.makeKeyAndVisible()//
+                    
+                }
+                
+            } else {
+                
+                let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                
+                let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Sale") as UIViewController
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = initialViewControlleripad
+                self.window?.makeKeyAndVisible()//
+                
+            }
+                
+            })
+            
+        }
+    
     func letsgo() {
+        
+        ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
         
         var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
         

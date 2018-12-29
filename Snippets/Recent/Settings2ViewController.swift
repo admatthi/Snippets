@@ -39,14 +39,27 @@ class Settings2ViewController: UIViewController {
     }
     @IBAction func tapSubscription(_ sender: Any) {
         
-//        if let url = NSURL(string: "https://www.tryeatfree.com/subscription.html"
-//            ) {
-//            UIApplication.shared.openURL(url as URL)
-//        }
+        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/subscription.html"
+            ) {
+            UIApplication.shared.openURL(url as URL)
+        }
     }
+    
     @IBAction func tapTerms(_ sender: Any) {
         
         if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/terms.html"
+            ) {
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
+    
+    @IBAction func tapBack(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func tapGives(_ sender: Any) {
+        
+        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/gives.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }

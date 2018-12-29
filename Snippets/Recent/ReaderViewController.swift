@@ -31,8 +31,9 @@ let oorange = UIColor(red:1.00, green:0.40, blue:0.08, alpha:1.0)
 
 var colors = [UIColor]()
 
-class ReaderViewController: UIViewController {
+class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var progressView: UIProgressView!
     
     @IBAction func tapBack(_ sender: Any) {
@@ -56,7 +57,7 @@ class ReaderViewController: UIViewController {
     }
     @IBAction func tapPrevious(_ sender: AnyObject?) {
         
-        quotetext.slideInFromLeft()
+//        quotetext.slideInFromLeft()
 
         if counter > 0 {
             
@@ -64,24 +65,23 @@ class ReaderViewController: UIViewController {
 
         }
         
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
-        bookmarktapped = false
+//        bookmarktapped = false
     }
     @IBAction func tapNext(_ sender: AnyObject?) {
         
-        threebuttonuntapped()
+//        threebuttonuntapped()
         
-        quotetext.slideInFromRight()
+//        quotetext.slideInFromRight()
 
         
         nextcount()
         
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
         bookmarktapped = false
     }
-    @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference?
     var category = String()
     
@@ -126,20 +126,26 @@ class ReaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        threebuttonuntapped()
+        view.bringSubview(toFront: tapanywhere)
+        view.bringSubview(toFront: topquote)
+
+//        threebuttonuntapped()
+        
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 500
         
         ref = Database.database().reference()
         
         favorites.removeAll()
         
-        swipeRightRec.addTarget(self, action: #selector(self.swipeR) )
-        swipeRightRec.direction = .right
-        self.view!.addGestureRecognizer(swipeRightRec)
-        
-        
-        swipeLeftRec.addTarget(self, action: #selector(self.swipeL) )
-        swipeLeftRec.direction = .left
-        self.view!.addGestureRecognizer(swipeLeftRec)
+//        swipeRightRec.addTarget(self, action: #selector(self.swipeR) )
+//        swipeRightRec.direction = .right
+//        self.view!.addGestureRecognizer(swipeRightRec)
+//
+//
+//        swipeLeftRec.addTarget(self, action: #selector(self.swipeL) )
+//        swipeLeftRec.direction = .left
+//        self.view!.addGestureRecognizer(swipeLeftRec)
         
         
 //        var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
@@ -156,7 +162,7 @@ class ReaderViewController: UIViewController {
         } else {
             
 
-            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
+            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
 
 
         }
@@ -172,7 +178,7 @@ class ReaderViewController: UIViewController {
         
         bookmarktapped = false
         
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
 
         FBSDKAppEvents.logEvent("Read Book Viewed")
 //        wtf()
@@ -181,8 +187,9 @@ class ReaderViewController: UIViewController {
 
                 // Do any additional setup after loading the view.
         
-        showbookmark()
+//        showbookmark()
         tapanywhere.alpha = 1
+        
     }
     
     @IBOutlet weak var counterbutton: UIButton!
@@ -257,7 +264,7 @@ class ReaderViewController: UIViewController {
                     trimmedtext = trimmedtext.replacingOccurrences(of: "”", with: "", options: NSString.CompareOptions.literal, range: nil)
                     
 
-                    ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : trimmedtext, "Image" : selectedimagename])
+                    ref?.child("Snippets").child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : trimmedtext, "Image" : selectedimagename])
 
                 bookmarktapped = true
 
@@ -293,7 +300,7 @@ class ReaderViewController: UIViewController {
                 trimmedtext = trimmedtext.replacingOccurrences(of: "”", with: "", options: NSString.CompareOptions.literal, range: nil)
                 
                 
-                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : trimmedtext, "Image" : selectedimagename])
+                ref?.child("Snippets").child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : trimmedtext, "Image" : selectedimagename])
 
                 bookmarktapped = true
 
@@ -326,7 +333,7 @@ class ReaderViewController: UIViewController {
     
     func threebuttontapped() {
         
-        tapbookmark.alpha = 1
+//        tapbookmark.alpha = 1
         tapbuy.alpha = 1
         tapback.alpha = 1
         threebutton.setImage(UIImage(named: "3ButtonsOpen"), for: .normal)
@@ -340,7 +347,7 @@ class ReaderViewController: UIViewController {
         tapbuy.alpha = 0
         tapback.alpha = 0
      
-        threebutton.setImage(UIImage(named: "3Buttons"), for: .normal)
+//        threebutton.setImage(UIImage(named: "3Buttons"), for: .normal)
         
         threetapped = false
     }
@@ -363,7 +370,7 @@ class ReaderViewController: UIViewController {
             
         ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).removeValue()
 
-            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription, "Views" : selectedviews])
+            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription, "Views" : selectedviews])
 
             selectedimage = cover.image!
             FBSDKAppEvents.logEvent("Book Completed")
@@ -648,10 +655,10 @@ class ReaderViewController: UIViewController {
     @IBOutlet weak var fourteen: UIImageView!
     @IBOutlet weak var fifteen: UIImageView!
 
+    var trimmedtext = String()
 
     func showproperquote() {
         
-        var trimmedtext = String()
         
         if counter < quote.count {
             
@@ -669,8 +676,9 @@ class ReaderViewController: UIViewController {
         trimmedtext = trimmedtext.replacingOccurrences(of: "”", with: "", options: NSString.CompareOptions.literal, range: nil)
 
         print(trimmedtext)
-        quotetext.text = trimmedtext.capitalizingFirstLetter()
-            
+//        quotetext.text = trimmedtext.capitalizingFirstLetter()
+    
+        tableView.reloadData()
 
         print(counter)
        
@@ -681,6 +689,43 @@ class ReaderViewController: UIViewController {
 
         }
     }
+    
+    @IBOutlet weak var topquote: UIImageView!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        return 1
+        
+    }
+//
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+
+        if trimmedtext.count > 400 {
+            
+            return UITableViewAutomaticDimension
+            
+        } else {
+            
+            return 585
+
+        }
+
+
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Reader", for: indexPath) as! ReaderTableViewCell
+        
+
+        cell.maintext.text = trimmedtext.capitalizingFirstLetter()
+        cell.selectionStyle = .none
+        cell.center = self.view.center
+        
+        return cell
+        
+    }
+        
     /*
      // MARK: - Navigation
      

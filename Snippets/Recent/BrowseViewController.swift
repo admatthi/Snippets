@@ -113,12 +113,33 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView.tag == 1 {
+            
+        let kWhateverHeightYouWant = 66
+        let string3 = genres[indexPath.row].size
+            
+        return string3
+            
+        } else {
+            
+            return CGSize(width: 166, height: 245 )
+        }
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ref = Database.database().reference()
 
-        
+//        addstaticbooks()
         genres.removeAll()
         genres.append("Today's Picks")
         genres.append("Biography & Memoir")
@@ -138,8 +159,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
-//        dayofmonth = dateFormatter.string(from: now)
-        dayofmonth = "4"
+        dayofmonth = dateFormatter.string(from: now)
+//        dayofmonth = "29"
 
         
         queryfortodayspicks()
@@ -343,7 +364,28 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     var dayofmonth = String()
-
+    
+    func addstaticbooks() {
+        
+        selectedgenre = "Mental Health"
+        
+        var counter2 = 28
+        
+        while counter2 < 32 {
+            
+            //            ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues(["Author" : "Jordan B. Peterson", "BookID" : "\(counter2)", "Description" : "What does everyone in the modern world need to know? Renowned psychologist Jordan B. Peterson's answer to this most difficult of questions uniquely combines the hard-won truths of ancient tradition with the stunning revelations of cutting-edge scientific research.", "Genre" : "\(selectedgenre)", "Image" : "F\(counter2)", "Name" : "12 Rules for Life", "Completed" : "No", "Views" : "x"])
+            
+            //    ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues([ "Views" : "\(sevenviews[counter2])"])
+            
+            ref?.child("AllBooks1").child(selectedgenre).child("\(counter2)").child("Summary").child("1").updateChildValues(["1" : "x", "2" : "x", "3" : "x", "4" : "x", "5" : "x", "6" : "x","7" : "x", "8" : "x","9" : "x","10" : "x","11" : "x", "12" : "x", "13" : "x", "14" : "x", "15" : "x", "16" : "x", "17" : "x", "18" : "x", "19" : "x", "20" : "x", "Title" : "x"])
+            
+            
+            counter2 += 1
+            
+        }
+        
+        
+    }
     func queryfortodayspicks() {
         
         var functioncounter = 0
@@ -744,7 +786,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
         cell.views.alpha =  0
-    
+        
         cell.dark.alpha = 0
         //        cell.selectionStyle = .none
         
@@ -793,6 +835,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 
             collectionView.alpha = 1
             cell.titlelabel.text = genres[indexPath.row]
+            cell.titlelabel.sizeToFit()
             
             cell.selectedimage.layer.cornerRadius = 5.0
                 cell.selectedimage.layer.masksToBounds = true

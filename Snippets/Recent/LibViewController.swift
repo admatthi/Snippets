@@ -159,7 +159,7 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
             tapback.alpha = 0
             tapbookmark.alpha = 0
         } else {
-            tapbookmark.alpha = 1
+//            tapbookmark.alpha = 1
             tapback.alpha = 1
             purchased = true
             uid = (Auth.auth().currentUser?.uid)!

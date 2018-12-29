@@ -810,6 +810,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         nineviews.append("2M views")
         nineviews.append("1.2M views")
   
+        addstaticbooks()
 //        addstaticbooks()
 
 
@@ -1398,11 +1399,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     
     func addstaticbooks() {
         
-    selectedgenre = "Productivity"
+    selectedgenre = "Business & Investing"
         
-    var counter2 = 7
+    var counter2 = 28
         
-        while counter2 < 35 {
+        while counter2 < 31 {
     
 //            ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues(["Author" : "Jordan B. Peterson", "BookID" : "\(counter2)", "Description" : "What does everyone in the modern world need to know? Renowned psychologist Jordan B. Peterson's answer to this most difficult of questions uniquely combines the hard-won truths of ancient tradition with the stunning revelations of cutting-edge scientific research.", "Genre" : "\(selectedgenre)", "Image" : "F\(counter2)", "Name" : "12 Rules for Life", "Completed" : "No", "Views" : "x"])
             

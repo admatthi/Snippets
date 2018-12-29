@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 newuser = false
                 
-                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
+//                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
                 
                 DispatchQueue.main.async {
                     
@@ -111,21 +111,47 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let thirty = dateFormatter.string(from: thirtyDaysAfterToday)
                 
                 self.addstaticbooks()
-                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
+//                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
 
                 
 
                 newuser = false
 
-                DispatchQueue.main.async {
-                    
-                    purchased = true
-                    
-                    self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
-                }
+                self.queryforinfo()
+                
             }
             
         }
+        
+    }
+    
+    func queryforinfo() {
+        
+        var functioncounter = 0
+        
+        ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if var purchased = value?["Purchased"] as? String {
+                
+                if purchased == "Yes" {
+                    
+                    self.performSegue(withIdentifier: "SignInToExplore", sender: self)
+                    
+                } else {
+                    
+                    self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
+
+                }
+                
+            } else {
+                
+                self.performSegue(withIdentifier: "LoginToPurchase", sender: self)//
+                
+            }
+            
+        })
         
     }
     
