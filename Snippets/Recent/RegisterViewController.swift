@@ -13,6 +13,8 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 import FBSDKCoreKit
+import Foundation
+import MessageUI
 
 class RegisterViewController: UIViewController, UITextFieldDelegate     {
 

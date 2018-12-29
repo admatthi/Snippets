@@ -15,6 +15,9 @@
 		9D1B921E21D6A33200332A18 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B921D21D6A33100332A18 /* Settings2ViewController.swift */; };
 		9D1B921F21D6A33200332A18 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B921D21D6A33100332A18 /* Settings2ViewController.swift */; };
 		9D1B922021D6A33200332A18 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B921D21D6A33100332A18 /* Settings2ViewController.swift */; };
+		9D1B922221D7D83500332A18 /* ContacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B922121D7D83400332A18 /* ContacViewController.swift */; };
+		9D1B922321D7D83500332A18 /* ContacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B922121D7D83400332A18 /* ContacViewController.swift */; };
+		9D1B922421D7D83500332A18 /* ContacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B922121D7D83400332A18 /* ContacViewController.swift */; };
 		9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */; };
 		9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1EBF0921767EF4004A566A /* SwipeViewController.swift */; };
 		9D2CF7A6215A672A00F9C3D5 /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */; };
@@ -207,6 +210,7 @@
 		9D0D2D522198857D000C3C6F /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		9D19F2A520FFD2C700BEC738 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		9D1B921D21D6A33100332A18 /* Settings2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings2ViewController.swift; sourceTree = "<group>"; };
+		9D1B922121D7D83400332A18 /* ContacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContacViewController.swift; sourceTree = "<group>"; };
 		9D1CE2EF2112BF3F00639C5F /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		9D1EBF0921767EF4004A566A /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 				9D88EA7B21D5B20B004CDE4D /* RegisterViewController.swift */,
 				9D88EA7F21D5B216004CDE4D /* SignInViewController.swift */,
 				9D1B921D21D6A33100332A18 /* Settings2ViewController.swift */,
+				9D1B922121D7D83400332A18 /* ContacViewController.swift */,
 			);
 			path = Recent;
 			sourceTree = "<group>";
@@ -825,6 +830,7 @@
 				9D88EA8021D5B217004CDE4D /* SignInViewController.swift in Sources */,
 				9DD3601A21D66AC70057FFD4 /* ReaderTableViewCell.swift in Sources */,
 				9D9A82A02146D9A90050F2B3 /* LibTableViewCell.swift in Sources */,
+				9D1B922221D7D83500332A18 /* ContacViewController.swift in Sources */,
 				9D1B921E21D6A33200332A18 /* Settings2ViewController.swift in Sources */,
 				9D1CE2F02112BF3F00639C5F /* MoreInfoViewController.swift in Sources */,
 				9D714F2020FFA1A9002CD2A3 /* AViewController.swift in Sources */,
@@ -855,6 +861,7 @@
 				9D88EA8121D5B217004CDE4D /* SignInViewController.swift in Sources */,
 				9D714F1520FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9D88EA7D21D5B20B004CDE4D /* RegisterViewController.swift in Sources */,
+				9D1B922321D7D83500332A18 /* ContacViewController.swift in Sources */,
 				9D714F0F20FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D714F1E20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
 				9DD3AC60217BCD5600D82C13 /* FavViewController.swift in Sources */,
@@ -888,6 +895,7 @@
 				9D88EA8221D5B217004CDE4D /* SignInViewController.swift in Sources */,
 				9D714F1620FFA1A9002CD2A3 /* CodeViewController.swift in Sources */,
 				9D88EA7E21D5B20B004CDE4D /* RegisterViewController.swift in Sources */,
+				9D1B922421D7D83500332A18 /* ContacViewController.swift in Sources */,
 				9D714F1020FFA1A9002CD2A3 /* BooksCollectionViewCell.swift in Sources */,
 				9D714F1F20FFA1A9002CD2A3 /* FavoritesViewController.swift in Sources */,
 				9DD3AC5F217BCD5600D82C13 /* FavViewController.swift in Sources */,
