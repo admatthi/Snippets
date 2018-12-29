@@ -10,6 +10,8 @@ import UIKit
 
 class ReaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tapright: UIButton!
+    @IBOutlet weak var tapleft: UIButton!
     @IBOutlet weak var maintext: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -127,7 +127,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         view.bringSubview(toFront: tapanywhere)
-        view.bringSubview(toFront: topquote)
+//        view.bringSubview(toFront: topquote)
 
 //        threebuttonuntapped()
         
@@ -721,7 +721,9 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.maintext.text = trimmedtext.capitalizingFirstLetter()
         cell.selectionStyle = .none
         cell.center = self.view.center
-        
+        cell.tapright.addTarget(self, action: #selector(ReaderViewController.tapNext(_:)), for: UIControlEvents.touchUpInside)
+        cell.tapleft.addTarget(self, action: #selector(ReaderViewController.tapPrevious(_:)), for: UIControlEvents.touchUpInside)
+
         return cell
         
     }
