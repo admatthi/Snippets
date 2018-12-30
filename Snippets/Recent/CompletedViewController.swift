@@ -96,6 +96,8 @@ class CompletedViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         ref = Database.database().reference()
 
+        tv.layer.cornerRadius = 2.0
+        tv.layer.masksToBounds = true
         tv.text = "Any other thoughts?"
         tv.textColor = UIColor.lightGray
         tv.delegate = self

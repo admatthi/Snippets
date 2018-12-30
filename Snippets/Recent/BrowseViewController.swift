@@ -120,6 +120,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadviews()
         ref = Database.database().reference()
 
 //        addstaticbooks()
@@ -705,7 +706,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 selectedtitle = seemoretitles[seemoreids[indexPath.row+1]]!
                 selectedauthor = seemoreauthors[seemoreids[indexPath.row+1]]!
                 selectedimagename = seemoreimagenames[seemoreids[indexPath.row+1]]!
-                
+                selectedviews = nineviews[indexPath.row]
+
                 self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
                 
             } else {
@@ -715,7 +717,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 selectedauthor = seemoreauthors[seemoreids[indexPath.row]]!
                 selectedimagename = seemoreimagenames[seemoreids[indexPath.row]]!
                 
-                selectedviews = seemoreviews[seemoreids[indexPath.row]]!
+                selectedviews = nineviews[indexPath.row]
                 
                 self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
                 

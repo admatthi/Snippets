@@ -111,13 +111,15 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @objc func swipeR() {
         
+        
+
         self.tapPrevious(nil)
 
     }
     
     @objc func swipeL() {
         
-        
+
         self.tapNext(nil)
 
         
@@ -723,7 +725,6 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.center = self.view.center
         cell.tapright.addTarget(self, action: #selector(ReaderViewController.tapNext(_:)), for: UIControlEvents.touchUpInside)
         cell.tapleft.addTarget(self, action: #selector(ReaderViewController.tapPrevious(_:)), for: UIControlEvents.touchUpInside)
-
         return cell
         
     }
