@@ -18,14 +18,14 @@ import UserNotifications
 class Settings2ViewController: UIViewController {
     @IBAction func tapBilling(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/billing-terms.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/billing-terms.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
     }
     @IBAction func tapAbout(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com"
+        if let url = NSURL(string: "https://www.snippetsla.com"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -39,7 +39,7 @@ class Settings2ViewController: UIViewController {
     }
     @IBAction func tapSubscription(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/subscription.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/subscription.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -47,7 +47,7 @@ class Settings2ViewController: UIViewController {
     
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/terms.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/terms.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -59,7 +59,7 @@ class Settings2ViewController: UIViewController {
     }
     @IBAction func tapGives(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/gives.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/gives.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -67,7 +67,7 @@ class Settings2ViewController: UIViewController {
     
     @IBAction func tapPrivacy(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }

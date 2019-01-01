@@ -365,7 +365,6 @@
 				9D714EBD20FFA0E7002CD2A3 /* AppDelegate.swift */,
 				9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */,
 				9D714EF720FFA1A6002CD2A3 /* Main.storyboard */,
-				9DE5864A21481AF500DF4129 /* MainViewController.swift */,
 				9D714EF620FFA1A6002CD2A3 /* AViewController.swift */,
 				9DD3AC5C217BCD2000D82C13 /* Recent */,
 				9DD3AC63217BCD5900D82C13 /* Other */,
@@ -420,6 +419,7 @@
 		9DD3AC5C217BCD2000D82C13 /* Recent */ = {
 			isa = PBXGroup;
 			children = (
+				9DE5864A21481AF500DF4129 /* MainViewController.swift */,
 				9DDA5AC021D533410021F95D /* OverviewViewController.swift */,
 				9D32CFF52189006D005B1B97 /* CompletedViewController.swift */,
 				9DE9BF912188AE5B009A5182 /* FunnelViewController.swift */,
@@ -1050,7 +1050,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3EC0ED10C94DCEF6F5337251 /* Pods-Snippets.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-9";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;
@@ -1071,7 +1071,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4ED7EBDC46DD0480DD87253 /* Pods-Snippets.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-9";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;

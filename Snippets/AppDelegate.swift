@@ -61,6 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        
 //        UITabBar.appearance().barTintColor = UIColor.black
 //        UITabBar.appearance().tintColor = UIColor.black
+    
+        
+//        UITabBar.appearance().isTranslucent = false
+//        UITabBar.appearance().backgroundColor = UIColor.clear
+//        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar")
+//        UITabBar.appearance().contentMode = .scaleAspectFit
         
         ref = Database.database().reference()
 

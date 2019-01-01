@@ -128,6 +128,8 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        explanation.removeAll()
+        
         view.bringSubview(toFront: tapanywhere)
 //        view.bringSubview(toFront: topquote)
 
@@ -403,6 +405,20 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             var value = snapshot.value as? NSDictionary
             
             
+            if var activityvalue2 = value?["Explanation1"] as? String {
+                
+                self.explanation.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["Explanation2"] as? String {
+                
+                self.explanation.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["Explanation3"] as? String {
+                
+                self.explanation.append(activityvalue2)
+            }
             
             if var activityvalue2 = value?["1"] as? String {
                 
@@ -604,6 +620,9 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    var explanation = [String]()
+    
+    
      @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -695,12 +714,29 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var topquote: UIImageView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if explanation.count > counter {
         
-        return 1
+        if explanation[counter] != "" {
+            
+            return 2
+
+        } else {
+            
+            return 1
+            
+            }
+        
+        } else {
+            
+            return 1
+
+        }
         
     }
 //
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 0 {
 
 
         if trimmedtext.count > 400 {
@@ -709,10 +745,16 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else {
             
-            return 585
+            return 625
 
         }
 
+        } else {
+            
+            return UITableViewAutomaticDimension
+
+            
+        }
 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -725,6 +767,37 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.center = self.view.center
         cell.tapright.addTarget(self, action: #selector(ReaderViewController.tapNext(_:)), for: UIControlEvents.touchUpInside)
         cell.tapleft.addTarget(self, action: #selector(ReaderViewController.tapPrevious(_:)), for: UIControlEvents.touchUpInside)
+        
+        if indexPath.row == 0 {
+            
+            if explanation.count > counter {
+                
+                cell.arrow.alpha = 1
+
+            } else {
+                
+                
+                cell.arrow.alpha = 0
+
+            }
+            
+        } else {
+            
+            if explanation.count > 0 {
+                
+                
+                cell.maintext.text = explanation[counter]
+                
+            } else {
+                
+                
+            }
+            
+            tapanywhere.alpha = 0
+            cell.arrow.alpha = 0
+            
+        }
+        
         return cell
         
     }

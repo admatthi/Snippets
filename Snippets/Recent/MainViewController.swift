@@ -19,6 +19,22 @@ class MainViewController: UITabBarController {
 //        self.tabBar.isTranslucent = false
 //        self.tabBar.tintColor = .white
         // Do any additional setup after loading the view.
+//        tabBar.backgroundImage = UIImage.imageWithData(UIColor.clearColor())
+
+//        tabBar.isTranslucent = true
+////       tabBar.alpha = 0.3
+//
+//                var bgView: UIImageView = UIImageView(image: UIImage(named: "tabbar"))
+//
+//        bgView.frame = tabBar.bounds
+////        bgView.bottomAnchor = view.bottomAnchor
+//        tabBar.addSubview(bgView)
+//        tabBar.shadowImage = nil
+        
+//        var bgView: UIImageView = UIImageView(image: UIImage(named: "tabbar"))
+////        bgView.frame = CGRectMake(0, 420, 320, 60)//you might need to modify this frame to your tabbar frame
+//
+//        self.view.addSubview(bgView)
     }
 
     override func didReceiveMemoryWarning() {

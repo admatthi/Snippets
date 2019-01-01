@@ -89,7 +89,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tapterms: UIButton!
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -249,7 +249,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/privacy-policy.html"
+        if let url = NSURL(string: "https://www.snippetsla.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }

@@ -64,6 +64,7 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
             
         }
     }
+    
     @IBAction func tapBuy(_ sender: Any) {
         
         FBSDKAppEvents.logEvent("Monthly Pressed")
@@ -167,7 +168,6 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         sixbookcovers.append(UIImage(named: "B19")!)
         sixbookcovers.append(UIImage(named: "B20")!)
 
-        
         sixbookcovers.append(UIImage(named: "F1")!)
         sixbookcovers.append(UIImage(named: "F2")!)
         sixbookcovers.append(UIImage(named: "F3")!)
@@ -212,7 +212,6 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         sixbookcovers.append(UIImage(named: "M4")!)
         sixbookcovers.append(UIImage(named: "M5")!)
         sixbookcovers.append(UIImage(named: "M6")!)
-        sixbookcovers.append(UIImage(named: "M7")!)
         sixbookcovers.append(UIImage(named: "M8")!)
         sixbookcovers.append(UIImage(named: "M9")!)
         sixbookcovers.append(UIImage(named: "M10")!)

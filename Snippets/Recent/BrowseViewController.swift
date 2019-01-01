@@ -114,12 +114,37 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-
+    var swipecounter = Int()
     
+    let swipeRightRec = UISwipeGestureRecognizer()
+    let swipeLeftRec = UISwipeGestureRecognizer()
+    let swipeUpRec = UISwipeGestureRecognizer()
+    let swipeDownRec = UISwipeGestureRecognizer()
+    
+    @objc func swipeR() {
+        
+        
+        swipecounter += 1
+        selectedindex = swipecounter
+
+        collectionView2.reloadData()
+
+    }
+    
+    @objc func swipeL() {
+        
+        swipecounter -= 1
+        selectedindex = swipecounter
+
+        collectionView2.reloadData()
+        
+    }
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+   
+        
         loadviews()
         ref = Database.database().reference()
 
@@ -146,6 +171,16 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         dayofmonth = dateFormatter.string(from: now)
 //        dayofmonth = "29"
 
+        var screenSize = collectionView.bounds
+        var screenWidth = screenSize.width
+        var screenHeight = screenSize.height
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/2, height: screenWidth/1.2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
         
         queryfortodayspicks()
         
@@ -700,6 +735,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         if seemoreimages.count > 0 {
             
             if selectedindex == 0 {
+                
+                
                 selectedbookid = dayofmonth
                 selectedgenre = genres[indexPath.row+1]
                 selectedimage = seemoreimages[seemoreids[indexPath.row+1]]!
@@ -788,7 +825,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             if selectedindex == 0 {
                 
-                
+                cell.readagain.alpha = 0
                 cell.dark.alpha = 1
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row+1]]
                 cell.views.text = genres[indexPath.row + 1]
@@ -797,7 +834,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 self.activityIndicator.alpha = 0
 //                cell.lockimage.alpha = 1
             } else {
-                
+                cell.readagain.alpha = 0
                 cell.dark.alpha = 0
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
                 

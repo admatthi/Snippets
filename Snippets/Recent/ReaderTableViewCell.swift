@@ -9,7 +9,8 @@
 import UIKit
 
 class ReaderTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var arrow: UIImageView!
+    
     @IBOutlet weak var tapright: UIButton!
     @IBOutlet weak var tapleft: UIButton!
     @IBOutlet weak var maintext: UILabel!

@@ -148,6 +148,17 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         loadstuff()
         
+        var screenSize = collectionView.bounds
+        var screenWidth = screenSize.width
+        var screenHeight = screenSize.height
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/2, height: screenWidth/1.2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
+        
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             tapinprogress.alpha = 0

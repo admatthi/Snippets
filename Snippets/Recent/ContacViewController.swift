@@ -50,6 +50,7 @@ class ContacViewController: UIViewController, UITextViewDelegate {
         ref = Database.database().reference()
         
         tv.text = "Your message here..."
+        
         tv.textColor = UIColor.lightGray
         thankyoulabel.alpha = 0
         tv.layer.borderColor = UIColor.lightGray.cgColor
@@ -59,6 +60,7 @@ class ContacViewController: UIViewController, UITextViewDelegate {
         taps.addTextSpacing(2.0)
         header.addCharacterSpacing()
         // Do any additional setup after loading the view.
+        
     }
     
     @IBOutlet weak var header: UILabel!
