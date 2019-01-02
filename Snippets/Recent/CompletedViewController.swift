@@ -30,6 +30,12 @@ class CompletedViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
     @IBOutlet weak var tv: UITextView!
     @IBOutlet weak var stars: UIImageView!
     @IBAction func tapNext(_ sender: Any) {
