@@ -131,48 +131,15 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         explanation.removeAll()
         
         view.bringSubview(toFront: tapanywhere)
-//        view.bringSubview(toFront: topquote)
 
-//        threebuttonuntapped()
-        
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 500
         
         ref = Database.database().reference()
         
         favorites.removeAll()
         
-//        swipeRightRec.addTarget(self, action: #selector(self.swipeR) )
-//        swipeRightRec.direction = .right
-//        self.view!.addGestureRecognizer(swipeRightRec)
-//
-//
-//        swipeLeftRec.addTarget(self, action: #selector(self.swipeL) )
-//        swipeLeftRec.direction = .left
-//        self.view!.addGestureRecognizer(swipeLeftRec)
-        
-        
-//        var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
-//        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-//        self.view.addGestureRecognizer(swipeRight)
-//
-//        var swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(gesture:)))
-//        self.view.addGestureRecognizer(swipeLeft)
-        
-        if freepressed {
-            
-     
-            
-        } else {
-            
-
-            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
-
-
-        }
-        
-//        whitelabel.layer.cornerRadius = 10.0
-//        whitelabel.layer.masksToBounds = true
+        uid = (Auth.auth().currentUser?.uid)!
+      
+    ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
         
         titlelabel.text = selectedtitle
         authorlabel.text = selectedauthor
@@ -182,14 +149,12 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         bookmarktapped = false
         
-//        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+
 
         FBSDKAppEvents.logEvent("Read Book Viewed")
 //        wtf()
         
             whatthehell()
-
-                // Do any additional setup after loading the view.
         
 //        showbookmark()
         tapanywhere.alpha = 1
@@ -784,8 +749,11 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             
             if explanation.count > 0 {
+            
                 
-                
+                cell.maintext.font = UIFont(name:"Avenir-Next", size: 11.0)
+
+
                 cell.maintext.text = explanation[counter]
                 
             } else {

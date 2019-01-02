@@ -810,6 +810,9 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
+        cell.viewslabel.text = nineviews[indexPath.row]
+//        cell.viewslabel.sizeToFit()
+            
         cell.views.alpha =  0
         
         cell.dark.alpha = 0
@@ -825,16 +828,22 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             if selectedindex == 0 {
                 
-                cell.readagain.alpha = 0
+//                cell.readagain.alpha = 0
                 cell.dark.alpha = 1
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row+1]]
                 cell.views.text = genres[indexPath.row + 1]
                 cell.views.alpha = 1
+                cell.viewslabel.alpha = 1
+                cell.eyeball.alpha = 1
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.alpha = 0
+                
 //                cell.lockimage.alpha = 1
             } else {
-                cell.readagain.alpha = 0
+//                cell.readagain.alpha = 0
+                cell.views.alpha = 0
+                cell.eyeball.alpha = 0
+                cell.viewslabel.alpha = 0
                 cell.dark.alpha = 0
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
                 
