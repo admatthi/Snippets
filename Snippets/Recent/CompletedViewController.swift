@@ -57,14 +57,17 @@ class CompletedViewController: UIViewController, UITextViewDelegate {
 
             }
            
-    ref!.child("FeedbackStars").child(selectedgenre).child(selectedbookid).childByAutoId().updateChildValues(["Stars" : starsnumber, "Comments" : comments])
-            
+            ref!.child("FeedbackStars").childByAutoId().updateChildValues(["stars" : starsnumber, "comments" : comments, "bookID" : selectedbookid, "genre" : selectedgenre, "uid" : uid])
+
             self.performSegue(withIdentifier: "CompletedToMain", sender: self)
         } else {
             
             if tv.text != "" {
                 
-                ref!.child("FeedbackStars").child(selectedgenre).child(selectedbookid).childByAutoId().updateChildValues(["Stars" : starsnumber, "Comments" : comments])
+                ref!.child("FeedbackStars").child(selectedgenre).child(selectedbookid).childByAutoId().updateChildValues(["stars" : starsnumber, "comments" : comments, "genre" : selectedgenre, "uid" : uid])
+                
+                ref!.child("FeedbackStars").childByAutoId().updateChildValues(["stars" : starsnumber, "comments" : comments, "bookID" : selectedbookid, "genre" : selectedgenre, "uid" : uid])
+
                 self.performSegue(withIdentifier: "CompletedToMain", sender: self)
 
 

@@ -93,8 +93,9 @@ class BookOverviewViewController: UIViewController {
         author.text = selectedauthor
         cover.image = selectedimage
         
-        keyinsights.text = selectedviews
-        
+//        keyinsights.text = selectedviews
+                keyinsights.alpha = 0
+
         queryforreviewinfo()
         
         cover.layer.cornerRadius = 2.0

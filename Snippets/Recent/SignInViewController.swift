@@ -48,16 +48,58 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 dateFormatter.dateFormat = "MM-dd-yy"
                 var todaysdate =  dateFormatter.string(from: date)
                 
-            self.performSegue(withIdentifier: "SignInToExplore", sender: self)
-
-                //
-                //                ref!.child("Users").child(uid).child("Purchased").child(selectedid).updateChildValues(["Title": "x"])
-                //            ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
+                self.queryforinfo()
                 
                 
             }
             
         }
+        
+    }
+    
+    func queryforinfo() {
+        
+        var functioncounter = 0
+        
+        ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if var purchased = value?["Purchased"] as? String {
+                
+                if purchased == "Yes" {
+                    
+                    DispatchQueue.main.async {
+                        
+                        
+                        self.performSegue(withIdentifier: "ExploreNow", sender: self)
+                        
+                    }
+                    
+                } else {
+                    
+                    DispatchQueue.main.async {
+                        
+                        
+                        self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
+                        
+                    }////
+                    
+                }
+                
+            } else {
+                
+                DispatchQueue.main.async {
+                    
+                    purchased = true
+                    
+                    self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
+                    
+                }//
+                
+            }
+            
+        })
         
     }
     @IBOutlet weak var header: UILabel!

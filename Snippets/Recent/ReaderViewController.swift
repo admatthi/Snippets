@@ -125,6 +125,40 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     @IBOutlet weak var tapbuy: UIButton!
+    
+    var switched = Bool()
+    var formerquotes = [String]()
+    
+    @IBAction func tapSwitch(_ sender: Any) {
+        counter = 0
+
+        if switched {
+            tapswitch.setImage(UIImage(named: "Summary"), for: .normal)
+            topquote.alpha = 1
+            quote = formerquotes
+            progressView.alpha = 0
+            
+            showproperquote()
+            switched = false
+            
+            
+        } else {
+            
+            progressView.alpha = 1
+            tapswitch.setImage(UIImage(named: "Quotes"), for: .normal)
+            
+            formerquotes = quote
+            quote = explanation
+            
+            topquote.alpha = 0
+            showproperquote()
+
+            switched = true
+            
+        }
+    }
+    @IBOutlet weak var topquote: UIImageView!
+    @IBOutlet weak var tapswitch: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -132,6 +166,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         view.bringSubview(toFront: tapanywhere)
 
+        switched = false
         
         ref = Database.database().reference()
         
@@ -150,11 +185,12 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         bookmarktapped = false
         
 
-
+        
         FBSDKAppEvents.logEvent("Read Book Viewed")
 //        wtf()
         
-            whatthehell()
+        
+        whatthehell()
         
 //        showbookmark()
         tapanywhere.alpha = 1
@@ -186,8 +222,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             counter -= 1
             showproperquote()
             
-            let progress = (Float(counter)/Float(arrayCount))
-            self.progressView.setProgress(Float(progress), animated:true)
+            
         }
         
         bookmarktapped = true
@@ -353,8 +388,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             showproperquote()
             
-            let progress = (Float(counter)/Float(arrayCount))
-            self.progressView.setProgress(Float(progress), animated:true)
+           
         }
         
         tapanywhere.alpha = 0
@@ -372,18 +406,156 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             if var activityvalue2 = value?["Explanation1"] as? String {
                 
+                self.tapswitch.alpha = 1
+                self.tapswitch.setImage(UIImage(named: "Quotes"), for: .normal)
+                
+     
+                
+                self.topquote.alpha = 0
+                
+                self.switched = true
                 self.explanation.append(activityvalue2)
+                
+            } else {
+                
+                self.tapswitch.alpha = 0
             }
             
             if var activityvalue2 = value?["Explanation2"] as? String {
                 
+                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
+                
             }
             
             if var activityvalue2 = value?["Explanation3"] as? String {
                 
+                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
+                
             }
+            
+            if var activityvalue2 = value?["Explanation4"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation5"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation6"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation7"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation8"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation9"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation10"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation11"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation12"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation13"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation14"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation15"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation16"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation17"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation18"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation19"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+            if var activityvalue2 = value?["Explanation20"] as? String {
+                
+                self.tapswitch.alpha = 1
+                self.explanation.append(activityvalue2)
+                
+            }
+            
+         
+          
             
             if var activityvalue2 = value?["1"] as? String {
                 
@@ -575,8 +747,14 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 quote.append(activityvalue2)
             }
 
-        
+            self.formerquotes = quote
 
+            if self.explanation.count > 0 {
+                
+                quote = self.explanation
+            }
+
+            self.counter = 0
             self.showproperquote()
             
             self.arrayCount = quote.count
@@ -645,6 +823,14 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func showproperquote() {
         
+        if counter == 0 {
+            
+            self.progressView.setProgress(0.0, animated:false)
+
+        } else {
+            let progress = (Float(counter)/Float(arrayCount))
+            self.progressView.setProgress(Float(progress), animated:true)
+        }
         
         if counter < quote.count {
             
@@ -676,14 +862,13 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    @IBOutlet weak var topquote: UIImageView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if explanation.count > counter {
         
         if explanation[counter] != "" {
             
-            return 2
+            return 1
 
         } else {
             
@@ -737,7 +922,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             if explanation.count > counter {
                 
-                cell.arrow.alpha = 1
+                cell.arrow.alpha = 0
 
             } else {
                 

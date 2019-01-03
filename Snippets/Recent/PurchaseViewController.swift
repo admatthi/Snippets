@@ -242,9 +242,9 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBAction func tapBack(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: {
-            
-        })
+//        self.dismiss(animated: true, completion: {
+//            
+//        })
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

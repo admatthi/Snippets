@@ -139,8 +139,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         collectionView2.reloadData()
         
     }
- 
-    
+ var intdayofweek = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
    
@@ -168,7 +167,9 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
+        
         dayofmonth = dateFormatter.string(from: now)
+        intdayofweek = Int(dayofmonth)!
 //        dayofmonth = "29"
 
         var screenSize = collectionView.bounds
@@ -374,6 +375,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 
                 if functioncounter == seemoreids.count {
                  
+                    self.collectionView.reloadData()
                 }
                 
                 
@@ -386,17 +388,17 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func addstaticbooks() {
         
-        selectedgenre = "Mental Health"
+        selectedgenre = "Psychology"
         
-        var counter2 = 28
+        var counter2 = 27
         
         while counter2 < 32 {
             
-            //            ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues(["Author" : "Jordan B. Peterson", "BookID" : "\(counter2)", "Description" : "What does everyone in the modern world need to know? Renowned psychologist Jordan B. Peterson's answer to this most difficult of questions uniquely combines the hard-won truths of ancient tradition with the stunning revelations of cutting-edge scientific research.", "Genre" : "\(selectedgenre)", "Image" : "F\(counter2)", "Name" : "12 Rules for Life", "Completed" : "No", "Views" : "x"])
+                        ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues(["Author" : "Jordan B. Peterson", "BookID" : "\(counter2)", "Description" : "What does everyone in the modern world need to know? Renowned psychologist Jordan B. Peterson's answer to this most difficult of questions uniquely combines the hard-won truths of ancient tradition with the stunning revelations of cutting-edge scientific research.", "Genre" : "\(selectedgenre)", "Image" : "F\(counter2)", "Name" : "12 Rules for Life", "Completed" : "No", "Views" : "x"])
             
-            //    ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues([ "Views" : "\(sevenviews[counter2])"])
+            //    ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues([ "Views" : "\(nineviews[counter2])"])
             
-            ref?.child("AllBooks1").child(selectedgenre).child("\(counter2)").child("Summary").child("1").updateChildValues(["1" : "x", "2" : "x", "3" : "x", "4" : "x", "5" : "x", "6" : "x","7" : "x", "8" : "x","9" : "x","10" : "x","11" : "x", "12" : "x", "13" : "x", "14" : "x", "15" : "x", "16" : "x", "17" : "x", "18" : "x", "19" : "x", "20" : "x", "Title" : "x"])
+            ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").child("Summary").child("1").updateChildValues(["1" : "x", "2" : "x", "3" : "x", "4" : "x", "5" : "x", "6" : "x","7" : "x", "8" : "x","9" : "x","10" : "x","11" : "x", "12" : "x", "13" : "x", "14" : "x", "15" : "x", "16" : "x", "17" : "x", "18" : "x", "19" : "x", "20" : "x", "Title" : "x"])
             
             
             counter2 += 1
@@ -535,109 +537,109 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func loadviews() {
         
-        oneviews.append("233K views")
-        oneviews.append("492K views")
-        oneviews.append("432K views")
-        oneviews.append("589K views")
-        oneviews.append("2.4M views")
-        oneviews.append("2M views")
-        oneviews.append("1.3M views")
-        oneviews.append("1.9M views")
-        oneviews.append("887K views")
-        oneviews.append("145K views")
+        nineviews.append("233K views")
+        nineviews.append("492K views")
+        nineviews.append("432K views")
+        nineviews.append("589K views")
+        nineviews.append("2.4M views")
+        nineviews.append("2M views")
+        nineviews.append("1.3M views")
+        nineviews.append("1.9M views")
+        nineviews.append("887K views")
+        nineviews.append("145K views")
         
-        twoviews.append("343K views")
-        twoviews.append("466.9K views")
-        twoviews.append("957.6K views")
-        twoviews.append("377.9K views")
-        twoviews.append("3.4M views")
-        twoviews.append("2.1M views")
-        twoviews.append("1.6M views")
-        twoviews.append("1.2M views")
-        twoviews.append("87K views")
-        twoviews.append("123.5K views")
+        nineviews.append("343K views")
+        nineviews.append("466.9K views")
+        nineviews.append("957.6K views")
+        nineviews.append("377.9K views")
+        nineviews.append("3.4M views")
+        nineviews.append("2.1M views")
+        nineviews.append("1.6M views")
+        nineviews.append("1.2M views")
+        nineviews.append("87K views")
+        nineviews.append("123.5K views")
         
-        threeviews.append("377.9K views")
-        threeviews.append("3.4M views")
-        threeviews.append("933.6K views")
-        threeviews.append("395.8K views")
-        threeviews.append("82K views")
-        threeviews.append("5.1M views")
-        threeviews.append("2.6M views")
-        threeviews.append("1.3M views")
-        threeviews.append("2M views")
-        threeviews.append("1.2M views")
+        nineviews.append("377.9K views")
+        nineviews.append("3.4M views")
+        nineviews.append("933.6K views")
+        nineviews.append("395.8K views")
+        nineviews.append("82K views")
+        nineviews.append("5.1M views")
+        nineviews.append("2.6M views")
+        nineviews.append("1.3M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
         
-        fourviews.append("264.9K views")
-        fourviews.append("1.4M views")
-        fourviews.append("321.2K views")
-        fourviews.append("452.3K views")
-        fourviews.append("115K views")
-        fourviews.append("3.2M views")
-        fourviews.append("6.2M views")
-        fourviews.append("3.8M views")
-        fourviews.append("1.1M views")
-        fourviews.append("1.5M views")
+        nineviews.append("264.9K views")
+        nineviews.append("1.4M views")
+        nineviews.append("321.2K views")
+        nineviews.append("452.3K views")
+        nineviews.append("115K views")
+        nineviews.append("3.2M views")
+        nineviews.append("6.2M views")
+        nineviews.append("3.8M views")
+        nineviews.append("1.1M views")
+        nineviews.append("1.5M views")
         
-        fiveviews.append("255.4K views")
-        fiveviews.append("1.5M views")
-        fiveviews.append("321K views")
-        fiveviews.append("455K views")
-        fiveviews.append("321K views")
-        fiveviews.append("4.3M views")
-        fiveviews.append("2.1M views")
-        fiveviews.append("1.8M views")
-        fiveviews.append("2.5M views")
-        fiveviews.append("26K views")
-        fiveviews.append("37K views")
-        fiveviews.append("39K views")
-        fiveviews.append("321.6K views")
-        fiveviews.append("342.8K views")
-        fiveviews.append("821K views")
-        fiveviews.append("4.2M views")
-        fiveviews.append("1.9M views")
-        fiveviews.append("2.2M views")
-        fiveviews.append("3.7M views")
-        fiveviews.append("1M views")
+        nineviews.append("255.4K views")
+        nineviews.append("1.5M views")
+        nineviews.append("321K views")
+        nineviews.append("455K views")
+        nineviews.append("321K views")
+        nineviews.append("4.3M views")
+        nineviews.append("2.1M views")
+        nineviews.append("1.8M views")
+        nineviews.append("2.5M views")
+        nineviews.append("26K views")
+        nineviews.append("37K views")
+        nineviews.append("39K views")
+        nineviews.append("321.6K views")
+        nineviews.append("342.8K views")
+        nineviews.append("821K views")
+        nineviews.append("4.2M views")
+        nineviews.append("1.9M views")
+        nineviews.append("2.2M views")
+        nineviews.append("3.7M views")
+        nineviews.append("1M views")
         
-        sixviews.append("450K views")
-        sixviews.append("2.8M views")
-        sixviews.append("321K views")
-        sixviews.append("892K views")
-        sixviews.append("801K views")
-        sixviews.append("4M views")
-        sixviews.append("1.2M views")
-        sixviews.append("1M views")
-        sixviews.append("2.4M views")
-        sixviews.append("2.9M views")
+        nineviews.append("450K views")
+        nineviews.append("2.8M views")
+        nineviews.append("321K views")
+        nineviews.append("892K views")
+        nineviews.append("801K views")
+        nineviews.append("4M views")
+        nineviews.append("1.2M views")
+        nineviews.append("1M views")
+        nineviews.append("2.4M views")
+        nineviews.append("2.9M views")
         
-        sevenviews.append("1.8M views")
-        sevenviews.append("2.5M views")
-        sevenviews.append("26K views")
-        sevenviews.append("37K views")
-        sevenviews.append("39K views")
-        sevenviews.append("321.6K views")
-        sevenviews.append("342.8K views")
-        sevenviews.append("821K views")
-        sevenviews.append("4.2M views")
-        sevenviews.append("39K views")
-        sevenviews.append("321.6K views")
-        sevenviews.append("342.8K views")
-        sevenviews.append("821K views")
+        nineviews.append("1.8M views")
+        nineviews.append("2.5M views")
+        nineviews.append("26K views")
+        nineviews.append("37K views")
+        nineviews.append("39K views")
+        nineviews.append("321.6K views")
+        nineviews.append("342.8K views")
+        nineviews.append("821K views")
+        nineviews.append("4.2M views")
+        nineviews.append("39K views")
+        nineviews.append("321.6K views")
+        nineviews.append("342.8K views")
+        nineviews.append("821K views")
         
-        eightviews.append("377.9K views")
-        eightviews.append("3.4M views")
-        eightviews.append("933.6K views")
-        eightviews.append("395.8K views")
-        eightviews.append("82K views")
-        eightviews.append("5.1M views")
-        eightviews.append("2.6M views")
-        eightviews.append("1.3M views")
-        eightviews.append("2M views")
-        eightviews.append("1.2M views")
-        eightviews.append("1.3M views")
-        eightviews.append("2M views")
-        eightviews.append("1.2M views")
+        nineviews.append("377.9K views")
+        nineviews.append("3.4M views")
+        nineviews.append("933.6K views")
+        nineviews.append("395.8K views")
+        nineviews.append("82K views")
+        nineviews.append("5.1M views")
+        nineviews.append("2.6M views")
+        nineviews.append("1.3M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
+        nineviews.append("1.3M views")
+        nineviews.append("2M views")
+        nineviews.append("1.2M views")
         
         nineviews.append("832K views")
         nineviews.append("3M views")
@@ -810,7 +812,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
-        cell.viewslabel.text = nineviews[indexPath.row]
+        
+            
 //        cell.viewslabel.sizeToFit()
             
         cell.views.alpha =  0
@@ -828,6 +831,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             if selectedindex == 0 {
                 
+                cell.viewslabel.text = nineviews[intdayofweek + indexPath.row]
 //                cell.readagain.alpha = 0
                 cell.dark.alpha = 1
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row+1]]
@@ -841,10 +845,12 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 //                cell.lockimage.alpha = 1
             } else {
 //                cell.readagain.alpha = 0
-                cell.views.alpha = 0
-                cell.eyeball.alpha = 0
-                cell.viewslabel.alpha = 0
-                cell.dark.alpha = 0
+                cell.viewslabel.text = nineviews.randomElement()
+                cell.views.alpha = 1
+                cell.eyeball.alpha = 1
+                cell.viewslabel.alpha = 1
+                cell.dark.alpha = 1
+                cell.views.text = seemoretitles[seemoreids[indexPath.row]]
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
                 
                 self.activityIndicator.stopAnimating()

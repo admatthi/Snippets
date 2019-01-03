@@ -58,12 +58,12 @@ class ContacViewController: UIViewController, UITextViewDelegate {
         
         tv.delegate = self
         taps.addTextSpacing(2.0)
-        header.addCharacterSpacing()
+//        header.addCharacterSpacing()
         // Do any additional setup after loading the view.
         
     }
     
-    @IBOutlet weak var header: UILabel!
+//    @IBOutlet weak var header: UILabel!
     @IBOutlet weak var taps: UIButton!
     @IBAction func tapSubmit(_ sender: Any) {
         
@@ -72,7 +72,7 @@ class ContacViewController: UIViewController, UITextViewDelegate {
             if uid != "" {
                 
                thankyoulabel.alpha = 1
-                ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : "\(tv.text!)"])
+                ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["text" : "\(tv.text!)"])
                 tv.alpha = 0
                 taps.alpha = 0
                 self.view.endEditing(true)

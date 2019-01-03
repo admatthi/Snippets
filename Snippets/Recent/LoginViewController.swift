@@ -27,7 +27,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func tapSignUp(_ sender: Any) {
         
-        signup()
     }
 
     @IBAction func tapBack(_ sender: Any) {
@@ -69,55 +68,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
 //                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
                 
-                DispatchQueue.main.async {
-                    
-                    purchased = true
-
-                    self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
-                    
-                }
-            }
-            
-        }
-        
-    }
-    
-    @IBOutlet weak var errorlabel: UILabel!
-    func signup() {
-        
-        
-        var email = "\(emailtf.text!)"
-        var password = "\(passwordtf.text!)"
-        
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            
-            if let error = error {
                 
-                self.errorlabel.alpha = 1
-                self.errorlabel.text = error.localizedDescription
-                
-                return
-                
-            } else {
-                
-                uid = (Auth.auth().currentUser?.uid)!
-                
-                let date = Date()
-                let calendar = Calendar.current
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MM-dd-yy"
-                var todaysdate =  dateFormatter.string(from: date)
-                let thirtyDaysAfterToday = Calendar.current.date(byAdding: .day, value: +30, to: date)!
-                let thirty = dateFormatter.string(from: thirtyDaysAfterToday)
-                
-                self.addstaticbooks()
-//                ref?.child("Users").child(uid).updateChildValues(["Email" : email, "Purchased" : true])
-
-                
-
-                newuser = false
-
                 self.queryforinfo()
+                
                 
             }
             
@@ -137,23 +90,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 if purchased == "Yes" {
                     
-                    self.performSegue(withIdentifier: "SignInToExplore", sender: self)
+                    DispatchQueue.main.async {
+                        
+                        
+                        self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
+                        
+                    }
                     
                 } else {
                     
-                    self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
-
+                    DispatchQueue.main.async {
+                        
+                        
+                        self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
+                        
+                    }////
+                    
                 }
                 
             } else {
                 
-                self.performSegue(withIdentifier: "LoginToPurchase", sender: self)//
+                DispatchQueue.main.async {
+                    
+                    purchased = true
+                    
+                    self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
+                    
+                }//
                 
             }
             
         })
         
     }
+    
+    @IBOutlet weak var errorlabel: UILabel!
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         

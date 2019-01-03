@@ -66,7 +66,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate     {
                 ref?.child("Snippets").child("Users").child(uid).updateChildValues(["email" : email, "Password" : password, "Purchased" : "No"])
                 
                 
-                
+                ref?.child("Snippets").child("NewUsers").child(uid).updateChildValues(["email" : email, "Password" : password, "Purchased" : "No"])
+
                 
                 DispatchQueue.main.async {
                     

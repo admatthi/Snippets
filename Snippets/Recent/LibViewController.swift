@@ -75,9 +75,7 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
 //    }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        selectedgenre == ""
+ 
         
 //        ref = Database.database().reference()
 //
@@ -126,7 +124,6 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
 //
 //        }
         
-    }
     @IBOutlet weak var tapback: UIButton!
     
 
@@ -159,55 +156,92 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = layout
         
-        if Auth.auth().currentUser == nil {
-            // Do smth if user is not logged in
-            tapinprogress.alpha = 0
-//            upgradebutton.alpha = 1
-//            label1.alpha = 1
-//            label2.alpha = 1
-            label3.alpha = 1
-            collectionView.alpha = 0
-            tapback.alpha = 0
-            tapbookmark.alpha = 0
-        } else {
+//        if Auth.auth().currentUser == nil {
+//            // Do smth if user is not logged in
+//            tapinprogress.alpha = 0
+////            upgradebutton.alpha = 1
+////            label1.alpha = 1
+////            label2.alpha = 1
+//            label3.alpha = 1
+//            collectionView.alpha = 0
+//            tapback.alpha = 0
+//            tapbookmark.alpha = 0
+//        } else {
 //            tapbookmark.alpha = 1
-            tapback.alpha = 1
-            purchased = true
-            uid = (Auth.auth().currentUser?.uid)!
-            collectionView.alpha = 1
-            upgradebutton.alpha = 0
-            label1.alpha = 0
-            label2.alpha = 0
-            label3.alpha = 0
-            inprogresspressed = false
-            searchterm = "InProgress"
-            tapinprogress.alpha = 0
-            
-            librarybookids.removeAll()
-            librarycovers.removeAll()
-            libraryauthors.removeAll()
-            librarytitles.removeAll()
-            librarygenres.removeAll()
-            librarysubids.removeAll()
-            libraryimagenames.removeAll()
-            librarydescriptions.removeAll()
-            libraryviews.removeAll()
-            collectionView.reloadData()
-            
-            queryforbookids { () -> () in
-                
-                self.queryforbookinfo()
-                
-                
-            }
-            
-            refreshControl.attributedTitle = NSAttributedString(string: "")
-            refreshControl.addTarget(self, action: #selector(LibViewController.refresh), for: UIControlEvents.valueChanged)
-            refreshControl.tintColor  = mygreen
-            collectionView.addSubview(refreshControl) // not required when using UITableViewController
+//            tapback.alpha = 1
+//            purchased = true
+//            uid = (Auth.auth().currentUser?.uid)!
+//            collectionView.alpha = 1
+//            upgradebutton.alpha = 0
+//            label1.alpha = 0
+//            label2.alpha = 0
+//            label3.alpha = 0
+//            inprogresspressed = false
+//            searchterm = "InProgress"
+//            tapinprogress.alpha = 0
+//
+//            librarybookids.removeAll()
+//            librarycovers.removeAll()
+//            libraryauthors.removeAll()
+//            librarytitles.removeAll()
+//            librarygenres.removeAll()
+//            librarysubids.removeAll()
+//            libraryimagenames.removeAll()
+//            librarydescriptions.removeAll()
+//            libraryviews.removeAll()
+//            collectionView.reloadData()
+//
+//            queryforbookids { () -> () in
+//
+//                self.queryforbookinfo()
+//
+//
+//            }
+//
+//            refreshControl.attributedTitle = NSAttributedString(string: "")
+//            refreshControl.addTarget(self, action: #selector(LibViewController.refresh), for: UIControlEvents.valueChanged)
+//            refreshControl.tintColor  = mygreen
+//            collectionView.addSubview(refreshControl) // not required when using UITableViewController
        
+        
+    }
+    
+override func viewDidAppear(_ animated: Bool) {
+        
+        tapback.alpha = 1
+        purchased = true
+        uid = (Auth.auth().currentUser?.uid)!
+        collectionView.alpha = 1
+        upgradebutton.alpha = 0
+        label1.alpha = 0
+        label2.alpha = 0
+        label3.alpha = 0
+        inprogresspressed = false
+        searchterm = "InProgress"
+        tapinprogress.alpha = 0
+        
+        librarybookids.removeAll()
+        librarycovers.removeAll()
+        libraryauthors.removeAll()
+        librarytitles.removeAll()
+        librarygenres.removeAll()
+        librarysubids.removeAll()
+        libraryimagenames.removeAll()
+        librarydescriptions.removeAll()
+        libraryviews.removeAll()
+        collectionView.reloadData()
+        
+        queryforbookids { () -> () in
+            
+            self.queryforbookinfo()
+            
+            
         }
         
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: #selector(LibViewController.refresh), for: UIControlEvents.valueChanged)
+        refreshControl.tintColor  = mygreen
+        collectionView.addSubview(refreshControl)
     }
     
     var refreshControl = UIRefreshControl()
@@ -243,8 +277,7 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         
        
         
-        
-    ref?.child("Users").child(uid).child("Library").child(searchterm).observeSingleEvent(of: .value, with: { (snapshot) in
+    ref?.child("Snippets").child("Users").child(uid).child("Library").child(searchterm).observeSingleEvent(of: .value, with: { (snapshot) in
             
         if var value = snapshot.value as? NSDictionary {
             
@@ -295,7 +328,7 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         for each in librarybookids  {
             
-            ref?.child("Users").child(uid).child("Library").child(searchterm).child(each).observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("Snippets").child("Users").child(uid).child("Library").child(searchterm).child(each).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
                 
