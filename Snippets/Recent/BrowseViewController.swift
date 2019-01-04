@@ -827,7 +827,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         //        cell.layer.masksToBounds = true
         //
         //        cell.finished.alpha = 0
-        
+        cell.genre.alpha = 0
         
         if seemoreimages.count > 0 {
             
@@ -837,8 +837,6 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 //                cell.readagain.alpha = 0
                 cell.dark.alpha = 1
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
-                cell.genre.text = seemoreids[indexPath.row].uppercased()
-                cell.genre.addCharacterSpacing()
                 cell.views.text = seemoretitles[seemoreids[indexPath.row]]
 
                 cell.views.alpha = 1

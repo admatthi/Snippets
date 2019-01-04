@@ -46,6 +46,24 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         savetext2.flash()
     }
+    @IBAction func tapBuyWeekly(_ sender: Any) {
+        
+        FBSDKAppEvents.logEvent("Weekly Pressed")
+        
+        //        purchase(purchase: threedaytrial)
+        
+        //        let delegate = UIApplication.shared.delegate as! AppDelegate
+        
+        purchases.entitlements { entitlements in
+            guard let pro = entitlements?["Subscriptions"] else { return }
+            guard let monthly = pro.offerings["Weekly"] else { return }
+            guard let product = monthly.activeProduct else { return }
+            self.purchases.makePurchase(product)
+            
+            
+        }
+        
+    }
     @IBOutlet weak var tapyearly: UIButton!
     @IBAction func tapBuyYearly(_ sender: Any) {
         
@@ -64,9 +82,7 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
             
         }
     }
-    @IBOutlet weak var tapy1: UIButton!
-    
-    @IBOutlet weak var tapm1: UIButton!
+
     @IBAction func tapBuy(_ sender: Any) {
         
         FBSDKAppEvents.logEvent("Monthly Pressed")
@@ -109,6 +125,9 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var savetext2: UIButton!
     @IBAction func savetext(_ sender: Any) {
     }
+    @IBOutlet weak var tapw1: UIButton!
+    @IBOutlet weak var tapm1: UIButton!
+    @IBOutlet weak var tapy1: UIButton!
     @IBOutlet weak var tapterms: UIButton!
     @IBOutlet weak var tapbuy: UIButton!
     override func viewDidLoad() {
@@ -116,18 +135,22 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         ref = Database.database().reference()
         
-        view.bringSubview(toFront: tapm1)
-        view.bringSubview(toFront: tapy1)
+     
         savetext2.layer.cornerRadius = 5.0
         savetext2.layer.masksToBounds = true
-        tapbuy.layer.borderColor = myblue2.cgColor
+//
+//        tapbuy.layer.borderWidth = 2.0
+//        tapbuy.layer.cornerRadius = 5.0
+//        tapbuy.layer.masksToBounds = true
+//        tapyearly.layer.cornerRadius = 5.0
+//        tapyearly.layer.masksToBounds = true
         
-        tapbuy.layer.borderWidth = 2.0
-        tapbuy.layer.cornerRadius = 5.0
-        tapbuy.layer.masksToBounds = true
-        tapyearly.layer.cornerRadius = 5.0
-        tapyearly.layer.masksToBounds = true
-        
+        tapy1.layer.cornerRadius = 30.0
+        tapy1.layer.masksToBounds = true
+        tapm1.layer.cornerRadius = 30.0
+        tapm1.layer.masksToBounds = true
+        tapw1.layer.cornerRadius = 30.0
+        tapw1.layer.masksToBounds = true
         tapterms.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         
         let buttonTitleStr = NSMutableAttributedString(string:"By continuing, you accept our Terms of Use & Privacy Policy", attributes:attrs)
@@ -248,7 +271,6 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         sixbookcovers.append(UIImage(named: "MH11")!)
         sixbookcovers.append(UIImage(named: "MH12")!)
         
-        collectionView.reloadData()
         
     }
 

@@ -233,6 +233,10 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.quote.append(activityvalue2)
             }
             
+            self.quote.remove(at: 0)
+            self.quote.remove(at: 1)
+            self.quote.remove(at: 2)
+            self.quote.remove(at: 3)
             
             self.arrayCount = self.quote.count
         })
@@ -257,57 +261,73 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         counter += 1
         tableView.reloadData()
         selectedgenre = "Health, Fitness, & Dieting"
-        selectedbookid = "1"
-        selectedtitle = "Weight loss"
-        selectedauthor = "Mark"
-        selectedimage = UIImage(named: "H1")!
+        selectedbookid = "18"
+        selectedtitle = "The 4 Hour Body"
+        selectedauthor = "Timothy Ferris"
+        selectedimage = UIImage(named: "H18")!
         tapd.alpha = 0
         tapm.alpha = 0
         tapmo.alpha = 0
         taplabel.alpha = 0
+        tapw.isUserInteractionEnabled = false
+        tapw.layer.borderColor = myblue.cgColor
+        tapw.layer.borderWidth = 2.0
+        showproperquote()
         whatthehell()
     }
     @IBAction func tapDating(_ sender: Any) {
         counter += 1
         tableView.reloadData()
         selectedgenre = "Sex & Relationships"
-        selectedbookid = "1"
-        selectedtitle = "Weight loss"
-        selectedauthor = "Mark"
-        selectedimage = UIImage(named: "H1")!
+        selectedbookid = "3"
+        selectedtitle = "The Game"
+        selectedauthor = "Neil Strauss"
+        selectedimage = UIImage(named: "S3")!
         tapm.alpha = 0
         tapmo.alpha = 0
         taplabel.alpha = 0
         tapw.alpha = 0
+        tapd.isUserInteractionEnabled = false
+        tapd.layer.borderColor = myblue.cgColor
+        tapd.layer.borderWidth = 2.0
+        showproperquote()
         whatthehell()
     }
     @IBAction func tapMotivation(_ sender: Any) {
         counter += 1
         tableView.reloadData()
-        selectedgenre = "Productivity"
-        selectedbookid = "1"
-        selectedtitle = "Weight loss"
-        selectedauthor = "Mark"
-        selectedimage = UIImage(named: "H1")!
+        selectedgenre = "Business & Investing"
+        selectedbookid = "17"
+        selectedtitle = "Awaken The Giant Within"
+        selectedauthor = "Anthony Robbins"
+        selectedimage = UIImage(named: "B17")!
         tapd.alpha = 0
         tapm.alpha = 0
         taplabel.alpha = 0
         tapw.alpha = 0
+        tapmo.isUserInteractionEnabled = false
+        tapmo.layer.borderColor = myblue.cgColor
+        tapmo.layer.borderWidth = 2.0
+        showproperquote()
         whatthehell()
     }
     @IBAction func tapMoney(_ sender: Any) {
         counter += 1
         tableView.reloadData()
         selectedgenre = "Business & Investing"
-        selectedbookid = "1"
-        selectedtitle = "Weight loss"
-        selectedauthor = "Mark"
-        selectedimage = UIImage(named: "H1")!
+        selectedbookid = "32"
+        selectedtitle = "How to Win at the Sport of Business"
+        selectedauthor = "Mark Cuban"
+        selectedimage = UIImage(named: "B32")!
         tapd.alpha = 0
         tapmo.alpha = 0
         taplabel.alpha = 0
         tapw.alpha = 0
         whatthehell()
+        tapm.isUserInteractionEnabled = false
+        tapm.layer.borderColor = myblue.cgColor
+        tapm.layer.borderWidth = 2.0
+        showproperquote()
     }
     var counter = 0
     var quote = [String]()
@@ -318,12 +338,12 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ref = Database.database().reference()
         quote.removeAll()
         
-        titlelabel.alpha = 0
-        authorlabel.alpha = 0
+        titlelabel.alpha = 1
+        authorlabel.alpha = 1
         progressView.alpha = 0
         tapx.alpha = 0
         
-        cover.alpha = 0
+        cover.alpha = 1
         tapd.alpha = 0
         tapm.alpha = 0
         tapmo.alpha = 0
@@ -337,12 +357,15 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tapd.layer.masksToBounds = true
         tapm.layer.cornerRadius = 5.0
         tapw.layer.masksToBounds = true
+        cover.layer.cornerRadius = 5.0
+        cover.layer.masksToBounds = true
+        
         
         quote.append("Welcome to Snippets. Tap to continue.")
         quote.append("Discover life changing ideas from the world's best non fiction books!")
         quote.append("What interests you?")
         quote.append("Excellent choice. Tap to continue.")
-
+        showproperquote()
         tableView.reloadData()
         
         // Do any additional setup after loading the view.
@@ -353,14 +376,10 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func showproperquote() {
         
-        if counter == 0 {
-            
-            self.progressView.setProgress(0.0, animated:false)
-            
-        } else {
-            let progress = (Float(counter-5)/Float(arrayCount))
+    
+            let progress = (Float(self.counter-4)/Float(arrayCount-4))
+            print(progress)
             self.progressView.setProgress(Float(progress), animated:true)
-        }
         
         if counter < quote.count {
             
@@ -399,6 +418,8 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //        quotetext.slideInFromRight()
         
+        print(counter)
+        print(quote.count)
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
@@ -416,7 +437,7 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     
         
-        if counter == 4 {
+        if counter >= 4 {
             
             tapd.alpha = 0
             tapm.alpha = 0
@@ -455,8 +476,16 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func nextcount() {
         
-        
-        showproperquote()
+        if counter > quote.count-1 {
+
+            self.performSegue(withIdentifier: "Teaser2", sender: self)
+
+        } else {
+            
+            showproperquote()
+
+        }
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -495,7 +524,6 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "Reader", for: indexPath) as! ReaderTableViewCell
         
         
-        cell.maintext.text = trimmedtext.capitalizingFirstLetter()
         cell.selectionStyle = .none
         cell.center = self.view.center
         cell.tapright.addTarget(self, action: #selector(TeaserViewController.tapNext(_:)), for: UIControlEvents.touchUpInside)
@@ -504,7 +532,27 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.arrow.alpha = 0
         cell.maintext.text = self.quote[counter]
         
-   
+        cell.maintext.text = trimmedtext.capitalizingFirstLetter()
+
+        if counter == 2 {
+            
+           cell.tapright.isUserInteractionEnabled = false
+            
+        } else {
+            
+            cell.tapright.isUserInteractionEnabled = true
+
+        }
+        
+        if counter == 4 {
+            
+            tapd.alpha = 0
+            tapm.alpha = 0
+            tapmo.alpha = 0
+            taplabel.alpha = 0
+            tapw.alpha = 0
+            cell.maintext.textAlignment = .left
+        }
         
         return cell
         
