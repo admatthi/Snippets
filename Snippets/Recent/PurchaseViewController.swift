@@ -112,7 +112,7 @@ class PurchaseViewController: UIViewController, UITableViewDelegate, UITableView
         
         
        
-        FBSDKAppEvents.logEvent("Yearl Pressed")
+        FBSDKAppEvents.logEvent("Yearly Pressed")
         
         //        purchase(purchase: threedaytrial)
         

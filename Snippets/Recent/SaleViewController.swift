@@ -64,7 +64,9 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
             
         }
     }
+    @IBOutlet weak var tapy1: UIButton!
     
+    @IBOutlet weak var tapm1: UIButton!
     @IBAction func tapBuy(_ sender: Any) {
         
         FBSDKAppEvents.logEvent("Monthly Pressed")
@@ -114,6 +116,8 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         ref = Database.database().reference()
         
+        view.bringSubview(toFront: tapm1)
+        view.bringSubview(toFront: tapy1)
         savetext2.layer.cornerRadius = 5.0
         savetext2.layer.masksToBounds = true
         tapbuy.layer.borderColor = myblue2.cgColor

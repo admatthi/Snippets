@@ -49,7 +49,7 @@ class BookOverviewViewController: UIViewController {
     
     @IBAction func tapcopy(_ sender: Any) {
         
-        UIPasteboard.general.string = "One of the best Snippets from \(selectedauthor)'s \(selectedtitle). Tag a friend who needs to hear this! \(selecteddescription) #readthesnippets #book #booksarelife #bookcommunity #bookpassion #bookrecommendation #bookreview #nonfiction #love #greatreads #quotes #bookquotes #bookobsessed #alwayslearning"
+        UIPasteboard.general.string = "One of the best Snippets from \(selectedauthor)'s \(selectedtitle). Tag a friend who needs to hear this! #readthesnippets #book #booksarelife #bookcommunity #bookpassion #bookrecommendation #bookreview #nonfiction #love #greatreads #quotes #bookquotes #bookobsessed #alwayslearning"
 
     }
     @IBOutlet weak var taplib: UIButton!
@@ -122,7 +122,10 @@ class BookOverviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func tapTwitter(_ sender: Any) {
+        
+    }
+    
  
     func queryforreviewinfo() {
         

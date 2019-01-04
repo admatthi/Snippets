@@ -71,26 +71,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ref = Database.database().reference()
 
         
-        if Auth.auth().currentUser == nil {
-            
-            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            
-            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Overview") as UIViewController
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = initialViewControlleripad
-            self.window?.makeKeyAndVisible()//
-            
-            
-        }  else {
-
-            uid = (Auth.auth().currentUser?.uid)!
-
-            queryforinfo()
-            
-          
-
-        }
+//        if Auth.auth().currentUser == nil {
+//            
+//            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            
+//            
+//            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Overview") as UIViewController
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//            self.window?.rootViewController = initialViewControlleripad
+//            self.window?.makeKeyAndVisible()//
+//            
+//            
+//        }  else {
+//
+//            uid = (Auth.auth().currentUser?.uid)!
+//
+//            queryforinfo()
+//            
+//          
+//
+//        }
         
         return true
     }

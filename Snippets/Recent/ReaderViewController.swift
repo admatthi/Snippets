@@ -819,6 +819,11 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var fourteen: UIImageView!
     @IBOutlet weak var fifteen: UIImageView!
 
+    @IBAction func tapTwitter(_ sender: Any) {
+        
+             UIPasteboard.general.string = "\(quote[counter]) #readthesnippets #book #booksarelife #bookcommunity #bookpassion #bookrecommendation #bookreview #nonfiction #love #greatreads #quotes #bookquotes #bookobsessed #alwayslearning"
+        
+    }
     var trimmedtext = String()
 
     func showproperquote() {

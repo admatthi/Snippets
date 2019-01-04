@@ -156,7 +156,6 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         genres.append("Sex & Relationships")
         genres.append("Productivity")
         genres.append("Mental Health")
-        genres.append("Psychology")
         
         collectionView2.reloadData()
         
@@ -520,9 +519,12 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 print(functioncounter)
                 print(each)
                 
-                if functioncounter == genres.count-2 {
+                if functioncounter == genres.count-1 {
                     seemoreids = genres
-
+                    var index3 = seemoreids.firstIndex(of: "Today's Picks")
+                    seemoreids.remove(at: index3!)
+                    seemoreids.shuffle()
+                    
                     self.collectionView.reloadData()
                     self.collectionView2.reloadData()
                 }
@@ -740,11 +742,11 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 
                 
                 selectedbookid = dayofmonth
-                selectedgenre = genres[indexPath.row+1]
-                selectedimage = seemoreimages[seemoreids[indexPath.row+1]]!
-                selectedtitle = seemoretitles[seemoreids[indexPath.row+1]]!
-                selectedauthor = seemoreauthors[seemoreids[indexPath.row+1]]!
-                selectedimagename = seemoreimagenames[seemoreids[indexPath.row+1]]!
+                selectedgenre = seemoreids[indexPath.row]
+                selectedimage = seemoreimages[seemoreids[indexPath.row]]!
+                selectedtitle = seemoretitles[seemoreids[indexPath.row]]!
+                selectedauthor = seemoreauthors[seemoreids[indexPath.row]]!
+                selectedimagename = seemoreimagenames[seemoreids[indexPath.row]]!
                 selectedviews = nineviews[indexPath.row]
 
                 self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
@@ -834,8 +836,11 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 cell.viewslabel.text = nineviews[intdayofweek + indexPath.row]
 //                cell.readagain.alpha = 0
                 cell.dark.alpha = 1
-                cell.bookcover.image = seemoreimages[seemoreids[indexPath.row+1]]
-                cell.views.text = genres[indexPath.row + 1]
+                cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
+                cell.genre.text = seemoreids[indexPath.row].uppercased()
+                cell.genre.addCharacterSpacing()
+                cell.views.text = seemoretitles[seemoreids[indexPath.row]]
+
                 cell.views.alpha = 1
                 cell.viewslabel.alpha = 1
                 cell.eyeball.alpha = 1
