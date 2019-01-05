@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseCore
 import FBSDKCoreKit
 import StoreKit
 import UserNotifications
@@ -19,11 +20,12 @@ import Purchases
 
 var uid = String()
 var ref: DatabaseReference?
+var didpurchase = Bool()
 
 var newuser = Bool()
 var todaysdate = String()
 var screenshot = UIImage()
-
+var tryingtopurchase = Bool()
 
 protocol SnippetsPurchasesDelegate: AnyObject {
     
@@ -107,31 +109,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 if purchased == "Yes" {
                     
+                    didpurchase = true
                     var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                     
                     tabBar.selectedIndex = 0
                     
                 } else {
                     
-                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    didpurchase = false
+                    var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                     
-                    
-                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Teaser") as UIViewController
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                    self.window?.rootViewController = initialViewControlleripad
-                    self.window?.makeKeyAndVisible()//
+                    tabBar.selectedIndex = 0
                     
                 }
                 
             } else {
                 
-                let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                didpurchase = false
+                var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                 
-                
-                let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Sale") as UIViewController
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                self.window?.rootViewController = initialViewControlleripad
-                self.window?.makeKeyAndVisible()//
+                tabBar.selectedIndex = 0
                 
             }
                 
@@ -141,6 +138,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func letsgo() {
         
+       didpurchase = true
+
         ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
 
         

@@ -21,29 +21,26 @@ var selectedviews = String()
 class BookOverviewViewController: UIViewController {
 
     @IBOutlet weak var keyinsights: UILabel!
+
+    
     @IBAction func tapStartReading(_ sender: Any) {
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        if purchased {
             
+        if didpurchase  {
             
-                self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+            self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+
             
         } else {
             
-            if freepressed {
-                
-                self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+            self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
 
-            } else {
-                
-                self.performSegue(withIdentifier: "BookOverviewToPurchase", sender: self)
-
-            }
             
         }
+    
         
     }
     

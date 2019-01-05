@@ -68,12 +68,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate     {
                 
                 ref?.child("Snippets").child("NewUsers").child(uid).updateChildValues(["email" : email, "Password" : password, "Purchased" : "No"])
 
+                didpurchase = false
                 
                 DispatchQueue.main.async {
                     
                     //                    purchased = true
                     
-                    self.performSegue(withIdentifier: "RegisterToPurchase", sender: self)
+                    self.performSegue(withIdentifier: "LoginToExplore4", sender: self)
                 }
             }
             

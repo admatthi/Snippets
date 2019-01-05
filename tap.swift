@@ -24,10 +24,6 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var maintext: UILabel!
     @IBAction func tapRight(_ sender: Any) {
         
-        
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
-        generator.impactOccurred()
-        
 
 
    
@@ -417,6 +413,7 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //        threebuttonuntapped()
         
         //        quotetext.slideInFromRight()
+
         
         print(counter)
         print(quote.count)

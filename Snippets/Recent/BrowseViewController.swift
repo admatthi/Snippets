@@ -688,6 +688,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
@@ -749,7 +751,12 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 selectedimagename = seemoreimagenames[seemoreids[indexPath.row]]!
                 selectedviews = nineviews[indexPath.row]
 
-                self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
+                DispatchQueue.main.async {
+                    
+                    
+                    self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
+                    
+                }
                 
             } else {
                 selectedbookid = seemoreids[indexPath.row]
@@ -760,8 +767,12 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 
                 selectedviews = nineviews[indexPath.row]
                 
-                self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
-                
+                DispatchQueue.main.async {
+                    
+                    
+                    self.performSegue(withIdentifier: "BrowseToOverview", sender: self)
+                    
+                }
             }
             
 

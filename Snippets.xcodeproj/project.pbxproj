@@ -99,9 +99,6 @@
 		9D714F0220FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */; };
 		9D714F0320FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */; };
 		9D714F0420FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */; };
-		9D714F0520FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EED20FFA1A3002CD2A3 /* PurchaseViewController.swift */; };
-		9D714F0620FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EED20FFA1A3002CD2A3 /* PurchaseViewController.swift */; };
-		9D714F0720FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EED20FFA1A3002CD2A3 /* PurchaseViewController.swift */; };
 		9D714F0820FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */; };
 		9D714F0920FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */; };
 		9D714F0A20FFA1A9002CD2A3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */; };
@@ -253,7 +250,6 @@
 		9D714EDF20FFA0EB002CD2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D714EEB20FFA1A2002CD2A3 /* ReadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadTableViewCell.swift; sourceTree = "<group>"; };
 		9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverBooksViewController.swift; sourceTree = "<group>"; };
-		9D714EED20FFA1A3002CD2A3 /* PurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		9D714EEF20FFA1A4002CD2A3 /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -433,7 +429,6 @@
 				9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */,
 				9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */,
 				9D9A829D2146D9380050F2B3 /* LibViewController.swift */,
-				9D714EED20FFA1A3002CD2A3 /* PurchaseViewController.swift */,
 				9DD3AC68217CEEFA00D82C13 /* TermsTableViewCell.swift */,
 				9D714EEF20FFA1A4002CD2A3 /* ReaderViewController.swift */,
 				9DD3601921D66AC70057FFD4 /* ReaderTableViewCell.swift */,
@@ -497,7 +492,7 @@
 				9D714EB620FFA0E7002CD2A3 /* Sources */,
 				9D714EB720FFA0E7002CD2A3 /* Frameworks */,
 				9D714EB820FFA0E7002CD2A3 /* Resources */,
-				31CBE43157513037BD21694D /* [CP] Embed Pods Frameworks */,
+				FC9E2B411F6614281376DC18 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -706,7 +701,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31CBE43157513037BD21694D /* [CP] Embed Pods Frameworks */ = {
+		6E087CED3F355BBDB2AF66A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnippetsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		852FE167FFD61846402850FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnippetsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC9E2B411F6614281376DC18 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -744,42 +775,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snippets/Pods-Snippets-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E087CED3F355BBDB2AF66A5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SnippetsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		852FE167FFD61846402850FA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SnippetsUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -800,7 +795,6 @@
 				9D1EBF0A21767EF4004A566A /* SwipeViewController.swift in Sources */,
 				9DEEE4C821776523001B5FE8 /* ScrollViewController.swift in Sources */,
 				9D32CFF62189006E005B1B97 /* CompletedViewController.swift in Sources */,
-				9D714F0520FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3820FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
 				9D5E80C621DC792800321335 /* ContactUsViewController.swift in Sources */,
 				9D19F2A620FFD2C700BEC738 /* LibraryViewController.swift in Sources */,
@@ -847,7 +841,6 @@
 				9D714F1B20FFA1A9002CD2A3 /* FavoritesTableViewCell.swift in Sources */,
 				9D714F0320FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */,
 				9D714F1820FFA1A9002CD2A3 /* DViewController.swift in Sources */,
-				9D714F0620FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3920FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
 				9DD3AC62217BCD5600D82C13 /* FavTableViewCell.swift in Sources */,
 				9DD3AC5E217BCD3900D82C13 /* LibViewController.swift in Sources */,
@@ -880,7 +873,6 @@
 				9D714F1C20FFA1A9002CD2A3 /* FavoritesTableViewCell.swift in Sources */,
 				9D714F0420FFA1A9002CD2A3 /* DiscoverBooksViewController.swift in Sources */,
 				9D714F1920FFA1A9002CD2A3 /* DViewController.swift in Sources */,
-				9D714F0720FFA1A9002CD2A3 /* PurchaseViewController.swift in Sources */,
 				9D714F3A20FFA1A9002CD2A3 /* A1ViewController.swift in Sources */,
 				9DD3AC61217BCD5600D82C13 /* FavTableViewCell.swift in Sources */,
 				9DD3AC5D217BCD3900D82C13 /* LibViewController.swift in Sources */,
@@ -1055,7 +1047,7 @@
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Snippets/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1076,7 +1068,7 @@
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Snippets/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

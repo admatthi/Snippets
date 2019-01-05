@@ -50,6 +50,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 self.queryforinfo()
                 
+        
                 
             }
             
@@ -69,39 +70,29 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 if purchased == "Yes" {
                     
-                    DispatchQueue.main.async {
-                        
-                        
-                        self.performSegue(withIdentifier: "ExploreNow", sender: self)
-                        
-                    }
-                    
+                    didpurchase = true
+                  
+                    self.performSegue(withIdentifier: "LoginToExplore5", sender: self)
                 } else {
                     
-                    DispatchQueue.main.async {
-                        
-                        
-                        self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
-                        
-                    }////
+                    didpurchase = false
+                    
+                    self.performSegue(withIdentifier: "LoginToExplore5", sender: self)
                     
                 }
                 
             } else {
                 
-                DispatchQueue.main.async {
-                    
-                    purchased = true
-                    
-                    self.performSegue(withIdentifier: "LoginToPurchase", sender: self)
-                    
-                }//
+                didpurchase = false
+                
+                self.performSegue(withIdentifier: "LoginToExplore5", sender: self)
                 
             }
             
         })
         
     }
+  
     @IBOutlet weak var header: UILabel!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
