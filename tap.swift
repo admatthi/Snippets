@@ -242,6 +242,7 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var taplabel: UILabel!
     
     @IBOutlet weak var tapx: UIButton!
+    @IBOutlet weak var topquote: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tapw: UIButton!
     
@@ -337,6 +338,7 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         titlelabel.alpha = 1
         authorlabel.alpha = 1
         progressView.alpha = 0
+        topquote.alpha = 0
         tapx.alpha = 0
         
         cover.alpha = 1
@@ -445,6 +447,7 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
             authorlabel.alpha = 1
             cover.alpha = 1
             progressView.alpha = 1
+            topquote.alpha = 1
             tapx.alpha = 1
             titlelabel.text = selectedtitle
             authorlabel.text = selectedauthor

@@ -71,12 +71,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 if purchased == "Yes" {
                     
                     didpurchase = true
-                  
+                    
                     self.performSegue(withIdentifier: "LoginToExplore5", sender: self)
+                    
                 } else {
                     
                     didpurchase = false
-                    
                     self.performSegue(withIdentifier: "LoginToExplore5", sender: self)
                     
                 }

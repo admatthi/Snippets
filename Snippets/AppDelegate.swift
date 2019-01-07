@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKAppEvents.activateApp()
         
-        UXCam.start(withKey: "8921dd89a4b98a3")
+        UXCam.start(withKey: "mdecypu3fp8w6kp")
         purchases = RCPurchases(apiKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw")
 
         purchases!.delegate = self
@@ -138,14 +138,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func letsgo() {
         
-       didpurchase = true
 
-        ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+        if Auth.auth().currentUser != nil {
 
+            didpurchase = true
+
+    ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarBuyer : UITabBarController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as! UITabBarController
         
-        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = tabBarBuyer
         
-        tabBar.selectedIndex = 0
+        self.window?.makeKeyAndVisible()
+            
+        }
         
     }
 
@@ -288,6 +296,8 @@ extension AppDelegate: RCPurchasesDelegate {
         
         self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
         
+        didpurchase = true
+        
         print("purchased")
         tryingtopurchase  = true
         letsgo()
@@ -297,7 +307,7 @@ extension AppDelegate: RCPurchasesDelegate {
     func purchases(_ purchases: RCPurchases, receivedUpdatedPurchaserInfo purchaserInfo: RCPurchaserInfo) {
 //        handlePurchaserInfo(purchaserInfo)
         
-        print("shit")
+        print(purchaserInfo)
         
     }
 
