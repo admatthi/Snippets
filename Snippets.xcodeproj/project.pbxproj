@@ -440,6 +440,7 @@
 				9D88EA7B21D5B20B004CDE4D /* RegisterViewController.swift */,
 				9D88EA7F21D5B216004CDE4D /* SignInViewController.swift */,
 				9D1B921D21D6A33100332A18 /* Settings2ViewController.swift */,
+				9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */,
 				9D1B922121D7D83400332A18 /* ContacViewController.swift */,
 			);
 			path = Recent;
@@ -457,7 +458,6 @@
 				9D714EF320FFA1A5002CD2A3 /* DViewController.swift */,
 				9D714EF420FFA1A5002CD2A3 /* FavoritesTableViewCell.swift */,
 				9D714EF520FFA1A6002CD2A3 /* FavoritesViewController.swift */,
-				9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */,
 				9D2CF7A5215A672A00F9C3D5 /* SeeMoreViewController.swift */,
 				9D714EEB20FFA1A2002CD2A3 /* ReadTableViewCell.swift */,
 				9D714EFD20FFA1A9002CD2A3 /* SubsViewController.swift */,

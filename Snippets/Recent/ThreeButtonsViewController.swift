@@ -15,6 +15,8 @@ import FBSDKCoreKit
 import UserNotifications
 import AudioToolbox
 
+var selectedscreenshot = UIImage()
+
 class ThreeButtonsViewController: UIViewController {
 
     @IBAction func tapBack(_ sender: Any) {
@@ -55,6 +57,41 @@ class ThreeButtonsViewController: UIViewController {
             }
         
         
+    }
+    @IBAction func tapShare(_ sender: Any) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Share This Snippet", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                
+                let text = "You should read this Snippet from \(selectedauthor)'s \(selectedtitle)."
+                
+                var image = screenshot
+              
+                let myWebsite = NSURL(string: "https://snippets.page.link/share")
+                
+                let shareAll : Array = [text, image, myWebsite] as [Any]
+                
+                
+                let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+                
+                activityViewController.excludedActivityTypes = [UIActivityType.print, UIActivityType.postToWeibo, UIActivityType.addToReadingList, UIActivityType.postToVimeo, UIActivityType.saveToCameraRoll, UIActivityType.assignToContact]
+                
+                activityViewController.popoverPresentationController?.sourceView = self.view
+                self.present(activityViewController, animated: true, completion: nil)
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        present(alert, animated: true)
     }
     @IBOutlet weak var tapbookmark: UIButton!
     @IBOutlet weak var tapbuy: UIButton!

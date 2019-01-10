@@ -40,6 +40,8 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         selectedtext = trimmedtext
         
+        takeScreenshot(true)
+
         self.performSegue(withIdentifier: "ReaderToThree", sender: self)
 //        self.dismiss(animated: true, completion: {
 //
@@ -202,7 +204,6 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 //        showbookmark()
         tapanywhere.alpha = 1
-        
         
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeDown.direction = UISwipeGestureRecognizerDirection.down
@@ -1035,6 +1036,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             screenshot = image
             
         }
+        
         return screenshotImage
     }
 }

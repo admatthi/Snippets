@@ -2781,13 +2781,12 @@
                                 <state key="normal" image="ShareNew">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapShare:" destination="Lzz-H7-XAH" eventType="touchUpInside" id="FnF-Lj-QLd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FE-59-yEs">
-                                <rect key="frame" x="50" y="112" width="276" height="411"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="411" id="Tcz-Hd-Vvh"/>
-                                    <constraint firstAttribute="width" constant="276" id="VZc-PO-Q3L"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="69" width="375" height="454"/>
                                 <connections>
                                     <action selector="tapBack:" destination="Lzz-H7-XAH" eventType="touchUpInside" id="Hle-vv-ZMw"/>
                                 </connections>
@@ -2802,13 +2801,15 @@
                             <constraint firstItem="F1v-H3-vE3" firstAttribute="trailing" secondItem="mug-n1-siz" secondAttribute="trailing" constant="16" id="K3r-at-In8"/>
                             <constraint firstItem="5dr-mF-y10" firstAttribute="top" secondItem="F1v-H3-vE3" secondAttribute="top" constant="3" id="KhV-Me-Z8q"/>
                             <constraint firstItem="5dr-mF-y10" firstAttribute="leading" secondItem="F1v-H3-vE3" secondAttribute="leading" constant="16" id="N08-pv-c6b"/>
+                            <constraint firstItem="S68-Do-gRC" firstAttribute="top" secondItem="2FE-59-yEs" secondAttribute="bottom" constant="17" id="NbR-SG-nvQ"/>
                             <constraint firstItem="hsQ-s5-YgM" firstAttribute="top" secondItem="8iN-RZ-Ebg" secondAttribute="bottom" constant="-47" id="Wl4-A5-reG"/>
+                            <constraint firstItem="2FE-59-yEs" firstAttribute="top" secondItem="b2z-UB-977" secondAttribute="bottom" constant="8" id="Z3j-hO-ydo"/>
                             <constraint firstItem="F1v-H3-vE3" firstAttribute="trailing" secondItem="b2z-UB-977" secondAttribute="trailing" constant="16" id="a7m-1B-JtT"/>
                             <constraint firstItem="mug-n1-siz" firstAttribute="leading" secondItem="5dr-mF-y10" secondAttribute="trailing" constant="7" id="avO-9V-DMx"/>
-                            <constraint firstItem="8iN-RZ-Ebg" firstAttribute="top" secondItem="2FE-59-yEs" secondAttribute="bottom" constant="-412" id="bko-oS-IKo"/>
                             <constraint firstItem="8iN-RZ-Ebg" firstAttribute="centerY" secondItem="cfv-wR-C77" secondAttribute="centerY" constant="15.5" id="bze-FJ-ocw"/>
-                            <constraint firstItem="2FE-59-yEs" firstAttribute="leading" secondItem="8iN-RZ-Ebg" secondAttribute="trailing" constant="-275.5" id="dWK-GE-vG3"/>
+                            <constraint firstItem="2FE-59-yEs" firstAttribute="leading" secondItem="F1v-H3-vE3" secondAttribute="leading" id="c7c-Ii-R3u"/>
                             <constraint firstItem="wku-qO-rcI" firstAttribute="top" secondItem="8iN-RZ-Ebg" secondAttribute="bottom" constant="-56" id="daY-5Z-Tp1"/>
+                            <constraint firstItem="2FE-59-yEs" firstAttribute="trailing" secondItem="F1v-H3-vE3" secondAttribute="trailing" id="enc-U1-QFb"/>
                             <constraint firstItem="mug-n1-siz" firstAttribute="leading" secondItem="5dr-mF-y10" secondAttribute="trailing" constant="7" id="fT2-zu-ks2"/>
                             <constraint firstItem="TRg-my-BWE" firstAttribute="centerX" secondItem="cfv-wR-C77" secondAttribute="centerX" id="gwq-Bd-SV5"/>
                             <constraint firstItem="S68-Do-gRC" firstAttribute="top" secondItem="hsQ-s5-YgM" secondAttribute="bottom" constant="-33" id="hRy-T5-fD7"/>
