@@ -110,9 +110,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if purchased == "Yes" {
                     
                     didpurchase = true
+                    
+                    
                     var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                     
+                    
                     tabBar.selectedIndex = 0
+                    
+                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    
+                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as UIViewController
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    self.window?.rootViewController = initialViewControlleripad
+                    self.window?.makeKeyAndVisible()
                     
                 } else {
                     
@@ -121,6 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     tabBar.selectedIndex = 0
                     
+                  
                 }
                 
             } else {
@@ -129,6 +141,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                 
                 tabBar.selectedIndex = 0
+             
+              
                 
             }
                 

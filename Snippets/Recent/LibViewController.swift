@@ -434,11 +434,13 @@ override func viewDidAppear(_ animated: Bool) {
         
         if librarycovers.count > 0 {
             
+            emptylabel.alpha = 0
             return librarycovers.count
             
         } else {
             
-            return 2
+            
+            return 0
             
         }
     }
@@ -789,6 +791,7 @@ override func viewDidAppear(_ animated: Bool) {
         self.present(alert, animated: true, completion: nil)
         
     }
+    @IBOutlet weak var emptylabel: UILabel!
     
     open func takeScreenshot(_ shouldSave: Bool = true) -> UIImage? {
         var screenshotImage :UIImage?

@@ -18,6 +18,8 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tapx: UIButton!
     @IBOutlet weak var ss: UIImageView!
     
+    @IBOutlet weak var header: UILabel!
+    @IBOutlet weak var tapb: UIButton!
     @IBOutlet weak var tf: UITextView!
     @IBAction func tapX(_ sender: Any) {
         
@@ -27,6 +29,17 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
     }
     @IBAction func tapB(_ sender: Any) {
     
+        activityIndicator.alpha = 1
+        tapx.alpha = 0
+        ss.alpha = 0
+        tf.alpha = 0
+        tapb.alpha = 0
+        header.alpha = 0
+
+        activityIndicator.startAnimating()
+        
+        self.view.endEditing(true)
+
         if tf.text != "" {
         
            
@@ -106,17 +119,37 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
         
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ref = Database.database().reference()
 
+        activityIndicator.alpha = 0
         tf.delegate = self
         ss.image = screenshot
+        tf.layer.cornerRadius = 2.0
+        tf.layer.masksToBounds = true
+        tf.text = "Please describe what went wrong"
+        tf.textColor = UIColor.lightGray
         
         // Do any additional setup after loading the view.
     }
 
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Please describe what went wrong"
+            textView.textColor = UIColor.lightGray
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

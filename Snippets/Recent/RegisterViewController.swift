@@ -90,7 +90,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate     {
     @IBOutlet weak var header: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+taplogin.addTextSpacing(2.0)
         header.addCharacterSpacing()
         // Do any additional setup after loading the view.
         tapterms.titleLabel?.textAlignment = NSTextAlignment.center
@@ -100,9 +100,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate     {
 //        passwordtf.layer.borderColor = UIColor.gray.cgColor
 //        passwordtf.layer.borderWidth = 0.5
         
-//        self.addLineToView(view: emailtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 0.5)
-//
-//        self.addLineToView(view: passwordtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 0.5)
+        self.addLineToView(view: emailtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 1.25)
+
+        self.addLineToView(view: passwordtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 1.25)
         
         
         ref = Database.database().reference()
@@ -155,6 +155,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate     {
             break
         }
     }
+    @IBOutlet weak var taplogin: UIButton!
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            
+            takeScreenshot(true)
+            showalert()
+            
+        }
+    }
     
     func showalert() {
         
@@ -201,7 +210,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate     {
         return screenshotImage
     }
 }
-}
+
 
 extension UIButton{
     

@@ -25,6 +25,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         ref = Database.database().reference()
         
+        view.bringSubview(toFront: emptylabel)
         FBSDKAppEvents.logEvent("Favorites Viewed")
         
         tableView.reloadData()
@@ -79,8 +80,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         
         favoriteids.removeAll()
-        
-        ref?.child("Users").child(uid).child("Favorites").queryLimited(toFirst: 25).observeSingleEvent(of: .value, with: { (snapshot) in
+         ref?.child("Snippets").child("Users").child(uid).child("Favorites").queryLimited(toFirst: 25).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
@@ -119,7 +119,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         for each in favoriteids {
             
-            ref?.child("Users").child(uid).child("Favorites").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
+            ref?.child("Snippets").child("Users").child(uid).child("Favorites").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 var value = snapshot.value as? NSDictionary
                 
@@ -174,11 +174,13 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if thumbnail.count > 0 {
             
+            emptylabel.alpha = 0
             return thumbnail.count
             
         } else {
             
-            return 2
+            emptylabel.alpha = 1
+            return 0
         }
     }
     
@@ -196,45 +198,11 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
             cell.descriptionlabel.text = favorites[favoriteids[indexPath.row]]
             cell.coverimage.image = thumbnail[favoriteids[indexPath.row]]
-            cell.greenlabel.alpha = 1
-            cell.emptylabel.alpha = 0
-            cell.upgradelabel.alpha = 0
-            cell.lock.alpha = 0
-            cell.bluebutton.alpha = 0
+
             
         } else {
             
-            if indexPath.row == 0 {
-            cell.descriptionlabel.text = ""
-            cell.emptylabel.alpha = 1
-            cell.coverimage.image = nil
-            cell.greenlabel.alpha = 0
-                cell.upgradelabel.alpha = 0
-                cell.bluebutton.alpha = 0
-                cell.lock.alpha = 0
-            } else {
-                
-                cell.descriptionlabel.text = ""
-                cell.emptylabel.alpha = 0
-                cell.coverimage.image = nil
-                cell.greenlabel.alpha = 0
-                cell.upgradelabel.alpha = 1
-                cell.bluebutton.alpha = 1
-                cell.lock.alpha = 1
-                if Auth.auth().currentUser == nil {
-                    // Do smth if user is not logged in
-                    cell.upgradelabel.alpha = 1
-                    cell.bluebutton.alpha = 1
-                    cell.lock.alpha = 1
-                } else {
-                    
-                    cell.upgradelabel.alpha = 0
-                    cell.bluebutton.alpha = 0
-                    cell.lock.alpha = 0
-                }
-            }
-            
-            
+          
             
         }
         
@@ -248,7 +216,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if editingStyle == .delete {
             
-            ref?.child("Users").child(uid).child("Favorites").child(favoriteids[indexPath.row]).removeValue()
+            ref?.child("Snippets").child("Users").child(uid).child("Favorites").child(favoriteids[indexPath.row]).removeValue()
             
             favorites.removeValue(forKey: favoriteids[indexPath.row])
             thumbnail.removeValue(forKey: favoriteids[indexPath.row])
@@ -263,6 +231,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
 
+    @IBOutlet weak var emptylabel: UILabel!
     /*
     // MARK: - Navigation
 

@@ -59,6 +59,11 @@ class BookOverviewViewController: UIViewController {
     @IBOutlet weak var taplib: UIButton!
     @IBAction func tapLibrary(_ sender: Any) {
         
+        if didpurchase {
+            
+        taplib.setImage(UIImage(named: "Plus Copy"), for: .normal)
+
+        
         if selectedimagename != "" {
             ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
             
@@ -67,7 +72,11 @@ class BookOverviewViewController: UIViewController {
             ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": "StockPhoto", "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
         }
         
-            taplib.setImage(UIImage(named: "Plus Copy"), for: .normal)
+            
+        } else {
+                
+                self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
+            }
     }
     @IBAction func tapBack(_ sender: Any) {
         
@@ -107,17 +116,7 @@ class BookOverviewViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("Book Overview Viewed")
         
-        
-        if didpurchase {
-            // Do smth if user is not logged in
-            
-            taplib.alpha = 1
-            
-        } else {
-            
-            taplib.alpha = 0
-            
-        }
+     
         // Do any additional setup after loading the view.
     }
 

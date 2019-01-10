@@ -438,7 +438,7 @@ class NewPurchaseViewController: UIViewController {
             
         }
     }
-    
+
     
     func showalert() {
         

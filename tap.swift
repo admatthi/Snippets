@@ -566,7 +566,15 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            
+            takeScreenshot(true)
+            showalert()
+            
+        }
+    }
+    
     func showalert() {
         
         let alert = UIAlertController(title: "Shake To Report", message: "Please report any issues you found!", preferredStyle: UIAlertControllerStyle.alert)
@@ -613,4 +621,4 @@ class TeaserViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 }
 
-}
+

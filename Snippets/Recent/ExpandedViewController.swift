@@ -12,6 +12,10 @@ var selectedtext = String()
 
 class ExpandedViewController: UIViewController {
 
+    @IBAction func tapBack(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var fulltext: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()

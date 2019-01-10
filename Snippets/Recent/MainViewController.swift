@@ -12,6 +12,11 @@ let darkbluee = UIColor(red:0.09, green:0.11, blue:0.14, alpha:1.0)
 
 class MainViewController: UITabBarController {
 
+    override func viewDidAppear(_ animated: Bool) {
+        
+       
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

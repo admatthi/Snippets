@@ -109,9 +109,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         header.addCharacterSpacing()
         // Do any additional setup after loading the view.
         
-//        self.addLineToView(view: emailtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 0.5)
-//
-//        self.addLineToView(view: passwordtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 0.5)
+        self.addLineToView(view: emailtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 1.25)
+
+        self.addLineToView(view: passwordtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 1.25)
         
 //        emailtf.layer.borderColor = UIColor.gray.cgColor
 //        emailtf.layer.borderWidth = 0.5
@@ -169,6 +169,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             break
         }
     }
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            
+            takeScreenshot(true)
+            showalert()
+            
+        }
+    }
     
     func showalert() {
         
@@ -215,4 +223,4 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         return screenshotImage
     }
 }
-}
+
