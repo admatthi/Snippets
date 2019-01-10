@@ -146,8 +146,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         loadviews()
         ref = Database.database().reference()
-
-        addstaticbooks()
+//        addstaticbooks()
         genres.removeAll()
         genres.append("Today's Picks")
         genres.append("Biography & Memoir")

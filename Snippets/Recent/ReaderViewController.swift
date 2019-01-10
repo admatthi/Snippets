@@ -38,9 +38,12 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func tapBack(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: {
-            
-        })
+        selectedtext = trimmedtext
+        
+        self.performSegue(withIdentifier: "ReaderToThree", sender: self)
+//        self.dismiss(animated: true, completion: {
+//
+//        })
     }
     @IBAction func tapBuy(_ sender: Any) {
         
@@ -82,6 +85,12 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         bookmarktapped = false
     }
+    
+    @IBAction func goodBye(_ sender: AnyObject?) {
+        
+      self.dismiss(animated: true, completion: nil)
+        
+    }
     var ref: DatabaseReference?
     var category = String()
     
@@ -122,7 +131,6 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         self.tapNext(nil)
 
-        
     }
     @IBOutlet weak var tapbuy: UIButton!
     
@@ -195,6 +203,10 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        showbookmark()
         tapanywhere.alpha = 1
         
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
     @IBOutlet weak var counterbutton: UIButton!
@@ -406,150 +418,150 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             if var activityvalue2 = value?["Explanation1"] as? String {
                 
-                self.tapswitch.alpha = 1
-                self.tapswitch.setImage(UIImage(named: "Quotes"), for: .normal)
-                
-     
-                
-                self.topquote.alpha = 0
-                
-                self.switched = true
-                self.explanation.append(activityvalue2)
+//                self.tapswitch.alpha = 1
+//                self.tapswitch.setImage(UIImage(named: "Quotes"), for: .normal)
+//
+//
+//
+//                self.topquote.alpha = 0
+//
+//                self.switched = true
+//                self.explanation.append(activityvalue2)
                 
             } else {
                 
-                self.tapswitch.alpha = 0
+//                self.tapswitch.alpha = 0
             }
             
             if var activityvalue2 = value?["Explanation2"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation3"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation4"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation5"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation6"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation7"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation8"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation9"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation10"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation11"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation12"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation13"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation14"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation15"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation16"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation17"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation18"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation19"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
             
             if var activityvalue2 = value?["Explanation20"] as? String {
                 
-                self.tapswitch.alpha = 1
+//                self.tapswitch.alpha = 1
                 self.explanation.append(activityvalue2)
                 
             }
@@ -775,7 +787,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             case UISwipeGestureRecognizerDirection.right:
                 self.tapNext(nil)
             case UISwipeGestureRecognizerDirection.down:
-                print("Swiped down")
+                self.goodBye(nil)
             case UISwipeGestureRecognizerDirection.left:
                 self.tapPrevious(nil)
             case UISwipeGestureRecognizerDirection.up:
@@ -880,6 +892,8 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return 1
             
             }
+            
+            
         
         } else {
             

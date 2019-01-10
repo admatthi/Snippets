@@ -10,8 +10,6 @@ import UIKit
 import Firebase
 import FirebaseCore
 import FirebaseStorage
-import FirebaseDatabase
-import FirebaseAuth
 import FBSDKCoreKit
 
 var reading = [String:String]()
