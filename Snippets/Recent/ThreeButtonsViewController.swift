@@ -68,7 +68,7 @@ class ThreeButtonsViewController: UIViewController {
             switch action.style{
             case .default:
                 
-                let text = "You should read this Snippet from \(selectedauthor)'s \(selectedtitle)."
+                let text = "You need to hear this."
                 
                 var image = screenshot
               
@@ -124,13 +124,13 @@ class ThreeButtonsViewController: UIViewController {
             tapbuy.alpha = 0
         }
         
-        if Auth.auth().currentUser == nil {
+        if didpurchase {
 
-            tapbookmark.alpha = 0
+            tapbookmark.alpha = 1
             
         } else {
             
-            tapbookmark.alpha = 1
+            tapbookmark.alpha = 0
 
         }
         // Do any additional setup after loading the view.

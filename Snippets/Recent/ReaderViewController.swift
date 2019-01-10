@@ -184,8 +184,13 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         uid = (Auth.auth().currentUser?.uid)!
       
+        if didpurchase {
     ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
         
+        } else {
+            
+            
+        }
         titlelabel.text = selectedtitle
         authorlabel.text = selectedauthor
         cover.image = selectedimage

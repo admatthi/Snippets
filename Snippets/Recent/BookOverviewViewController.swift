@@ -17,6 +17,7 @@ import UserNotifications
 import AudioToolbox
 
 var selectedviews = String()
+var dailypick = Bool()
 
 class BookOverviewViewController: UIViewController {
 
@@ -28,6 +29,12 @@ class BookOverviewViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
+        if dailypick {
+            
+            self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+
+            
+        } else {
             
         if didpurchase  {
             
@@ -41,7 +48,7 @@ class BookOverviewViewController: UIViewController {
             
         }
     
-        
+        }
     }
     
     @IBAction func tapcopy(_ sender: Any) {
@@ -101,14 +108,14 @@ class BookOverviewViewController: UIViewController {
         FBSDKAppEvents.logEvent("Book Overview Viewed")
         
         
-        if Auth.auth().currentUser == nil {
+        if didpurchase {
             // Do smth if user is not logged in
             
-            taplib.alpha = 0
+            taplib.alpha = 1
             
         } else {
             
-            taplib.alpha = 1
+            taplib.alpha = 0
             
         }
         // Do any additional setup after loading the view.

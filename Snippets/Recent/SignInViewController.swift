@@ -113,11 +113,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 //
 //        self.addLineToView(view: passwordtf, position:.LINE_POSITION_BOTTOM, color: UIColor.lightGray, width: 0.5)
         
-        emailtf.layer.borderColor = UIColor.gray.cgColor
-        emailtf.layer.borderWidth = 0.5
-        passwordtf.layer.borderColor = UIColor.gray.cgColor
-        passwordtf.layer.borderWidth = 0.5
-        
+//        emailtf.layer.borderColor = UIColor.gray.cgColor
+//        emailtf.layer.borderWidth = 0.5
+//        passwordtf.layer.borderColor = UIColor.gray.cgColor
+//        passwordtf.layer.borderWidth = 0.5
+//        
         ref = Database.database().reference()
         
         emailtf.delegate = self
@@ -169,4 +169,50 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             break
         }
     }
+    
+    func showalert() {
+        
+        let alert = UIAlertController(title: "Shake To Report", message: "Please report any issues you found!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Send Feedback", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Feedback") as! FeedbackViewController
+                self.present(vc, animated: true, completion: nil)
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    open func takeScreenshot(_ shouldSave: Bool = true) -> UIImage? {
+        var screenshotImage :UIImage?
+        let layer = UIApplication.shared.keyWindow!.layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        guard let context = UIGraphicsGetCurrentContext() else {return nil}
+        layer.render(in:context)
+        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenshotImage, shouldSave {
+            
+            screenshot = image
+            
+        }
+        
+        return screenshotImage
+    }
+}
 }

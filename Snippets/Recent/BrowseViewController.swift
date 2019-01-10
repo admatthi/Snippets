@@ -193,6 +193,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             uid = (Auth.auth().currentUser?.uid)!
 
             purchased = true
+            
+            
         }
         
         
@@ -741,7 +743,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             if selectedindex == 0 {
                 
-                
+                dailypick = true
                 selectedbookid = dayofmonth
                 selectedgenre = seemoreids[indexPath.row]
                 selectedimage = seemoreimages[seemoreids[indexPath.row]]!
@@ -758,6 +760,9 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                 }
                 
             } else {
+                
+                dailypick = false
+                
                 selectedbookid = seemoreids[indexPath.row]
                 selectedimage = seemoreimages[seemoreids[indexPath.row]]!
                 selectedtitle = seemoretitles[seemoreids[indexPath.row]]!

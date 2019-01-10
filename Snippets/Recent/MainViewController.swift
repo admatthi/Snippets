@@ -15,6 +15,14 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if didpurchase {
+            
+            
+        } else {
+            
+            self.performSegue(withIdentifier: "ExploreToPurchase8", sender: self)//
+        }
+        
 //        self.tabBar.barTintColor = darkbluee
 //        self.tabBar.isTranslucent = false
 //        self.tabBar.tintColor = .white
