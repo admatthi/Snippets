@@ -298,6 +298,34 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         
     }
     
+    func updateamazonurl() {
+        
+            var functioncounter = 0
+            
+            for each in seemoreids {
+                
+                ref?.child("AllBooks1").child(selectedgenre).child(each).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    var value = snapshot.value as? NSDictionary
+                    
+                    
+                    
+                    if var author2 = value?["AmazonURL"] as? String {
+                        
+                        
+                    } else {
+                        
+                        ref?.child("AllBooks1").child(selectedgenre).child(each).updateChildValues(["AmazonURL" : "https://www.amazon.com/b?ie=UTF8&node=17025012011"])
+
+                    }
+                    
+                })
+                
+
+
+            }
+    }
+    
     func queryforreviewinfo() {
         
         var functioncounter = 0
@@ -395,7 +423,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         while counter2 < 12 {
             
-                        ref?.child("AllBooks1").child(selectedgenre).child("\(counter2)").updateChildValues(["Author" : "Jordan B. Peterson", "BookID" : "\(counter2)", "Description" : "What does everyone in the modern world need to know? Renowned psychologist Jordan B. Peterson's answer to this most difficult of questions uniquely combines the hard-won truths of ancient tradition with the stunning revelations of cutting-edge scientific research.", "Genre" : "\(selectedgenre)", "Image" : "F\(counter2)", "Name" : "12 Rules for Life", "Completed" : "No", "Views" : "x"])
+            ref?.child("AllBooks1").child(selectedgenre).child("\(counter2)").updateChildValues(["Author" : "Jordan B. Peterson", "BookID" : "\(counter2)", "Description" : "What does everyone in the modern world need to know? Renowned psychologist Jordan B. Peterson's answer to this most difficult of questions uniquely combines the hard-won truths of ancient tradition with the stunning revelations of cutting-edge scientific research.", "Genre" : "\(selectedgenre)", "Image" : "F\(counter2)", "Name" : "12 Rules for Life", "Completed" : "No", "Views" : "x", "AmazonURL" : "https://www.amazon.com/b?ie=UTF8&node=17025012011"])
             
             //    ref?.child("AllBooks2").child(selectedgenre).child("\(counter2)").updateChildValues([ "Views" : "\(nineviews[counter2])"])
             
@@ -731,6 +759,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             queryforids { () -> () in
                 
                 self.queryforreviewinfo()
+                
+//                self.updateamazonurl()
                 
             }
             

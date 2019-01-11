@@ -435,6 +435,7 @@ override func viewDidAppear(_ animated: Bool) {
         if librarycovers.count > 0 {
             
             emptylabel.alpha = 0
+            
             return librarycovers.count
             
         } else {
@@ -473,11 +474,15 @@ override func viewDidAppear(_ animated: Bool) {
     @IBOutlet weak var upgradebutton: UIButton!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
+        
+        
         cell.bookcover.layer.cornerRadius = 2.0
         cell.bookcover.layer.masksToBounds = true
-        cell.views.alpha =  0
-        cell.dark.alpha = 0
-        
+        cell.views.alpha =  1
+        cell.dark.alpha = 1
+        cell.viewslabel.text = libraryauthors[librarybookids[indexPath.row]]
+      
+        cell.views.text = librarytitles[librarybookids[indexPath.row]]
 //        cell.selectionStyle = .none
     
 //        cell.layer.cornerRadius = 10.0
@@ -493,7 +498,7 @@ override func viewDidAppear(_ animated: Bool) {
         
         if librarycovers.count > 0 {
             
-            cell.dark.alpha = 0
+            cell.dark.alpha = 1
 //            cell.rectangle.alpha = 1
             
             if librarycomps[librarybookids[indexPath.row]] == "No" {
@@ -555,7 +560,7 @@ override func viewDidAppear(_ animated: Bool) {
         } else {
             
 //            cell.title.text = ""
-            cell.dark.alpha = 0
+            cell.dark.alpha = 1
             cell.bookcover.image = nil
 //            cell.views.text = ""
 //            cell.author.text = ""
