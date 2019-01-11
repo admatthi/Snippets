@@ -65,11 +65,11 @@ class BookOverviewViewController: UIViewController {
 
         
         if selectedimagename != "" {
-            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
+            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews, "AmazonURL" : selectedurl])
             
         } else {
             
-            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": "StockPhoto", "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
+            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": "StockPhoto", "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews, "AmazonURL" : selectedurl])
         }
         
             

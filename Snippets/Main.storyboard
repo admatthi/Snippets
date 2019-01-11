@@ -861,7 +861,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBc-21-epb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13810" y="6187"/>
+            <point key="canvasLocation" x="-13474" y="6187"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="9vu-PR-2BY">
@@ -1756,7 +1756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4o-f4-hFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14782" y="6187"/>
+            <point key="canvasLocation" x="-14980" y="6187"/>
         </scene>
         <!--Read-->
         <scene sceneID="eqf-WC-6cX">
@@ -2480,7 +2480,7 @@
                                 <color key="trackTintColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQB-qa-L0G">
-                                <rect key="frame" x="0.0" y="83" width="375" height="584"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Reader" rowHeight="558" id="L11-6u-JEB" customClass="ReaderTableViewCell" customModule="Snippets" customModuleProvider="target">
@@ -2628,7 +2628,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CQB-qa-L0G" firstAttribute="top" secondItem="622-b1-FrP" secondAttribute="bottom" constant="12" id="5qz-7z-3rq"/>
+                            <constraint firstItem="CQB-qa-L0G" firstAttribute="top" secondItem="622-b1-FrP" secondAttribute="bottom" constant="41" id="5qz-7z-3rq"/>
                             <constraint firstItem="Nme-PX-6As" firstAttribute="top" secondItem="ReY-xY-xWf" secondAttribute="top" id="5ze-i5-flv"/>
                             <constraint firstItem="KY8-eM-vWb" firstAttribute="trailing" secondItem="Cei-bH-82Q" secondAttribute="trailing" constant="16" id="6TE-cv-KNB"/>
                             <constraint firstItem="JaN-qy-6S4" firstAttribute="leading" secondItem="622-b1-FrP" secondAttribute="trailing" constant="43" id="86Y-Cb-PyP"/>
@@ -2639,7 +2639,7 @@
                             <constraint firstItem="Jw1-pX-G33" firstAttribute="top" secondItem="wek-3b-SxM" secondAttribute="bottom" constant="14" id="KGc-OE-hZ5"/>
                             <constraint firstItem="KY8-eM-vWb" firstAttribute="bottom" secondItem="Cei-bH-82Q" secondAttribute="bottom" constant="27" id="NAk-cL-f72"/>
                             <constraint firstAttribute="trailing" secondItem="wek-3b-SxM" secondAttribute="trailing" id="P8x-wU-zwe"/>
-                            <constraint firstItem="CQB-qa-L0G" firstAttribute="bottom" secondItem="KY8-eM-vWb" secondAttribute="bottom" id="Rmz-j4-ko6"/>
+                            <constraint firstItem="CQB-qa-L0G" firstAttribute="bottom" secondItem="KY8-eM-vWb" secondAttribute="bottom" constant="-51" id="Rmz-j4-ko6"/>
                             <constraint firstItem="Koy-TD-RV9" firstAttribute="leading" secondItem="KY8-eM-vWb" secondAttribute="leading" constant="9" id="T8X-Vr-AeA"/>
                             <constraint firstItem="KY8-eM-vWb" firstAttribute="bottom" secondItem="pmU-0X-Ieh" secondAttribute="bottom" constant="15" id="WKj-r9-IT6"/>
                             <constraint firstItem="KY8-eM-vWb" firstAttribute="trailing" secondItem="JaN-qy-6S4" secondAttribute="trailing" constant="11" id="ZXH-MB-71E"/>
@@ -3817,10 +3817,10 @@
         <image name="eyeballs-1" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="civ-X1-5U7"/>
+        <segue reference="ls7-bq-jF8"/>
         <segue reference="3Q6-dz-lRU"/>
-        <segue reference="Sny-F5-hPa"/>
-        <segue reference="0uK-Nl-aPG"/>
+        <segue reference="Npu-fD-AVd"/>
+        <segue reference="geI-t6-Svl"/>
         <segue reference="Z3c-by-PbJ"/>
         <segue reference="VE2-wa-weF"/>
         <segue reference="CP6-za-CrR"/>

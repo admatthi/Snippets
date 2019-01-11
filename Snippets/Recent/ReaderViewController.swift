@@ -80,6 +80,8 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 //        quotetext.slideInFromRight()
 
+        let indexPath = NSIndexPath(row: 0, section: 0)
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
         
         nextcount()
         
@@ -185,7 +187,7 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         uid = (Auth.auth().currentUser?.uid)!
       
         if didpurchase {
-    ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews])
+    ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews, "AmazonURL" : selectedurl])
         
         } else {
             

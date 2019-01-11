@@ -19,6 +19,7 @@ var inprogresspressed = Bool()
 var searchterm = String()
 var librarydescriptions = [String:String]()
 var libraryviews = [String:String]()
+
 class LibViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     
@@ -228,7 +229,8 @@ override func viewDidAppear(_ animated: Bool) {
         librarydescriptions.removeAll()
         libraryviews.removeAll()
         collectionView.reloadData()
-        
+        libraryurls.removeAll()
+    
         queryforbookids { () -> () in
             
             self.queryforbookinfo()
@@ -349,6 +351,12 @@ override func viewDidAppear(_ animated: Bool) {
                     
                 }
                 
+                if var activityvalue4 = value?["AmazonURL"] as? String {
+                    
+                    libraryurls[each] = activityvalue4
+                    
+                }
+                
                 
                 if var activityvalue4 = value?["Description"] as? String {
                     
@@ -414,7 +422,8 @@ override func viewDidAppear(_ animated: Bool) {
             selecteddescription = librarydescriptions[librarybookids[indexPath.row]]!
             selectedgenre = librarygenres[librarybookids[indexPath.row]]!
             selectedbookid = librarysubids[librarybookids[indexPath.row]]!
-            
+            selectedurl = libraryurls[librarybookids[indexPath.row]]!
+
             selectedimage = librarycovers[librarybookids[indexPath.row]]!
             selectedimagename = libraryimagenames[librarybookids[indexPath.row]]!
             
