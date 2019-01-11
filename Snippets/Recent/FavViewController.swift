@@ -164,7 +164,6 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         } else {
             
-            self.performSegue(withIdentifier: "FavoritesToPurchase", sender: self)
            
         }
         

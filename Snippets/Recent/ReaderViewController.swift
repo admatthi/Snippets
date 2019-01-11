@@ -918,10 +918,14 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         if trimmedtext.count > 400 {
             
+            tableView.isScrollEnabled = true
+
             return UITableViewAutomaticDimension
             
         } else {
             
+            tableView.isScrollEnabled = false
+
             return 625
 
         }

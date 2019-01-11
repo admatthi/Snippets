@@ -239,7 +239,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
                         
                         self.collectionView.alpha = 1
                         self.collectionView.reloadData()
-                        
+                        self.collectionView.setContentOffset(CGPoint(x:0,y:0), animated: false)
+
                         
                         
                         completed()
@@ -731,7 +732,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             collectionView2.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
             
-            
+
 
             if selectedindex == 0 {
                 
@@ -858,7 +859,7 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         if collectionView.tag == 2 {
             
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
-        cell.bookcover.layer.cornerRadius = 2.0
+        cell.bookcover.layer.cornerRadius = 5.0
         cell.bookcover.layer.masksToBounds = true
         
             
@@ -875,11 +876,14 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         //        cell.finished.alpha = 0
         cell.genre.alpha = 0
         
+
         if seemoreimages.count > 0 {
             
             if selectedindex == 0 {
                 
-                cell.viewslabel.text = nineviews[intdayofweek + indexPath.row]
+//                cell.viewslabel.text = nineviews[intdayofweek + indexPath.row]
+                            cell.viewslabel.text = seemoreauthors[seemoreids[indexPath.row]]
+
 //                cell.readagain.alpha = 0
                 cell.dark.alpha = 1
                 cell.bookcover.image = seemoreimages[seemoreids[indexPath.row]]
@@ -887,16 +891,18 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
 
                 cell.views.alpha = 1
                 cell.viewslabel.alpha = 1
-                cell.eyeball.alpha = 1
+                cell.eyeball.alpha = 0
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.alpha = 0
                 
 //                cell.lockimage.alpha = 1
             } else {
 //                cell.readagain.alpha = 0
-                cell.viewslabel.text = nineviews.randomElement()
+//                cell.viewslabel.text = nineviews.randomElement()
+                cell.viewslabel.text = seemoreauthors[seemoreids[indexPath.row]]
+
                 cell.views.alpha = 1
-                cell.eyeball.alpha = 1
+                cell.eyeball.alpha = 0
                 cell.viewslabel.alpha = 1
                 cell.dark.alpha = 1
                 cell.views.text = seemoretitles[seemoreids[indexPath.row]]

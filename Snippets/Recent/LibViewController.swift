@@ -485,7 +485,7 @@ override func viewDidAppear(_ animated: Bool) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         
         
-        cell.bookcover.layer.cornerRadius = 2.0
+        cell.bookcover.layer.cornerRadius = 5.0
         cell.bookcover.layer.masksToBounds = true
         cell.views.alpha =  1
         cell.dark.alpha = 1
