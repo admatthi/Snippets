@@ -34,7 +34,6 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             // Do smth if user is not logged in
             
             tableView.reloadData()
-            tapsettings.alpha = 0
             
         } else {
             

@@ -43,7 +43,8 @@ class BookOverviewViewController: UIViewController {
             
         } else {
             
-            self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
+
+            self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
 
             
         }
@@ -74,7 +75,7 @@ class BookOverviewViewController: UIViewController {
         
             
         } else {
-                
+
                 self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
             }
     }

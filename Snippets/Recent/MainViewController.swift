@@ -25,7 +25,7 @@ class MainViewController: UITabBarController {
             
         } else {
             
-            self.performSegue(withIdentifier: "ExploreToPurchase8", sender: self)//
+//            self.performSegue(withIdentifier: "ExploreToPurchase8", sender: self)//
         }
         
 //        self.tabBar.barTintColor = darkbluee

@@ -72,9 +72,20 @@ class Settings2ViewController: UIViewController {
             UIApplication.shared.openURL(url as URL)
         }
     }
+    @IBOutlet weak var taplogout: UIButton!
+    @IBOutlet weak var taplogin: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if didpurchase {
+            
+            taplogin.alpha = 0
+            
+        } else {
+            
+            taplogout.alpha = 0
+            
+        }
         // Do any additional setup after loading the view.
     }
 

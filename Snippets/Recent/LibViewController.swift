@@ -209,11 +209,9 @@ override func viewDidAppear(_ animated: Bool) {
         
         tapback.alpha = 1
         purchased = true
-        uid = (Auth.auth().currentUser?.uid)!
         collectionView.alpha = 1
         upgradebutton.alpha = 0
         label1.alpha = 0
-        label2.alpha = 0
         label3.alpha = 0
         inprogresspressed = false
         searchterm = "InProgress"
@@ -231,12 +229,18 @@ override func viewDidAppear(_ animated: Bool) {
         collectionView.reloadData()
         libraryurls.removeAll()
     
-        queryforbookids { () -> () in
-            
-            self.queryforbookinfo()
-            
-            
+        if didpurchase {
+        
+        uid = (Auth.auth().currentUser?.uid)!
+
+            queryforbookids { () -> () in
+                
+                self.queryforbookinfo()
+                
+                
+            }
         }
+    
         
         refreshControl.attributedTitle = NSAttributedString(string: "")
         refreshControl.addTarget(self, action: #selector(LibViewController.refresh), for: UIControlEvents.valueChanged)

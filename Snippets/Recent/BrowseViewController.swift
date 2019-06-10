@@ -165,10 +165,10 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"
-        
+//
         dayofmonth = dateFormatter.string(from: now)
         intdayofweek = Int(dayofmonth)!
-//        dayofmonth = "29"
+//        dayofmonth = "15"
 
         var screenSize = collectionView.bounds
         var screenWidth = screenSize.width
@@ -867,7 +867,8 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
             
         cell.views.alpha =  0
         
-        cell.dark.alpha = 0
+        cell.dark.alpha = 1
+        
         //        cell.selectionStyle = .none
         
         //        cell.layer.cornerRadius = 10.0
@@ -876,12 +877,18 @@ class BrowseViewController: UIViewController, UICollectionViewDataSource, UIColl
         //        cell.finished.alpha = 0
         cell.genre.alpha = 0
         
+            if seemoreimages[seemoreids[indexPath.row]] == nil {
+                
+                seemoreids.remove(at: indexPath.row)
+            }
 
         if seemoreimages.count > 0 {
             
             if selectedindex == 0 {
                 
 //                cell.viewslabel.text = nineviews[intdayofweek + indexPath.row]
+                
+                
                             cell.viewslabel.text = seemoreauthors[seemoreids[indexPath.row]]
 
 //                cell.readagain.alpha = 0

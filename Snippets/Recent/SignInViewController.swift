@@ -76,7 +76,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     
                 } else {
                     
-                    didpurchase = false
+                    didpurchase = true
                     self.performSegue(withIdentifier: "LoginToExplore5", sender: self)
                     
                 }

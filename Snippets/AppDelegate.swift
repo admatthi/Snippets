@@ -14,7 +14,6 @@ import StoreKit
 import UserNotifications
 import FirebaseInstanceID
 import FirebaseMessaging
-import UXCam
 import AVFoundation
 import Purchases
 
@@ -55,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKAppEvents.activateApp()
         
-        UXCam.start(withKey: "mdecypu3fp8w6kp")
         purchases = RCPurchases(apiKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw")
 
         purchases!.delegate = self
@@ -75,15 +73,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Auth.auth().currentUser == nil {
 
-            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//
+//            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Teaser") as UIViewController
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//            self.window?.rootViewController = initialViewControlleripad
+//            self.window?.makeKeyAndVisible()//
 
-
-            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Teaser") as UIViewController
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = initialViewControlleripad
-            self.window?.makeKeyAndVisible()//
-
-
+            
+            var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+            
+            
+            tabBar.selectedIndex = 0
+            
         }  else {
 
             uid = (Auth.auth().currentUser?.uid)!
@@ -116,18 +119,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     
                     tabBar.selectedIndex = 0
-                    
-                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    
-                    
-                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as UIViewController
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                    self.window?.rootViewController = initialViewControlleripad
-                    self.window?.makeKeyAndVisible()
+//                    
+//                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                    
+//                    
+//                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as UIViewController
+//                    self.window = UIWindow(frame: UIScreen.main.bounds)
+//                    self.window?.rootViewController = initialViewControlleripad
+//                    self.window?.makeKeyAndVisible()
                     
                 } else {
                     
-                    didpurchase = false
+                    didpurchase = true
+                    
                     var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                     
                     tabBar.selectedIndex = 0
@@ -159,13 +163,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
 
-        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarBuyer : UITabBarController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as! UITabBarController
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = tabBarBuyer
-        
-        self.window?.makeKeyAndVisible()
+                        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            
+                        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Register") as UIViewController
+                        self.window = UIWindow(frame: UIScreen.main.bounds)
+                        self.window?.rootViewController = initialViewControlleripad
+                        self.window?.makeKeyAndVisible()//
             
         }
         

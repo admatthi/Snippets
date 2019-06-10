@@ -57,7 +57,7 @@ class ThreeButtonsViewController: UIViewController {
             }
         
         } else {
-            
+
             self.performSegue(withIdentifier: "ThreeToSale", sender: self)
 
         }

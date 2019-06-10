@@ -184,14 +184,14 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         favorites.removeAll()
         
-        uid = (Auth.auth().currentUser?.uid)!
       
         if didpurchase {
-    ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews, "AmazonURL" : selectedurl])
+            uid = (Auth.auth().currentUser?.uid)!
+ ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews, "AmazonURL" : selectedurl])
         
         } else {
-            
-            
+    
+    
         }
         titlelabel.text = selectedtitle
         authorlabel.text = selectedauthor
@@ -392,9 +392,15 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             }
             
-        ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).removeValue()
+            if uid != "" {
+                
+                        ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).removeValue()
+                
+                            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription, "Views" : selectedviews])
+                
+                
+            }
 
-            ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription, "Views" : selectedviews])
 
             selectedimage = cover.image!
             FBSDKAppEvents.logEvent("Book Completed")
