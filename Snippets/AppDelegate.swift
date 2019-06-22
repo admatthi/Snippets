@@ -13,7 +13,6 @@ import FBSDKCoreKit
 import StoreKit
 import UserNotifications
 import FirebaseInstanceID
-import FirebaseMessaging
 import AVFoundation
 import Purchases
 
@@ -37,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var purchases: RCPurchases?
+    var purchases: Purchases?
 
     weak var purchasesdelegate : SnippetsPurchasesDelegate?
 
@@ -52,9 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        FBSDKAppEvents.activateApp()
+        AppEvents.activateApp()
         
-        purchases = RCPurchases(apiKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw")
+        purchases = Purchases.configure(withAPIKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw", appUserID: nil)
 
         purchases!.delegate = self
         
@@ -102,20 +101,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func queryforinfo() {
         
-        var functioncounter = 0
+        _ = 0
         
         ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            var value = snapshot.value as? NSDictionary
+            let value = snapshot.value as? NSDictionary
             
-            if var purchased = value?["Purchased"] as? String {
+            if let purchased = value?["Purchased"] as? String {
                 
                 if purchased == "Yes" {
                     
                     didpurchase = true
                     
                     
-                    var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                     
                     
                     tabBar.selectedIndex = 0
@@ -132,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     didpurchase = true
                     
-                    var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                     
                     tabBar.selectedIndex = 0
                     
@@ -142,7 +141,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 
                 didpurchase = false
-                var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+                let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
                 
                 tabBar.selectedIndex = 0
              
@@ -233,9 +232,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Failed to register: \(error)")
     }
     
-    func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
-        print(remoteMessage.appData)
-    }
+
     
 }
 
@@ -332,8 +329,8 @@ class SegueFromTop: UIStoryboardSegue
 }
 
 
-extension AppDelegate: RCPurchasesDelegate {
-    func purchases(_ purchases: RCPurchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: RCPurchaserInfo) {
+extension AppDelegate: PurchasesDelegate {
+    func purchases(_ purchases: Purchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: PurchaserInfo) {
         
         self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
         
@@ -345,26 +342,26 @@ extension AppDelegate: RCPurchasesDelegate {
         
     }
 
-    func purchases(_ purchases: RCPurchases, receivedUpdatedPurchaserInfo purchaserInfo: RCPurchaserInfo) {
+    func purchases(_ purchases: Purchases, receivedUpdatedPurchaserInfo purchaserInfo: PurchaserInfo) {
 //        handlePurchaserInfo(purchaserInfo)
         
         print(purchaserInfo)
         
     }
 
-    func purchases(_ purchases: RCPurchases, failedToUpdatePurchaserInfoWithError error: Error) {
+    func purchases(_ purchases: Purchases, failedToUpdatePurchaserInfoWithError error: Error) {
         print(error)
         
         tryingtopurchase = false
     }
 
-    func purchases(_ purchases: RCPurchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
+    func purchases(_ purchases: Purchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
         print(failureReason)
         
         tryingtopurchase = false
     }
 
-    func purchases(_ purchases: RCPurchases, restoredTransactionsWith purchaserInfo: RCPurchaserInfo) {
+    func purchases(_ purchases: Purchases, restoredTransactionsWith purchaserInfo: PurchaserInfo) {
 //        handlePurchaserInfo(purchaserInfo)
         
         print("restored")
@@ -374,7 +371,7 @@ extension AppDelegate: RCPurchasesDelegate {
         
     }
 
-    func purchases(_ purchases: RCPurchases, failedToRestoreTransactionsWithError error: Error) {
+    func purchases(_ purchases: Purchases, failedToRestoreTransactionsWithError error: Error) {
         print(error)
     }
 }

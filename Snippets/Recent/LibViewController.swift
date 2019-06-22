@@ -81,7 +81,7 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
 //        self.becomeFirstResponder() // To get shake gesture
 //
 //        //        freebackground.layer.cornerRadius = 5.0
-//        FBSDKAppEvents.logEvent("Library Viewed")
+//        AppEvents.logEvent("Library Viewed")
 //
 //        self.loaddefaultvalues()
 //
@@ -134,7 +134,6 @@ class LibViewController: UIViewController, UICollectionViewDataSource, UICollect
         self.becomeFirstResponder() // To get shake gesture
         
         //        freebackground.layer.cornerRadius = 5.0
-        FBSDKAppEvents.logEvent("Library Viewed")
         
         self.loaddefaultvalues()
         

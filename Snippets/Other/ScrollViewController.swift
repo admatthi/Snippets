@@ -313,7 +313,6 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription, "Views" : selectedviews])
             
             //            selectedimage = coverimage.image!
-            FBSDKAppEvents.logEvent("Book Completed")
             
             //            self.performSegue(withIdentifier: "ReaderToCompleted", sender: self)
             
@@ -802,7 +801,6 @@ class ScrollViewController: UIViewController, UITableViewDelegate, UITableViewDa
         selectedurl = seemoreurls[seemoreids[buttonTag]]!
         if selectedurl != "" {
             
-            FBSDKAppEvents.logEvent("Buy Tapped")
             
             if let url = NSURL(string: "\(selectedurl)"
                 ) {

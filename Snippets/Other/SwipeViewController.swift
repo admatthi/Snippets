@@ -84,7 +84,6 @@ class SwipeViewController: UIViewController {
         
         if selectedurl != "" {
             
-            FBSDKAppEvents.logEvent("Buy Tapped")
             
             if let url = NSURL(string: "\(selectedurl)"
                 ) {
@@ -154,7 +153,6 @@ class SwipeViewController: UIViewController {
 //            ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription, "Views" : selectedviews])
             
 //            selectedimage = coverimage.image!
-            FBSDKAppEvents.logEvent("Book Completed")
             
 //            self.performSegue(withIdentifier: "ReaderToCompleted", sender: self)
             
@@ -474,7 +472,6 @@ class SwipeViewController: UIViewController {
         
         tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         
-        FBSDKAppEvents.logEvent("Read Book Viewed")
         // Do any additional setup after loading the view.
     }
     

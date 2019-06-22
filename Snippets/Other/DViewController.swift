@@ -55,7 +55,6 @@ class DViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
-        FBSDKAppEvents.logEvent("Fourth Screen")
         
  
         

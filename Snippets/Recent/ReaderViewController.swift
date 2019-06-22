@@ -51,7 +51,6 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if selectedurl != "" {
             
-            FBSDKAppEvents.logEvent("Buy Tapped")
 
             if let url = NSURL(string: "\(selectedurl)"
                 ) {
@@ -203,7 +202,6 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 
         
-        FBSDKAppEvents.logEvent("Read Book Viewed")
 //        wtf()
         
         
@@ -403,7 +401,6 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
             selectedimage = cover.image!
-            FBSDKAppEvents.logEvent("Book Completed")
 
             self.performSegue(withIdentifier: "ReaderToCompleted", sender: self)
 

@@ -20,103 +20,217 @@ import Purchases
 
 var myblue2 = UIColor(red:0.19, green:0.39, blue:1.00, alpha:1.0)
 
-class SaleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    var attrs = [
-        NSAttributedStringKey.foregroundColor : UIColor.lightGray,
-        NSAttributedStringKey.underlineStyle : 1] as [NSAttributedStringKey : Any]
-    
-    var attrs2 = [NSAttributedStringKey.font : UIFont(name: "AvenirNext-Bold", size: 17.0),
-                  NSAttributedStringKey.foregroundColor : UIColor.black] as [NSAttributedStringKey : Any]
-    
-    var attributedString = NSMutableAttributedString(string:"")
-    var attributedString2 = NSMutableAttributedString(string:"")
-    
-    
-    @IBOutlet weak var progressView: UIProgressView!
-    
+class SaleViewController: UIViewController  {
 
     
-    var purchases = RCPurchases(apiKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw")
-    
-    @IBAction func tapLogin(_ sender: Any) {
-    }
-    
+    @IBOutlet weak var tapcontinue: UIButton!
     override func viewDidAppear(_ animated: Bool) {
         
-        savetext2.flash()
+        tapcontinue.flash()
     }
-    @IBAction func tapBuyWeekly(_ sender: Any) {
+    @IBAction func tapBuyLifetimely(_ sender: Any) {
         
-        FBSDKAppEvents.logEvent("Weekly Pressed")
         
         //        purchase(purchase: threedaytrial)
         
         //        let delegate = UIApplication.shared.delegate as! AppDelegate
         
-        purchases.entitlements { entitlements in
-            guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Weekly"] else { return }
-            guard let product = monthly.activeProduct else { return }
-            self.purchases.makePurchase(product)
-            
-            
-        }
+      
         
-    }
-    @IBOutlet weak var tapyearly: UIButton!
-    @IBAction func tapBuyYearly(_ sender: Any) {
-        
-        FBSDKAppEvents.logEvent("Yearly Pressed")
-        
-        //        purchase(purchase: threedaytrial)
-        
-        //        let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        purchases.entitlements { entitlements in
-            guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Yearly"] else { return }
-            guard let product = monthly.activeProduct else { return }
-            self.purchases.makePurchase(product)
-            
-            
-        }
-    }
-
-    @IBAction func tapBuy(_ sender: Any) {
-        
-        FBSDKAppEvents.logEvent("Monthly Pressed")
-        
-        //        purchase(purchase: threedaytrial)
-        
-        //        let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        purchases.entitlements { entitlements in
-            guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Monthly"] else { return }
-            guard let product = monthly.activeProduct else { return }
-            self.purchases.makePurchase(product)
-            
-            
-        }
     }
     
+    var month = Bool()
+    var year = Bool()
+    var Lifetime = Bool()
+    
+    var purchases = Purchases.configure(withAPIKey: "LaEomxfMQACzbGFnmmffVNcCEopCcCMc", appUserID: nil)
+
+    @IBAction func tapLifetime(_ sender: Any) {
+        
+        Lifetime = true
+        month = false
+        year = false
+        tapLifetime.setImage(UIImage(named: "LifeTimeT"), for: .normal)
+        tapmonth.setImage(UIImage(named:"Months"), for: .normal)
+        tapyear.setImage(UIImage(named:"Year"), for: .normal)
+        
+    }
+    
+    @IBAction func tapYear(_ sender: Any) {
+        
+        year = true
+        month = false
+        Lifetime = false
+        tapLifetime.setImage(UIImage(named: "Lifetime"), for: .normal)
+        tapmonth.setImage(UIImage(named:"Months"), for: .normal)
+        tapyear.setImage(UIImage(named:"YearT"), for: .normal)
+    }
+    var counter = Int()
+    
+    @IBOutlet weak var valueimage: UIImageView!
+    @IBAction func tapMonth(_ sender: Any) {
+        
+        month = true
+        year = false
+        Lifetime = false
+        tapLifetime.setImage(UIImage(named: "Lifetime"), for: .normal)
+        tapmonth.setImage(UIImage(named:"MonthsT"), for: .normal)
+        tapyear.setImage(UIImage(named:"Year"), for: .normal)
+    }
+
+    @IBOutlet weak var tapLifetime: UIButton!
+    
+    @IBOutlet weak var popular: UIImageView!
+    @IBOutlet weak var tapyear: UIButton!
+    @IBOutlet weak var tapmonth: UIButton!
+    @IBAction func tapContinue(_ sender: Any) {
+        
+        if month {
+            
+            purchases.entitlements { (entitlements, error) in
+                guard let pro = entitlements?["premium"] else { return }
+                guard let monthly = pro.offerings["monthly"] else { return }
+                guard let product = monthly.activeProduct else { return }
+                
+                self.purchases.makePurchase(product, { (transaction, purchaserInfo, error, cancelled) in
+                    if let purchaserInfo = purchaserInfo {
+                        
+                        print("x")
+                        
+                        
+                        if purchaserInfo.activeEntitlements.contains("my_entitlement_identifier") {
+                            // Unlock that great "pro" content
+                            
+                            
+                            
+                            
+//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
+                            
+                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                            
+                            print("n")
+                        } else {
+                            
+                            
+//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
+                            
+                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                            
+                            print("y")
+                        }
+                        
+                    } else {
+                        
+                        //                    self.performSegue(withIdentifier: "PayToHome", sender: self)
+                        //
+                        //                    print("n")
+                    }
+                })
+                
+            }
+        }
+        if Lifetime {
+            
+            
+            purchases.entitlements { (entitlements, error) in
+                guard let pro = entitlements?["premium"] else { return }
+                guard let monthly = pro.offerings["Lifetimely"] else { return }
+                guard let product = monthly.activeProduct else { return }
+                
+                self.purchases.makePurchase(product, { (transaction, purchaserInfo, error, cancelled) in
+                    if let purchaserInfo = purchaserInfo {
+                        
+                        print("x")
+                        
+                        
+                        if purchaserInfo.activeEntitlements.contains("my_entitlement_identifier") {
+                            // Unlock that great "pro" content
+                            
+                            
+                            
+                            
+//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
+                            
+                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                            
+                            print("n")
+                        } else {
+                            
+                            
+//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
+                            
+                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                            
+                            print("y")
+                        }
+                        
+                    } else {
+                        
+                        //                    self.performSegue(withIdentifier: "PayToHome", sender: self)
+                        //
+                        //                    print("n")
+                    }
+                })
+                
+            }
+        }
+        
+        if year {
+            
+            purchases.entitlements { (entitlements, error) in
+                guard let pro = entitlements?["premium"] else { return }
+                guard let monthly = pro.offerings["yearly"] else { return }
+                guard let product = monthly.activeProduct else { return }
+                
+                self.purchases.makePurchase(product, { (transaction, purchaserInfo, error, cancelled) in
+                    if let purchaserInfo = purchaserInfo {
+                        
+                        print("x")
+                        
+                        
+                        if purchaserInfo.activeEntitlements.contains("my_entitlement_identifier") {
+                            // Unlock that great "pro" content
+                            
+                            
+//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
+                            
+                            
+                            
+                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                            
+                            print("n")
+                        } else {
+                            
+                            
+//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
+                            
+                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                            
+                            print("y")
+                        }
+                        
+                    } else {
+                        
+                        //                    self.performSegue(withIdentifier: "PayToHome", sender: self)
+                        //
+                        //                    print("n")
+                    }
+                })
+                
+            }
+        }
+    }
     
     @IBAction func tapBack(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
     }
-    @IBOutlet weak var collectionView: UICollectionView!
     var ref: DatabaseReference?
     var category = String()
     
     var bookmarktapped = Bool()
     
-    
-    @IBOutlet weak var cover: UIImageView!
-    @IBOutlet weak var authorlabel: UILabel!
-    @IBOutlet weak var titlelabel: UILabel!
-    
+
     @IBAction func tapTerms(_ sender: Any) {
         
         if let url = NSURL(string: "https://www.mysnippetsapp.weebly.com/privacy-policy.html"
@@ -126,175 +240,40 @@ class SaleViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
-    @IBOutlet weak var savetext2: UIButton!
-    @IBAction func savetext(_ sender: Any) {
-    }
-    @IBOutlet weak var tapw1: UIButton!
-    @IBOutlet weak var tapm1: UIButton!
-    @IBOutlet weak var tapy1: UIButton!
-    @IBOutlet weak var tapterms: UIButton!
-    @IBOutlet weak var tapbuy: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
         
-     
-        savetext2.layer.cornerRadius = 5.0
-        savetext2.layer.masksToBounds = true
-//
-//        tapbuy.layer.borderWidth = 2.0
-//        tapbuy.layer.cornerRadius = 5.0
-//        tapbuy.layer.masksToBounds = true
-//        tapyearly.layer.cornerRadius = 5.0
-//        tapyearly.layer.masksToBounds = true
+        year = true
         
-        tapy1.layer.cornerRadius = 30.0
-        tapy1.layer.masksToBounds = true
-        tapm1.layer.cornerRadius = 30.0
-        tapm1.layer.masksToBounds = true
-        tapw1.layer.cornerRadius = 30.0
-        tapw1.layer.masksToBounds = true
-        tapterms.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        
-        let buttonTitleStr = NSMutableAttributedString(string:"By continuing, you accept our Terms of Use & Privacy Policy", attributes:attrs)
-        attributedString.append(buttonTitleStr)
-        tapterms.setAttributedTitle(attributedString, for: .normal)
-        tapterms.setTitleColor(.black, for: .normal)
-        
-        
-        
-        //        whitelabel.layer.cornerRadius = 10.0
-        //        whitelabel.layer.masksToBounds = true
-        
-//        titlelabel.text = selectedtitle
-//        authorlabel.text = selectedauthor
-//        cover.image = selectedimage
-//        cover.layer.cornerRadius = 5.0
-//        cover.layer.masksToBounds = true
-        
-        
-//        whatthehell()
-        
-        sixbookcovers.removeAll()
-        
-        sixbookcovers.append(UIImage(named: "B1")!)
-        sixbookcovers.append(UIImage(named: "B2")!)
-        sixbookcovers.append(UIImage(named: "B3")!)
-        sixbookcovers.append(UIImage(named: "B4")!)
-        sixbookcovers.append(UIImage(named: "B5")!)
-        sixbookcovers.append(UIImage(named: "B6")!)
-        sixbookcovers.append(UIImage(named: "B7")!)
-        sixbookcovers.append(UIImage(named: "B8")!)
-        sixbookcovers.append(UIImage(named: "B9")!)
-        sixbookcovers.append(UIImage(named: "B10")!)
-        sixbookcovers.append(UIImage(named: "B11")!)
-        sixbookcovers.append(UIImage(named: "B12")!)
-        sixbookcovers.append(UIImage(named: "B13")!)
-        sixbookcovers.append(UIImage(named: "B14")!)
-        sixbookcovers.append(UIImage(named: "B15")!)
-        sixbookcovers.append(UIImage(named: "B16")!)
-        sixbookcovers.append(UIImage(named: "B17")!)
-        sixbookcovers.append(UIImage(named: "B18")!)
-        sixbookcovers.append(UIImage(named: "B19")!)
-        sixbookcovers.append(UIImage(named: "B20")!)
-
-        sixbookcovers.append(UIImage(named: "F1")!)
-        sixbookcovers.append(UIImage(named: "F2")!)
-        sixbookcovers.append(UIImage(named: "F3")!)
-        sixbookcovers.append(UIImage(named: "F4")!)
-        sixbookcovers.append(UIImage(named: "F5")!)
-        sixbookcovers.append(UIImage(named: "F6")!)
-        sixbookcovers.append(UIImage(named: "F7")!)
-        sixbookcovers.append(UIImage(named: "F8")!)
-        sixbookcovers.append(UIImage(named: "F9")!)
-        sixbookcovers.append(UIImage(named: "F10")!)
-
-        
-        sixbookcovers.append(UIImage(named: "H1")!)
-        sixbookcovers.append(UIImage(named: "H2")!)
-        sixbookcovers.append(UIImage(named: "H3")!)
-        sixbookcovers.append(UIImage(named: "H4")!)
-        sixbookcovers.append(UIImage(named: "H5")!)
-        sixbookcovers.append(UIImage(named: "H6")!)
-        sixbookcovers.append(UIImage(named: "H7")!)
-        sixbookcovers.append(UIImage(named: "H8")!)
-        sixbookcovers.append(UIImage(named: "H9")!)
-        sixbookcovers.append(UIImage(named: "H10")!)
-        sixbookcovers.append(UIImage(named: "H11")!)
-        sixbookcovers.append(UIImage(named: "H12")!)
-        
-        sixbookcovers.append(UIImage(named: "H13")!)
-        sixbookcovers.append(UIImage(named: "H14")!)
-        sixbookcovers.append(UIImage(named: "H15")!)
-        sixbookcovers.append(UIImage(named: "H16")!)
-        sixbookcovers.append(UIImage(named: "H17")!)
-        sixbookcovers.append(UIImage(named: "H18")!)
-        sixbookcovers.append(UIImage(named: "H19")!)
-        sixbookcovers.append(UIImage(named: "H20")!)
-        sixbookcovers.append(UIImage(named: "H21")!)
-        sixbookcovers.append(UIImage(named: "H22")!)
-        sixbookcovers.append(UIImage(named: "H23")!)
-        sixbookcovers.append(UIImage(named: "H24")!)
-        
-        sixbookcovers.append(UIImage(named: "M1")!)
-        sixbookcovers.append(UIImage(named: "M2")!)
-        sixbookcovers.append(UIImage(named: "M3")!)
-        sixbookcovers.append(UIImage(named: "M4")!)
-        sixbookcovers.append(UIImage(named: "M5")!)
-        sixbookcovers.append(UIImage(named: "M6")!)
-        sixbookcovers.append(UIImage(named: "M8")!)
-        sixbookcovers.append(UIImage(named: "M9")!)
-        sixbookcovers.append(UIImage(named: "M10")!)
-        sixbookcovers.append(UIImage(named: "M11")!)
-        sixbookcovers.append(UIImage(named: "M12")!)
-        sixbookcovers.append(UIImage(named: "M13")!)
-        sixbookcovers.append(UIImage(named: "M14")!)
-        sixbookcovers.append(UIImage(named: "M15")!)
-        sixbookcovers.append(UIImage(named: "M16")!)
-        sixbookcovers.append(UIImage(named: "M17")!)
-        sixbookcovers.append(UIImage(named: "M18")!)
-        sixbookcovers.append(UIImage(named: "M19")!)
-        sixbookcovers.append(UIImage(named: "M20")!)
-        sixbookcovers.append(UIImage(named: "M21")!)
-        sixbookcovers.append(UIImage(named: "M22")!)
-        sixbookcovers.append(UIImage(named: "M23")!)
-        sixbookcovers.append(UIImage(named: "M24")!)
-        
-        
-        sixbookcovers.append(UIImage(named: "MH1")!)
-        sixbookcovers.append(UIImage(named: "MH2")!)
-        sixbookcovers.append(UIImage(named: "MH3")!)
-        sixbookcovers.append(UIImage(named: "MH4")!)
-        sixbookcovers.append(UIImage(named: "MH5")!)
-        sixbookcovers.append(UIImage(named: "MH6")!)
-        sixbookcovers.append(UIImage(named: "MH7")!)
-        sixbookcovers.append(UIImage(named: "MH8")!)
-        sixbookcovers.append(UIImage(named: "MH9")!)
-        sixbookcovers.append(UIImage(named: "MH10")!)
-        sixbookcovers.append(UIImage(named: "MH11")!)
-        sixbookcovers.append(UIImage(named: "MH12")!)
-        
-        
-    }
-
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return sixbookcovers.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    
+    @IBOutlet weak var counterimage: UIImageView!
+
+    @objc func shownext (){
         
-        
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
+        if counter < 8 {
             
-        cell.bookcover.layer.cornerRadius = 10.0
-        cell.bookcover.layer.masksToBounds = true
-            cell.bookcover.image = sixbookcovers[indexPath.row]
+            counter += 1
+            valueimage.image = UIImage(named: "counter\(counter)")
             
-            return cell
+            counterimage.image = UIImage(named: "valuecounter\(counter)")
+            
+        } else {
+            
+            counter = 1
+            counter += 1
+            valueimage.image = UIImage(named: "counter\(counter)")
+            
+            counterimage.image = UIImage(named: "valuecounter\(counter)")
         }
+        
+    }
+
     
 }
 

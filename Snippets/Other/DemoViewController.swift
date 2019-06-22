@@ -81,7 +81,6 @@ class DemoViewController: UIViewController {
         
         bookmarktapped = false
         
-        FBSDKAppEvents.logEvent("Demo Viewed")
         //        wtf()
         
         whatthehell()

@@ -29,7 +29,6 @@ class A1ViewController: UIViewController, UICollectionViewDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FBSDKAppEvents.logEvent("Sale Screen")
 
 
         

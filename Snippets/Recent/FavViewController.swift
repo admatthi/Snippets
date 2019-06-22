@@ -26,7 +26,6 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         ref = Database.database().reference()
         
         view.bringSubview(toFront: emptylabel)
-        FBSDKAppEvents.logEvent("Favorites Viewed")
         
         tableView.reloadData()
         

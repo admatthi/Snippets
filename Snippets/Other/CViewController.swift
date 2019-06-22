@@ -76,7 +76,6 @@ class CViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FBSDKAppEvents.logEvent("Third Screen")
         
         b1pressed = true
         b2pressed = true

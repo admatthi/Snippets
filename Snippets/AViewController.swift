@@ -25,7 +25,6 @@ class AViewController: UIViewController {
         newuser = true
         // Do any additional setup after loading the view.
         
-        FBSDKAppEvents.logEvent("First Screen")
         
     }
     

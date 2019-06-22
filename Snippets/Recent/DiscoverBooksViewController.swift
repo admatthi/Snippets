@@ -172,7 +172,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         self.becomeFirstResponder() // To get shake gesture
         
 //        freebackground.layer.cornerRadius = 5.0
-        FBSDKAppEvents.logEvent("Discover Viewed")
 //        activityIndicator.color = .white
         // Do any additional setup after loading the view.
         
@@ -881,8 +880,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("For You Tapped")
-
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
             
@@ -904,7 +901,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        FBSDKAppEvents.logEvent("Health, Fitness, & Dieting Tapped")
 
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -927,7 +923,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        FBSDKAppEvents.logEvent("Business & Investing Tapped")
 
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -950,7 +945,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        FBSDKAppEvents.logEvent("Sex & Relationships Tapped")
 
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -972,7 +966,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        FBSDKAppEvents.logEvent("Productivity Tapped")
 
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -994,7 +987,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        FBSDKAppEvents.logEvent("Mental Health Tapped")
 
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -1018,7 +1010,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        FBSDKAppEvents.logEvent("Psychology Tapped")
 
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
@@ -1429,7 +1420,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedimage = onebookcovers[indexPath.row]
                 selectedviews = oneviews[indexPath.row]
                 selectedgenre = "Top Sellers"
-                FBSDKAppEvents.logEvent("Top Sellers Tapped")
                 selectedimagename = "BS\(indexPath.row+1)"
 
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
@@ -1444,7 +1434,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     
                     selectedviews = twoviews[indexPath.row]
                     selectedgenre = "Biography & Memoir"
-                    FBSDKAppEvents.logEvent("Biography Tapped")
                     selectedimagename = "M\(indexPath.row+1)"
 
                     self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
@@ -1456,7 +1445,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
        
                         selectedimage = threebookcovers[indexPath.row]
                      selectedgenre = "For You"
-                        FBSDKAppEvents.logEvent("For You Tapped")
                         selectedimagename = "F\(indexPath.row+1)"
 
                         selectedviews = threeviews[indexPath.row]
@@ -1470,7 +1458,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                             selectedgenre = "Health, Fitness, & Dieting"
                             selectedimage = fourbookcovers[indexPath.row]
                      selectedviews = fourviews[indexPath.row]
-                            FBSDKAppEvents.logEvent("Health, Fitness, & Dieting Tapped")
                             selectedimagename = "H\(indexPath.row+1)"
 
                             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
@@ -1483,7 +1470,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                 selectedgenre = "Business & Investing"
                                 selectedimage = fivebookcovers[indexPath.row]
        selectedviews = fiveviews[indexPath.row]
-                                FBSDKAppEvents.logEvent("Business & Investing Tapped")
                                 selectedimagename = "B\(indexPath.row+1)"
                                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                                 
@@ -1494,7 +1480,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                     selectedbookid = sixids[indexPath.row]
                                     selectedimage = sixbookcovers[indexPath.row]
                                     selectedgenre = "Sex & Relationships"
-                                    FBSDKAppEvents.logEvent("Sex & Relationships Tapped")
                                     selectedimagename = "S\(indexPath.row+1)"
 
                                     selectedviews = sixviews[indexPath.row]
@@ -1508,7 +1493,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
  
                                         selectedimage = sevenbookcovers[indexPath.row]
                                         selectedgenre = "Productivity"
-                                        FBSDKAppEvents.logEvent("Productivity Tapped")
                                         selectedimagename = "PR\(indexPath.row+1)"
 
                                         selectedviews = sevenviews[indexPath.row]
@@ -1521,7 +1505,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                             selectedbookid = eightids[indexPath.row]
                                             selectedimage = eightbookcovers[indexPath.row]
                                             selectedgenre = "Mental Health"
-                                            FBSDKAppEvents.logEvent("Mental Health Tapped")
                                             selectedimagename = "MH\(indexPath.row+1)"
 
                                             selectedviews = eightviews[indexPath.row]
@@ -1536,7 +1519,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                                                 selectedimage = ninebookcovers[indexPath.row]
                                                 selectedgenre = "Psychology"
                                                 selectedviews = nineviews[indexPath.row]
-                                                FBSDKAppEvents.logEvent("Psychology Tapped")
                                                 selectedimagename = "PS\(indexPath.row+1)"
                                                 if psychologylabel.text == "For Diana" {
                                                     

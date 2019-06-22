@@ -158,7 +158,6 @@ class BViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FBSDKAppEvents.logEvent("Second Screen")
         
         b1pressed = true
         b2pressed = true

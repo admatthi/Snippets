@@ -40,26 +40,16 @@ class NewPurchaseViewController: UIViewController {
         })
     }
     
-    var purchases = RCPurchases(apiKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw")
 
     @IBAction func tapLogin(_ sender: Any) {
     }
     @IBAction func tapBuy(_ sender: Any) {
         
-        FBSDKAppEvents.logEvent("Yearly Pressed")
         
         //        purchase(purchase: threedaytrial)
         
         //        let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        purchases.entitlements { entitlements in
-            guard let pro = entitlements?["Subscriptions"] else { return }
-            guard let monthly = pro.offerings["Weekly"] else { return }
-            guard let product = monthly.activeProduct else { return }
-            self.purchases.makePurchase(product)
-            
-            
-        }
+ 
     }
 
  

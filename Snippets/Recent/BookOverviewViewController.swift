@@ -115,7 +115,6 @@ class BookOverviewViewController: UIViewController {
         cover.layer.cornerRadius = 2.0
         cover.layer.masksToBounds = true
         
-        FBSDKAppEvents.logEvent("Book Overview Viewed")
         
      
         // Do any additional setup after loading the view.
