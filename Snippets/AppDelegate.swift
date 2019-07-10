@@ -57,6 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         purchases!.delegate = self
         
+        Purchases.debugLogsEnabled = true
+        
+        
 //        
 //        UITabBar.appearance().barTintColor = UIColor.black
 //        UITabBar.appearance().tintColor = UIColor.black
@@ -156,11 +159,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func letsgo() {
         
 
-        if Auth.auth().currentUser != nil {
+//        if Auth.auth().currentUser != nil {
 
             didpurchase = true
 
-    ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+        Auth.auth().signInAnonymously() { (authResult, error) in
+            // ...
+   
+            uid = (Auth.auth().currentUser?.uid)!
+
+            
+            ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
 
                         let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -170,7 +180,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         self.window?.rootViewController = initialViewControlleripad
                         self.window?.makeKeyAndVisible()//
             
+            
         }
+            
+//        }
         
     }
 

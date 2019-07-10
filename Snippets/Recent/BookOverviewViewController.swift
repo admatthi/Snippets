@@ -29,12 +29,7 @@ class BookOverviewViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        if dailypick {
-            
-            self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
-
-            
-        } else {
+     
             
         if didpurchase  {
             
@@ -44,12 +39,11 @@ class BookOverviewViewController: UIViewController {
         } else {
             
 
-            self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+            self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
 
             
         }
     
-        }
     }
     
     @IBAction func tapcopy(_ sender: Any) {

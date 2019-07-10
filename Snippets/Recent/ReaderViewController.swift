@@ -185,6 +185,8 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
       
         if didpurchase {
+            
+            
             uid = (Auth.auth().currentUser?.uid)!
  ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "No", "Description" : selecteddescription, "Views" : selectedviews, "AmazonURL" : selectedurl])
         

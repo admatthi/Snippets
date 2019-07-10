@@ -43,7 +43,7 @@ class SaleViewController: UIViewController  {
     var year = Bool()
     var Lifetime = Bool()
     
-    var purchases = Purchases.configure(withAPIKey: "LaEomxfMQACzbGFnmmffVNcCEopCcCMc", appUserID: nil)
+    var purchases = Purchases.configure(withAPIKey: "RDlbQdhQOSZKZUtWvzWnfocZNPLbDFfw", appUserID: nil)
 
     @IBAction func tapLifetime(_ sender: Any) {
         
@@ -85,11 +85,16 @@ class SaleViewController: UIViewController  {
     @IBOutlet weak var tapmonth: UIButton!
     @IBAction func tapContinue(_ sender: Any) {
         
+        
+        year = true
+        month = false
+        Lifetime = false
+        
         if month {
             
             purchases.entitlements { (entitlements, error) in
-                guard let pro = entitlements?["premium"] else { return }
-                guard let monthly = pro.offerings["monthly"] else { return }
+                guard let pro = entitlements?["Subscriptions"] else { return }
+                guard let monthly = pro.offerings["monthly50"] else { return }
                 guard let product = monthly.activeProduct else { return }
                 
                 self.purchases.makePurchase(product, { (transaction, purchaserInfo, error, cancelled) in
@@ -106,17 +111,42 @@ class SaleViewController: UIViewController  {
                             
 //                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
                             
-                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                          
                             
                             print("n")
+                            
+                            
+                            Auth.auth().signInAnonymously() { (authResult, error) in
+                                // ...
+                                
+                                uid = (Auth.auth().currentUser?.uid)!
+
+                                didpurchase = true
+                                
+                                self.ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+                                
+                                self.dismiss(animated: true, completion: nil)
+                                
+                            }
+                            
                         } else {
                             
                             
 //                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
                             
-                            self.performSegue(withIdentifier: "PayToHome", sender: self)
-                            
-                            print("y")
+                            Auth.auth().signInAnonymously() { (authResult, error) in
+                                // ...
+                                
+                                uid = (Auth.auth().currentUser?.uid)!
+                                
+                                didpurchase = true
+                                
+                                self.ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+                                self.dismiss(animated: true, completion: nil)
+                                
+                            }
                         }
                         
                     } else {
@@ -133,8 +163,8 @@ class SaleViewController: UIViewController  {
             
             
             purchases.entitlements { (entitlements, error) in
-                guard let pro = entitlements?["premium"] else { return }
-                guard let monthly = pro.offerings["Lifetimely"] else { return }
+                guard let pro = entitlements?["Subscriptions"] else { return }
+                guard let monthly = pro.offerings["lifetime299"] else { return }
                 guard let product = monthly.activeProduct else { return }
                 
                 self.purchases.makePurchase(product, { (transaction, purchaserInfo, error, cancelled) in
@@ -149,37 +179,54 @@ class SaleViewController: UIViewController  {
                             
                             
                             
-//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
-                            
-                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                            //                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])Auth.auth().signInAnonymously() { (authResult, error) in
+                            // ...
                             
                             print("n")
-                        } else {
                             
                             
-//                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
+                            Auth.auth().signInAnonymously() { (authResult, error) in
+                                // ...
+                                
+                                uid = (Auth.auth().currentUser?.uid)!
+                                
+                                didpurchase = true
+                                
+                                self.ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+                                self.dismiss(animated: true, completion: nil)
+                                
+                            }
                             
-                            self.performSegue(withIdentifier: "PayToHome", sender: self)
-                            
-                            print("y")
                         }
                         
-                    } else {
+                        } else {
+                            
+
+                        Auth.auth().signInAnonymously() { (authResult, error) in
+                            // ...
+                            
+                            uid = (Auth.auth().currentUser?.uid)!
+                            
+                            didpurchase = true
+                            
+                            self.ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+                            self.dismiss(animated: true, completion: nil)
+                            
+                            }
+                        }
                         
-                        //                    self.performSegue(withIdentifier: "PayToHome", sender: self)
-                        //
-                        //                    print("n")
-                    }
-                })
-                
+                    })
+            
             }
         }
         
         if year {
             
             purchases.entitlements { (entitlements, error) in
-                guard let pro = entitlements?["premium"] else { return }
-                guard let monthly = pro.offerings["yearly"] else { return }
+                guard let pro = entitlements?["Subscriptions"] else { return }
+                guard let monthly = pro.offerings["yearly90"] else { return }
                 guard let product = monthly.activeProduct else { return }
                 
                 self.purchases.makePurchase(product, { (transaction, purchaserInfo, error, cancelled) in
@@ -194,19 +241,38 @@ class SaleViewController: UIViewController  {
                             
 //                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
                             
+    
+                                    Auth.auth().signInAnonymously() { (authResult, error) in
+                                    // ...
+    
+                                    uid = (Auth.auth().currentUser?.uid)!
+    
+                                    didpurchase = true
+    
+                                        self.ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+                                    self.dismiss(animated: true, completion: nil)
+    
+                                    }
                             
-                            
-                            self.performSegue(withIdentifier: "PayToHome", sender: self)
-                            
-                            print("n")
                         } else {
                             
                             
 //                            ref?.child("users").child(uid).updateChildValues(["Account Balance" : newcoin])
                             
-                            self.performSegue(withIdentifier: "PayToHome", sender: self)
+                                Auth.auth().signInAnonymously() { (authResult, error) in
+                                // ...
+    
+                                uid = (Auth.auth().currentUser?.uid)!
+    
+                                didpurchase = true
+    
+                                    self.ref?.child("Snippets").child("Users").child(uid).updateChildValues(["Purchased" : "Yes"])
+
+                                self.dismiss(animated: true, completion: nil)
+    
+                                }
                             
-                            print("y")
                         }
                         
                     } else {
@@ -247,6 +313,9 @@ class SaleViewController: UIViewController  {
         ref = Database.database().reference()
         
         year = true
+        
+        let timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.shownext), userInfo: nil, repeats: true)
+
         
     }
     
