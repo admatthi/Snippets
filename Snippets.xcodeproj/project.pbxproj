@@ -177,6 +177,7 @@
 		9DEEE4CC21776BCF001B5FE8 /* ScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEE4CB21776BCE001B5FE8 /* ScrollTableViewCell.swift */; };
 		9DEEE4CE21776DE1001B5FE8 /* Scroll2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */; };
 		9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */; };
+		9DF217A922E60CEB003923FD /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF217A822E60CEB003923FD /* AudioViewController.swift */; };
 		9DFD9C782187902200BE0EBA /* NewPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */; };
 		A6E7EF2390C3C070289A05D1 /* Pods_SnippetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C13544F156830DA6D0E7DD /* Pods_SnippetsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -291,6 +292,7 @@
 		9DEEE4CB21776BCE001B5FE8 /* ScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTableViewCell.swift; sourceTree = "<group>"; };
 		9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll2TableViewCell.swift; sourceTree = "<group>"; };
 		9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9DF217A822E60CEB003923FD /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPurchaseViewController.swift; sourceTree = "<group>"; };
 		AE432FE1E718478CCBE2095E /* Pods-SnippetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6F6838DF4E4976048A787E4 /* Pods-SnippetsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -368,7 +370,7 @@
 				9D714EFE20FFA1A9002CD2A3 /* A1ViewController.swift */,
 				9D714EF720FFA1A6002CD2A3 /* Main.storyboard */,
 				9D714EF620FFA1A6002CD2A3 /* AViewController.swift */,
-				9DD3AC5C217BCD2000D82C13 /* Recent */,
+				9DD3AC5C217BCD2000D82C13 /* Aug 19 */,
 				9D5AFEA522BE73A700A1FCB4 /* BasisGrotesquePro-Bold.ttf */,
 				9D5AFEA622BE73A900A1FCB4 /* BasisGrotesquePro-Light.ttf */,
 				9D5AFEA422BE73A600A1FCB4 /* BasisGrotesquePro-Regular.ttf */,
@@ -421,7 +423,7 @@
 			path = SnippetsUITests;
 			sourceTree = "<group>";
 		};
-		9DD3AC5C217BCD2000D82C13 /* Recent */ = {
+		9DD3AC5C217BCD2000D82C13 /* Aug 19 */ = {
 			isa = PBXGroup;
 			children = (
 				9DE5864A21481AF500DF4129 /* MainViewController.swift */,
@@ -434,6 +436,7 @@
 				9D3C9AC2217D410D0053D9AD /* CategoriesCollectionViewCell.swift */,
 				9D0D2D502198854B000C3C6F /* BrowseViewController.swift */,
 				9D714EF920FFA1A7002CD2A3 /* BookOverviewViewController.swift */,
+				9DF217A822E60CEB003923FD /* AudioViewController.swift */,
 				9D714EF020FFA1A4002CD2A3 /* BooksCollectionViewCell.swift */,
 				9D714EEC20FFA1A3002CD2A3 /* DiscoverBooksViewController.swift */,
 				9D9A829D2146D9380050F2B3 /* LibViewController.swift */,
@@ -450,7 +453,7 @@
 				9D714EEE20FFA1A3002CD2A3 /* FeedbackViewController.swift */,
 				9D1B922121D7D83400332A18 /* ContacViewController.swift */,
 			);
-			path = Recent;
+			path = "Aug 19";
 			sourceTree = "<group>";
 		};
 		9DD3AC63217BCD5900D82C13 /* Other */ = {
@@ -814,6 +817,7 @@
 				9D714F3220FFA1A9002CD2A3 /* BViewController.swift in Sources */,
 				9DFD9C782187902200BE0EBA /* NewPurchaseViewController.swift in Sources */,
 				9DE9BF922188AE5B009A5182 /* FunnelViewController.swift in Sources */,
+				9DF217A922E60CEB003923FD /* AudioViewController.swift in Sources */,
 				9D54FB7A2134DE60003B8BA7 /* DemoViewController.swift in Sources */,
 				9DEEE4CC21776BCF001B5FE8 /* ScrollTableViewCell.swift in Sources */,
 				9D7D492921790F1A00138802 /* GenreViewController.swift in Sources */,
