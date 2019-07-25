@@ -419,6 +419,10 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tapanywhere.alpha = 0
 
     }
+    @IBAction func tapAudio(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "TextToAudio", sender: self)
+    }
     @IBOutlet weak var whitelabel: UILabel!
     func whatthehell() {
         

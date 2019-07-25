@@ -37,11 +37,14 @@ class AudioViewController: UIViewController {
             
             tapspeed.setTitle("1x", for: .normal)
             
+            player?.rate = 1.0
             x2speed = false
+            
         } else {
             
               tapspeed.setTitle("2x", for: .normal)
             
+            player?.rate = 2.0
             x2speed = true
         }
     }
@@ -63,6 +66,8 @@ class AudioViewController: UIViewController {
             
             player!.play()
 
+            musictimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AudioViewController.musicProgress), userInfo: nil, repeats: true)
+
             //playButton!.setImage(UIImage(named: "player_control_pause_50px.png"), forState: UIControlState.Normal)
             tapplayorpause.setBackgroundImage(UIImage(named: "Pause"), for: .normal)
             
@@ -79,26 +84,37 @@ class AudioViewController: UIViewController {
     @IBOutlet weak var currentTimeLabel: UILabel!
     
     @IBOutlet weak var durationlabel: UILabel!
+    
+    var doublect = Double()
     @objc func musicProgress()  {
         
-        
-        print(duration)
         
         var currenttime = player?.currentTime()
         print(player!.currentTime)
 
-        var doublect = Double(CMTimeGetSeconds(currenttime!))
+        doublect = Double(CMTimeGetSeconds(currenttime!))
         
         print(doublect)
 
         if doublect >= 1 {
             
             var normalizedTime = Float(doublect / duration )
+            let dTotalSeconds = player?.currentTime()
+
+            let asset = AVURLAsset(url: url!, options: nil)
+            let cTotalSeconds = asset.duration
             
-            currentTimeLabel.text = timeString(time: doublect)
-            durationlabel.text = timeString(time: duration)
+            
+            durationlabel.text = cTotalSeconds.durationText
+            currentTimeLabel.text = dTotalSeconds?.durationText
+            
             self.progressView.progress = normalizedTime
             
+            if doublect >= duration {
+                
+                nextcount()
+            }
+
         } else {
             
        
@@ -106,14 +122,30 @@ class AudioViewController: UIViewController {
     
     }
     
-    func timeString(time:TimeInterval) -> String {
+    func converttominutes() {
         
-        let minutes = Int(time) / 60
-        return String(format:"%02i:%02i", minutes)
+//        var minduration = Int(duration) / 60
+//
+//
+//        var mindoublect = Int()
+//
+//
+//        mindoublect = Int(doublect) / 60
+//
+        
+
+
     }
-    
+ 
     var playtapped = Bool()
     
+    @IBAction func tapText(_ sender: Any) {
+        
+        
+        self.performSegue(withIdentifier: "AudioToText", sender: self)
+        
+        
+    }
     func nextcount() {
         
         
@@ -143,13 +175,13 @@ class AudioViewController: UIViewController {
             
             selectedimage = cover.image!
             
-            self.performSegue(withIdentifier: "ReaderToCompleted", sender: self)
+            self.performSegue(withIdentifier: "AudioToCompleted", sender: self)
             
             
         } else {
             
             counter += 1
-            
+            loadselectedaudio()
             
         }
         
@@ -171,9 +203,11 @@ class AudioViewController: UIViewController {
         
         let playerLayer=AVPlayerLayer(player: player!)
         playerLayer.frame=CGRect(x:0, y:0, width:10, height:50)
-        self.view.layer.addSublayer(playerLayer)
+//        self.view.layer.addSublayer(playerLayer)
         
         player!.play()
+        
+        
         
         let asset = AVURLAsset(url: url!, options: nil)
         let audioDuration = asset.duration
@@ -483,4 +517,20 @@ class AudioViewController: UIViewController {
     }
     */
 
+}
+
+extension CMTime {
+    var durationText:String {
+        let totalSeconds = CMTimeGetSeconds(self)
+        let hours:Int = Int(totalSeconds.truncatingRemainder(dividingBy: 86400) / 3600)
+        let minutes:Int = Int(totalSeconds.truncatingRemainder(dividingBy: 3600) / 60)
+        let seconds:Int = Int(totalSeconds.truncatingRemainder(dividingBy: 60))
+        
+        if hours > 0 {
+            return String(format: "%i:%02i:%02i", hours, minutes, seconds)
+        } else {
+            return String(format: "%02i:%02i", minutes, seconds)
+        }
+        
+    }
 }
