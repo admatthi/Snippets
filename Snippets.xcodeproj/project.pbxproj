@@ -178,6 +178,7 @@
 		9DEEE4CE21776DE1001B5FE8 /* Scroll2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */; };
 		9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */; };
 		9DF217A922E60CEB003923FD /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF217A822E60CEB003923FD /* AudioViewController.swift */; };
+		9DF217AB22E9FFCA003923FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF217AA22E9FFCA003923FD /* AVFoundation.framework */; };
 		9DFD9C782187902200BE0EBA /* NewPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */; };
 		A6E7EF2390C3C070289A05D1 /* Pods_SnippetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C13544F156830DA6D0E7DD /* Pods_SnippetsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -293,6 +294,7 @@
 		9DEEE4CD21776DE1001B5FE8 /* Scroll2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll2TableViewCell.swift; sourceTree = "<group>"; };
 		9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DF217A822E60CEB003923FD /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		9DF217AA22E9FFCA003923FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPurchaseViewController.swift; sourceTree = "<group>"; };
 		AE432FE1E718478CCBE2095E /* Pods-SnippetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6F6838DF4E4976048A787E4 /* Pods-SnippetsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF217AB22E9FFCA003923FD /* AVFoundation.framework in Frameworks */,
 				9D402076210241E400E90720 /* StoreKit.framework in Frameworks */,
 				5AE2E904E62031C3F39B682C /* Pods_Snippets.framework in Frameworks */,
 			);
@@ -485,6 +488,7 @@
 		F87C21907DEB21E58C006ECF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DF217AA22E9FFCA003923FD /* AVFoundation.framework */,
 				9D402075210241E400E90720 /* StoreKit.framework */,
 				1E38BD0FECE3698D9AEB47AC /* Pods_Snippets.framework */,
 				0614CC4CB5F24E7C7EAFCDDA /* Pods_SnippetsTests.framework */,
@@ -566,6 +570,9 @@
 					9D714EB920FFA0E7002CD2A3 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -1050,7 +1057,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22CA04C7CEA1DD707CBA3472 /* Pods-Snippets.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-11";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;
@@ -1071,7 +1078,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6329B95625DC1D1E59228AB2 /* Pods-Snippets.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-11";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				ENABLE_BITCODE = NO;

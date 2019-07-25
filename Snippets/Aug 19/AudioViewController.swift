@@ -15,6 +15,11 @@ import FirebaseAuth
 import FBSDKCoreKit
 import UserNotifications
 import AudioToolbox
+import AVFoundation
+
+
+var audiofiles = [String]()
+
 
 class AudioViewController: UIViewController {
 
@@ -40,43 +45,398 @@ class AudioViewController: UIViewController {
             x2speed = true
         }
     }
+    @IBOutlet weak var backimage: UIImageView!
     @IBAction func tapFastForward(_ sender: Any) {
+        
+        nextcount()
     }
     @IBAction func tapPrevious(_ sender: Any) {
+        
+    
     }
     @IBAction func tapPlayOrPause(_ sender: Any) {
         
-        if playtapped {
+    
+        
+        if player?.rate == 0
+        {
             
+            player!.play()
+
+            //playButton!.setImage(UIImage(named: "player_control_pause_50px.png"), forState: UIControlState.Normal)
             tapplayorpause.setBackgroundImage(UIImage(named: "Pause"), for: .normal)
             
-                playtapped = false
+           
             
         } else {
-            
+            player!.pause()
+            //playButton!.setImage(UIImage(named: "player_control_play_50px.png"), forState: UIControlState.Normal)
             tapplayorpause.setBackgroundImage(UIImage(named: "Play"), for: .normal)
             
-            playtapped = true
+            musictimer.invalidate()
         }
+    }
+    
+    @objc func musicProgress()  {
+        
+        let normalizedTime = Float(self.player?.currentTime as! Double / (duration) )
+        
+        self.progressView.progress = normalizedTime
     }
     
     var playtapped = Bool()
     
+    func nextcount() {
+        
+        
+        if counter > audiofiles.count-2 {
+            
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+            
+            if freepressed {
+                
+                
+            } else {
+                
+                
+                
+            }
+            
+            if uid != "" {
+                
+                ref?.child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).removeValue()
+                
+                ref?.child("Snippets").child("Users").child(uid).child("Library").child("InProgress").child(selectedtitle).updateChildValues(["Name" : selectedtitle, "Author" : selectedauthor, "Image": selectedimagename, "Genre" : selectedgenre, "BookID" : selectedbookid, "Completed" : "Yes", "Description" : selecteddescription, "Views" : selectedviews])
+                
+                
+            }
+            
+            
+            selectedimage = cover.image!
+            
+            self.performSegue(withIdentifier: "ReaderToCompleted", sender: self)
+            
+            
+        } else {
+            
+            counter += 1
+            
+            
+        }
+        
+        
+    }
+    
+//    var player: AVAudioPlayer?
+
+    
+    func loadselectedaudio() {
+        
+
+
+        var url = URL(string: audiofiles[counter])
+        
+        let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
+        player = AVPlayer(playerItem: playerItem)
+        
+        let playerLayer=AVPlayerLayer(player: player!)
+        playerLayer.frame=CGRect(x:0, y:0, width:10, height:50)
+        self.view.layer.addSublayer(playerLayer)
+        
+        player!.play()
+        
+        let asset = AVURLAsset(url: url!, options: nil)
+        let audioDuration = asset.duration
+        duration = CMTimeGetSeconds(audioDuration)
+        
+        musictimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AudioViewController.musicProgress), userInfo: nil, repeats: true)
+
+    }
+    
+    var musictimer = Timer()
+    var duration = Double()
+    
+    
+    func queryforallaudiofiles() {
+        
+        audiofiles.removeAll()
+        
+        ref?.child("AllBooks1").child(selectedgenre).child(selectedbookid).child("Summary").child("Audio").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+         
+            
+            
+            if var activityvalue2 = value?["1"] as? String {
+                
+                audiofiles.append(activityvalue2)
+                
+                self.loadselectedaudio()
+
+            }
+            
+            if var activityvalue2 = value?["2"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["3"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["4"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["5"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["6"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["7"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["8"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["9"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["10"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["11"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["12"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["13"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["14"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["15"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["16"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["17"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["18"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["19"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["20"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["21"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["22"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["23"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["24"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["25"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["26"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["26"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["27"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["28"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["29"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["30"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["31"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["32"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["33"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["34"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["35"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["36"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["37"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["38"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["39"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            if var activityvalue2 = value?["40"] as? String {
+                
+                audiofiles.append(activityvalue2)
+            }
+            
+            
+        })
+        
+        
+    }
+    
     @IBOutlet weak var tapplayorpause: UIButton!
+    
+    var player:AVPlayer?
+    var playerItem:AVPlayerItem?
+    var playButton:UIButton?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         ref = Database.database().reference()
 
+    
+        
+     
+        
+        queryforallaudiofiles()
+        
         titlelabel.text = selectedtitle
         authorlabel.text = selectedauthor
         cover.image = selectedimage
         cover.layer.cornerRadius = 5.0
         cover.layer.masksToBounds = true
+        backimage.image = selectedimage
         
         playtapped = false
         x2speed = false
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
         // Do any additional setup after loading the view.
     }
+    
+    @objc func playButtonTapped(_ sender:UIButton)
+    {
+      
+    }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped up")
+            case UISwipeGestureRecognizerDirection.down:
+                self.goodBye(nil)
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped up")
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
+    }
+    
+    
+    @IBAction func goodBye(_ sender: AnyObject?) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    let swipeDownRec = UISwipeGestureRecognizer()
+
     @IBOutlet weak var titlelabel: UILabel!
     
     @IBOutlet weak var authorlabel: UILabel!

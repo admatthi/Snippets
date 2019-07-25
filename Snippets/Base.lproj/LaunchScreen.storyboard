@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +20,19 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqy-9V-Tst">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.098039215686274508" green="0.12549019607843137" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SNIPPETSLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3O3-JT-zS1">
-                                <rect key="frame" x="95" y="299" width="184" height="68"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle Copy 9" translatesAutoresizingMaskIntoConstraints="NO" id="0Dl-qf-6pC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="GI3-Pf-ypS">
+                                <rect key="frame" x="108" y="291" width="159" height="85"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="90g-r1-in6"/>
-                                    <constraint firstAttribute="width" constant="184" id="yn7-OQ-xSp"/>
+                                    <constraint firstAttribute="height" constant="84.999999999999886" id="3xj-hk-0iZ"/>
+                                    <constraint firstAttribute="width" constant="159" id="zGa-w9-xkP"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -36,9 +40,14 @@
                         <constraints>
                             <constraint firstItem="Dqy-9V-Tst" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="90z-3Z-aPs"/>
                             <constraint firstItem="Dqy-9V-Tst" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cmt-q5-R5x"/>
+                            <constraint firstItem="0Dl-qf-6pC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FKl-yF-3Yq"/>
+                            <constraint firstItem="0Dl-qf-6pC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="G2T-Cw-FE3"/>
                             <constraint firstAttribute="bottom" secondItem="Dqy-9V-Tst" secondAttribute="bottom" id="G5G-Js-Zmt"/>
-                            <constraint firstItem="3O3-JT-zS1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="b1d-Xo-AEi"/>
-                            <constraint firstItem="3O3-JT-zS1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gNX-UW-Wcc"/>
+                            <constraint firstItem="0Dl-qf-6pC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OLR-wK-ilG"/>
+                            <constraint firstItem="0Dl-qf-6pC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XOd-vd-Ku5"/>
+                            <constraint firstItem="GI3-Pf-ypS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XSa-KJ-09j"/>
+                            <constraint firstItem="GI3-Pf-ypS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="a5y-zR-PrZ"/>
+                            <constraint firstAttribute="bottom" secondItem="0Dl-qf-6pC" secondAttribute="bottom" id="dhW-bK-rLf"/>
                             <constraint firstItem="Dqy-9V-Tst" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hSQ-Yu-N1x"/>
                             <constraint firstItem="Dqy-9V-Tst" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yLB-Xy-lUJ"/>
                         </constraints>
@@ -51,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SNIPPETSLogo" width="424" height="106"/>
+        <image name="Group" width="470" height="644"/>
+        <image name="Rectangle Copy 9" width="1024" height="1024"/>
     </resources>
 </document>
