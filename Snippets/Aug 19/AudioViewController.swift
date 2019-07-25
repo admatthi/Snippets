@@ -76,12 +76,40 @@ class AudioViewController: UIViewController {
             musictimer.invalidate()
         }
     }
+    @IBOutlet weak var currentTimeLabel: UILabel!
     
+    @IBOutlet weak var durationlabel: UILabel!
     @objc func musicProgress()  {
         
-        let normalizedTime = Float(self.player?.currentTime as! Double / (duration) )
         
-        self.progressView.progress = normalizedTime
+        print(duration)
+        
+        var currenttime = player?.currentTime()
+        print(player!.currentTime)
+
+        var doublect = Double(CMTimeGetSeconds(currenttime!))
+        
+        print(doublect)
+
+        if doublect >= 1 {
+            
+            var normalizedTime = Float(doublect / duration )
+            
+            currentTimeLabel.text = timeString(time: doublect)
+            durationlabel.text = timeString(time: duration)
+            self.progressView.progress = normalizedTime
+            
+        } else {
+            
+       
+        }
+    
+    }
+    
+    func timeString(time:TimeInterval) -> String {
+        
+        let minutes = Int(time) / 60
+        return String(format:"%02i:%02i", minutes)
     }
     
     var playtapped = Bool()
@@ -130,12 +158,13 @@ class AudioViewController: UIViewController {
     
 //    var player: AVAudioPlayer?
 
-    
+    var url = URL(string: "www.google.com")
+
     func loadselectedaudio() {
         
 
 
-        var url = URL(string: audiofiles[counter])
+        url = URL(string: audiofiles[counter])
         
         let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
         player = AVPlayer(playerItem: playerItem)
@@ -148,6 +177,8 @@ class AudioViewController: UIViewController {
         
         let asset = AVURLAsset(url: url!, options: nil)
         let audioDuration = asset.duration
+        
+    
         duration = CMTimeGetSeconds(audioDuration)
         
         musictimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AudioViewController.musicProgress), userInfo: nil, repeats: true)
