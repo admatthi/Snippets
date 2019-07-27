@@ -44,7 +44,33 @@ class BookOverviewViewController: UIViewController {
         } else {
             
 
-            self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
+            var bookbool = UserDefaults.standard.object(forKey: "FirstBook") as? String ?? "false"
+
+            
+            if bookbool == "True" {
+                
+                
+                if firststoryid == selectedbookid {
+                    
+                    self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+
+                    
+                } else {
+                    
+                self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
+
+                }
+                
+            } else {
+                
+                UserDefaults.standard.set("True", forKey: "FirstBook")
+                
+                firststoryid = selectedbookid
+                
+                self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+
+            }
+
 
             
         }

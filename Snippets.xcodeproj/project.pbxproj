@@ -179,6 +179,15 @@
 		9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */; };
 		9DF217A922E60CEB003923FD /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF217A822E60CEB003923FD /* AudioViewController.swift */; };
 		9DF217AB22E9FFCA003923FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF217AA22E9FFCA003923FD /* AVFoundation.framework */; };
+		9DFD2D1622EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */; };
+		9DFD2D1722EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */; };
+		9DFD2D1822EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */; };
+		9DFD2D2122EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */; };
+		9DFD2D2222EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */; };
+		9DFD2D2322EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */; };
+		9DFD2D2422EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D2022EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf */; };
+		9DFD2D2522EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D2022EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf */; };
+		9DFD2D2622EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D2022EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf */; };
 		9DFD9C782187902200BE0EBA /* NewPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */; };
 		A6E7EF2390C3C070289A05D1 /* Pods_SnippetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C13544F156830DA6D0E7DD /* Pods_SnippetsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -295,6 +304,9 @@
 		9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DF217A822E60CEB003923FD /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		9DF217AA22E9FFCA003923FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BasisGrotesquePro-Bold.ttf"; path = "../../Bling/Together/Jewelry/BasisGrotesquePro-Bold.ttf"; sourceTree = "<group>"; };
+		9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BasisGrotesquePro-Light 16-34-54-461.ttf"; sourceTree = "<group>"; };
+		9DFD2D2022EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BasisGrotesquePro-Regular 16-34-54-649.ttf"; sourceTree = "<group>"; };
 		9DFD9C772187902200BE0EBA /* NewPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPurchaseViewController.swift; sourceTree = "<group>"; };
 		AE432FE1E718478CCBE2095E /* Pods-SnippetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6F6838DF4E4976048A787E4 /* Pods-SnippetsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetsTests/Pods-SnippetsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -398,6 +410,9 @@
 				9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */,
 				9D4D43052177B9B000DC0EB5 /* National-Medium.otf */,
 				9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */,
+				9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */,
+				9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */,
+				9DFD2D2022EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf */,
 				9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */,
 				9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */,
 				9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */,
@@ -614,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4D43152177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
+				9DFD2D2422EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf in Resources */,
 				9D714F2320FFA1A9002CD2A3 /* Main.storyboard in Resources */,
 				9D4D43212177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
 				9D4D431B2177BA3B00DC0EB5 /* National-Medium.otf in Resources */,
@@ -621,6 +637,7 @@
 				9D662CD021082BAB00A474A3 /* rm_albion.ttf in Resources */,
 				9D4D43302177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */,
 				9D4D43242177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */,
+				9DFD2D1622EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */,
 				9D4D43392177BA3B00DC0EB5 /* National-Regular.otf in Resources */,
 				9D4D43452177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */,
 				9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */,
@@ -629,6 +646,7 @@
 				9D4D43482177BA3B00DC0EB5 /* National-Light.otf in Resources */,
 				9D4D43332177BA3B00DC0EB5 /* National-BlackItalic.otf in Resources */,
 				9DA3FFE7210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
+				9DFD2D2122EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */,
 				9D4D431E2177BA3B00DC0EB5 /* National-Book.otf in Resources */,
 				9D4D432D2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */,
 				9D4D43182177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
@@ -646,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4D43192177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
+				9DFD2D1722EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */,
 				9D4D43162177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
 				9D4D43402177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */,
 				9D4D43222177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
@@ -658,6 +677,7 @@
 				9D4D433A2177BA3B00DC0EB5 /* National-Regular.otf in Resources */,
 				9DA3FFE8210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
 				9D4D43252177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */,
+				9DFD2D2222EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */,
 				9D4D43462177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */,
 				9D4D432E2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */,
 				9D4D432B2177BA3B00DC0EB5 /* National-Bold.otf in Resources */,
@@ -667,6 +687,7 @@
 				9D4D43432177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */,
 				9D4D43372177BA3B00DC0EB5 /* National-Semibold.otf in Resources */,
 				9D662CD121082BAB00A474A3 /* rm_albion.ttf in Resources */,
+				9DFD2D2522EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4D431A2177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
+				9DFD2D1822EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */,
 				9D4D43172177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
 				9D4D43412177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */,
 				9D4D43232177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
@@ -687,6 +709,7 @@
 				9D4D433B2177BA3B00DC0EB5 /* National-Regular.otf in Resources */,
 				9DA3FFE9210E794700A26F62 /* Cheltenham-Bold.otf in Resources */,
 				9D4D43262177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */,
+				9DFD2D2322EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */,
 				9D4D43472177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */,
 				9D4D432F2177BA3B00DC0EB5 /* National-SemiboldItalic.otf in Resources */,
 				9D4D432C2177BA3B00DC0EB5 /* National-Bold.otf in Resources */,
@@ -696,6 +719,7 @@
 				9D4D43442177BA3B00DC0EB5 /* National-Extrabold.otf in Resources */,
 				9D4D43382177BA3B00DC0EB5 /* National-Semibold.otf in Resources */,
 				9D662CD221082BAB00A474A3 /* rm_albion.ttf in Resources */,
+				9DFD2D2622EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

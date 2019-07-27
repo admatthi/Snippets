@@ -25,6 +25,9 @@ var todaysdate = String()
 var screenshot = UIImage()
 var tryingtopurchase = Bool()
 
+var haspickedfirststory = Bool()
+var firststoryid = String()
+
 protocol SnippetsPurchasesDelegate: AnyObject {
     
     func purchaseCompleted(product: String)
@@ -75,86 +78,89 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Auth.auth().currentUser == nil {
 
-//            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//
-//            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Teaser") as UIViewController
-//            self.window = UIWindow(frame: UIScreen.main.bounds)
-//            self.window?.rootViewController = initialViewControlleripad
-//            self.window?.makeKeyAndVisible()//
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Sale") as UIViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()//
 
             
-            var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-            
-            
-            tabBar.selectedIndex = 0
+//            var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+//
+//
+//            tabBar.selectedIndex = 0
             
         }  else {
 
             uid = (Auth.auth().currentUser?.uid)!
 
-            queryforinfo()
+//            queryforinfo()
 
-
+                        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+            
+            
+                        tabBar.selectedIndex = 0
 
         }
         
         return true
     }
     
-    func queryforinfo() {
-        
-        _ = 0
-        
-        ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            let value = snapshot.value as? NSDictionary
-            
-            if let purchased = value?["Purchased"] as? String {
-                
-                if purchased == "Yes" {
-                    
-                    didpurchase = true
-                    
-                    
-                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-                    
-                    
-                    tabBar.selectedIndex = 0
-//                    
-//                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                    
-//                    
-//                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as UIViewController
-//                    self.window = UIWindow(frame: UIScreen.main.bounds)
-//                    self.window?.rootViewController = initialViewControlleripad
-//                    self.window?.makeKeyAndVisible()
-                    
-                } else {
-                    
-                    didpurchase = true
-                    
-                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-                    
-                    tabBar.selectedIndex = 0
-                    
-                  
-                }
-                
-            } else {
-                
-                didpurchase = false
-                let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-                
-                tabBar.selectedIndex = 0
-             
-              
-                
-            }
-                
-            })
-            
-        }
+//    func queryforinfo() {
+//
+//        _ = 0
+//
+//        ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            let value = snapshot.value as? NSDictionary
+//
+//            if let purchased = value?["Purchased"] as? String {
+//
+//                if purchased == "Yes" {
+//
+//                    didpurchase = true
+//
+//
+//                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+//
+//
+//                    tabBar.selectedIndex = 0
+////
+////                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+////
+////
+////                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as UIViewController
+////                    self.window = UIWindow(frame: UIScreen.main.bounds)
+////                    self.window?.rootViewController = initialViewControlleripad
+////                    self.window?.makeKeyAndVisible()
+//
+//                } else {
+//
+//                    didpurchase = true
+//
+//                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+//
+//                    tabBar.selectedIndex = 0
+//
+//
+//                }
+//
+//            } else {
+//
+//                didpurchase = false
+//                let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+//
+//                tabBar.selectedIndex = 0
+//
+//
+//
+//            }
+//
+//            })
+//
+//        }
     
     func letsgo() {
         

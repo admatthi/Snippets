@@ -77,14 +77,18 @@ class Settings2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if didpurchase {
-            
-            taplogin.alpha = 0
-            
-        } else {
+        if Auth.auth().currentUser == nil {
             
             taplogout.alpha = 0
+            taplogin.alpha = 1
+
+        } else {
             
+            taplogin.alpha = 0
+            taplogout.alpha = 1
+            
+            
+
         }
         // Do any additional setup after loading the view.
     }

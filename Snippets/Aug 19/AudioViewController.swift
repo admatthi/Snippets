@@ -146,6 +146,22 @@ class AudioViewController: UIViewController {
         
         
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        musictimer.invalidate()
+        
+        if player?.rate == 0
+        {
+            
+        } else {
+            
+            
+            player?.pause()
+
+            
+        }
+    }
     func nextcount() {
         
         
@@ -195,7 +211,7 @@ class AudioViewController: UIViewController {
     func loadselectedaudio() {
         
 
-
+   
         url = URL(string: audiofiles[counter])
         
         let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
@@ -214,6 +230,14 @@ class AudioViewController: UIViewController {
         
     
         duration = CMTimeGetSeconds(audioDuration)
+        
+        let dTotalSeconds = player?.currentTime()
+        
+        let cTotalSeconds = asset.duration
+        
+        
+        durationlabel.text = cTotalSeconds.durationText
+        currentTimeLabel.text = dTotalSeconds?.durationText
         
         musictimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AudioViewController.musicProgress), userInfo: nil, repeats: true)
 
@@ -446,7 +470,7 @@ class AudioViewController: UIViewController {
         
         ref = Database.database().reference()
 
-    
+        counter = 0
         
      
         

@@ -23,6 +23,10 @@ var myblue2 = UIColor(red:0.19, green:0.39, blue:1.00, alpha:1.0)
 class SaleViewController: UIViewController  {
 
     
+    @IBAction func tapRestore(_ sender: Any) {
+        
+        
+    }
     @IBOutlet weak var tapcontinue: UIButton!
     override func viewDidAppear(_ animated: Bool) {
         
@@ -289,7 +293,7 @@ class SaleViewController: UIViewController  {
     
     @IBAction func tapBack(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
     }
     var ref: DatabaseReference?
     var category = String()
