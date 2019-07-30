@@ -35,6 +35,7 @@ class CompletedViewController: UIViewController, UITextViewDelegate {
         self.view.endEditing(true)
         
     }
+    @IBOutlet weak var bamview: CheerView!
     
     @IBOutlet weak var tv: UITextView!
     @IBOutlet weak var stars: UIImageView!
@@ -96,6 +97,7 @@ class CompletedViewController: UIViewController, UITextViewDelegate {
         stars.image = UIImage(named: "2Star")
         starsnumber = "2"
     }
+    
     @IBAction func tapB3(_ sender: Any) {
         
         stars.image = UIImage(named: "3Star")
@@ -107,9 +109,14 @@ class CompletedViewController: UIViewController, UITextViewDelegate {
         stars.image = UIImage(named: "5Star")
         starsnumber = "5"
     }
-    @IBOutlet weak var bamview: CheerView!
+  
+    
+    
+    
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var imageback: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()

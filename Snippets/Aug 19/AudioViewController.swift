@@ -55,7 +55,8 @@ class AudioViewController: UIViewController {
     }
     @IBAction func tapPrevious(_ sender: Any) {
         
-    
+        previouscount()
+        
     }
     @IBAction func tapPlayOrPause(_ sender: Any) {
         
@@ -122,6 +123,27 @@ class AudioViewController: UIViewController {
     
     }
     
+    func previouscount() {
+        
+
+        if counter == 0 {
+            
+            
+        } else {
+            
+            counter -= 1
+            
+            self.chapterlabel.text = "Chapter \(counter+1) / \(audiofiles.count)"
+            
+            loadselectedaudio()
+            
+            
+            
+        }
+     
+        
+    }
+    
     func converttominutes() {
         
 //        var minduration = Int(duration) / 60
@@ -153,6 +175,8 @@ class AudioViewController: UIViewController {
         
         if player?.rate == 0
         {
+            
+            
             
         } else {
             
@@ -197,6 +221,8 @@ class AudioViewController: UIViewController {
         } else {
             
             counter += 1
+            self.chapterlabel.text = "Chapter \(counter+1) / \(audiofiles.count)"
+
             loadselectedaudio()
             
         }
@@ -451,6 +477,7 @@ class AudioViewController: UIViewController {
                 audiofiles.append(activityvalue2)
             }
             
+            self.chapterlabel.text = "Chapter \(counter+1) / \(audiofiles.count)"
             
         })
         
@@ -459,6 +486,8 @@ class AudioViewController: UIViewController {
     
     @IBOutlet weak var tapplayorpause: UIButton!
     
+    @IBOutlet weak var chapterlabel: UILabel!
+    @IBOutlet weak var headlinelabel: UILabel!
     var player:AVPlayer?
     var playerItem:AVPlayerItem?
     var playButton:UIButton?
@@ -469,12 +498,20 @@ class AudioViewController: UIViewController {
         
         
         ref = Database.database().reference()
-
-        counter = 0
         
      
+        if audiofiles.count > 0 {
+            
+            chapterlabel.text = "Chapter \(counter+1) / \(audiofiles.count)"
+            
+            
+        } else {
+            
+            chapterlabel.text = ""
+            queryforallaudiofiles()
+
+        }
         
-        queryforallaudiofiles()
         
         titlelabel.text = selectedtitle
         authorlabel.text = selectedauthor

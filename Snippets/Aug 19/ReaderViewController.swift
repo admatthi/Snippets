@@ -91,7 +91,9 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func goodBye(_ sender: AnyObject?) {
         
-      self.dismiss(animated: true, completion: nil)
+//      self.dismiss(animated: true, completion: nil)
+
+        self.performSegue(withIdentifier: "ReadToOverview", sender: self)
         
     }
     var ref: DatabaseReference?
@@ -228,8 +230,6 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var backgroundlabel: UILabel!
     
 
-    
-    var counter = 0
     
     func lastcount() {
         
@@ -783,10 +783,11 @@ class ReaderViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 quote = self.explanation
             }
 
-            self.counter = 0
-            self.showproperquote()
             
             self.arrayCount = quote.count
+            
+            self.showproperquote()
+
         })
         
         

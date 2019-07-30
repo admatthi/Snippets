@@ -96,71 +96,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             uid = (Auth.auth().currentUser?.uid)!
 
-//            queryforinfo()
+            queryforinfo()
 
-                        var tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-            
-            
-                        tabBar.selectedIndex = 0
+        
 
         }
         
         return true
     }
     
-//    func queryforinfo() {
+    func queryforinfo() {
+
+        _ = 0
+
+        ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+
+            let value = snapshot.value as? NSDictionary
+
+            if let purchased = value?["Purchased"] as? String {
+
+                if purchased == "Yes" {
+
+                    didpurchase = true
+
+
+                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+
+
+                    tabBar.selectedIndex = 0
 //
-//        _ = 0
-//
-//        ref?.child("Snippets").child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//            let value = snapshot.value as? NSDictionary
-//
-//            if let purchased = value?["Purchased"] as? String {
-//
-//                if purchased == "Yes" {
-//
-//                    didpurchase = true
-//
-//
-//                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-//
-//
-//                    tabBar.selectedIndex = 0
-////
-////                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-////
-////
-////                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as UIViewController
-////                    self.window = UIWindow(frame: UIScreen.main.bounds)
-////                    self.window?.rootViewController = initialViewControlleripad
-////                    self.window?.makeKeyAndVisible()
-//
-//                } else {
-//
-//                    didpurchase = true
-//
-//                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-//
-//                    tabBar.selectedIndex = 0
+//                    let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //
 //
-//                }
-//
-//            } else {
-//
-//                didpurchase = false
-//                let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
-//
-//                tabBar.selectedIndex = 0
-//
-//
-//
-//            }
-//
-//            })
-//
-//        }
+//                    let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Buyer") as UIViewController
+//                    self.window = UIWindow(frame: UIScreen.main.bounds)
+//                    self.window?.rootViewController = initialViewControlleripad
+//                    self.window?.makeKeyAndVisible()
+
+                } else {
+
+                    didpurchase = true
+
+                    let tabBar: UITabBarController = self.window?.rootViewController as! UITabBarController
+
+                    tabBar.selectedIndex = 0
+
+
+                }
+
+            } else {
+
+                didpurchase = false
+                
+                let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                
+                let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Sale") as UIViewController
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = initialViewControlleripad
+                self.window?.makeKeyAndVisible()//
+
+
+
+            }
+
+            })
+
+        }
     
     func letsgo() {
         

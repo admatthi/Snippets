@@ -26,9 +26,23 @@ class BookOverviewViewController: UIViewController {
     
     @IBAction func tapListen(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "BookOverviewToListen", sender: self)
         
+        
+        if didpurchase  {
+            
+            self.performSegue(withIdentifier: "BookOverviewToListen", sender: self)
+
+            
+        } else {
+            
+            
+            //            var bookbool = UserDefaults.standard.object(forKey: "FirstBook") as? String ?? "false"
+            
+            self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
+            
+        }
     }
+    
     @IBAction func tapStartReading(_ sender: Any) {
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
@@ -44,32 +58,35 @@ class BookOverviewViewController: UIViewController {
         } else {
             
 
-            var bookbool = UserDefaults.standard.object(forKey: "FirstBook") as? String ?? "false"
+//            var bookbool = UserDefaults.standard.object(forKey: "FirstBook") as? String ?? "false"
+
+                            self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
 
             
-            if bookbool == "True" {
-                
-                
-                if firststoryid == selectedbookid {
-                    
-                    self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
-
-                    
-                } else {
-                    
-                self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
-
-                }
-                
-            } else {
-                
-                UserDefaults.standard.set("True", forKey: "FirstBook")
-                
-                firststoryid = selectedbookid
-                
-                self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
-
-            }
+//
+//            if bookbool == "True" {
+//
+//
+//                if firststoryid == selectedbookid {
+//
+//                    self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+//
+//
+//                } else {
+//
+//                self.performSegue(withIdentifier: "BookOverviewToPurchase2", sender: self)
+//
+//                }
+//
+//            } else {
+            
+//                UserDefaults.standard.set("True", forKey: "FirstBook")
+//
+//                firststoryid = selectedbookid
+//
+//                self.performSegue(withIdentifier: "BookOverviewToRead", sender: self)
+//
+//            }
 
 
             
@@ -106,9 +123,9 @@ class BookOverviewViewController: UIViewController {
     }
     @IBAction func tapBack(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: {
-            
-        })
+//        self.dismiss(animated: true, completion: {
+//            
+//        })
     }
     @IBOutlet weak var tapstart: UIButton!
     @IBOutlet weak var descriptionlabel: UILabel!
@@ -140,6 +157,8 @@ class BookOverviewViewController: UIViewController {
         cover.layer.cornerRadius = 2.0
         cover.layer.masksToBounds = true
         
+        
+        counter = 0
         
      
         // Do any additional setup after loading the view.

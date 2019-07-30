@@ -35,6 +35,8 @@ class Settings2ViewController: UIViewController {
         
         try! Auth.auth().signOut()
 
+        didpurchase = false
+        
         self.performSegue(withIdentifier: "Settingstoregister", sender: self)
     }
     @IBAction func tapSubscription(_ sender: Any) {

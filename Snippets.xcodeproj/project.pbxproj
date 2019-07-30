@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -179,9 +179,6 @@
 		9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */; };
 		9DF217A922E60CEB003923FD /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF217A822E60CEB003923FD /* AudioViewController.swift */; };
 		9DF217AB22E9FFCA003923FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF217AA22E9FFCA003923FD /* AVFoundation.framework */; };
-		9DFD2D1622EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */; };
-		9DFD2D1722EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */; };
-		9DFD2D1822EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */; };
 		9DFD2D2122EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */; };
 		9DFD2D2222EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */; };
 		9DFD2D2322EBF1D100CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */; };
@@ -251,7 +248,6 @@
 		9D4D43142177BA3300DC0EB5 /* National-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "National-Light.otf"; sourceTree = "<group>"; };
 		9D54FB792134DE60003B8BA7 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		9D5AFEA422BE73A600A1FCB4 /* BasisGrotesquePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BasisGrotesquePro-Regular.ttf"; sourceTree = "<group>"; };
-		9D5AFEA522BE73A700A1FCB4 /* BasisGrotesquePro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BasisGrotesquePro-Bold.ttf"; sourceTree = "<group>"; };
 		9D5AFEA622BE73A900A1FCB4 /* BasisGrotesquePro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BasisGrotesquePro-Light.ttf"; sourceTree = "<group>"; };
 		9D5E80C521DC792800321335 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		9D662CCF21082BA900A474A3 /* rm_albion.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rm_albion.ttf; sourceTree = "<group>"; };
@@ -386,39 +382,15 @@
 				9D714EF720FFA1A6002CD2A3 /* Main.storyboard */,
 				9D714EF620FFA1A6002CD2A3 /* AViewController.swift */,
 				9DD3AC5C217BCD2000D82C13 /* Aug 19 */,
-				9D5AFEA522BE73A700A1FCB4 /* BasisGrotesquePro-Bold.ttf */,
-				9D5AFEA622BE73A900A1FCB4 /* BasisGrotesquePro-Light.ttf */,
-				9D5AFEA422BE73A600A1FCB4 /* BasisGrotesquePro-Regular.ttf */,
 				9DD3AC63217BCD5900D82C13 /* Other */,
 				9D714EC620FFA0EB002CD2A3 /* LaunchScreen.storyboard */,
-				9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */,
-				9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */,
+				9DA63CF922EF708F00F07495 /* Fonts */,
 				9DEEE4CB21776BCE001B5FE8 /* ScrollTableViewCell.swift */,
 				9D662CCF21082BA900A474A3 /* rm_albion.ttf */,
 				9D714EC420FFA0EB002CD2A3 /* Assets.xcassets */,
 				9D714EC920FFA0EB002CD2A3 /* Info.plist */,
 				9DEFB37620FFA45000FB3B33 /* GoogleService-Info.plist */,
-				9D4D43102177BA1100DC0EB5 /* National-Black.otf */,
-				9D4D430D2177B9FC00DC0EB5 /* National-BlackItalic.otf */,
-				9D4D430A2177B9DD00DC0EB5 /* National-Bold.otf */,
-				9D4D43032177B99800DC0EB5 /* National-BoldItalic.otf */,
-				9D4D43062177B9B700DC0EB5 /* National-Book.otf */,
-				9D4D43082177B9CD00DC0EB5 /* National-BookItalic.otf */,
-				9D4D43122177BA2200DC0EB5 /* National-Extrabold.otf */,
-				9D4D43132177BA2900DC0EB5 /* National-ExtraboldItalic.otf */,
-				9D4D43142177BA3300DC0EB5 /* National-Light.otf */,
-				9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */,
-				9D4D43052177B9B000DC0EB5 /* National-Medium.otf */,
-				9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */,
 				9DFD2D1322EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf */,
-				9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */,
-				9DFD2D2022EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf */,
-				9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */,
-				9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */,
-				9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */,
-				9D4D430B2177B9E400DC0EB5 /* National-SemiboldItalic.otf */,
-				9D4D43072177B9C400DC0EB5 /* National-Thin.otf */,
-				9D4D430C2177B9F400DC0EB5 /* National-ThinItalic.otf */,
 			);
 			path = Snippets;
 			sourceTree = "<group>";
@@ -439,6 +411,37 @@
 				9D714EDF20FFA0EB002CD2A3 /* Info.plist */,
 			);
 			path = SnippetsUITests;
+			sourceTree = "<group>";
+		};
+		9DA63CF922EF708F00F07495 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9D5AFEA622BE73A900A1FCB4 /* BasisGrotesquePro-Light.ttf */,
+				9D5AFEA422BE73A600A1FCB4 /* BasisGrotesquePro-Regular.ttf */,
+				9DA3FFE6210E794600A26F62 /* Cheltenham-Bold.otf */,
+				9DE98A532107F75E0073AD07 /* Cheltenham Book Regular.otf */,
+				9D4D43102177BA1100DC0EB5 /* National-Black.otf */,
+				9D4D430D2177B9FC00DC0EB5 /* National-BlackItalic.otf */,
+				9D4D430A2177B9DD00DC0EB5 /* National-Bold.otf */,
+				9D4D43032177B99800DC0EB5 /* National-BoldItalic.otf */,
+				9D4D43062177B9B700DC0EB5 /* National-Book.otf */,
+				9D4D43082177B9CD00DC0EB5 /* National-BookItalic.otf */,
+				9D4D43122177BA2200DC0EB5 /* National-Extrabold.otf */,
+				9D4D43132177BA2900DC0EB5 /* National-ExtraboldItalic.otf */,
+				9D4D43142177BA3300DC0EB5 /* National-Light.otf */,
+				9D4D43042177B9A400DC0EB5 /* National-LightItalic.otf */,
+				9D4D43052177B9B000DC0EB5 /* National-Medium.otf */,
+				9D4D43092177B9D500DC0EB5 /* National-MediumItalic.otf */,
+				9DFD2D1F22EBF1D000CE5591 /* BasisGrotesquePro-Light 16-34-54-461.ttf */,
+				9DFD2D2022EBF1D100CE5591 /* BasisGrotesquePro-Regular 16-34-54-649.ttf */,
+				9D4D430F2177BA0A00DC0EB5 /* National-Regular.otf */,
+				9D4D43112177BA1800DC0EB5 /* National-RegularItalic.otf */,
+				9D4D430E2177BA0300DC0EB5 /* National-Semibold.otf */,
+				9D4D430B2177B9E400DC0EB5 /* National-SemiboldItalic.otf */,
+				9D4D43072177B9C400DC0EB5 /* National-Thin.otf */,
+				9D4D430C2177B9F400DC0EB5 /* National-ThinItalic.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9DD3AC5C217BCD2000D82C13 /* Aug 19 */ = {
@@ -637,7 +640,6 @@
 				9D662CD021082BAB00A474A3 /* rm_albion.ttf in Resources */,
 				9D4D43302177BA3B00DC0EB5 /* National-ThinItalic.otf in Resources */,
 				9D4D43242177BA3B00DC0EB5 /* National-BookItalic.otf in Resources */,
-				9DFD2D1622EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */,
 				9D4D43392177BA3B00DC0EB5 /* National-Regular.otf in Resources */,
 				9D4D43452177BA3B00DC0EB5 /* National-ExtraboldItalic.otf in Resources */,
 				9DEFB37720FFA45000FB3B33 /* GoogleService-Info.plist in Resources */,
@@ -664,7 +666,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4D43192177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
-				9DFD2D1722EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */,
 				9D4D43162177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
 				9D4D43402177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */,
 				9D4D43222177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
@@ -696,7 +697,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4D431A2177BA3B00DC0EB5 /* National-LightItalic.otf in Resources */,
-				9DFD2D1822EBF18500CE5591 /* BasisGrotesquePro-Bold.ttf in Resources */,
 				9D4D43172177BA3B00DC0EB5 /* National-BoldItalic.otf in Resources */,
 				9D4D43412177BA3B00DC0EB5 /* National-RegularItalic.otf in Resources */,
 				9D4D43232177BA3B00DC0EB5 /* National-Thin.otf in Resources */,
@@ -749,27 +749,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Snippets/Pods-Snippets-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Cheers/Cheers.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/Purchases/Purchases.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Snippets/Pods-Snippets-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cheers.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Purchases.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Snippets/Pods-Snippets-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1127,7 +1112,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 797Q3HJ5U5;
+				DEVELOPMENT_TEAM = X24QFW733V;
 				INFOPLIST_FILE = SnippetsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1149,7 +1134,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 797Q3HJ5U5;
+				DEVELOPMENT_TEAM = X24QFW733V;
 				INFOPLIST_FILE = SnippetsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1170,7 +1155,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 797Q3HJ5U5;
+				DEVELOPMENT_TEAM = X24QFW733V;
 				INFOPLIST_FILE = SnippetsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1191,7 +1176,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 797Q3HJ5U5;
+				DEVELOPMENT_TEAM = X24QFW733V;
 				INFOPLIST_FILE = SnippetsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

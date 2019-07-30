@@ -63,10 +63,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate     {
                 let thirty = dateFormatter.string(from: thirtyDaysAfterToday)
                 
                 //                self.addstaticbooks()
-                ref?.child("Snippets").child("Users").child(uid).updateChildValues(["email" : email, "Password" : password, "Purchased" : "Yes"])
+                ref?.child("Snippets").child("Users").child(uid).updateChildValues(["email" : email, "Purchased" : "Yes"])
                 
                 
-                ref?.child("Snippets").child("NewUsers").child(uid).updateChildValues(["email" : email, "Password" : password, "Purchased" : "Yes"])
+                ref?.child("Snippets").child("NewUsers").child(uid).updateChildValues(["email" : email, "Purchased" : "Yes"])
 
                 didpurchase = true
                 
